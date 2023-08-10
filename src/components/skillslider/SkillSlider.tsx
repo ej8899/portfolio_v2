@@ -9,6 +9,7 @@ some of this was used below:
 const SkillSlider = () => {
   return (
     <Fragment>
+      <h2 id='about__title'>Skills & Tools</h2>
       <article
         className='marquee_wrapper scrolla-element-anim-1 scroll-animate'
         style={{
@@ -18,7 +19,6 @@ const SkillSlider = () => {
             'linear-gradient(to right, rgba(240, 235, 227, 0), rgba(240, 235, 227, 1) 20%, rgba(240, 235, 227, 1) 80%, rgba(240, 235, 227, 0))',
         }}
       >
-        <h2 id='about__title'>Skills & Tools</h2>
         <div className='marquee'>
           <div className='marquee__group'>
             <svg>

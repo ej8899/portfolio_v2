@@ -1,5 +1,7 @@
-import comedyComedian from '../assets/comedy/comedian-page.jpg';
-import comedyHome from '../assets/comedy/home-page.jpg';
+import learnthisLessons from '../assets/learnthis/lessons.png';
+import learnthisHome from '../assets/learnthis/title.jpg';
+import learnthisClipper from '../assets/learnthis/webclipper.png';
+import learnthisAbout from '../assets/learnthis/about.png';
 
 export interface IProject {
   title: string;
@@ -32,7 +34,9 @@ type TTech =
   | 'jest'
   | 'eslint'
   | 'babel'
-  | 'webpack';
+  | 'webpack'
+  | 'postgres'
+  | 'express';
 
 const PROJECTS: IProject[] = [
   {
@@ -42,10 +46,12 @@ const PROJECTS: IProject[] = [
       live: 'https://github.com',
       repo: 'https://github.com',
     },
-    techIcons: ['react', 'sass', 'firebase', 'node'],
+    techIcons: ['react', 'sass', 'postgres', 'express', 'node'],
     screenshots: [
-      { url: comedyHome, alt: 'The Comedy DB Desktop Home Screenshot' },
-      { url: comedyComedian, alt: 'The Comedy DB Desktop Special Screenshot' },
+      { url: learnthisHome, alt: 'The Comedy DB Desktop Home Screenshot' },
+      { url: learnthisLessons, alt: 'The Comedy DB Desktop Special Screenshot' },
+      { url: learnthisClipper, alt: 'The Comedy DB Desktop Special Screenshot' },
+      { url: learnthisAbout, alt: 'The Comedy DB Desktop Special Screenshot' },
     ],
     description: [
       { type: 'header', value: 'The Inspiration' },

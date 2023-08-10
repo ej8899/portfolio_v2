@@ -2,7 +2,7 @@ import Github from '../../assets/components/Github';
 import LinkedIn from '../../assets/components/LinkedIn';
 import Button from '../button/Button';
 import './Hero.scss';
-
+import globalconfig from '../../config';
 function Hero() {
   return (
     <section className='hero' aria-label='hero with github & linkedin links'>
@@ -14,22 +14,19 @@ function Hero() {
           </h3>
 
           <div className='hero__cta'>
-            <a
-              href='https://www.linkedin.com/in/ernie-johnson/'
-              target='_blank'
-              rel='noreferrer'
-              aria-label='My LinkedIn Profile'
-            >
-              <LinkedIn />
+            <a target='_new' rel='nofollow' href={globalconfig.link.linkedin}>
+              <i aria-hidden='true' className='fab fa-linkedin-in' />
             </a>
-            <a
-              href='https://github.com/ej8899'
-              target='_blank'
-              rel='noreferrer'
-              aria-label='My Github Profile'
-            >
-              <Github />
+            <a target='_new' rel='nofollow' href={globalconfig.link.github}>
+              <i aria-hidden='true' className='fab fa-github' />
             </a>
+            <a target='_new' rel='nofollow' href={globalconfig.link.twitter}>
+              <i aria-hidden='true' className='fab fa-twitter' />
+            </a>
+            <a target='_new' rel='nofollow' href={globalconfig.link.youtube}>
+              <i aria-hidden='true' className='fab fa-youtube' />
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href='#about'>
               <Button type='outline'>About Me</Button>
             </a>

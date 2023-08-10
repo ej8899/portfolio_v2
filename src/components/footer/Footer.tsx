@@ -2,6 +2,7 @@
 // import Github from '../../assets/components/Github';
 import './Footer.scss';
 import globalconfig from '../../config';
+
 function Footer() {
   const currentYear = new Date().getFullYear();
 

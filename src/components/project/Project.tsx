@@ -12,11 +12,13 @@ import Redux from '../../assets/components/Redux';
 import Sass from '../../assets/components/Sass';
 import TypeScript from '../../assets/components/TypeScript';
 import Webpack from '../../assets/components/Webpack';
+import Postgres from '../../assets/components/Postgres';
 import { IProject } from '../../data/projects';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import Carousel from '../carousel/Carousel';
 import DevIcon from '../dev_icon/DevIcon';
 import './Project.scss';
+import Express from '../../assets/components/Express';
 
 type TProps = {
   data: IProject;
@@ -135,6 +137,14 @@ function Project({ data, number }: TProps) {
               case 'eslint':
                 techComponent = <ESLint />;
                 tooltip = 'ESLint';
+                break;
+              case 'postgres':
+                techComponent = <Postgres />;
+                tooltip = 'PostgreSQL';
+                break;
+              case 'express':
+                techComponent = <Express />;
+                tooltip = 'Express';
                 break;
             }
 
