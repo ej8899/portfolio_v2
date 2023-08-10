@@ -1,0 +1,223 @@
+.contact {
+  position: relative;
+  padding-block: calc(var(--section-separator-height) + var(--section-vertical-padding))
+    var(--section-vertical-padding);
+
+  &__content {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+  }
+
+  &__header {
+    opacity: 0;
+    transform: translateX(-30%);
+
+    transition: opacity 1.25s ease-out, transform 0.5s ease-out;
+
+    &.animate-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    h2 {
+      position: relative;
+
+      text-transform: uppercase;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 105%;
+        left: 1ch;
+        transform: translateX(-50%);
+
+        width: 80%;
+        height: 0.3ch;
+
+        background: var(--clr-primary-100);
+
+        animation: pulseSkewScale infinite 1s ease-in-out;
+      }
+    }
+
+    h2 {
+      color: var(--clr-neutral-200);
+      text-align: center;
+      margin-bottom: calc(var(--section-vertical-padding) / 16);
+    }
+  }
+
+  form {
+    margin-top: 2rem;
+
+    display: grid;
+    gap: 1rem;
+
+    width: min(100%, 600px);
+    padding: min(1.5rem, 10vw);
+
+    background: var(--clr-neutral-900-t);
+    border-radius: var(--border-radius-200);
+
+    opacity: 0;
+    transform: translateY(30%);
+
+    transition: opacity 1.25s ease-out, transform 0.75s ease-out;
+
+    &.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .input-wrapper {
+      > * {
+        display: block;
+      }
+    }
+
+    button {
+      text-transform: uppercase;
+    }
+
+    label {
+      margin-bottom: 0.5rem;
+
+      transform: translateX(0.25rem);
+
+      font-family: var(--ff-main);
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      color: var(--clr-neutral-300);
+    }
+
+    input,
+    textarea {
+      --border-thickness: 3px;
+      --border-invalid: var(--border-thickness) solid var(--clr-error);
+      --border-valid: var(--border-thickness) solid var(--clr-success);
+      --border-focus: var(--border-thickness) solid var(--clr-neutral-500);
+      --border-standard: var(--border-thickness) solid var(--clr-neutral-800);
+
+      width: 100%;
+
+      padding: 0.5rem 0.75rem;
+
+      outline: var(--border-standard);
+      border: 0;
+      border-radius: var(--border-radius-100);
+
+      color: var(--clr-neutral-100);
+      background: var(--clr-neutral-900-t);
+
+      &::placeholder {
+        color: var(--clr-neutral-500);
+      }
+
+      &:focus {
+        outline: var(--border-focus);
+
+        + .validation-message {
+          color: var(--clr-neutral-500);
+        }
+      }
+
+      &.invalid:not(:placeholder-shown):not(:focus) {
+        outline: var(--border-invalid);
+      }
+
+      &.valid:not(:placeholder-shown) {
+        outline: var(--border-valid);
+      }
+    }
+
+    textarea {
+      min-height: 10rem;
+      resize: none;
+      width: 100%;
+    }
+
+    .validation-message {
+      margin: 0;
+      margin-top: 8px;
+
+      text-align-last: left;
+      display: block;
+      color: var(--clr-error);
+      font-size: 0.9rem;
+      transform: translateX(0.25rem);
+      font-style: italic;
+
+      opacity: 1;
+
+      &.invisible {
+        opacity: 0;
+      }
+    }
+  }
+
+  svg.send-status {
+    width: min(300px, 80vw);
+    padding-block: 2rem;
+  }
+
+  button {
+    padding: 1rem 1.5rem;
+    margin-inline: auto;
+    margin-top: 0.5rem;
+
+    border: 0;
+    border-radius: var(--border-radius-100);
+
+    background: var(--clr-primary-200);
+    color: white;
+
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
+
+    transition: transform var(--transition-short) ease-in-out;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+      outline: 0;
+    }
+  }
+
+  p {
+    color: var(--clr-neutral-200);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.custom-shape-divider-top-1680975773 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+
+  // translateY: fix gap that appears on random viewport sizes
+  // 1/2 pixel of the darker transparent overlap is less noticeable
+  // than 1/2 pixel gap of nothing
+  transform: rotate(180deg) translateY(0.5px);
+}
+
+.custom-shape-divider-top-1680975773 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: var(--section-separator-height);
+}
+
+.custom-shape-divider-top-1680975773 .shape-fill {
+  fill: var(--clr-portfolio-bg);
+}

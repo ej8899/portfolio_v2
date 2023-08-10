@@ -1,0 +1,131 @@
+.hero {
+  --spacer: 1.5vh;
+  --timer: 0.5s;
+
+  position: relative;
+
+  color: var(--clr-neutral-200);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+
+  &__text {
+    opacity: 0;
+    animation: fadeInFromBottom var(--timer) ease-out 0.5s normal forwards;
+    transform: translateY(-10vh);
+
+    // name font
+    h2 {
+      font-family: "Jost";
+	font-size: 90px;
+	line-height: 1.2;
+	color: #FFF;
+	font-weight: 700;
+	margin: 15px 0 0 0;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgba(0, 0, 0, 0.2);
+      margin-bottom: calc(var(--spacer) * 0.5);
+
+      font-weight: var(--fw-xbold);
+      font-size: clamp(2.5rem, 10vw, 6rem);
+
+      color: var(--clr-neutral-200);
+    }
+
+    // user title 1
+    h3 {
+      margin-bottom: calc(var(--spacer) * 5);
+
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.1px;
+      font-size: clamp(1.25rem, 6vw, 3rem);
+      color: var(--clr-neutral-500);
+
+      // user title 2 (underline)
+      span {
+        position: relative;
+
+        // Underline
+        &:before {
+          content: '';
+          position: absolute;
+
+          bottom: max(calc(-4px - 1.2vw), -16px);
+          right: 12.5%;
+
+          height: min(1.5vw, 12px);
+          width: 75%;
+
+          background-color: var(--clr-primary-100);
+
+          transform: rotate(-2deg) skew(-5deg);
+          animation: pulseSkewScale 1s infinite ease-in-out;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeInFromLeft var(--timer) ease-out 0.75s normal forwards;
+
+    a {
+      font-family: var(--ff-accent);
+      font-size: 1.5rem;
+    }
+
+    svg {
+      aspect-ratio: 1/1;
+      width: min(7vw, 2.5rem);
+      color: var(--clr-primary-100);
+
+      transition: transform var(--transition-short) ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.custom-shape-divider-bottom-1680894835 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+
+  // translateY: fix gap that appears on random viewport sizes
+  transform: translateY(1px);
+}
+
+.custom-shape-divider-bottom-1680894835 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: var(--section-separator-height);
+}
+
+.custom-shape-divider-bottom-1680894835 .shape-fill {
+  fill: var(--clr-about-bg-top);
+}
+
+.title {
+	font-family: "Jost";
+	font-size: 90px;
+	line-height: 1.2;
+	color: #FFF;
+	font-weight: 700;
+	margin: 15px 0 0 0;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,123 @@
+.about {
+  --about-gap: min(4.5vh, 3rem);
+  padding-block: var(--section-vertical-padding);
+
+  color: var(--clr-neutral-900);
+  background: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: var(--about-gap);
+
+    @media (max-width: 950px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  h3 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  &__text {
+    opacity: 0;
+    transform: translateY(30%);
+
+    transition: opacity 1.25s ease-out, transform 0.5s ease-out;
+
+    &.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      position: relative;
+
+      margin-bottom: var(--about-gap);
+
+      color: var(--clr-neutral-900);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 4.6ch;
+        width: 2ch;
+        height: 0.35ch;
+        background: var(--clr-primary-100);
+        animation: pulseSkewScale infinite 1s ease-in-out;
+      }
+    }
+
+    p {
+      font-size: clamp(0.9rem, 3.15vw, 1.1rem);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    a,
+    a:visited,
+    a:active {
+      color: var(--clr-primary-200);
+      font-weight: var(--fw-bold);
+    }
+  }
+
+  &__skills {
+    opacity: 0;
+    transform: translateY(-30%);
+
+    transition: opacity 1.25s ease-out, transform 0.5s ease-out;
+
+    &.animate-in {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  &__skills-title {
+    margin-bottom: var(--about-gap);
+  }
+
+  &__skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+
+  &__skill {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 0.5rem;
+
+    color: var(--clr-neutral-700);
+    background: var(--clr-neutral-300);
+    border-radius: var(--border-radius-100);
+
+    filter: grayscale(100%) contrast(1);
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px) scale(1.25);
+      filter: grayscale(0%);
+
+      color: var(--clr-neutral-100);
+      background: var(--clr-neutral-800);
+    }
+
+    svg {
+      width: 28px;
+      aspect-ratio: 1/1;
+    }
+
+    p {
+      padding-right: 0.75rem;
+
+      font-weight: var(--fw-bold);
+      font-size: 0.95rem;
+    }
+  }
+}

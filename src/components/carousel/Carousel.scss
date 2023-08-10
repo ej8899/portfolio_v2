@@ -1,0 +1,80 @@
+.carousel {
+  display: grid;
+  justify-content: center;
+
+  // prevent click from selecting container
+  -webkit-user-select: none; // safari
+  -ms-user-select: none; // ie
+  user-select: none; // standard
+
+  // standalone images or those in container below
+  img {
+    border-radius: var(--border-radius-200);
+  }
+
+  &__images-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    background: none;
+    border: 0;
+
+    cursor: pointer;
+
+    img {
+      scroll-snap-align: start;
+      object-fit: cover;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__bottom-buttons {
+    --button-size: 0.75rem;
+
+    margin-top: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-template-columns: repeat(auto-fit, minmax(var(--button-size), 1fr));
+
+    // fixes overflow on small mobile devices
+    gap: min(1rem, 2.5vw);
+
+    button {
+      height: var(--button-size);
+      aspect-ratio: 1;
+      border-radius: 50vw;
+
+      cursor: pointer;
+
+      border: 0;
+      outline: 0;
+      background: var(--clr-neutral-700);
+
+      transition: transform var(--transition-short) ease-in-out;
+
+      &.currentImage {
+        background: var(--clr-primary-100);
+      }
+
+      &:hover {
+        transform: scale(1.25);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--clr-neutral-200);
+      }
+    }
+  }
+}
