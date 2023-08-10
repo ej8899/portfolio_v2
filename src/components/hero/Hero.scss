@@ -18,14 +18,15 @@
     // name font
     h2 {
       font-family: "Jost";
-	font-size: 90px;
-	line-height: 1.2;
-	color: #FFF;
-	font-weight: 700;
-	margin: 15px 0 0 0;
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
-	text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgba(0, 0, 0, 0.2);
+      font-size: 90px;
+      line-height: 1.2;
+      color: #FFF;
+      font-weight: 700;
+      margin: 15px 0 0 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgba(0, 0, 0, 0.2);
+      
       margin-bottom: calc(var(--spacer) * 0.5);
 
       font-weight: var(--fw-xbold);
