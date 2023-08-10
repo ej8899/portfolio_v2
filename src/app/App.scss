@@ -49,13 +49,12 @@
     box-shadow: var(--box-shadow-900);
 
     line-height: 1.35;
-
     transition: transform var(--transition-short) ease-in-out;
   }
 
   &:hover {
     &::after {
-      transform: scale(1) translateX(-50%);
+      transform: scale(1) translateX(-50%) !important;
     }
   }
 }
@@ -183,7 +182,7 @@
 #scrollToTopButton {
   display: none;
   position: fixed;
-  bottom: 20px;
+  bottom: 40px;
   right: 20px;
   background-color: orange;
   color: #fff;
@@ -191,7 +190,8 @@
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
-  transition: opacity 0.3s, transform 0.3s;
+  //transition: opacity 0.3s, transform 1.3s;
+  animation: fadeOut 2s;
 }
 
 #scrollToTopButton:hover {
@@ -201,5 +201,16 @@
 #scrollToTopButton.active {
   transform: translateY(0);
   display:block;
-  opacity: 1.0;
+  //opacity: 1.0;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }

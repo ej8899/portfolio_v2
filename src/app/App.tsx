@@ -42,7 +42,7 @@ function App() {
       <Contact />
       <Footer />
       <button id='scrollToTopButton' title='Scroll to Top'>
-        fdsfd
+        <i className='fas fa-chevron-up'></i>
       </button>
       <div className='cursor' />
     </>

@@ -15,7 +15,6 @@ function Footer() {
                 className='social-links scrolla-element-anim-1 scroll-animate'
                 data-animate='active'
               >
-                SOCIAL ICONS:
                 <a target='_new' rel='nofollow' href={globalconfig.link.twitter}>
                   <i aria-hidden='true' className='fab fa-twitter' />
                 </a>
