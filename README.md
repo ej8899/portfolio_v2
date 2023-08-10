@@ -148,8 +148,8 @@ The useState hook handles the sending & sent state, letting the user know when t
 
 ```sh
 # clone repo & change directories
-git clone https://github.com/bmilcs/portfolio bmilcs_portfolio/
-cd bmilcs_portfolio
+git clone https://github.com/ej8899/portfolio_v2/
+cd portfolio_v2
 
 # install all dependencies
 npm install
