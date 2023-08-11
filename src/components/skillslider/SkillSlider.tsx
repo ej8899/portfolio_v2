@@ -1,4 +1,6 @@
 import './SkillSlider.scss';
+import { useEffect, useRef, useState } from 'react';
+import useElementOnScreen from '../../hooks/useElementOnScreen';
 
 /* good reference on sliders here:
 https://ryanmulligan.dev/blog/css-marquee/
@@ -6,6 +8,15 @@ some of this was used below:
 */
 
 const SkillSlider = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const [renderAllProjects, setRenderAllProjects] = useState(false);
+  const isOnScreen = useElementOnScreen(titleRef);
+
+  useEffect(() => {
+    if (!isOnScreen) return;
+    titleRef.current?.classList.add('animate-in');
+  }, [isOnScreen]);
+
   return (
     <section className='skills' aria-labelledby='my skills and tools'>
       <div className='column centered_grid'>

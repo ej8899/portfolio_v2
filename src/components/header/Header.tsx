@@ -19,36 +19,38 @@ function Header() {
   }, [isHeaderOffScreen]);
 
   return (
-    <header className='column header' aria-label='header with navigation' ref={headerRef}>
-      <BMIcon />
-      <nav className={isMenuOpen ? 'nav__open' : 'nav__closed'}>
-        <ul>
-          <li>
-            <a href='#portfolio' onClick={() => setIsMenuOpen(false)}>
-              portfolio
-            </a>
-          </li>
-          <li>
-            <a href='#about' onClick={() => setIsMenuOpen(false)}>
-              about
-            </a>
-          </li>
-          <li>
-            <a href='#contact' onClick={() => setIsMenuOpen(false)}>
-              contact
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <div className='centered_nav header'>
+      <header className='column' aria-label='header with navigation' ref={headerRef}>
+        <BMIcon />
+        <nav className={isMenuOpen ? 'nav__open' : 'nav__closed'}>
+          <ul>
+            <li>
+              <a href='#portfolio' onClick={() => setIsMenuOpen(false)}>
+                portfolio
+              </a>
+            </li>
+            <li>
+              <a href='#about' onClick={() => setIsMenuOpen(false)}>
+                about
+              </a>
+            </li>
+            <li>
+              <a href='#contact' onClick={() => setIsMenuOpen(false)}>
+                contact
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-      <button
-        className='hamburger-menu'
-        onClick={() => setIsMenuOpen((prev) => !prev)}
-        ref={hamburgerRef}
-      >
-        <HamburgerIcon />
-      </button>
-    </header>
+        <button
+          className='hamburger-menu'
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          ref={hamburgerRef}
+        >
+          <HamburgerIcon />
+        </button>
+      </header>
+    </div>
   );
 }
 

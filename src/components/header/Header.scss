@@ -3,8 +3,8 @@ header {
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   align-items: center;
-
-  padding-block: 2rem;
+  width:100%;
+  padding-block: 0rem;
 
   animation: fadeInOpacity 1s linear;
 
@@ -130,6 +130,12 @@ header {
       transform: rotate(360deg);
     }
   }
+}
+
+.centered_nav {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
 /* nav bar frosting */
