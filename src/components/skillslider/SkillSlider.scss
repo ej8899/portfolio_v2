@@ -5,6 +5,23 @@
   color: var(--clr-neutral-900);
   background: linear-gradient(var(--clr-skills-bg-top), var(--clr-skills-bg-bottom));
 
+  h2 {
+    position: relative;
+    margin-bottom: var(--about-gap);
+    color: var(--clr-neutral-900);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 5.6ch;
+      width: 3ch;
+      height: 0.35ch;
+      background: var(--clr-primary-100);
+      animation: pulseSkewScale infinite 1s ease-in-out;
+    }
+  }
+
   &__content {
     display: grid;
     grid-template-columns: 1.25fr 1fr;
@@ -120,4 +137,12 @@
       font-size: 0.95rem;
     }
   }
+}
+
+.submessage {
+  font-size: 1.2rem;
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }

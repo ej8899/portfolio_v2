@@ -25,16 +25,16 @@ function Hero() {
 
           <div className='hero__cta'>
             <a target='_new' rel='nofollow' href={globalconfig.link.linkedin}>
-              <i aria-hidden='true' className='fab fa-linkedin-in' />
+              <i aria-hidden='true' className='fab fa-linkedin-in socicons' />
             </a>
             <a target='_new' rel='nofollow' href={globalconfig.link.github}>
-              <i aria-hidden='true' className='fab fa-github' />
+              <i aria-hidden='true' className='fab fa-github socicons' />
             </a>
             <a target='_new' rel='nofollow' href={globalconfig.link.twitter}>
-              <i aria-hidden='true' className='fab fa-twitter' />
+              <i aria-hidden='true' className='fab fa-twitter socicons' />
             </a>
             <a target='_new' rel='nofollow' href={globalconfig.link.youtube}>
-              <i aria-hidden='true' className='fab fa-youtube' />
+              <i aria-hidden='true' className='fab fa-youtube socicons' />
             </a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href='#about'>

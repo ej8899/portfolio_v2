@@ -1,9 +1,9 @@
 .button {
   border: 0;
   outline: 0;
-
+  
   transition: transform 0.25s ease-in-out;
-
+  color: var(--clr-primary-100);
   &:hover {
     cursor: pointer;
     transform: scale(1.1) rotate(1deg);
@@ -42,9 +42,10 @@
     font-family: var(--ff-accent);
     font-weight: var(--fw-bold);
     color: var(--clr-primary-100);
+    color: white;
     background: none;
     outline: 3px solid var(--clr-primary-100);
-
+    transform: rotate(3deg);
     &:hover {
       color: var(--clr-neutral-100);
       background: var(--clr-primary-100);

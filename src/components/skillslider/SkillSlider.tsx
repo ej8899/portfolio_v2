@@ -1,5 +1,5 @@
 import './SkillSlider.scss';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 
 /* good reference on sliders here:
@@ -9,7 +9,6 @@ some of this was used below:
 
 const SkillSlider = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const [renderAllProjects, setRenderAllProjects] = useState(false);
   const isOnScreen = useElementOnScreen(titleRef);
 
   useEffect(() => {
@@ -23,6 +22,9 @@ const SkillSlider = () => {
         <h2 id='skills' className='skills__title'>
           Skills & Tools
         </h2>
+        <br />
+        <p className='submessage'>the sub message goes here</p>
+        <br />
         <article
           className='marquee_wrapper scrolla-element-anim-1 scroll-animate'
           style={{
@@ -99,7 +101,6 @@ const SkillSlider = () => {
               </svg>
             </div>
           </div>
-
           <div className='marquee marquee--reverse'>
             <div className='marquee__group'>
               <svg>

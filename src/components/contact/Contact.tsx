@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useRef, useState } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
+import Button from '../button/Button';
 import './Contact.scss';
 
 function Contact() {
@@ -178,7 +179,7 @@ function Contact() {
                   {messageValidation}
                 </p>
               </div>
-              <button>Send Me A Message</button>
+              <Button type='outline'>Send Me A Message</Button>
             </form>
           )}
 

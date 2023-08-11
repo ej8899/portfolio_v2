@@ -316,3 +316,16 @@
 	transform: translate(0, 0) scale(1);
 	opacity: 1;
 }
+
+
+.socicons {
+  font-size: 1.5rem;
+  transform: scale(1.0);
+  transition: transform 0.3s ease-in-out;
+}
+.socicons:hover {
+  transform: scale(1.4);
+  transition: transform 0.3s ease-in-out;
+  //fill: none;
+  filter: drop-shadow(0px 0px 5px #000);
+}

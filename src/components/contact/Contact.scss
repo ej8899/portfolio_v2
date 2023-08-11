@@ -24,7 +24,7 @@
     h2 {
       position: relative;
 
-      text-transform: uppercase;
+      //text-transform: uppercase;
 
       &::after {
         content: '';
@@ -183,8 +183,10 @@
 
     &:hover,
     &:focus {
-      transform: scale(1.05);
+      transform: scale(1.05) rotate(1deg);
       outline: 0;
+      border-color: black;
+      border: 2px;
     }
   }
 
