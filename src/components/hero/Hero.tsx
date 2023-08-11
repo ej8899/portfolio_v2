@@ -8,11 +8,19 @@ function Hero() {
     <section className='hero' aria-label='hero with github & linkedin links'>
       <div className='hero-content column centered_grid full_height'>
         <div className='hero__text'>
-          <h2>
-            <b>Ernie</b> Johnson
+          <h2
+            className='splitting-text-anim-1 scroll-animate'
+            data-splitting='chars'
+            data-animate='active'
+          >
+            <span>
+              <b>Ernie</b>
+              <br />
+              Johnson
+            </span>
           </h2>
           <h3>
-            Your Full Stack <span>Web & App Developer</span>
+            Your Full Stack <span>Web & App Developer!</span>
           </h3>
 
           <div className='hero__cta'>

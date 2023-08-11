@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import SkillSlider from '../skillslider/SkillSlider';
+// import SkillSlider from '../skillslider/SkillSlider';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import './About.scss';
 
@@ -17,7 +17,7 @@ function About() {
 
   return (
     <section className='about' aria-labelledby='about__title'>
-      <div className='column'>
+      <div className='column centered_grid'>
         <div className='about__content' ref={aboutRef}>
           <div className='about__text' ref={leftColumnRef}>
             <h2 id='about__title'>About Me</h2>
@@ -32,7 +32,6 @@ function About() {
           </div>
         </div>
       </div>
-      <SkillSlider />
     </section>
   );
 }

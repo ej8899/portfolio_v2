@@ -12,12 +12,14 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "splitting": "^1.0.6"
   },
   "devDependencies": {
-    "@types/node": "^18.15.10",
+    "@types/node": "^18.17.4",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@types/splitting": "^1.0.1",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
     "@vitejs/plugin-react-swc": "^3.0.0",

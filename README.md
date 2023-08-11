@@ -26,13 +26,13 @@ The goal of this repo is to practice the following skill sets:
 ## Links
 
 - [Live Demo](http://erniejohnson.ca)
-- [My Odin Project Progress](https://github.com/ej8899/portfolio_v2)
+- [On Github](https://github.com/ej8899/portfolio_v2)
 
 ![Hero](screenshots/hero.png)
 
 ## Summary
 
-This project concludes the Advanced HTML & CSS section of the Odin Project curriculum. Fortunately, I had already learned the basics of CSS animations & transitions at the very beginning of my web development journey. Accessibility, on the other hand, is a new concept for me.
+
 
 As someone who loves subtitles & keyboard-based interactivity, I have a natural appreciation for accessibility. With the help of Axe DevTools, the Chrome Accessibility Tree, and Lighthouse, I was able to score a `100%` for accessibility. I achieved this by using:
 

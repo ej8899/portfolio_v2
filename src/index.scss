@@ -37,6 +37,8 @@
   --clr-portfolio-bg: var(--clr-neutral-900-t);
   --clr-about-bg-top: var(--clr-neutral-100);
   --clr-about-bg-bottom: var(--clr-neutral-200);
+  --clr-skills-bg-top: var(--clr-neutral-100);
+  --clr-skills-bg-bottom: var(--clr-neutral-200);
   --clr-header: var(--clr-neutral-200);
 
   --box-shadow-100: 0px 0px 13px 3px var(--clr-neutral-900-t);
@@ -121,7 +123,7 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
-  // border-radius: var(--border-radius-200);
+  border-radius: var(--border-radius-200);
 }
 
 input,

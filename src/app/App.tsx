@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useEffect } from 'react';
 import About from '../components/about/About';
 import Contact from '../components/contact/Contact';
@@ -6,7 +9,10 @@ import Header from '../components/header/Header';
 import Hero from '../components/hero/Hero';
 import Portfolio from '../components/portfolio/Portfolio';
 import './App.scss';
-import { stickyNav, initCursor } from '../utils';
+import { stickyNav, initCursor, activeAnimation } from '../utils';
+// eslint-disable-next-line import/extensions, import/no-extraneous-dependencies
+import Splitting from 'splitting';
+import SkillSlider from '../components/skillslider/SkillSlider';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
 
@@ -15,8 +21,10 @@ function App() {
 
   /* Setup initial JS items */
   useEffect(() => {
+    activeAnimation();
     initCursor();
     window.addEventListener('scroll', stickyNav);
+    window.addEventListener('scroll', activeAnimation);
 
     // scroll to top button
     const scrollToTopButton = document.getElementById('scrollToTopButton');
@@ -32,12 +40,17 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    Splitting();
+  });
+
   return (
     // <WindowContext.Provider value={{ height, width }}>
     <>
       <Header />
       <Hero />
       <About />
+      <SkillSlider />
       <Portfolio />
       <Contact />
       <Footer />

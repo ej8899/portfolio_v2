@@ -58,6 +58,18 @@ export function initCursor() {
   }
 }
 
+export const activeAnimation = () => {
+  const progress_inner = document.querySelectorAll(".scroll-animate"),
+    triggerBottom = (window.innerHeight / 5) * 5 - 20;
+  progress_inner.forEach((box) => {
+    const boxTop = box.getBoundingClientRect().top;
+    if (boxTop < triggerBottom) {
+      box.style.visibility = "visible";
+      box.classList.add("animate__active");
+    }
+  });
+};
+
 export const stickyNav = () => {
   let offset = window.scrollY;
   const sticky = document.querySelectorAll(".header");

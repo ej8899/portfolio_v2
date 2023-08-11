@@ -1,14 +1,14 @@
-.about {
-  --about-gap: min(4.5vh, 3rem);
+.skills {
+  --skills-gap: min(4.5vh, 3rem);
   padding-block: var(--section-vertical-padding);
 
   color: var(--clr-neutral-900);
-  background: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
+  background: linear-gradient(var(--clr-skills-bg-top), var(--clr-skills-bg-bottom));
 
   &__content {
     display: grid;
     grid-template-columns: 1.25fr 1fr;
-    gap: var(--about-gap);
+    gap: var(--skills-gap);
 
     @media (max-width: 950px) {
       grid-template-columns: 1fr;
@@ -33,7 +33,7 @@
     h2 {
       position: relative;
 
-      margin-bottom: var(--about-gap);
+      margin-bottom: var(--skills-gap);
 
       color: var(--clr-neutral-900);
 
@@ -76,7 +76,7 @@
   }
 
   &__skills-title {
-    margin-bottom: var(--about-gap);
+    margin-bottom: var(--skills-gap);
   }
 
   &__skills-wrapper {
