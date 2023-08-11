@@ -8,7 +8,7 @@ function Footer() {
 
   return (
     <footer aria-label='footer containing github repo link'>
-      <div className='footer__builder'>
+      <div className='footer__wrapper'>
         <div className='container'>
           <div className='row copyright_text'>
             <div className='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
@@ -17,19 +17,19 @@ function Footer() {
                 data-animate='active'
               >
                 <a target='_new' rel='nofollow' href={globalconfig.link.twitter}>
-                  <i aria-hidden='true' className='fab fa-twitter' />
-                  {' '}
+                  <i aria-hidden='true' className='fab fa-twitter socicons' />
+                  &nbsp;&nbsp;&nbsp;
                 </a>
                 <a target='_new' rel='nofollow' href={globalconfig.link.linkedin}>
-                  <i aria-hidden='true' className='fab fa-linkedin-in' />
-                  {' '}
+                  <i aria-hidden='true' className='fab fa-linkedin-in socicons' />
+                  &nbsp;&nbsp;&nbsp;
                 </a>
                 <a target='_new' rel='nofollow' href={globalconfig.link.youtube}>
-                  <i aria-hidden='true' className='fab fa-youtube' />
-                  {' '}
+                  <i aria-hidden='true' className='fab fa-youtube socicons' />
+                  &nbsp;&nbsp;&nbsp;
                 </a>
                 <a target='_new' rel='nofollow' href={globalconfig.link.github}>
-                  <i aria-hidden='true' className='fab fa-github' />
+                  <i aria-hidden='true' className='fab fa-github socicons' />
                 </a>
               </div>
             </div>

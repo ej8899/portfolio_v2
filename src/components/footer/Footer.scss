@@ -20,17 +20,18 @@ footer {
 }
 
 .footer__wrapper {
-  max-width: max-content;
-
+  //max-width: max-content;
+  width: 1280px;
+  
   display: flex;
   align-items: center;
   gap: 1rem;
 
   padding: 0.5rem 1rem;
 
-  border-radius: var(--border-radius-400) var(--border-radius-400) 0 0;
+  //border-radius: var(--border-radius-400) var(--border-radius-400) 0 0;
 
-  background: var(--clr-neutral-900-t);
+  //background: var(--clr-neutral-900-t);
 }
 
 .copyright-text {
@@ -41,4 +42,10 @@ footer {
   // line-height: 37px;
   padding-bottom: 1rem;
   font-family: "Jost", sans-serif;
+  //max-width: 1280px;
+  width:100%;
+}
+
+.socicons {
+  font-size: 1.5rem;
 }
