@@ -7,7 +7,7 @@
   // offset padding-top to accommodate for the wavy separator
   padding-block: calc(var(--section-vertical-padding) * 2) var(--section-vertical-padding);
 
-  background: var(--clr-portfolio-bg);
+  background: teal;
   color: var(--clr-neutral-200);
 
   &__title {

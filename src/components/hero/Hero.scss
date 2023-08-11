@@ -5,7 +5,7 @@
   position: relative;
 
   color: var(--clr-neutral-200);
-
+  background-color: teal;
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
@@ -18,23 +18,25 @@
     // name font
     h2 {
       font-family: "Jost";
-      font-size: 90px;
+      font-size: 80px;
       line-height: 1.2;
       color: #FFF;
-      font-weight: 700;
+      //font-weight: 700;
       margin: 15px 0 0 0;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgba(0, 0, 0, 0.2);
-      
       margin-bottom: calc(var(--spacer) * 0.5);
 
       font-weight: var(--fw-xbold);
-      font-size: clamp(2.5rem, 10vw, 6rem);
+      font-size: clamp(2.0rem, 8vw, 5rem);
 
       color: var(--clr-neutral-200);
     }
 
+    b {
+      color: orange;
+    }
     // user title 1
     h3 {
       margin-bottom: calc(var(--spacer) * 5);
@@ -42,8 +44,8 @@
       font-weight: var(--fw-bold);
       letter-spacing: 0.1px;
       font-size: clamp(1.25rem, 6vw, 3rem);
-      color: var(--clr-neutral-500);
-
+      color: var(--clr-neutral-800);
+      
       // user title 2 (underline)
       span {
         position: relative;
@@ -119,14 +121,3 @@
   fill: var(--clr-about-bg-top);
 }
 
-.title {
-	font-family: "Jost";
-	font-size: 90px;
-	line-height: 1.2;
-	color: #FFF;
-	font-weight: 700;
-	margin: 15px 0 0 0;
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
-	text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgba(0, 0, 0, 0.2);
-}

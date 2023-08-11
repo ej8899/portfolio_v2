@@ -8,7 +8,9 @@ function Hero() {
     <section className='hero' aria-label='hero with github & linkedin links'>
       <div className='hero-content column centered_grid full_height'>
         <div className='hero__text'>
-          <h2>Ernie Johnson</h2>
+          <h2>
+            <b>Ernie</b> Johnson
+          </h2>
           <h3>
             Your Full Stack <span>Web & App Developer</span>
           </h3>
