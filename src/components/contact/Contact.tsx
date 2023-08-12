@@ -89,7 +89,7 @@ function Contact() {
 
   return (
     // book style section separator
-    <section className='contact' id='contact' aria-labelledby='contact__title'>
+    <section className='contact ratio4-3' id='contact' aria-labelledby='contact__title'>
       <div className='custom-shape-divider-top-1680975773' aria-hidden='true'>
         {/* use SVG separator here if we want */}
       </div>
