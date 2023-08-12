@@ -5,7 +5,7 @@
   position: relative;
 
   color: var(--clr-neutral-200);
-  background-color: teal;
+  background-color: rgb(254, 254, 254);
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
@@ -76,7 +76,7 @@
   }
 
   &__cta {
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;

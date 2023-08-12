@@ -1,9 +1,11 @@
 .contact {
   position: relative;
-  padding-block: calc(var(--section-separator-height) + var(--section-vertical-padding))
-    var(--section-vertical-padding);
+  padding-block: calc(var(--section-separator-height) + var(--section-vertical-padding)) var(--section-vertical-padding);
   z-index: 1;
-  background-color: blue;
+  background-color: white;
+  // background-color: blue;
+  background-image: url('data:image/svg+xml,<svg id="visual" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="960" height="540" fill="%23037679"></rect><path d="M0 420L960 284L960 541L0 541Z" fill="%23FFFFFF" stroke-linecap="square" stroke-linejoin="bevel"></path></svg>');
+  background-repeat: no-repeat;
   margin-bottom: 50px;
 
   &__content {
@@ -60,9 +62,10 @@
 
     width: min(100%, 600px);
     padding: min(1.5rem, 10vw);
-
-    background: var(--clr-neutral-900-t);
+    background-color: rgb(32, 122, 122);
+    //background: var(--clr-neutral-900-t);
     border-radius: var(--border-radius-200);
+    border: 2px solid black;
 
     opacity: 0;
     transform: translateY(30%);
@@ -113,10 +116,13 @@
       outline: var(--border-standard);
       border: 0;
       border-radius: var(--border-radius-100);
-
-      color: var(--clr-neutral-100);
-      background: var(--clr-neutral-900-t);
-
+      // TODO tweak these colors and put back to vars
+      // TODO red color needs adjusted for readability
+      //color: var(--clr-neutral-100);
+      color: black;
+      //background: var(--clr-neutral-900-t);
+      background: rgb(218, 217, 217);
+      
       &::placeholder {
         color: var(--clr-neutral-500);
       }
