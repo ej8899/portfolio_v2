@@ -35,7 +35,7 @@ function Aboutimage() {
       />
       <div className='info-list'>
         <ul>
-          <li>
+          <li className='rotate3l'>
             <span className='num'>
               2 <strong>+</strong>
             </span>
@@ -43,7 +43,7 @@ function Aboutimage() {
               Years of <strong>Experience</strong>
             </span>
           </li>
-          <li>
+          <li className='rotate3r'>
             <span className='num'>53</span>
             <span className='value'>
               Completed <strong>Projects</strong>

@@ -141,6 +141,13 @@
   }
 }
 
+.rotate3r {
+  transform: rotate(3deg);
+}
+.rotate3l {
+  transform: rotate(-3deg);
+}
+
 .greyscale {
   filter: grayscale(80%);
   -webkit-filter: grayscale(80%);
