@@ -6,6 +6,8 @@ function Aboutimage() {
       className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started'
       data-animate='active'
     >
+      {/* TODO setup for @media resizing */}
+      {/* TODO setup for animation on scroll to view and parallax */}
       <img
         decoding='async'
         className='greyscale aboutimage'
