@@ -146,3 +146,27 @@
   display: flex;
   justify-content: center;
 }
+
+.circle-tooltip {
+  fill: teal;
+  cursor: pointer;
+}
+
+.circle-tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%; /* Position above the circle */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.circle-tooltip:hover::before {
+  opacity: 1;
+}

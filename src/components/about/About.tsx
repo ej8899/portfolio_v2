@@ -16,7 +16,7 @@ function About() {
   }, [isOnScreen]);
 
   return (
-    <section className='about' aria-labelledby='about__title'>
+    <section id='about' className='about' aria-labelledby='about__title'>
       <div className='column centered_grid'>
         <h2 id='about__title'>About Me</h2>
         <div className='about__content' ref={aboutRef}>

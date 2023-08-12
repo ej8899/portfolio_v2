@@ -26,14 +26,17 @@
 
   color: var(--clr-primary-100);
   font-weight: bold;
-
+  transform: scale(1);
+  &::before {
+    font-size:10px;
+  }
   &::after {
     content: attr(data-tooltip);
     position: absolute;
     top: calc(-100% - var(--tooltip-gap));
     left: 50%;
     z-index: 10;
-
+    
     transform: scale(0);
 
     width: max-content;
@@ -328,4 +331,7 @@
   transition: transform 0.3s ease-in-out;
   //fill: none;
   filter: drop-shadow(0px 0px 5px #000);
+}
+.soctips {
+  
 }

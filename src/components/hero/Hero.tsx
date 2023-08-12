@@ -44,6 +44,7 @@ function Hero() {
         </div>
       </div>
 
+      {/*
       <div className='custom-shape-divider-bottom-1680894835' aria-hidden='true' id='about'>
         <svg
           data-name='Layer 1'
@@ -57,6 +58,7 @@ function Hero() {
           ></path>
         </svg>
       </div>
+    */}
     </section>
   );
 }

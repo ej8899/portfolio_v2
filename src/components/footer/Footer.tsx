@@ -15,7 +15,7 @@ function Footer() {
                 data-animate='active'
               >
                 <a target='_new' rel='nofollow' href={globalconfig.link.twitter}>
-                  <i aria-hidden='true' className='fab fa-twitter socicons' />
+                  <i aria-hidden='true' className='fab fa-twitter socicons soctips'/>
                   &nbsp;&nbsp;&nbsp;
                 </a>
                 <a target='_new' rel='nofollow' href={globalconfig.link.linkedin}>
