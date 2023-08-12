@@ -8,10 +8,8 @@ function Footer() {
 
   return (
     <footer aria-label='footer containing github repo link'>
-      <div className='footer__wrapper'>
-        <div className='container'>
-          <div className='row copyright_text'>
-            <div className='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+      <div className='footer__wrapper copyright_text'>
+            <div className='footer-section'>
               <div
                 className='social-links scrolla-element-anim-1 scroll-animate'
                 data-animate='active'
@@ -33,24 +31,22 @@ function Footer() {
                 </a>
               </div>
             </div>
-            <div className='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+            <div className='footer-section'>
               <div
-                className='copyright-text align-center scrolla-element-anim-1 scroll-animate'
+                className='copyright-text scrolla-element-anim-1 scroll-animate'
                 data-animate='active'
               >
                 © {currentYear} <strong>ERNIEJOHNSON.CA</strong>. All rights reserved.
               </div>
             </div>
-            <div className='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+            <div className='footer-section'>
               <div
-                className='copyright-text align-right scrolla-element-anim-1 scroll-animate'
+                className='copyright-text scrolla-element-anim-1 scroll-animate'
                 data-animate='active'
               >
                 Developed by <strong>ERNIEJOHNSON.CA</strong> - version {globalconfig.appVersion}
               </div>
             </div>
-          </div>
-        </div>
       </div>
     </footer>
   );
