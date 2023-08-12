@@ -22,6 +22,8 @@ const SkillSlider = () => {
         <h2 id='skills' className='skills__title'>
           Skills & Tools
         </h2>
+      </div>
+      <div>
         <br />
         <p className='submessage'>the sub message goes here</p>
         <br />
