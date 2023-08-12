@@ -2,9 +2,9 @@
   position: relative;
   padding-block: calc(var(--section-separator-height) + var(--section-vertical-padding))
     var(--section-vertical-padding);
-  z-index: 0;
+  z-index: 1;
   background-color: blue;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
   &__content {
     width: 100%;
