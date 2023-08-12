@@ -1,7 +1,9 @@
+// eslint-disable
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 import { useEffect } from 'react';
 import About from '../components/about/About';
 import Contact from '../components/contact/Contact';
@@ -45,7 +47,7 @@ function App() {
         targetElement.style.zIndex = 1;
       } else {
         if (globalconfig.debug) {
-          console.log('debug: setting zindex on footer to -1');
+          // console.log('debug: setting zindex on footer to -1');
         }
         targetElement.style.zIndex = -1;
       }

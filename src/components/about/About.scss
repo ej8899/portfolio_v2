@@ -140,3 +140,148 @@
     }
   }
 }
+
+.greyscale {
+  filter: grayscale(80%);
+  -webkit-filter: grayscale(80%);
+  position: relative;
+	left: -25px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 440px;
+	-webkit-border-radius: 440px;
+	z-index: 10;
+}
+
+
+
+
+.aboutimg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 480px;
+	-webkit-border-radius: 480px;
+	z-index: 10;
+}
+
+.circle.circle {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+
+.circle.circle-1 {
+	width: 440px;
+	height: 440px;
+	z-index: 2;
+	background: orange;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+}
+
+.circle.img-1 {
+	top: 25px;
+	right: 40px;
+	left: auto;
+	width: 226px;
+	height: 226px;
+}
+
+.circle.img-2 {
+	bottom: 50px;
+	right: auto;
+	top: auto;
+	left: -110px;
+	width: 141px;
+	height: 141px;
+}
+
+.circle.img-3 {
+	bottom: 10px;
+	right: -14px;
+	top: auto;
+	left: auto;
+	width: 141px;
+	height: 141px;
+}
+
+
+.section.hero-started .info-list {
+	position: absolute;
+	top: 210px;
+	left: -195px;
+	z-index: 12;
+}
+
+.section.hero-started .info-list ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.section.hero-started .info-list ul li {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	color: #000;
+	border: 2px solid #000;
+	background-color: #fff;
+	box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+	height: 82px;
+	border-radius: 82px;
+	-webkit-border-radius: 82px;
+	width: 250px;
+	padding: 0 20px;
+}
+
+.section.hero-started .info-list ul li:nth-child(1) {
+	margin: 160px 0 0 120px;
+}
+
+.section.hero-started .info-list ul li:nth-child(2) {
+	margin: -30px 0 0 420px;
+}
+
+.section.hero-started .info-list ul li .num {
+	display: block;
+	font-size: 37px;
+	line-height: 20px;
+	text-transform: uppercase;
+	font-weight: 700;
+	width: 50%;
+	text-align: center;
+}
+
+.section.hero-started .info-list ul li .num strong {
+	position: relative;
+	top: -4px;
+}
+
+.section.hero-started .info-list ul li .value {
+	display: block;
+	width: 50%;
+	text-align: left;
+	font-size: 13px;
+	line-height: 20px;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+}
+
+.section.hero-started .subtitle strong,
+.section.hero-started .title strong,
+.section.hero-started .info-list ul li strong,
+.section.hero-started .subtitle b,
+.section.hero-started .title b,
+.section.hero-started .info-list ul li b {
+	color: var(--myorange);
+}

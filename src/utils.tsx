@@ -8,7 +8,7 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
+import { jarallax } from "jarallax";
 
 //
 // cursor manipulation system here:
@@ -84,4 +84,5 @@ export const stickyNav = () => {
     }
   });
 };
+
 
