@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
@@ -13,6 +14,7 @@ import { stickyNav, initCursor, activeAnimation } from '../utils';
 // eslint-disable-next-line import/extensions, import/no-extraneous-dependencies
 import Splitting from 'splitting';
 import SkillSlider from '../components/skillslider/SkillSlider';
+import globalconfig from '../config';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
 
@@ -26,9 +28,29 @@ function App() {
     window.addEventListener('scroll', stickyNav);
     window.addEventListener('scroll', activeAnimation);
 
-    // scroll to top button
+    // scroll listeners
+    const targetElement = document.querySelector('.footer__wrapper');
+    const contentHeight = document.querySelector('.appwrapper').clientHeight;
+    const lastPixelsToShow = 50;
     const scrollToTopButton = document.getElementById('scrollToTopButton');
+    const viewportHeight = window.innerHeight;
+    console.log('appwrapper height:', contentHeight);
+    console.log('viewport height:', viewportHeight);
     window.addEventListener('scroll', () => {
+      // bring footer to surface for clickable links
+      if (contentHeight - scrollY - viewportHeight < lastPixelsToShow) {
+        if (globalconfig.debug) {
+          console.log('debug: setting zindex on footer to 1');
+        }
+        targetElement.style.zIndex = 1;
+      } else {
+        if (globalconfig.debug) {
+          console.log('debug: setting zindex on footer to -1');
+        }
+        targetElement.style.zIndex = -1;
+      }
+
+      // add the scroll to top button
       if (window.scrollY > 300) {
         scrollToTopButton.classList.add('active');
       } else {
@@ -47,13 +69,15 @@ function App() {
   return (
     // <WindowContext.Provider value={{ height, width }}>
     <>
-      <Header />
-      <Hero />
-      <About />
-      <SkillSlider />
-      <Portfolio />
-      <Contact />
-      <Footer />
+      <div className='appwrapper'>
+        <Header />
+        <Hero />
+        <About />
+        <SkillSlider />
+        <Portfolio />
+        <Contact />
+        <Footer />
+      </div>
       <button id='scrollToTopButton' title='Scroll to Top'>
         <i className='fas fa-chevron-up'></i>
       </button>

@@ -9,7 +9,6 @@ footer {
   font-family: var(--ff-accent);
   font-size: 0.9rem;
   height: 100px;
-
   strong {
     color: var(--clr-primary-100);
   }
@@ -68,9 +67,9 @@ footer {
   
   padding: 1rem 0rem;
   
-  // for parallax
+  // for parallax - JS listener to bring it to zindex 0 when visible
   position: fixed;
-  z-index: 0;
+  z-index: -1;
   bottom: 0;
   height: 100px;
   // border-radius: var(--border-radius-400) var(--border-radius-400) 0 0;

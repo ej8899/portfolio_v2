@@ -7,7 +7,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer aria-label='footer containing github repo link'>
+    <footer className='footer' aria-label='footer containing github repo link'>
       <div className='footer__wrapper copyright_text'>
             <div className='footer-section'>
               <div
