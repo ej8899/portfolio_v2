@@ -76,6 +76,9 @@ const SkillSlider = () => {
               <svg>
                 <use xlinkHref='#postgresql' />
               </svg>
+              <svg>
+                <use xlinkHref='#nextjs' />
+              </svg>
             </div>
 
             <div aria-hidden='true' className='marquee__group'>
@@ -108,6 +111,9 @@ const SkillSlider = () => {
               </svg>
               <svg>
                 <use xlinkHref='#postgresql' />
+              </svg>
+              <svg>
+                <use xlinkHref='#nextjs' />
               </svg>
             </div>
           </div>
@@ -303,6 +309,10 @@ const SkillSlider = () => {
 
             <symbol id='figma' viewBox='0 0 128 128'>
               <path d='M45.5 129c11.9 0 21.5-9.6 21.5-21.5V86H45.5C33.6 86 24 95.6 24 107.5S33.6 129 45.5 129zm0 0M24 64.5C24 52.6 33.6 43 45.5 43H67v43H45.5C33.6 86 24 76.4 24 64.5zm0 0M24 21.5C24 9.6 33.6 0 45.5 0H67v43H45.5C33.6 43 24 33.4 24 21.5zm0 0M67 0h21.5C100.4 0 110 9.6 110 21.5S100.4 43 88.5 43H67zm0 0M110 64.5c0 11.9-9.6 21.5-21.5 21.5S67 76.4 67 64.5 76.6 43 88.5 43 110 52.6 110 64.5zm0 0'></path>
+            </symbol>
+
+            <symbol id='nextjs' viewBox='0 0 128 128'>
+              <path d='M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64c11.2 0 21.7-2.9 30.8-7.9L48.4 55.3v36.6h-6.8V41.8h6.8l50.5 75.8C116.4 106.2 128 86.5 128 64c0-35.3-28.7-64-64-64zm22.1 84.6l-7.5-11.3V41.8h7.5v42.8z'></path>
             </symbol>
           </defs>
         </svg>
