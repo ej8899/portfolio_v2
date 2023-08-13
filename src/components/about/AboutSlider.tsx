@@ -3,6 +3,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable import/no-extraneous-dependencies */
 import './About.scss';
+import './Swiper.scss';
+
 import { useEffect, useRef } from 'react';
 import { servicesSliderProps } from '../../sliderProps';
 
@@ -13,211 +15,86 @@ import { servicesSliderProps } from '../../sliderProps';
 import { register } from 'swiper/element/bundle';
 register();
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, EffectFade } from 'swiper/modules';
 
 // TODO - swiper - how to use breakpoints in this style of usage?
 
 function AboutSlider() {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const swiperElRef = useRef(null);
+  // const swiperElRef = useRef(null);
 
   return (
     <div
-      className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started'
+      className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started aboutslidercontainer'
       data-animate='active'
     >
       <h2>test for swiper slider</h2>
-      <Swiper modules={[Pagination, Navigation]} {...servicesSliderProps}>
-        <SwiperSlide>1afdsfkdlsl</SwiperSlide>
-        <SwiperSlide>2asfdf afdsf</SwiperSlide>
-        <SwiperSlide>3sdfdsfdss</SwiperSlide>
-        <SwiperSlide>4afdsfkdlsl</SwiperSlide>
-        <SwiperSlide>5asfdf afdsf</SwiperSlide>
-        <SwiperSlide>6sdfdsfdss</SwiperSlide>
-      </Swiper>
-      <br />
-      <br />
-      <br />
-      <div className='container'>
-        <swiper-container
-          ref={swiperElRef}
-          slides-per-view='3'
-          speed='400'
-          loop='true'
-          pagination='true'
-          navigation='true'
-          scrollbar='true'
-          spacebetween='40'
-        >
-          <swiper-slide className='swiper-slide'>
-            <div className='services-item'>
-              <div className='lui-subtitle'>
-                <span> Web Development </span>
+      <Swiper
+        modules={[Pagination, Navigation, EffectFade]}
+        {...servicesSliderProps}
+        className='swiper-slide'
+      >
+        <SwiperSlide className='swiper-slide'>
+          <div className='services-item'>
+            <div className='lui-subtitle'>
+              <span> Web Development </span>
+            </div>
+            <div className='icon' />
+            <h5 className='lui-title'>
+              <span> Web Design </span>
+            </h5>
+            <div className='lui-text'>
+              <div>
+                {' '}
+                Web designers craft the overall vision &amp; plan for a website layout. Professional
+                logo development: Business, Company, or Personal.
               </div>
-              <div className='icon' />
-              <h5 className='lui-title'>
-                <span> Web Design </span>
-              </h5>
-              <div className='lui-text'>
-                <div>
-                  {' '}
-                  Web designers craft the overall vision &amp; plan for a website layout.
-                  Professional logo development: Business, Company, or Personal.
-                </div>
-              </div>
-              &nbsp;
-              {/* <a href='#pricing-section' className='lnk'>
+            </div>
+            &nbsp;
+            {/* <a href='#pricing-section' className='lnk'>
                 
-                See Pricing
+            See Pricing
             </a>*/}
-              <div
-                className='image'
-                style={{
-                  backgroundImage: 'url(assets/images/pat-2.png)',
-                }}
-              />
+            <div
+              className='image'
+              style={{
+                backgroundImage: 'url(src/assets/images/pat-2.png)',
+              }}
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+          <div className='services-item'>
+            <div className='lui-subtitle'>
+              <span> Backend Web Development </span>
             </div>
-          </swiper-slide>
-          <swiper-slide className='swiper-slide'>
-            <div className='services-item'>
-              <div className='lui-subtitle'>
-                <span> Backend Web Development </span>
+            <div className='icon' />
+            <h5 className='lui-title'>
+              <span> API & SQL Server Design </span>
+            </h5>
+            <div className='lui-text'>
+              <div>
+                <p>
+                  Any website beyond a basic static site needs secure backend code to deliver
+                  content to the front end client. I have experience with effective database design
+                  in MySQL and PostreSQL combined with creating RESTful (& secure) APIs.
+                </p>
               </div>
-              <div className='icon' />
-              <h5 className='lui-title'>
-                <span> API & SQL Server Design </span>
-              </h5>
-              <div className='lui-text'>
-                <div>
-                  <p>
-                    Any website beyond a basic static site needs secure backend code to deliver
-                    content to the front end client. I have experience with effective database
-                    design in MySQL and PostreSQL combined with creating RESTful (& secure) APIs.
-                  </p>
-                </div>
-              </div>
-              &nbsp;
-              <div
-                className='image'
-                style={{
-                  backgroundImage: 'url(assets/images/pat-2.png)',
-                }}
-              />
             </div>
-          </swiper-slide>
-          <swiper-slide className='swiper-slide'>
-            <div className='services-item'>
-              <div className='lui-subtitle'>
-                <span> Apps Development </span>
-              </div>
-              <div className='icon' />
-              <h5 className='lui-title'>
-                <span> iOS &amp; Android </span>
-              </h5>
-              <div className='lui-text'>
-                <div>
-                  <p>
-                    Design Software applications to run on mobile devices. Modern and mobile-ready
-                    application that will help you reach all of your marketing.
-                    <br />
-                    &nbsp;
-                  </p>
-                </div>
-              </div>
-              &nbsp;
-              <div
-                className='image'
-                style={{
-                  backgroundImage: 'url(assets/images/pat-2.png)',
-                }}
-              />
-            </div>
-          </swiper-slide>
-          <swiper-slide className='swiper-slide'>
-            <div className='services-item'>
-              <div className='lui-subtitle'>
-                <span> Cybersecurity Evaluation </span>
-              </div>
-              <div className='icon' />
-              <h5 className='lui-title'>
-                <span> Application Security </span>
-              </h5>
-              <div className='lui-text'>
-                <div>
-                  {' '}
-                  I enjoy developing, adding and testing security features within applications to
-                  prevent security vulnerabilities against threats such as unauthorized access,
-                  modification and SQL injection attacks. <br />
-                  <br />
-                  &nbsp;
-                </div>
-              </div>
-              &nbsp;
-              <div
-                className='image'
-                style={{
-                  backgroundImage: 'url(assets/images/pat-2.png)',
-                }}
-              />
-            </div>
-          </swiper-slide>
-          <swiper-slide className='swiper-slide'>
-            <div className='services-item'>
-              <div className='lui-subtitle'>
-                <span> Sharepoint </span>
-              </div>
-              <div className='icon' />
-              <h5 className='lui-title'>
-                <span> Sharepoint Design </span>
-              </h5>
-              <div className='lui-text'>
-                <div>
-                  {' '}
-                  I also do Microsoft Sharepoint setup, configuration and layouts for busy
-                  corporations. <br />
-                  <br />
-                  &nbsp;
-                </div>
-              </div>
-              &nbsp;
-              <div
-                className='image'
-                style={{
-                  backgroundImage: 'url(assets/images/pat-2.png)',
-                }}
-              />
-            </div>
-          </swiper-slide>
-          <swiper-slide className='swiper-slide'>
-            <div className='services-item'>
-              <div className='lui-subtitle'>
-                <span> Advertising </span>
-              </div>
-              <div className='icon' />
-              <h5 className='lui-title'>
-                <span> Google Ads </span>
-              </h5>
-              <div className='lui-text'>
-                <div>
-                  {' '}
-                  Advertising services include: Google search result pages, gmails, YouTube and
-                  other websites participated in Google Ads program. <br />
-                  <br />
-                  &nbsp;
-                </div>
-              </div>
-              &nbsp;
-              <div
-                className='image'
-                style={{
-                  backgroundImage: 'url(assets/images/pat-2.png)',
-                }}
-              />
-            </div>
-          </swiper-slide>
-          <div className='swiper-pagination' />
-        </swiper-container>
-      </div>
+            &nbsp;
+            <div
+              className='image'
+              style={{
+                backgroundImage: 'url(src/assets/images/pat-2.png)',
+              }}
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>3sdfdsfdss</SwiperSlide>
+        <SwiperSlide className='swiper-slide'>4afdsfkdlsl</SwiperSlide>
+        <SwiperSlide className='swiper-slide'>5asfdf afdsf</SwiperSlide>
+        <SwiperSlide className='swiper-slide'>6sdfdsfdss</SwiperSlide>
+      </Swiper>
     </div>
   );
 }
