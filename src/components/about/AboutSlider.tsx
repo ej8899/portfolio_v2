@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable import/no-extraneous-dependencies */
 import './About.scss';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { servicesSliderProps } from '../../sliderProps';
 
 // import Swiper core and required modules
@@ -20,7 +20,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 function AboutSlider() {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const swiperElRef = useRef(null);
-  Object.assign(swiperElRef, servicesSliderProps);
+
   return (
     <div
       className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started'
