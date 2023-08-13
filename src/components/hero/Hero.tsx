@@ -5,7 +5,7 @@ import './Hero.scss';
 import globalconfig from '../../config';
 function Hero() {
   return (
-    <section className='hero' aria-label='hero with github & linkedin links'>
+    <section id='hero' className='hero' aria-label='hero with github & linkedin links'>
       <div className='hero-content column centered_grid full_height'>
         <div className='hero__text'>
           <h2

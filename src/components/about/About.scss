@@ -1,10 +1,10 @@
 .about {
   --about-gap: min(4.5vh, 3rem);
   padding-block: var(--section-vertical-padding);
-
-  color: var(--clr-neutral-900);
-  background: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
-
+  z-index: 2;
+  //color: var(--clr-neutral-900);
+  //background: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
+  background-color: rgb(196, 196, 187);
   h2 {
     position: relative;
 
@@ -142,10 +142,10 @@
 }
 
 .rotate3r {
-  transform: rotate(3deg);
+  transform: rotate(4deg);
 }
 .rotate3l {
-  transform: rotate(-3deg);
+  transform: rotate(-4deg);
 }
 
 .greyscale {
@@ -196,8 +196,8 @@
 }
 
 .circle.img-1 {
-	top: 25px;
-	right: 40px;
+	top: 5px;
+	right: 25px;
 	left: auto;
 	width: 226px;
 	height: 226px;
@@ -248,6 +248,15 @@
 	-webkit-border-radius: 82px;
 	width: 250px;
 	padding: 0 20px;
+  transition: transform background-color 0.3s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  &:hover {
+    // TODO change to variable
+    background-color: orange;
+    transition: background-color 0.3s ease-in-out;
+    transition: transform 0.25s ease-in-out;
+    transform: rotate(0deg);
+  }
 }
 
 .section.hero-started .info-list ul li:nth-child(1) {
@@ -290,5 +299,6 @@
 .section.hero-started .subtitle b,
 .section.hero-started .title b,
 .section.hero-started .info-list ul li b {
+  // bold text color here:
 	color: var(--myorange);
 }

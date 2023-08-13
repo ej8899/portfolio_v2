@@ -40,6 +40,7 @@ function App() {
     console.log('viewport height:', viewportHeight);
     window.addEventListener('scroll', () => {
       // bring footer to surface for clickable links
+      /*
       if (contentHeight - scrollY - viewportHeight < lastPixelsToShow) {
         if (globalconfig.debug) {
           console.log('debug: setting zindex on footer to 1');
@@ -51,7 +52,7 @@ function App() {
         }
         targetElement.style.zIndex = -1;
       }
-
+      */
       // add the scroll to top button
       if (window.scrollY > 300) {
         scrollToTopButton.classList.add('active');

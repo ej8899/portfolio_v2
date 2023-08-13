@@ -1,10 +1,11 @@
 .skills {
   --skills-gap: min(4.5vh, 3rem);
   padding-block: var(--section-vertical-padding);
-  z-index: 1;
+  z-index: 2;
   color: var(--clr-neutral-900);
-  //background: linear-gradient(var(--clr-skills-bg-top), var(--clr-skills-bg-bottom));
+  background: linear-gradient(var(--clr-skills-bg-top), var(--clr-skills-bg-bottom));
   background-color: white;
+
   h2 {
     position: relative;
     margin-bottom: var(--about-gap);
@@ -26,7 +27,7 @@
     display: grid;
     grid-template-columns: 1.25fr 1fr;
     gap: var(--skills-gap);
-
+    z-index: 2;
     @media (max-width: 950px) {
       grid-template-columns: 1fr;
     }
@@ -64,6 +65,15 @@
         background: var(--clr-primary-100);
         animation: pulseSkewScale infinite 1s ease-in-out;
       }
+    }
+
+
+    centered {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: red;
     }
 
     p {

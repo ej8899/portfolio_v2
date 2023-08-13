@@ -25,13 +25,18 @@ function Header() {
         <nav className={isMenuOpen ? 'nav__open' : 'nav__closed'}>
           <ul>
             <li>
-              <a href='#portfolio' onClick={() => setIsMenuOpen(false)}>
-                portfolio
+              <a href='#hero' onClick={() => setIsMenuOpen(false)}>
+                home
               </a>
             </li>
             <li>
               <a href='#about' onClick={() => setIsMenuOpen(false)}>
                 about
+              </a>
+            </li>
+            <li>
+              <a href='#portfolio' onClick={() => setIsMenuOpen(false)}>
+                portfolio
               </a>
             </li>
             <li>
@@ -41,7 +46,6 @@ function Header() {
             </li>
           </ul>
         </nav>
-
         <button
           className='hamburger-menu'
           onClick={() => setIsMenuOpen((prev) => !prev)}

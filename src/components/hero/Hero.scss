@@ -1,7 +1,7 @@
 .hero {
   --spacer: 1.5vh;
   --timer: 0.5s;
-
+  z-index: 2;
   position: relative;
 
   color: var(--clr-neutral-200);
@@ -15,6 +15,19 @@
   // https://www.svgbackgrounds.com/tools/svg-to-css/
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><g transform=" rotate(358 960 540) translate(-58.97700164393336 -33.17456342471246) scale(1.0614343767124306) "><rect width="1920" height="1080" fill="rgb(32, 122, 122)"></rect><g transform="translate(0, 0)"><path fill="rgb(140, 185, 185)" fill-opacity="1" d="M0,144.271L106.667,136.358C213.333,128.446,426.667,112.621,640,158.459C853.333,204.298,1066.667,311.799,1280,373.049C1493.333,434.298,1706.667,449.295,1813.333,456.793L1920,464.291L1920,1080L1813.333,1080C1706.667,1080,1493.333,1080,1280,1080C1066.667,1080,853.333,1080,640,1080C426.667,1080,213.333,1080,106.667,1080L0,1080Z"></path></g><g transform="translate(0, 540)"><path fill="rgb(247, 247, 247)" fill-opacity="1" d="M0,487.179L106.667,438.4C213.333,389.62,426.667,292.06,640,281.48C853.333,270.9,1066.667,347.299,1280,395.951C1493.333,444.603,1706.667,465.508,1813.333,475.96L1920,486.412L1920,540L1813.333,540C1706.667,540,1493.333,540,1280,540C1066.667,540,853.333,540,640,540C426.667,540,213.333,540,106.667,540L0,540Z"></path></g></g></svg>');
   background-repeat: no-repeat;
+
+  .socicons {
+    font-size: 1.5rem;
+    transform: scale(1.0);
+    transition: transform 0.3s ease-in-out;
+    color: black;
+  }
+  .socicons:hover {
+    transform: scale(1.4);
+    transition: transform 0.3s ease-in-out;
+    //fill: none;
+    filter: drop-shadow(0px 0px 10px orange);
+  }
 
   &__text {
     opacity: 0;
@@ -101,6 +114,33 @@
       }
     }
   }
+
+  button {
+    padding: 1rem 1.5rem;
+    margin-inline: auto;
+    margin-top: 0.5rem;
+
+    border: 0;
+    border-radius: var(--border-radius-100);
+
+    background: var(--clr-primary-200);
+    color: white;
+
+    // text-transform: uppercase;
+    font-weight: var(--fw-bold);
+    transform: rotate(-1deg);
+    transition: transform var(--transition-short) ease-in-out;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05) rotate(1deg);
+      // outline: 0;
+      border-color: black;
+      border: 2px;
+      transition: all 0.6s cubic-bezier(0.3, 0, 0.3, 1);
+	    -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.3, 1);
+    }
+  }
 }
 
 .custom-shape-divider-bottom-1680894835 {
@@ -125,4 +165,3 @@
 .custom-shape-divider-bottom-1680894835 .shape-fill {
   fill: var(--clr-about-bg-top);
 }
-

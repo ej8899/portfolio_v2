@@ -25,7 +25,15 @@ const SkillSlider = () => {
       </div>
       <div>
         <br />
-        <p className='submessage'>the sub message goes here</p>
+        <p className='submessage'>
+          <div className='centered'>
+            I do utilize a fair number of tools, frameworks and libraries as I develop applications.
+            <br />
+            The deciding factor(s) of what I&#39;ll use and when depend on the application,
+            <br />
+            the client needs, and the requirements of the web site or application itself.
+          </div>
+        </p>
         <br />
         <article
           className='marquee_wrapper scrolla-element-anim-1 scroll-animate'
