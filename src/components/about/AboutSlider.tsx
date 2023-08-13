@@ -9,19 +9,35 @@ import { servicesSliderProps } from '../../sliderProps';
 // import Swiper core and required modules
 
 // import function to register Swiper custom elements
+// https://swiperjs.com/element#usage-with-react
 import { register } from 'swiper/element/bundle';
 register();
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+
+// TODO - swiper - how to use breakpoints in this style of usage?
 
 function AboutSlider() {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const swiperElRef = useRef(null);
-
+  Object.assign(swiperElRef, servicesSliderProps);
   return (
     <div
       className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started'
       data-animate='active'
     >
       <h2>test for swiper slider</h2>
+      <Swiper modules={[Pagination, Navigation]} {...servicesSliderProps}>
+        <SwiperSlide>1afdsfkdlsl</SwiperSlide>
+        <SwiperSlide>2asfdf afdsf</SwiperSlide>
+        <SwiperSlide>3sdfdsfdss</SwiperSlide>
+        <SwiperSlide>4afdsfkdlsl</SwiperSlide>
+        <SwiperSlide>5asfdf afdsf</SwiperSlide>
+        <SwiperSlide>6sdfdsfdss</SwiperSlide>
+      </Swiper>
+      <br />
+      <br />
+      <br />
       <div className='container'>
         <swiper-container
           ref={swiperElRef}
@@ -31,6 +47,7 @@ function AboutSlider() {
           pagination='true'
           navigation='true'
           scrollbar='true'
+          spacebetween='40'
         >
           <swiper-slide className='swiper-slide'>
             <div className='services-item'>
