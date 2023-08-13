@@ -16,7 +16,10 @@ import { stickyNav, initCursor, activeAnimation } from '../utils';
 // eslint-disable-next-line import/extensions, import/no-extraneous-dependencies
 import Splitting from 'splitting';
 import SkillSlider from '../components/skillslider/SkillSlider';
+
+// extras
 import globalconfig from '../config';
+import AboutSlider from '../components/about/AboutSlider';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
 
@@ -76,6 +79,7 @@ function App() {
         <Header />
         <Hero />
         <About />
+        <AboutSlider />
         <SkillSlider />
         <Portfolio />
         <Contact />
