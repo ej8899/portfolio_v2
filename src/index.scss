@@ -10,6 +10,9 @@
   --fw-thin: 300;
 
   // color
+  // color scheme: https://www.schemecolor.com/blue-teal-orange.php
+  // https://www.color-hex.com/color-palette/31699
+  
   //--clr-neutral-900-t: hsla(0, 0%, 5%, 0.55);
   --clr-neutral-900-t: rgb(4, 0, 128);
   --clr-neutral-900: rgb(43, 41, 41);
@@ -25,7 +28,7 @@
   --clr-neutral-100-t: hsla(0, 0%, 97%, 0.15);
   --clr-primary-100-t: hsl(212, 65%, 56%, 0.5);
   --clr-primary-100: hsl(30, 100%, 48%);
-  --clr-primary-200: hsl(212, 65%, 46%, 1);
+  --clr-primary-200: #243B81;
   --clr-primary-300: hsl(212, 65%, 26%, 1);
   --clr-primary-400: hsl(197, 95%, 23%);
   --clr-accent-100: hsl(30, 100%, 48%);
