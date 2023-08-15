@@ -4,8 +4,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import './About.scss';
 import './Swiper.scss';
-
-import { useEffect, useRef } from 'react';
+import 'swiper/css/effect-fade';
+import 'swiper/css/autoplay';
+// import { useEffect, useRef } from 'react';
 import { servicesSliderProps } from '../../sliderProps';
 
 // import Swiper core and required modules
@@ -15,7 +16,7 @@ import { servicesSliderProps } from '../../sliderProps';
 import { register } from 'swiper/element/bundle';
 register();
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, EffectFade } from 'swiper/modules';
+import { Pagination, Navigation, EffectFade, Autoplay } from 'swiper/modules';
 
 // TODO - swiper - how to use breakpoints in this style of usage?
 
@@ -30,7 +31,7 @@ function AboutSlider() {
     >
       <h2>test for swiper slider</h2>
       <Swiper
-        modules={[Pagination, Navigation, EffectFade]}
+        modules={[Pagination, Navigation, EffectFade, Autoplay]}
         {...servicesSliderProps}
         className='swiper-slide'
       >

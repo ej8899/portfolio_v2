@@ -8,10 +8,15 @@
 export const servicesSliderProps = {
   slidesPerView: 3,
   spaceBetween: 40,
-  watchSlidesProgress: true,
+  watchSlidesProgress: false,
   noSwipingSelector: 'a',
   loop: true,
   speed: 1000,
+  // effect: 'fade',
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: true,
+  },
   pagination: {
     el: '.swiper-pagination',
     type: 'bullets',
