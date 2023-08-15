@@ -33,6 +33,7 @@ function AboutSlider() {
       <Swiper
         modules={[Pagination, Navigation, EffectFade, Autoplay]}
         {...servicesSliderProps}
+        pagination={true}
         className='swiper-slide'
       >
         <SwiperSlide className='swiper-slide'>
