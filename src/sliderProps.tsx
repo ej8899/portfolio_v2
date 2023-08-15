@@ -17,6 +17,7 @@ export const servicesSliderProps = {
     delay: 5000,
     disableOnInteraction: true,
   },
+  grabCursor: true,
   pagination: {
     el: '.swiper-pagination',
     type: 'bullets',
