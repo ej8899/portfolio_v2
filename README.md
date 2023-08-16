@@ -71,3 +71,12 @@ npm install
 # run app
 npm run dev
 ```
+
+## Credits
+divider section shapes:
+https://www.shapedivider.app/
+
+swiper (slider)
+
+splitting (char splitter for title effects)
+
