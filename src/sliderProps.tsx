@@ -3,6 +3,7 @@
 
 /*
   https://swiperjs.com/
+  https://swiperjs.com/react#effects
 */
 
 export const servicesSliderProps = {
