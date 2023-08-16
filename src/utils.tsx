@@ -36,7 +36,7 @@ export function initCursor() {
   });
 
   const link = document.querySelectorAll(
-    "a,  button, .button"
+    "a,  button, .button, .swiper-pagination, .swiper-button-prev, .swiper-button-next"
   );
   link.forEach((link) => {
     link.addEventListener("mouseenter", () => {
