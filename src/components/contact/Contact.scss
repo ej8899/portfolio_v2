@@ -1,7 +1,7 @@
 .contact {
   position: relative;
-  //padding-block: calc(var(--section-separator-height) + var(--section-vertical-padding)) var(--section-vertical-padding);
-  padding-block: var(--section-vertical-padding);
+  padding-block: calc(var(--section-separator-height) + var(--section-vertical-padding)) var(--section-vertical-padding);
+  //padding-block: var(--section-vertical-padding);
   z-index: 2;
   background-color: white;
   //background-color: teal;
@@ -49,7 +49,7 @@
     }
 
     h2 {
-      color: var(--clr-neutral-200);
+      color: var(--clr-neutral-800);
       text-align: center;
       margin-bottom: calc(var(--section-vertical-padding) / 16);
     }
@@ -222,18 +222,19 @@
   // translateY: fix gap that appears on random viewport sizes
   // 1/2 pixel of the darker transparent overlap is less noticeable
   // than 1/2 pixel gap of nothing
-  transform: rotate(180deg) translateY(0.5px);
+  transform:  translateY(0.5px);
 }
 
 .custom-shape-divider-top-1680975773 svg {
   position: relative;
   display: block;
-  width: calc(100% + 1.3px);
-  height: var(--section-separator-height);
+  width: calc(242% + 1.3px);
+  //height: var(--section-separator-height);
+  height: 183px;
 }
 
 .custom-shape-divider-top-1680975773 .shape-fill {
-  fill: var(--clr-portfolio-bg);
+  fill: teal;
 }
 
 .thanksmessage {
@@ -246,11 +247,39 @@
 
 .ratio4-3 {
   width: 100%;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><g transform=" rotate(358 960 540) translate(-58.97700164393336 -33.17456342471246) scale(1.0614343767124306) "><rect width="1920" height="1080" fill="rgb(32, 122, 122)"></rect><g transform="translate(0, 0)"><path fill="rgb(140, 185, 185)" fill-opacity="1" d="M0,144.271L106.667,136.358C213.333,128.446,426.667,112.621,640,158.459C853.333,204.298,1066.667,311.799,1280,373.049C1493.333,434.298,1706.667,449.295,1813.333,456.793L1920,464.291L1920,1080L1813.333,1080C1706.667,1080,1493.333,1080,1280,1080C1066.667,1080,853.333,1080,640,1080C426.667,1080,213.333,1080,106.667,1080L0,1080Z"></path></g><g transform="translate(0, 540)"></g></g></svg>');
+  //background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><g transform=" rotate(358 960 540) translate(-58.97700164393336 -33.17456342471246) scale(1.0614343767124306) "><rect width="1920" height="1080" fill="rgb(32, 122, 122)"></rect><g transform="translate(0, 0)"><path fill="rgb(140, 185, 185)" fill-opacity="1" d="M0,144.271L106.667,136.358C213.333,128.446,426.667,112.621,640,158.459C853.333,204.298,1066.667,311.799,1280,373.049C1493.333,434.298,1706.667,449.295,1813.333,456.793L1920,464.291L1920,1080L1813.333,1080C1706.667,1080,1493.333,1080,1280,1080C1066.667,1080,853.333,1080,640,1080C426.667,1080,213.333,1080,106.667,1080L0,1080Z"></path></g><g transform="translate(0, 540)"></g></g></svg>');
   background-size: cover;
   height: 0;
   padding: 0; /* reset */
   padding-bottom: calc(100% * 3 / 4);
   background-repeat: no-repeat;
   z-index: 1;
+}
+
+.custom-shape-divider-top-1681930915 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  fill: red;
+  color: red;
+  // translateY: fix gap that appears on random viewport sizes
+  //transform: rotate(180deg) translateY(1px);
+}
+
+.custom-shape-divider-top-1681930915 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: var(--section-separator-height);
+  fill: red;
+  color: red;
+}
+
+.custom-shape-divider-top-1681930915 .shape-fill {
+  //fill: var(--clr-about-bg-bottom);
+  fill: teal;
+  color:red;
 }

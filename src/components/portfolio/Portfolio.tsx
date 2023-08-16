@@ -17,7 +17,7 @@ function Portfolio() {
   }, [isOnScreen]);
 
   return (
-    <section className='portfolio' aria-label='my portfolio'>
+    <section id='portfolio' className='portfolio' aria-label='my portfolio'>
       <div className='custom-shape-divider-top-1681930915'>
         <svg
           data-name='Layer 1'
@@ -34,7 +34,7 @@ function Portfolio() {
 
       <div className='column full_height centered_grid'>
         {/* navigation point: skip over wavy divider */}
-        <h2 id='portfolio' className='portfolio__title' ref={titleRef}>
+        <h2 className='portfolio__title' ref={titleRef}>
           My Portfolio
         </h2>
 
