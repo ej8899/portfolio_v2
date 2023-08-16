@@ -4,7 +4,7 @@
   z-index: 2;
   position: relative;
 
-  color: var(--clr-neutral-200);
+  //color: var(--clr-neutral-200);
   background-color: rgb(254, 254, 254);
   display: grid;
   grid-template-columns: 1fr;
@@ -39,7 +39,6 @@
       font-family: "Jost";
       font-size: 80px;
       line-height: 1.2;
-      color: #FFF;
       margin: 15px 0 0 0;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -166,3 +165,14 @@
   fill: var(--clr-about-bg-top);
 }
 
+.hero-started .title {
+	font-family: "Jost";
+	font-size: 90px;
+	line-height: 1.2;
+	color: red;
+	font-weight: 700;
+	margin: 15px 0 0 0;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgba(0, 0, 0, 0.2);
+}

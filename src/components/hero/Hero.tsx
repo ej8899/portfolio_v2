@@ -9,7 +9,7 @@ function Hero() {
       <div className='hero-content column centered_grid full_height'>
         <div className='hero__text'>
           <h2
-            className='splitting-text-anim-1 scroll-animate'
+            className='title splitting-text-anim-1 scroll-animate hero-started'
             data-splitting='chars'
             data-animate='active'
           >
