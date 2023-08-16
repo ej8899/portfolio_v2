@@ -2,6 +2,7 @@
   --skills-gap: min(4.5vh, 3rem);
   padding-block: var(--section-vertical-padding);
   z-index: 2;
+  position: relative;
   color: var(--clr-neutral-900);
   background: linear-gradient(var(--clr-skills-bg-top), var(--clr-skills-bg-bottom));
   background-color: white;

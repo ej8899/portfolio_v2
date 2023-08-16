@@ -1,10 +1,11 @@
 .about {
   --about-gap: min(4.5vh, 3rem);
+  position: relative;
   padding-block: var(--section-vertical-padding);
   z-index: 2;
   //color: var(--clr-neutral-900);
   //background: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
-  background-color: rgb(196, 196, 187);
+  background-color: rgb(172, 138, 138);
   h2 {
     position: relative;
 
@@ -303,25 +304,28 @@
 	color: var(--myorange);
 }
 
-.custom-shape-divider-top-1681930915 {
+.about-custom-shape-divider-top-1681930915 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
-
+  background-color: rgb(6, 51, 186);
   // translateY: fix gap that appears on random viewport sizes
-  transform: rotate(180deg) translateY(1px);
+ //transform: rotate(180deg) translateY(1px);
 }
 
-.custom-shape-divider-top-1681930915 svg {
+.about-custom-shape-divider-top-1681930915 svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: var(--section-separator-height);
+  //height: var(--section-separator-height);
+  height:109px;
 }
 
-.custom-shape-divider-top-1681930915 .shape-fill {
-  fill: var(--clr-about-bg-bottom);
+.about-custom-shape-divider-top-1681930915 .about-shape-fill {
+  //fill: var(--clr-about-bg-bottom);
+  fill: rgba(251, 255, 0, 0.696)
+  //fill-opacity: 0.5;
 }

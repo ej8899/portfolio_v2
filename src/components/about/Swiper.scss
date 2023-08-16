@@ -3,6 +3,8 @@
 .aboutslidercontainer {
   background-color: rgb(136, 136, 132);
   height: 100%;
+  z-index: 2;
+  position: relative;
 }
 
 .swiper-container {
