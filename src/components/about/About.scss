@@ -4,8 +4,9 @@
   padding-block: var(--section-vertical-padding);
   z-index: 2;
   //color: var(--clr-neutral-900);
-  //background: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
-  background-color: rgb(172, 138, 138);
+  //background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
+  background-image: linear-gradient(red,yellow);
+  //background-color: rgb(172, 138, 138);
   h2 {
     position: relative;
 
@@ -305,13 +306,14 @@
 }
 
 .about-custom-shape-divider-top-1681930915 {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  background-color: rgb(6, 51, 186);
+  z-index: 2;
+  //background-color: rgb(6, 51, 186);
   // translateY: fix gap that appears on random viewport sizes
  //transform: rotate(180deg) translateY(1px);
 }
@@ -326,6 +328,6 @@
 
 .about-custom-shape-divider-top-1681930915 .about-shape-fill {
   //fill: var(--clr-about-bg-bottom);
-  fill: rgba(251, 255, 0, 0.696)
+  fill: rgb(251, 255, 0)
   //fill-opacity: 0.5;
 }
