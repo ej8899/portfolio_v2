@@ -313,12 +313,12 @@
 }
 .about-custom-shape-divider-top-1681930915 {
   position: absolute;
-  transform: translateY(960%);
+  transform: translateY(53%);
   top: 0;
   left: 0;
   width: 100%;
-  //height: 1080px;
-  height: 109px;
+  height: 1080px;
+  //height: 109px;
   overflow: hidden;
   line-height: 0;
   z-index: 2;
@@ -333,11 +333,12 @@
   display: block;
   width: calc(100% + 1.3px);
   //height: var(--section-separator-height);
-  height:109px;
+  height: 1080px;
+  //height:109px;
 }
 
 .about-custom-shape-divider-top-1681930915 .about-shape-fill {
-  //fill: var(--clr-about-bg-bottom);
-  fill: rgb(251, 255, 0)
+  fill: var(--clr-about-bg-bottom);
+  // fill: rgb(251, 255, 0)
   //fill-opacity: 0.5;
 }
