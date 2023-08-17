@@ -306,21 +306,28 @@
 	color: var(--myorange);
 }
 
+.about-header-wrapper {
+  // position: relative;
+  // width: 100%;
+  // height: 109px;
+}
 .about-custom-shape-divider-top-1681930915 {
-  position: relative;
+  position: absolute;
+  transform: translateY(960%);
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
   z-index: 2;
+  //display: block;
   //background-color: rgb(6, 51, 186);
   // translateY: fix gap that appears on random viewport sizes
  //transform: rotate(180deg) translateY(1px);
 }
 
 .about-custom-shape-divider-top-1681930915 svg {
-  position: relative;
+  // position: relative;
   display: block;
   width: calc(100% + 1.3px);
   //height: var(--section-separator-height);
