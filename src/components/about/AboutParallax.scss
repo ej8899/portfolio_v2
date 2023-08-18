@@ -1,22 +1,38 @@
-// .parallax-about {
-//   width: 100vw;
-//   background-repeat: no-repeat;
-//   //background-size: cover;
-//   //position: absolute;
-//   //transform-origin: center bottom;
-//   //z-index: -1;
-//   transform-style: preserve-3d;
-// }
+.about-parallax-wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+  position: relative;
+  transform-style: preserve-3d;
+  border: 2px orange solid;
+}
 
-// .about-parallax-wrapper {
-//   height: 100vh;
-//   width: 100vw;
-//   //background: var(--color_dark);
-//   overflow-y: auto;
-//   overflow-x: hidden;
-//   perspective: 10px;
-//   position: relative;
-// }
+.parallax-about {
+  position: relative;
+  transform-style: inherit;
+  //min-height: 100vh;
+  border: 1px red solid;
+}
+
+.parallax-about-item-bubbles {
+  transform: translateZ(-10px) scale(1.0)  rotate(4deg);
+}
+.parallax-about-item-photo {
+  transform: translateZ(-1px) scale(1.0) rotate(1deg);
+}
+.parallax-about-item-circle {
+  transform: translateZ(-10px) scale(1.0) rotate(1deg);
+}
+.parallax-about-item-info {
+  transform: translateZ(1px) scale(0.8) rotate(-5deg);
+}
+
+.parallax-about-item {
+  transform: translateZ(.4px) scale(1.0) rotate(-5deg);
+}
+
 
 // .parallax-about[data-parallax='1'] {
 //   transform: translateZ(-10px) scale(2);

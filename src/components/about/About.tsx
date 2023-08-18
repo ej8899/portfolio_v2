@@ -33,7 +33,7 @@ function About() {
         </svg>
       </div>
       <section id='about' className='about about-parallax-wrapper' aria-labelledby='about__title'>
-        <div className='column full_height centered_grid'>
+        <div className='column full_height centered_grid parallax-about'>
           <h2 id='about__title' className='js-parallax'>
             About Me
           </h2>
@@ -48,7 +48,7 @@ function About() {
                 mollit anim id est laborum.
               </p>
             </div>
-            <div ref={rightColumnRef}>
+            <div ref={rightColumnRef} className='parallax-about-item'>
               <Aboutimage />
             </div>
           </div>
