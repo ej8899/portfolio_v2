@@ -1,11 +1,11 @@
 .about {
   --about-gap: min(4.5vh, 3rem);
   position: relative;
-  padding-block: var(--section-vertical-padding);
+  // padding-block: var(--section-vertical-padding);
   z-index: 2;
   //color: var(--clr-neutral-900);
-  //background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
-  background-image: linear-gradient(red,yellow);
+  background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
+  //background-image: linear-gradient(red,yellow);
   //background-color: rgb(172, 138, 138);
   h2 {
     position: relative;
@@ -193,7 +193,7 @@
 	height: 440px;
 	z-index: 2;
 	background: orange;
-  background: linear-gradient(180deg, rgba(0,159,159,1) 0%, rgba(255,116,0,1) 67%);
+  background: linear-gradient(0deg, rgba(0,159,159,1) 0%, rgba(255,116,0,1) 77%);
 	border-radius: 100%;
 	-webkit-border-radius: 100%;
 }
@@ -339,6 +339,6 @@
 
 .about-custom-shape-divider-top-1681930915 .about-shape-fill {
   fill: var(--clr-about-bg-bottom);
-  // fill: rgb(251, 255, 0)
+  fill: rgb(251, 255, 0)
   //fill-opacity: 0.5;
 }
