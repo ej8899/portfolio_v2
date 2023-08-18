@@ -3,27 +3,31 @@ import './About.scss';
 function Aboutimage() {
   return (
     <div
-      className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started '
+      className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started parallax-section'
       data-animate='active'
     >
       {/* TODO setup for @media resizing */}
       {/* TODO setup for animation on scroll to view and parallax */}
-      <div className='parallax-about'>
+      <div>
         <img
           decoding='async'
           className='greyscale aboutimage parallax-about-item-photo'
           src='src/assets/images/profile2.png'
           alt='<b>Ernie</b> Johnson'
         />
-        <span className='circle circle-1 parallax-about-item-circle' />
+        <span className='circle circle-1' />
         <span
-          className='circle img-1 parallax-about-item-bubbles'
+          className='circle img-1 parallax-item'
+          data-scroll-ratio='0.1'
+          id='item1'
           style={{
             backgroundImage: 'url(src/assets/images/pat-1.png)',
           }}
         />
         <span
-          className='circle img-2 parallax-about-item-bubbles'
+          className='circle img-2 parallax-item'
+          data-scroll-ratio='0.1'
+          id='item2'
           style={{
             backgroundImage: 'url(src/assets/images/pat-2.png)',
           }}
@@ -44,7 +48,7 @@ function Aboutimage() {
                 Years of <strong>Experience</strong>
               </span>
             </li>
-            <li className='rotate3r parallax-about-item'>
+            <li className='rotate3r parallax-about-item-info2'>
               <span className='num'>53</span>
               <span className='value'>
                 Completed <strong>Projects</strong>

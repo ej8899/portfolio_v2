@@ -34,6 +34,7 @@ function App() {
     window.addEventListener('scroll', activeAnimation);
 
     // scroll listeners
+    const items = document.querySelectorAll('.parallax-item');
     const targetElement = document.querySelector('.footer__wrapper');
     const contentHeight = document.querySelector('.appwrapper').clientHeight;
     const lastPixelsToShow = 50;
@@ -42,6 +43,15 @@ function App() {
     console.log('appwrapper height:', contentHeight);
     console.log('viewport height:', viewportHeight);
     window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+
+      items.forEach((item) => {
+        const scrollRatio = item.getAttribute('data-scroll-ratio');
+        const translateY = -scrollY * scrollRatio;
+
+        item.style.transform = `translateY(${translateY}px)`;
+        console.log('parallax event on', item);
+      });
       // bring footer to surface for clickable links
       /*
       if (contentHeight - scrollY - viewportHeight < lastPixelsToShow) {
