@@ -11,7 +11,8 @@ function Aboutimage() {
       <div>
         <img
           decoding='async'
-          className='greyscale aboutimage parallax-about-item-photo'
+          className='greyscale aboutimage parallax-item'
+          data-scroll-ratio='0.9'
           src='src/assets/images/profile2.png'
           alt='<b>Ernie</b> Johnson'
         />
