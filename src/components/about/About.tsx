@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 // import SkillSlider from '../skillslider/SkillSlider';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import './About.scss';
+import './AboutParallax.scss';
 import Aboutimage from './Aboutimage';
 
 function About() {
@@ -31,7 +32,7 @@ function About() {
           ></path>
         </svg>
       </div>
-      <section id='about' className='about' aria-labelledby='about__title'>
+      <section id='about' className='about about-parallax-wrapper' aria-labelledby='about__title'>
         <div className='column full_height centered_grid'>
           <h2 id='about__title' className='js-parallax'>
             About Me

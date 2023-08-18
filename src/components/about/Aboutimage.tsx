@@ -10,11 +10,12 @@ function Aboutimage() {
       {/* TODO setup for animation on scroll to view and parallax */}
       <img
         decoding='async'
-        className='greyscale aboutimage'
+        className='greyscale aboutimage parallax-about'
+        data-parallax='7'
         src='src/assets/images/profile2.png'
         alt='<b>Ernie</b> Johnson'
       />
-      <span className='circle circle-1' />
+      <span className='circle circle-1 parallax-about' data-parallax='1' />
       <span
         className='circle img-1'
         style={{
@@ -28,14 +29,15 @@ function Aboutimage() {
         }}
       />
       <span
-        className='circle img-3'
+        className='circle img-3 parallax-about'
+        data-parallax='3'
         style={{
           backgroundImage: 'url(src/assets/images/pat-2.png)',
         }}
       />
       <div className='info-list'>
         <ul>
-          <li className='rotate3l'>
+          <li className='rotate3l parallax-about' data-parallax='6'>
             <span className='num'>
               2 <strong>+</strong>
             </span>
