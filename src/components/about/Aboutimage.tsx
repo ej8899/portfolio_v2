@@ -1,5 +1,4 @@
 import './About.scss';
-import './animate.css';
 import { useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 
