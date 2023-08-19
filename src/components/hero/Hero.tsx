@@ -3,20 +3,23 @@ import LinkedIn from '../../assets/components/LinkedIn';
 import Button from '../button/Button';
 import './Hero.scss';
 import globalconfig from '../../config';
+import useElementOnScreen from '../../hooks/useElementOnScreen';
+import { FormEvent, useEffect, useRef, useState } from 'react';
+
 function Hero() {
   return (
     <section id='hero' className='hero' aria-label='hero with github & linkedin links'>
       <div className='hero-content column centered_grid full_height'>
         <div className='hero__text'>
           <h2
-            className='title splitting-text-anim-1 scroll-animate hero-started'
+            className='title splitting-text-anim-1 animate__active scroll-animate hero-started'
             data-splitting='chars'
             data-animate='active'
           >
             <span>
-              <b>Ernie</b>
+              <b id='line1'>Ernie</b>
               <br />
-              Johnson
+              <span id='line2'>Johnson</span>
             </span>
           </h2>
           <h3>

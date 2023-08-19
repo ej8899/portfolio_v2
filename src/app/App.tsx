@@ -39,12 +39,15 @@ function App() {
     const contentHeight = document.querySelector('.appwrapper').clientHeight;
     const lastPixelsToShow = 50;
     const scrollToTopButton = document.getElementById('scrollToTopButton');
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
     const viewportHeight = window.innerHeight;
+    let scrollY;
     console.log('appwrapper height:', contentHeight);
     console.log('viewport height:', viewportHeight);
     window.addEventListener('scroll', () => {
-      // const scrollY = window.scrollY;
-
+      scrollY = window.scrollY;
+      // console.log('in app.tsx scrollY:', scrollY);
       // items.forEach((item) => {
       //   const scrollRatio = item.getAttribute('data-scroll-ratio');
       //   const translateY = -scrollY * scrollRatio;
@@ -70,8 +73,12 @@ function App() {
       // add the scroll to top button
       if (window.scrollY > 300) {
         scrollToTopButton.classList.add('active');
+        line1.classList.add('nowblack');
+        line2.classList.add('nowblack');
       } else {
         scrollToTopButton.classList.remove('active');
+        line1.classList.remove('nowblack');
+        line2.classList.remove('nowblack');
       }
     });
     scrollToTopButton.addEventListener('click', () => {
@@ -88,7 +95,7 @@ function App() {
     <>
       <div className='appwrapper'>
         <Header />
-        <Hero />
+        <Hero vscroll={scrollY} />
         <About />
         <AboutSlider />
         <SkillSlider />
