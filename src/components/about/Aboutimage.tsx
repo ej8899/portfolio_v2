@@ -16,6 +16,8 @@ function Aboutimage() {
     circleRef.current?.classList.add('fadeInUp');
   }, [isOnScreen]);
 
+  // TODO bug in circle if scrolling into view - it already fades in, then does the fadeInUp animation - need to keep circle off for start.
+
   return (
     <div
       className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started parallax-section'
