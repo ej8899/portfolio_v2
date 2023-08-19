@@ -80,3 +80,4 @@ swiper (slider)
 
 splitting (char splitter for title effects)
 
+animate.css
