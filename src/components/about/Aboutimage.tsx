@@ -6,13 +6,19 @@ function Aboutimage() {
   const infoRef1 = useRef<HTMLDivElement>(null);
   const infoRef2 = useRef<HTMLDivElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
+  const pat1Ref = useRef<HTMLDivElement>(null);
+  const pat2Ref = useRef<HTMLDivElement>(null);
+  const pat3Ref = useRef<HTMLDivElement>(null);
   const isOnScreen = useElementOnScreen(infoRef1, '-100px');
 
   useEffect(() => {
     if (!isOnScreen) return;
     infoRef1.current?.classList.add('animate__zoomIn');
     infoRef2.current?.classList.add('animate__zoomIn');
-    circleRef.current?.classList.add('fadeInUp');
+    circleRef.current?.classList.add('animate__fadeInUp');
+    pat1Ref.current?.classList.add('animate__fadeInTopRight');
+    pat3Ref.current?.classList.add('animate__fadeInBottomRight');
+    pat2Ref.current?.classList.add('animate__fadeInLeft');
   }, [isOnScreen]);
 
   // TODO bug in circle if scrolling into view - it already fades in, then does the fadeInUp animation - need to keep circle off for start.
@@ -34,7 +40,8 @@ function Aboutimage() {
         />
         <span className='circle circle-1 animate__animated' ref={circleRef} />
         <span
-          className='circle img-1 parallax-item'
+          className='circle img-1 parallax-item animate__animated'
+          ref={pat1Ref}
           data-scroll-ratio='0.1'
           id='item1'
           style={{
@@ -42,7 +49,8 @@ function Aboutimage() {
           }}
         />
         <span
-          className='circle img-2 parallax-item'
+          className='circle img-2 parallax-item animate__animated'
+          ref={pat2Ref}
           data-scroll-ratio='0.1'
           id='item2'
           style={{
@@ -50,7 +58,8 @@ function Aboutimage() {
           }}
         />
         <span
-          className='circle img-3 parallax-about-item-bubbles'
+          className='circle img-3 parallax-about-item-bubbles animate__animated'
+          ref={pat3Ref}
           style={{
             backgroundImage: 'url(src/assets/images/pat-2.png)',
           }}
