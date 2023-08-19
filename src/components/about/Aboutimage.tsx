@@ -12,7 +12,12 @@ function Aboutimage() {
   const isOnScreen = useElementOnScreen(infoRef1, '-100px');
 
   useEffect(() => {
-    if (!isOnScreen) return;
+    // TODO remove ani classes if off screen to reset these
+    if (!isOnScreen) {
+      infoRef1.current?.classList.remove('animate__zoomIn');
+      infoRef2.current?.classList.remove('animate__zoomIn');
+      return;
+    }
     infoRef1.current?.classList.add('animate__zoomIn');
     infoRef2.current?.classList.add('animate__zoomIn');
     circleRef.current?.classList.add('animate__fadeInUp');
