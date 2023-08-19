@@ -7,6 +7,7 @@ import ContactText from './ContactText';
 function Contact() {
   const headerRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const staticInfoRef = useRef<HTMLFormElement>(null);
   const isOnScreen = useElementOnScreen(headerRef, '-100px');
 
   const [email, setEmail] = useState('');
@@ -24,6 +25,7 @@ function Contact() {
     if (!isOnScreen) return;
     headerRef.current?.classList.add('animate-in');
     formRef.current?.classList.add('animate-in');
+    staticInfoRef.current?.classList.add('animate__fadeInLeft');
   }, [isOnScreen]);
 
   const isValidEmail = () => {
@@ -113,7 +115,7 @@ function Contact() {
         </div>
       </div>
       <div className='column centered_grid contact__content'>
-        <div>
+        <div ref={staticInfoRef} className='animate__animated'>
           <ContactText />
         </div>
         <div className='form__wrapper'>
@@ -192,6 +194,7 @@ function Contact() {
                   {messageValidation}
                 </p>
               </div>
+              <input type='checkbox' name='botcheck' className='hidden'></input>
               <Button type='outline'>Send Me A Message</Button>
             </form>
           )}

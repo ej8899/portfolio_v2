@@ -22,7 +22,7 @@ function ContactText() {
           <span> Freelance: </span>
         </div>
         <div className='lui-text'>
-          <span> Available Right Now </span>
+          <span> Currently Available </span>
         </div>
       </div>
       <div className='numbers-item'>
