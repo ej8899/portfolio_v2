@@ -11,7 +11,11 @@ function ContactText() {
           <span> Address: </span>
         </div>
         <div className='lui-text'>
-          <span> Remote (Canada & USA) </span>
+          <span>
+            Windsor, Ontario / Calgary, Alberta
+            <br />
+            Available for remote: Canada & USA
+          </span>
         </div>
       </div>
       <div className='numbers-item'>

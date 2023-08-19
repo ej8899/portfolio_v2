@@ -92,7 +92,32 @@ function AboutSlider() {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide className='swiper-slide'>3sdfdsfdss</SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+          <div className='services-item'>
+            <div className='lui-subtitle'>
+              <span> Hardware </span>
+            </div>
+            <div className='icon' />
+            <h5 className='lui-title'>
+              <span> Hardware Upgrades & Servicing </span>
+            </h5>
+            <div className='lui-text'>
+              <div>
+                <p>
+                  I love working on hardware - from building custom PCs to building custom servers -
+                  and yes, even wiring!
+                </p>
+              </div>
+            </div>
+            &nbsp;
+            <div
+              className='image'
+              style={{
+                backgroundImage: 'url(src/assets/images/pat-2.png)',
+              }}
+            />
+          </div>
+        </SwiperSlide>
         <SwiperSlide className='swiper-slide'>4afdsfkdlsl</SwiperSlide>
         <SwiperSlide className='swiper-slide'>5asfdf afdsf</SwiperSlide>
         <SwiperSlide className='swiper-slide'>6sdfdsfdss</SwiperSlide>
