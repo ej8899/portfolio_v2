@@ -343,3 +343,17 @@
   fill: rgb(251, 255, 0)
   //fill-opacity: 0.5;
 }
+
+
+
+.centered_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //height: 100vh; /* Adjust to your preferred height */
+}
+.centered_item {
+  text-align: center;
+  max-width: 50%;
+  //background-color: red;
+}
