@@ -44,7 +44,7 @@ function Footer() {
                 className='copyright-text scrolla-element-anim-1 scroll-animate'
                 data-animate='active'
               >
-                Developed by <strong>ERNIEJOHNSON.CA</strong> - version {globalconfig.appVersion}
+                version {globalconfig.appVersion}
               </div>
             </div>
       </div>
