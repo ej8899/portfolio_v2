@@ -58,7 +58,10 @@ function Contact() {
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!isFormValidated) return;
+    if (!isFormValidated) {
+      setMessageValidation('Please complete all sections of this form!');
+      return;
+    }
     setIsSendPending(true);
 
     try {
@@ -146,7 +149,7 @@ function Contact() {
                     emailValidation === 'validated_input' ? 'invisible' : ''
                   }`}
                 >
-                  {emailValidation}
+                  <b>{emailValidation}</b>
                 </p>
               </div>
 
@@ -169,7 +172,7 @@ function Contact() {
                     nameValidation === 'validated_input' ? 'invisible' : ''
                   }`}
                 >
-                  {nameValidation}
+                  <b>{nameValidation}</b>
                 </p>
               </div>
 
@@ -191,7 +194,7 @@ function Contact() {
                     messageValidation === 'validated_input' ? 'invisible' : ''
                   }`}
                 >
-                  {messageValidation}
+                  <b>{messageValidation}</b>
                 </p>
               </div>
               <input type='checkbox' name='botcheck' className='hidden'></input>
