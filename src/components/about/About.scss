@@ -196,12 +196,13 @@
 	background: orange;
   background: linear-gradient(0deg, rgba(0,159,159,1) 0%, rgba(255,116,0,1) 77%);
 	border-radius: 100%;
+  border: 2px solid black;
 	-webkit-border-radius: 100%;
 }
 
 .circle.img-1 {
-	top: 5px;
-	right: 25px;
+	top: 25px;
+	right: 35px;
 	left: auto;
 	width: 226px;
 	height: 226px;
@@ -211,14 +212,14 @@
 	bottom: 50px;
 	right: auto;
 	top: auto;
-	left: -110px;
+	left: -60px;
 	width: 141px;
 	height: 141px;
 }
 
 .circle.img-3 {
 	bottom: 10px;
-	right: -14px;
+	right: 10px;
 	top: auto;
 	left: auto;
 	width: 141px;
@@ -264,7 +265,7 @@
 }
 
 .section.hero-started .info-list ul li:nth-child(1) {
-	margin: 160px 0 0 120px;
+	margin: 160px 0 0 180px;
 }
 
 .section.hero-started .info-list ul li:nth-child(2) {
@@ -345,15 +346,3 @@
 }
 
 
-
-.centered_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  //height: 100vh; /* Adjust to your preferred height */
-}
-.centered_item {
-  text-align: center;
-  max-width: 50%;
-  //background-color: red;
-}
