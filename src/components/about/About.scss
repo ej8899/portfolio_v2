@@ -41,6 +41,7 @@
   }
 
   &__text {
+    z-index: 5;
     opacity: 0;
     transform: translateY(30%);
 

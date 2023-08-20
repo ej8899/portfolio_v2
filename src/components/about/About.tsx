@@ -39,13 +39,38 @@ function About() {
           </h2>
           <div className='about__content' ref={aboutRef}>
             <div className='about__text' ref={leftColumnRef}>
+              <p>I am a Construction Manager-transitioned- Web & Applications Developer.</p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla Excepteur
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
+                In all honesty, I&apos;ve now come &quot;full-circle&quot; in my career journey and
+                am coming back to web and applications development.
+              </p>
+              <p>
+                When much younger, I did start coding mini games and applications in BASIC language
+                on <span data-tooltip='VIC-20 -> C64 -> C128'>Commodore</span> computers.
+                Eventually, this transitioned into PC&apos;s and the early mobile devices like
+                Blackberry and Palm and then into the early days of web development - from static
+                web pages, to full-stack e-commerce applications.
+              </p>
+              <p>
+                Life happened, and I decided to re-think my career choices - I made a sudden shift
+                into first responder & emergency service roles. A few years years later and I found
+                my self involved in construction management of &quot;
+                <span data-tooltip='multi-billion dollar jobs'>major projects</span>&quot; across
+                Canada.
+              </p>
+              <p>
+                Fast forwarding into 2021, life-happened once again, and I&apos;ve once again
+                decided to re-ignite my passion for{' '}
+                <span data-tooltip='including hardware!'>technology</span> and application
+                development. I decided to leave my job to enroll in an intensive full-stack web
+                development&nbsp;
+                <span data-tooltip='Lighthouse Labs'>bootcamp</span>.
+              </p>
+              <p>I loved every minute of it, and now here we are!</p>
+              <p>
+                Other interests include: <span data-tooltip='my dog'>🐕</span>{' '}
+                <span data-tooltip='travel'>✈️</span> <span data-tooltip='scuba diving'>🤿</span>{' '}
+                <span data-tooltip='fitness'>💪</span> <span data-tooltip='photography'>📸</span>
               </p>
             </div>
             <div ref={rightColumnRef}>
