@@ -41,7 +41,7 @@ footer {
   margin: 0px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .footer {
     flex-direction: column;
     justify-content: center;
@@ -51,7 +51,7 @@ footer {
     flex-direction: column !important;
   }
   .footer-section {
-    //width: 100%;
+    width: 100%;
   }
 }
 
