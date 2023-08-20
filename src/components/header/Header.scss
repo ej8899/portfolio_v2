@@ -71,6 +71,7 @@ header {
       position: static;
       backdrop-filter: none;
       background: none;
+      
 
       ul {
         display: flex;
@@ -175,7 +176,7 @@ header {
 
 @media screen and (max-width: 1200px) {
 	.header.sticky {
-		background: #fff;
+		//background: #fff;
 	}
 }
 
