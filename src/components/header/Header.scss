@@ -75,8 +75,9 @@ header {
       ul {
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         gap: 2vw;
-
+        margin: 0;
         font-size: clamp(0.8rem, 1vw, 1rem);
       }
 
