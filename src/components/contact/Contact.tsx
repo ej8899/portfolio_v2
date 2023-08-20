@@ -71,7 +71,7 @@ function Contact() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: '7160e73c-4a32-4952-ab02-e07ea131ed58-asdfds',
+          access_key: '7160e73c-4a32-4952-ab02-e07ea131ed58',
           from_name: 'erniejohnson.ca',
           subject: 'erniejohnson.ca - contact form response',
           message,
