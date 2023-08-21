@@ -46,11 +46,13 @@ function About() {
                 am coming back to web and applications development.
               </p>
               <p>
-                When much younger, I did start coding mini games and applications in BASIC language
-                on <span data-tooltip='VIC-20 -> C64 -> C128'>Commodore</span> computers.
-                Eventually, this transitioned into PC&apos;s and the early mobile devices like
-                Blackberry and Palm and then into the early days of web development - from static
-                web pages, to full-stack e-commerce applications.
+                When much younger, I did start coding mini games and{' '}
+                <span data-tooltip='freeware and shareware'>applications</span> in BASIC language on{' '}
+                <span data-tooltip='VIC-20 -> C64 -> C128'>Commodore</span> computers. Eventually,
+                this transitioned into PC&apos;s and{' '}
+                <span data-tooltip='Blackberry and PalmPilot'>early mobile devices</span>
+                and then into the early days of web development - from static web pages, to web to
+                full-stack e-commerce applications.
               </p>
               <p>
                 Life happened, and I decided to re-think my career choices - I made a sudden shift
@@ -67,11 +69,24 @@ function About() {
                 development&nbsp;
                 <span data-tooltip='Lighthouse Labs'>bootcamp</span>.
               </p>
-              <p>I loved every minute of it, and now here we are!</p>
+              <p>I loved seeing what was new, and now here we are!</p>
               <p>
-                Other interests include: <span data-tooltip='my dog'>🐕</span>{' '}
-                <span data-tooltip='travel'>✈️</span> <span data-tooltip='scuba diving'>🤿</span>{' '}
-                <span data-tooltip='fitness'>💪</span> <span data-tooltip='photography'>📸</span>
+                Other interests include:
+                <span data-tooltip='my dog'>
+                  <big>🐕</big>
+                </span>{' '}
+                <span data-tooltip='travel'>
+                  <big>✈️</big>
+                </span>
+                <span data-tooltip='scuba diving'>
+                  <big>🤿</big>
+                </span>{' '}
+                <span data-tooltip='fitness'>
+                  <big>💪</big>
+                </span>{' '}
+                <span data-tooltip='photography'>
+                  <big>📸</big>
+                </span>
               </p>
             </div>
             <div ref={rightColumnRef}>

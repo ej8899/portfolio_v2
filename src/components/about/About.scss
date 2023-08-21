@@ -70,7 +70,10 @@
         animation: pulseSkewScale infinite 1s ease-in-out;
       }
     }
-
+    big {
+      font-size: clamp(2.0rem, 3.15vw, 1.1rem);
+      font-weight: bold;
+    }
     p {
       font-size: clamp(0.9rem, 3.15vw, 1.1rem);
       line-height: 1.8;
