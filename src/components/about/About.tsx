@@ -34,6 +34,7 @@ function About() {
       </div>
       <section id='about' className='about about-parallax-wrapper' aria-labelledby='about__title'>
         <div className='column full_height centered_grid'>
+          <br />
           <h2 id='about__title' className='js-parallax'>
             About Me
           </h2>
@@ -77,6 +78,9 @@ function About() {
               <Aboutimage />
             </div>
           </div>
+          <br />
+          <br />
+          &nbsp;
         </div>
       </section>
     </div>

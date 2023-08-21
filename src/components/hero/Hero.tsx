@@ -25,7 +25,6 @@ function Hero() {
           <h3>
             Your Full Stack <span>Web & App Developer!</span>
           </h3>
-
           <div className='hero__cta'>
             <a target='_new' rel='nofollow' href={globalconfig.link.linkedin}>
               <i aria-hidden='true' className='fab fa-linkedin-in socicons' />
@@ -44,6 +43,15 @@ function Hero() {
               <Button type='outline'>About Me</Button>
             </a>
           </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          &nbsp;
         </div>
       </div>
     </section>
