@@ -1,10 +1,13 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable react/jsx-no-comment-textnodes */
 // eslint-disable
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import About from '../components/about/About';
 import Contact from '../components/contact/Contact';
 import Footer from '../components/footer/Footer';
@@ -20,11 +23,19 @@ import SkillSlider from '../components/skillslider/SkillSlider';
 // extras
 import globalconfig from '../config';
 import AboutSlider from '../components/about/AboutSlider';
+import Chatbot from '../components/chatbot/Chatbot';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
 
 function App() {
   // const { height, width } = useWindowDimensions();
+
+  // chatbot
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
+  };
 
   /* Setup initial JS items */
   useEffect(() => {
@@ -107,6 +118,11 @@ function App() {
         <i className='fas fa-chevron-up'></i>
       </button>
       <div className='cursor' />
+      <div className='chat-icon' onClick={toggleChat}>
+        {/* Replace this with your desired chat icon */}
+        <i className='fas fa-comment-alt'></i>
+      </div>
+      {isChatOpen && <Chatbot />}
     </>
     // </WindowContext.Provider>
   );
