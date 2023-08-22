@@ -27,8 +27,20 @@ const intents = {
     responses: ['Sure, I\'m here to help!', 'What do you need assistance with?', 'I\'m here to assist you.']
   },
   bye: {
-    patterns: ['bye', 'goodbye', 'exit'],
+    patterns: ['bye', 'goodbye', 'exit','quit','logout'],
     responses: ['Goodbye!', 'Have a great day!', 'See you later!']
+  },
+  contact: {
+    patterns: ['contact', 'phone', 'email'],
+    responses: ['You can contact Ernie through the contact section of the site, or email ernie@erniejohnson.ca']
+  },
+  feedback: {
+    patterns: ['feedback','comments','comment'],
+    responses: ['Your feedback will be valuable! Share your thoughts and suggestions in the "contact" section!']
+  },
+  codeSkills: {
+    patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages'],
+    responses: ['Ernie has experience in Javascript, Typescript, React, NextJS, C, C++, PHP, Perl and more. Is there something more specific you need?']
   },
   default: {
     responses: ["I'm sorry, I don't understand that.", "Could you please rephrase that?", "I'm not sure how to help with that."]
@@ -54,10 +66,15 @@ function getRandomResponse(responses) {
   return responses[Math.floor(Math.random() * responses.length)];
 }
 
+
+//
+// main Chatbot() system
+//
 function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [userInput, setUserInput] = useState('');
   const [messageHistory, setMessageHistory] = useState([]);
+  const [userName, setUserName] = useState('');
 
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
@@ -69,9 +86,14 @@ function Chatbot() {
 
   const handleSendMessage = () => {
     if (userInput.trim() !== '') {
-      addMessage('User', userInput);
-      const botResponse = getResponse(userInput);
-      addMessage('Bot', botResponse);
+      if(!userName) {
+        setUserName(userInput);
+        addMessage('Bot', `Hi ${userInput}! How can I assist you today?`);
+      } else {
+        addMessage('User', userInput);
+        const botResponse = getResponse(userInput);
+        addMessage('Bot', botResponse);
+      }
       setUserInput('');
     }
   };
