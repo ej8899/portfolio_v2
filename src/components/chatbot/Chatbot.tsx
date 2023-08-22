@@ -31,7 +31,7 @@ const intents = {
     responses: ['Goodbye!', 'Have a great day!', 'See you later!']
   },
   contact: {
-    patterns: ['contact', 'phone', 'email'],
+    patterns: ['contact', 'phone', 'email','operator','support','live'],
     responses: ['You can contact Ernie through the contact section of the site, or email ernie@erniejohnson.ca']
   },
   feedback: {
@@ -41,6 +41,14 @@ const intents = {
   codeSkills: {
     patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages'],
     responses: ['Ernie has experience in Javascript, Typescript, React, NextJS, C, C++, PHP, Perl and more. Is there something more specific you need?']
+  },
+  hackAttempt: {
+    patterns: ['<script>', '<link>', '<iframe>','${',],
+    responses: ['Ernie has experience in cybersecurity for applications. This attack has been blocked!']
+  },
+  usersName: {
+    patterns: ['name'],
+    responses: ['Your name is ${userName}']
   },
   default: {
     responses: ["I'm sorry, I don't understand that.", "Could you please rephrase that?", "I'm not sure how to help with that."]
@@ -85,6 +93,10 @@ function Chatbot() {
   };
 
   const handleSendMessage = () => {
+    if (userInput.trim() == '' && !userName) {
+      // addMessage('Bot', `What is your name?`);
+      return;
+    }
     if (userInput.trim() !== '') {
       if(!userName) {
         setUserName(userInput);
@@ -113,6 +125,9 @@ function Chatbot() {
     }
   }, [messageHistory]);
   
+  useEffect(() => {
+    addMessage('Bot', `ue What is your name?`);
+  }, []);
 
   return (
     <div className={`chatbot-popup ${isOpen ? 'open' : ''}`}>
@@ -124,7 +139,14 @@ function Chatbot() {
       <div className="message-history">
         {messageHistory.map((msg, index) => (
           <div key={index} className={`message ${msg.sender}`}>
-            {msg.message}
+            {msg.sender === 'Bot' && (
+              <div className="avatar-circle">
+                {/* You can place an image tag or an icon here */}
+                
+                <i className="fa-solid fa-robot"></i>
+              </div>
+            )}
+            <div className="message-content">{msg.message}</div>
           </div>
         ))}
         <div ref={messagesEndRef}></div> {/* This ensures scrolling to bottom */}
