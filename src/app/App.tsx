@@ -118,9 +118,10 @@ function App() {
         <i className='fas fa-chevron-up'></i>
       </button>
       <div className='cursor' />
-      <div className='chat-icon' onClick={toggleChat}>
-        {/* Replace this with your desired chat icon */}
-        <i className='fas fa-comment-alt'></i>
+      <div id='chatBotButton'>
+        <div className='chat-icon' onClick={toggleChat}>
+          <i className='fas fa-comment-alt'></i>
+        </div>
       </div>
       {isChatOpen && <Chatbot />}
     </>
