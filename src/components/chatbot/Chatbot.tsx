@@ -17,6 +17,9 @@ type TProps = {
   children: ReactNode;
 };
 
+const chatbotVersion = '1.0';
+const chatbotChangeLog = 'v1.0 - 2023-08 - initial roll out';
+
 // TODO need to ensure we check for full words - presently 'history' triggers based on 'hi' in the greetings!
 const intents = {
   commands: {
@@ -41,11 +44,11 @@ const intents = {
   },
   feedback: {
     patterns: ['feedback','comments','comment'],
-    responses: ['Your feedback will be valuable! Share your thoughts and suggestions in the "contact" section!']
+    responses: ['Your feedback will be valuable! Share your thoughts and suggestions in the "<a href="#contact">contact</a>" section!']
   },
   codeSkills: {
     patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages'],
-    responses: ['Ernie has experience in Javascript, Typescript, React, NextJS, C, C++, PHP, Perl and more. Is there something more specific you need?']
+    responses: ['Ernie has experience in Javascript, Typescript, React, NextJS, C, C++, and more. He is also skilled with backend technologies like NodeJS, Perl, PHP, MySQL, PostgreSQL and more.<br><br>You can find additional skills in the <a href="#about">about</a> section.<BR>Is there something more specific you need?']
   },
   hackAttempt: {
     patterns: ['script', 'link', 'iframe','${','hack','backdoor','password',],
@@ -56,16 +59,20 @@ const intents = {
     responses: ['Chatterbot is in it`s infancy, but built as a React component to work within this project. As an extra "did you know", Chatterbot was built largely by an AI system with a few prompts from Ernie, followed up with some of his human tweaks of course!']
   },
   botChangeLog: {
-    patterns: ['changelog', 'change log'],
-    responses: ['Here is the changelog for Chatterbot:<br>2023-08 - 1.0 - initial release'],
+    patterns: ['changelog', 'change log', 'version'],
+    responses: ['Here is the recent change log for Chatterbot:<br>' + chatbotChangeLog],
   },
   downloads: {
-    patterns: ['resume'],
+    patterns: ['resume','download','downloads'],
     responses: ['Ernie&#39;s resume can be downloaded <a href="http://www.erniejohnson.ca/resume.pdf">here</a>'],
+  },
+  useAI: {
+    patterns: ['ai','bard','chatgpt','chat gpt'],
+    responses: ['Yes, Ernie uses AI technologies like ChatGPT and Google Bard.<br><br>In fact, Chatterbot was written largely by prompting ChatGPT to create the outline and basics of functionality.  Sure, there were a few bugs that needed a human to iron out along the way, and there may not have been much of a time saver from writing it from scratch, but interesting just the same!'],
   },
   botName: {
     patterns: ['your name','bot name'],
-    responses: ['My name is Chatterbot 1.0'],
+    responses: ['My name is Chatterbot v' + chatbotVersion],
   },
   usersName: {
     patterns: ['name'],
