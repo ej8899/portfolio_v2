@@ -24,7 +24,7 @@
   height: 30px;
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 10px;
+  margin-right: 5px;
   background-color: teal; /* Teal background for the avatar */
   display: flex;
   justify-content: center; /* Horizontally center content */
@@ -32,6 +32,7 @@
   // position: absolute;
   // top: 0;
   // right: 0;
+  flex: 0 0 30px;
 }
 
 .avatar-circle img {
@@ -85,7 +86,22 @@
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
+  display: flex;
   //clear: both;
+}
+
+.message-row {
+  display: flex; /* Create a flex container */
+  //align-items: flex-start; /* Align items to the top */
+  flex-direction: row;
+  //justify-content: space-between;
+  //border: 1px solid
+}
+.row-Bot {
+  align-items: flex-start;
+}
+.row-User {
+  justify-content: flex-end;;
 }
 
 .User {
@@ -93,6 +109,7 @@
   text-align: right;
   border: 2px solid #000000;
   border-radius: 20px 20px 0px 20px;
+  //align-items: flex-end;
   //float:right;
   //clear: both;
 }
@@ -102,6 +119,8 @@
   text-align: left;
   border: 2px solid #000000;
   border-radius: 0px 20px 20px 20px;
+  margin-top: 10px;
+  //align-items: flex-start;
   //float: left;
   //clear: both;
 }
@@ -111,7 +130,7 @@
   align-items: center;
   padding: 10px;
   border-top: 1px solid #ccc;
-  background-color: #f3f3f3;
+  background-color: #dc9b78;
 }
 
 input {

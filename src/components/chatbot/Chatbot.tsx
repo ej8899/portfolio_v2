@@ -188,22 +188,23 @@ function Chatbot() {
       </div>
       <div className="message-history">
         {messageHistory.map((msg, index) => (
-          <div key={index} className={`message ${msg.sender}`}>
+          <div key={index} className={`message-row row-${msg.sender}`}>
             {msg.sender === 'Bot' && (
               <div className="avatar-circle">
-                {/* You can place an image tag or an icon here */}
                 <i className="fa-solid fa-robot"></i>
               </div>
             )}
-            <div className="message-content">
-              {msg.message.includes('<a href=') || msg.message.includes('<b>') || msg.message.includes('<br>') ? (
-                  <div dangerouslySetInnerHTML={{ __html: msg.message }} />
-                ) : msg.message.includes('{userName}') ? (
-                  msg.message.replace('{userName}', userName)
-                ) : (
-                  msg.message
-                )}
-            </div>
+          <div key={index} className={`message ${msg.sender}`}>
+              <div className="message-content">
+                {msg.message.includes('<a href=') || msg.message.includes('<b>') || msg.message.includes('<br>') ? (
+                    <div dangerouslySetInnerHTML={{ __html: msg.message }} />
+                  ) : msg.message.includes('{userName}') ? (
+                    msg.message.replace('{userName}', userName)
+                  ) : (
+                    msg.message
+                  )}
+              </div>
+          </div>
           </div>
         ))}
         <div ref={messagesEndRef}></div> {/* This ensures scrolling to bottom */}
