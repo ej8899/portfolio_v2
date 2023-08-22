@@ -46,6 +46,10 @@ const intents = {
     patterns: ['<script>', '<link>', '<iframe>','${',],
     responses: ['Ernie has experience in cybersecurity for applications. This attack has been blocked!']
   },
+  aboutBot: {
+    patterns: ['about', 'chatterbot',],
+    responses: ['Chatterbot is in it&amp;s infancy, but built as a React component. As an extra "did you know", Chatterbot was built largely by an AI system with a few prompts from Ernie, followed up with some of his human tweaks of course!']
+  },
   usersName: {
     patterns: ['name'],
     responses: ['Your name is ${userName}']
