@@ -17,6 +17,7 @@ type TProps = {
   children: ReactNode;
 };
 
+// TODO need to ensure we check for full words - presently 'history' triggers based on 'hi' in the greetings!
 const intents = {
   greetings: {
     patterns: ['hello', 'hi', 'hey','wassup','sup','greetings'],
@@ -48,11 +49,15 @@ const intents = {
   },
   aboutBot: {
     patterns: ['about', 'chatterbot',],
-    responses: ['Chatterbot is in it&amp;s infancy, but built as a React component. As an extra "did you know", Chatterbot was built largely by an AI system with a few prompts from Ernie, followed up with some of his human tweaks of course!']
+    responses: ['Chatterbot is in it&amp;s infancy, but built as a React component to work in this project. As an extra "did you know", Chatterbot was built largely by an AI system with a few prompts from Ernie, followed up with some of his human tweaks of course!']
+  },
+  downloads: {
+    patterns: ['resume'],
+    responses: ['Ernie&#39;s resume can be downloaded <a href="http://www.erniejohnson.ca/resume.pdf">here</a>'],
   },
   usersName: {
     patterns: ['name'],
-    responses: ['Your name is ${userName}']
+    responses: ['Your name is {userName}']
   },
   default: {
     responses: ["I'm sorry, I don't understand that.", "Could you please rephrase that?", "I'm not sure how to help with that."]
@@ -146,11 +151,18 @@ function Chatbot() {
             {msg.sender === 'Bot' && (
               <div className="avatar-circle">
                 {/* You can place an image tag or an icon here */}
-                
                 <i className="fa-solid fa-robot"></i>
               </div>
             )}
-            <div className="message-content">{msg.message}</div>
+            <div className="message-content">
+              {msg.message.includes('<a href=') ? (
+                  <div dangerouslySetInnerHTML={{ __html: msg.message }} />
+                ) : msg.message.includes('{userName}') ? (
+                  msg.message.replace('{userName}', userName)
+                ) : (
+                  msg.message
+                )}
+            </div>
           </div>
         ))}
         <div ref={messagesEndRef}></div> {/* This ensures scrolling to bottom */}
