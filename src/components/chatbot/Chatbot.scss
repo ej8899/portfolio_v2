@@ -25,7 +25,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin-right: 5px;
-  background-color: teal; /* Teal background for the avatar */
+  background-color: rgba(43, 181, 181, 0.615); /* Teal background for the avatar */
   display: flex;
   justify-content: center; /* Horizontally center content */
   align-items: center; /* Vertically center content */
@@ -47,7 +47,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #007bff;
+  background-color:teal;
   color: #fff;
   //border-radius: 5px 5px 0 0;
 }

@@ -12,16 +12,17 @@
 import { ReactNode, useState, useRef, useEffect } from 'react';
 import './Chatbot.scss';
 
-type TProps = {
-  tooltip: string;
-  children: ReactNode;
-};
 
 const chatbotVersion = '1.0';
 const chatbotChangeLog = 'v1.0 - 2023-08 - initial roll out';
+let showQuickReplies = false;
 
-// TODO need to ensure we check for full words - presently 'history' triggers based on 'hi' in the greetings!
 const intents = {
+  options: {
+    patterns: ['options'],
+    responses: ['common options to use:'],
+    quickReplies: ['commands','contact','about','soft skills'],
+  },
   commands: {
     patterns: ['command','commands',],
     responses: ['Sure thing!<br><br>Here are a few common commands:<br>quit, support, feedback, about chatterbot, developer skills.']
@@ -35,28 +36,36 @@ const intents = {
     responses: ['Sure, I\'m here to help!', 'What do you need assistance with?', 'I\'m here to assist you.']
   },
   bye: {
-    patterns: ['bye', 'goodbye', 'exit','quit','logout','reset'],
+    patterns: ['bye', 'goodbye', 'exit','quit','logout','reset','close'],
     responses: ['Goodbye!', 'Have a great day!', 'See you later!']
   },
   contact: {
     patterns: ['contact', 'phone', 'email','operator','support','live'],
-    responses: ['You can contact Ernie through the contact section of the site, or email ernie@erniejohnson.ca']
+    responses: ['You can contact Ernie through the <a href="#contact">contact</a> section of the site, or email ernie@erniejohnson.ca']
   },
   feedback: {
     patterns: ['feedback','comments','comment'],
     responses: ['Your feedback will be valuable! Share your thoughts and suggestions in the "<a href="#contact">contact</a>" section!']
   },
+  softSkills: {
+    patterns: ['softskills','soft skills','project management'],
+    responses: ['Ernie has, of course, numerous "soft skills" he has gained during many years of employment across several different industries. The ability to work independently and within a team, communications, project management and more.'],
+  },
   codeSkills: {
-    patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages'],
+    patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages','json','javascript','react','typescript','nextjs','c','perl','php','bootstrap','materialui','tailwind'],
     responses: ['Ernie has experience in Javascript, Typescript, React, NextJS, C, C++, and more. He is also skilled with backend technologies like NodeJS, Perl, PHP, MySQL, PostgreSQL and more.<br><br>You can find additional skills in the <a href="#about">about</a> section.<BR>Is there something more specific you need?']
   },
+  workOptions: {
+    patterns: ['work', 'freelance', 'availability'],
+    responses: ['Ernie is currently available for freelance, part-time and full-time work. ']
+  },
   hackAttempt: {
-    patterns: ['script', 'link', 'iframe','${','hack','backdoor','password',],
-    responses: ['Ernie has experience in cybersecurity for applications. This attack has been blocked!']
+    patterns: ['script', 'link', 'iframe','${','hack','backdoor','password','cybersecurity','security'],
+    responses: ['Ernie has experience in cybersecurity for applications and tends not to leave security vulnerabilities open for possible hack attempts.']
   },
   aboutBot: {
     patterns: ['about', 'chatterbot',],
-    responses: ['Chatterbot is in it`s infancy, but built as a React component to work within this project. As an extra "did you know", Chatterbot was built largely by an AI system with a few prompts from Ernie, followed up with some of his human tweaks of course!']
+    responses: ['Chatterbot is in it`s infancy, but built as a React component to work within this project<br><br>As an extra "did you know", Chatterbot was built largely by an AI system with a few prompts from Ernie, followed up with some of his human tweaks of course!']
   },
   botChangeLog: {
     patterns: ['changelog', 'change log', 'version'],
@@ -87,24 +96,36 @@ const intents = {
   }
 };
 
+// HELPER FUNCTIONS
+function getTimePeriod() {
+  const currentHour = new Date().getHours();
+
+  if (currentHour >= 5 && currentHour < 12) {
+    return "morning";
+  } else if (currentHour >= 12 && currentHour < 18) {
+    return "afternoon";
+  } else {
+    return "evening";
+  }
+}
+
 function getResponse(message) {
   const lowerMessage = message.toLowerCase();
 
   for (const intentName in intents) {
     const intent = intents[intentName];
-    // for (const pattern of intent.patterns || []) {
-    //   if (lowerMessage.includes(pattern)) {
-    //     return getRandomResponse(intent.responses);
-    //   }
-    // }
     for (const pattern of intent.patterns || []) {
       const regexPattern = new RegExp(`\\b${pattern}\\b`, 'i'); // Create regex with word boundaries
       if (regexPattern.test(lowerMessage)) {
+        if(intentName === 'options') { 
+          showQuickReplies = true; 
+        } else {
+          showQuickReplies = false;
+        }
         return getRandomResponse(intent.responses);
       }
     }
   }
-
   return getRandomResponse(intents.default.responses);
 }
 
@@ -123,6 +144,7 @@ function Chatbot() {
   const [messageHistory, setMessageHistory] = useState([]);
   const [userName, setUserName] = useState('');
   const messagesEndRef = useRef(null);
+  const [quickReplies, setQuickReplies] = useState('quickreplyitem');
 
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
@@ -138,6 +160,15 @@ function Chatbot() {
     }
   };
 
+  const handleQuickReply = (intent) => {
+    // You can add the selected quick reply as a user message
+    // setChatHistory([...chatHistory, { message: intent, type: "user" }]);
+    // You can also directly call `getResponse` with the selected intent
+    const botResponse = getResponse(intent);
+    addMessage('Bot', botResponse);
+    // setChatHistory([...chatHistory, { message: response.message, type: "bot" }]);
+  };
+
   const handleSendMessage = () => {
     if (userInput.trim() == '' && !userName) {
       // addMessage('Bot', `What is your name?`);
@@ -146,7 +177,7 @@ function Chatbot() {
     if (userInput.trim() !== '') {
       if(!userName) {
         setUserName(userInput);
-        addMessage('Bot', `Hi ${userInput}! How can I assist you today?`);
+        addMessage('Bot', `Hi ${userInput}!<br>How can I assist you today?`);
       } else {
         addMessage('User', userInput);
         const botResponse = getResponse(userInput);
@@ -176,7 +207,9 @@ function Chatbot() {
   }, [messageHistory]);
   
   useEffect(() => {
-    if(!userName) addMessage('Bot', `ue What is your name?`);
+    // get timeframe of day (morning, afternoon, evening)
+    const timePeriod = getTimePeriod();
+    if(!userName) addMessage('Bot', `ue Good ${timePeriod}!<br>What is your name?`);
   }, []);
 
   return (
@@ -194,7 +227,7 @@ function Chatbot() {
                 <i className="fa-solid fa-robot"></i>
               </div>
             )}
-          <div key={index} className={`message ${msg.sender}`}>
+            <div key={index} className={`message ${msg.sender}`}>
               <div className="message-content">
                 {msg.message.includes('<a href=') || msg.message.includes('<b>') || msg.message.includes('<br>') ? (
                     <div dangerouslySetInnerHTML={{ __html: msg.message }} />
@@ -204,9 +237,23 @@ function Chatbot() {
                     msg.message
                   )}
               </div>
-          </div>
+            </div>
           </div>
         ))}
+            {showQuickReplies && 
+            <div>
+              <div className="quick-replies">
+                {intents.options.quickReplies.map((reply, qrindex) => (
+                  <button
+                    key={qrindex}
+                    onClick={() => handleQuickReply(reply)}
+                  >
+                    {reply}
+                  </button>
+                ))}
+              </div>
+            </div>
+            }
         <div ref={messagesEndRef}></div> {/* This ensures scrolling to bottom */}
       </div>
       <div className="user-input">
