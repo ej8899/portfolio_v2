@@ -61,7 +61,7 @@ const intents = {
     replies: 0,
   },
   adventureGame: {
-    patterns: ['go north','go south','go east','go west'],
+    patterns: ['go north','go south','go east','go west',],
     responses: [`You pack up your gear and adventure off into the unkown.`,`You wander off into adventure game land.`,`I'm not sure why, but you head off into the Forbidden Forest of Fear.`],
     replies: 0,
   },
@@ -70,13 +70,23 @@ const intents = {
     responses: ['Sure thing!<br><br>Here are a few common commands:<br>quit, support, feedback, about chatterbot, developer skills.'],
     replies: 0,
   },
+  controversy: {
+    patterns: ['blm','black lives','vaccine','covid','ukraine','russia','war','lockdown'],
+    responses: ['As in the famous words of U.S. President Joe Biden, "no comment".'],
+    replies: 0,
+  },
   greetings: {
     patterns: ['hello', 'hi', 'hey','wassup','sup','greetings',],
     responses: ['Hello!', 'Hi there!', 'Hey! How can I assist you?'],
     replies: 0,
   },
+  beamMeUp: {
+    patterns: ['beam me','beam me up scotty','live long and prosper','star trek', 'startrek','scotty','spock','captain'],
+    responses: ['Live long, and prosper.','I canna’ change the laws of physics. 🚀','Computers make excellent and efficient servants, but I have no wish to serve under them. 💻','I’m tellin’ ya, Captain, I dinna have enough power! 🚀','Dammit Jim, I’m a doctor not a physicist!'],
+    replies: 0,
+  },
   jokes: {
-    patterns: ['tell me a joke','dad joke','jokes','joke','know any jokes'],
+    patterns: ['tell me a joke','dad joke','jokes','joke','know any jokes','make me laugh'],
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     responses: [await fetchJokes() + ' 😆',await fetchJokes() + ' 🤣', await fetchJokes() + ' 😂', await fetchJokes() + ' 🤓', await fetchJokes() + ' 🤨'],
     replies: 0,
