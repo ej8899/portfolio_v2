@@ -16,6 +16,7 @@ import './Chatbot.scss';
 const chatbotVersion = '1.0';
 const chatbotChangeLog = 'v1.0 - 2023-08 - initial roll out';
 let showQuickReplies = false;
+let chatbotScore = 0;
 
 // TODO - might need to strip common words and phrases - example I tried "tell me about your projects" - and about gets keyed to the about response only - could we search & remove "tell me about" for example in this case?
 
@@ -123,6 +124,7 @@ function getResponse(message) {
     for (const pattern of intent.patterns || []) {
       const regexPattern = new RegExp(`\\b${pattern}\\b`, 'i'); // Create regex with word boundaries
       if (regexPattern.test(lowerMessage)) {
+        chatbotScore++;
         if(intentName === 'options') { 
           showQuickReplies = true; 
         } else {
@@ -132,6 +134,7 @@ function getResponse(message) {
       }
     }
   }
+  showQuickReplies = false;
   return getRandomResponse(intents.default.responses);
 }
 
@@ -151,7 +154,8 @@ function Chatbot() {
   const [userName, setUserName] = useState('');
   const messagesEndRef = useRef(null);
   const [quickReplies, setQuickReplies] = useState('quickreplyitem');
-
+  const [score, setScore] = useState(chatbotScore);
+  
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
   };
@@ -184,6 +188,7 @@ function Chatbot() {
     if (userInput.trim() !== '') {
       if(!userName) {
         setUserName(userInput);
+        localStorage.setItem("userName", userInput);
         addMessage('Bot', `Hi ${userInput}!<br>How can I assist you today?`);
       } else {
         addMessage('User', userInput);
@@ -205,7 +210,7 @@ function Chatbot() {
       { sender, message }
     ]);
   };
- 
+
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -214,12 +219,27 @@ function Chatbot() {
   }, [messageHistory]);
   
   useEffect(() => {
+    setScore(chatbotScore);
+  }, [chatbotScore]);
+
+  useEffect(() => {
     // get timeframe of day (morning, afternoon, evening)
     const timePeriod = getTimePeriod();
-    if (messageHistory.length === 0) {
-      if(!userName) addMessage('Bot', `ue Good ${timePeriod}!<br>What is your name?`);
+
+    const savedUserName = localStorage.getItem("userName");
+    console.log(savedUserName);
+    if (savedUserName) {
+      setUserName(savedUserName);
     }
-    console.log(messageHistory);
+
+    if (!savedUserName) {
+      console.log("message history length:",messageHistory.length);
+      if (messageHistory.length === 0) {
+        if(!userName) addMessage('Bot', `ue Good ${timePeriod}!<br>What is your name?`);
+      }
+    } else {
+      addMessage('Bot','Welcome back, ' + savedUserName);
+    }
   }, []);
 
   return (
@@ -227,6 +247,7 @@ function Chatbot() {
       <div className="chatbot-content"> 
       <div className="chatbot-header">
         <div className="title">ChatterBot</div>
+        <div className="score">Score: {score}</div>
         <button className="close-button" onClick={toggleChatbot}>Close</button>
       </div>
       <div className="message-history">
