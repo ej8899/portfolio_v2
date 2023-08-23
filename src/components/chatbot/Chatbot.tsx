@@ -123,7 +123,7 @@ const intents = {
   }
 };
 
-let unMatchedInputs = [];
+const unMatchedInputs = [];
 
 const chatbotScoreMax = Object.keys(intents).length - 1;
 
