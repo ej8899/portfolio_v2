@@ -31,7 +31,6 @@ async function fetchJokes() {
     },
     });
     const data = await response.json();
-    console.log(data);
     return data.joke;
   } catch (error) {
     console.error('Error fetching jokes:', error);
@@ -39,6 +38,23 @@ async function fetchJokes() {
   }
 }
 const jotd = await fetchJokes();
+
+async function fetchChuckNorris() {
+  try {
+    const response = await fetch('https://api.chucknorris.io/jokes/random', { headers: {
+      Accept: "application/json",
+    },
+    });
+    const data = await response.json();
+    return data.value;
+  } catch (error) {
+    console.error('Error fetching jokes:', error);
+    return [];
+  }
+}
+
+
+
 
 
 // TODO - might need to strip common words and phrases - example I tried "tell me about your projects" - and about gets keyed to the about response only - could we search & remove "tell me about" for example in this case?
@@ -71,7 +87,7 @@ const intents = {
     replies: 0,
   },
   controversy: {
-    patterns: ['blm','black lives','vaccine','covid','ukraine','russia','war','lockdown'],
+    patterns: ['blm','black lives','vaccine','covid','ukraine','russia','war','lockdown','trans','gender', 'genders', 'trump','biden','trudeau'],
     responses: ['As in the famous words of U.S. President Joe Biden, "no comment".'],
     replies: 0,
   },
@@ -89,6 +105,19 @@ const intents = {
     patterns: ['tell me a joke','dad joke','jokes','joke','know any jokes','make me laugh'],
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     responses: [await fetchJokes() + ' 😆',await fetchJokes() + ' 🤣', await fetchJokes() + ' 😂', await fetchJokes() + ' 🤓', await fetchJokes() + ' 🤨'],
+    replies: 0,
+  },
+  chucknorris: {
+    patterns: ['chuck norris','norris','chucknorris','chuck'],
+    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+    responses: [await fetchChuckNorris(),
+      await fetchChuckNorris(),
+      await fetchChuckNorris(),
+      await fetchChuckNorris(),
+      await fetchChuckNorris(),
+      await fetchChuckNorris(),
+      await fetchChuckNorris(),
+    ],
     replies: 0,
   },
   help: {
@@ -255,7 +284,6 @@ function getRandomResponse(responses) {
 
 
 
-
 //
 // main Chatbot() system
 //
@@ -269,6 +297,11 @@ function Chatbot() {
   const [score, setScore] = useState(chatbotScore);
   
   const toggleChatbot = () => {
+    console.log("open status:",isOpen);
+    if(!isOpen) {
+      // is open, will need to close so lets send chat stats:
+      handlerSubmit();
+    }
     setIsOpen(!isOpen);
   };
 
@@ -292,6 +325,7 @@ function Chatbot() {
     showQuickReplies = false;
   };
 
+  
   const handleSendMessage = () => {
     if (userInput.trim() == '' && !userName) {
       // addMessage('Bot', `What is your name?`);
@@ -323,11 +357,53 @@ function Chatbot() {
     ]);
   };
 
+  //
+  // emailer for chat log and data
+  //
+  function handlerSubmit() {
+    console.log('in handlersubmit');
+    handleSubmit().then(() => {
+      // Handle success here
+      console.log('chatterbot log sent');
+    }).catch((error) => {
+      console.error('Error submitting form:', error);
+      // Handle error here
+    });
+  }
+  const handleSubmit = async (e) => {
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '7160e73c-4a32-4952-ab02-e07ea131ed58',
+          from_name: 'erniejohnson.ca',
+          subject: 'erniejohnson.ca - chatterbot: FAILED responses',
+          message: unMatchedInputs,
+          name: 'chatterbot on erniejohnson.ca',
+          email: 'ej8899@gmail.com',
+          botcheck: '',
+        }),
+      });
+      const json = (await response.json()) as { success: boolean };
 
+      if (!json.success) throw new Error('Something went wrong.');
+    } catch (err) {
+      console.log('chatterbot - send log error');
+    }
+  };
+
+
+  //
+  // HOOKS
+  //
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
+    console.log('messageHistory:',messageHistory);
   }, [messageHistory]);
   
   useEffect(() => {
