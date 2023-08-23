@@ -54,7 +54,32 @@ async function fetchChuckNorris() {
 }
 
 
+function getFormattedDate() {
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const months = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
 
+  const currentDate = new Date();
+  const dayOfWeek = daysOfWeek[currentDate.getDay()];
+  const month = months[currentDate.getMonth()];
+  const day = currentDate.getDate();
+  const year = currentDate.getFullYear();
+
+  return `Today is ${dayOfWeek}, ${month} ${day}, ${year}`;
+}
+
+function getFormattedTime() {
+  const currentDate = new Date();
+  const hours = currentDate.getHours();
+  const minutes = currentDate.getMinutes();
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+
+  return `The current time is ${formattedHours}:${formattedMinutes} ${ampm}`;
+}
 
 
 // TODO - might need to strip common words and phrases - example I tried "tell me about your projects" - and about gets keyed to the about response only - could we search & remove "tell me about" for example in this case?
@@ -118,6 +143,16 @@ const intents = {
       await fetchChuckNorris(),
       await fetchChuckNorris(),
     ],
+    replies: 0,
+  },
+  datetoday: {
+    patterns: ['what day is it',`today's date`, 'todays date', 'date today','today'],
+    responses: [getFormattedDate()],
+    replies: 0,
+  },
+  timenow: {
+    patterns: ['what time is it','current time','time now','time today'],
+    responses: [getFormattedTime()],
     replies: 0,
   },
   help: {
