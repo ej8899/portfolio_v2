@@ -18,6 +18,29 @@ const chatbotChangeLog = 'v1.0 - 2023-08 - initial roll out';
 let showQuickReplies = false;
 let chatbotScore = 0;
 
+
+//
+// EASTER EGG Stuff.
+//
+
+// dad jokes
+async function fetchJokes() {
+  try {
+    const response = await fetch('https://icanhazdadjoke.com/', { headers: {
+      Accept: "application/json",
+    },
+    });
+    const data = await response.json();
+    console.log(data);
+    return data.joke;
+  } catch (error) {
+    console.error('Error fetching jokes:', error);
+    return [];
+  }
+}
+const jotd = await fetchJokes();
+
+
 // TODO - might need to strip common words and phrases - example I tried "tell me about your projects" - and about gets keyed to the about response only - could we search & remove "tell me about" for example in this case?
 
 const intents = {
@@ -32,6 +55,16 @@ const intents = {
     responses: ['That is great that you want to buy the developer a coffee! <a href="https://www.buymeacoffee.com/ej88994">click here</a> to "buy me a coffee"'],
     replies: 0,
   },
+  otherStuff: {
+    patterns: ['play a game','todays weather','weather'],
+    responses: [`We're hoping to implement a simple game and yes, even weather reporting into Chatterbot soon!  Come back later to check in with Chatterbot... BUT some of Chatterbot's features will be 'hidden' for you to find out on your own!`],
+    replies: 0,
+  },
+  adventureGame: {
+    patterns: ['go north','go south','go east','go west'],
+    responses: [`You pack up your gear and adventure off into the unkown.`,`You wander off into adventure game land.`,`I'm not sure why, but you head off into the Forbidden Forest of Fear.`],
+    replies: 0,
+  },
   commands: {
     patterns: ['command','commands',],
     responses: ['Sure thing!<br><br>Here are a few common commands:<br>quit, support, feedback, about chatterbot, developer skills.'],
@@ -40,6 +73,12 @@ const intents = {
   greetings: {
     patterns: ['hello', 'hi', 'hey','wassup','sup','greetings',],
     responses: ['Hello!', 'Hi there!', 'Hey! How can I assist you?'],
+    replies: 0,
+  },
+  jokes: {
+    patterns: ['tell me a joke','dad joke','jokes','joke','know any jokes'],
+    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+    responses: [await fetchJokes() + ' 😆',await fetchJokes() + ' 🤣', await fetchJokes() + ' 😂', await fetchJokes() + ' 🤓', await fetchJokes() + ' 🤨'],
     replies: 0,
   },
   help: {
@@ -203,6 +242,10 @@ function getRandomResponse(responses) {
 
 
 
+
+
+
+
 //
 // main Chatbot() system
 //
@@ -297,7 +340,7 @@ function Chatbot() {
         if(!userName) addMessage('Bot', `ue Good ${timePeriod}!<br>What is your name?`);
       }
     } else {
-      addMessage('Bot','Welcome back, ' + savedUserName);
+      addMessage('Bot',`Good ${timePeriod} & welcome back, ${savedUserName}!`);
     }
   }, []);
 
@@ -335,6 +378,7 @@ function Chatbot() {
               <div className="quick-replies">
                 {intents.options.quickReplies.map((reply, qrindex) => (
                   <button
+                    className='quickReplies'
                     key={qrindex}
                     onClick={() => handleQuickReply(reply)}
                   >
