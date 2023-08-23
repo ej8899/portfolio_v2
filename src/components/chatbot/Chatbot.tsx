@@ -11,7 +11,7 @@
 /* eslint-disable prettier/prettier */
 import { ReactNode, useState, useRef, useEffect } from 'react';
 import './Chatbot.scss';
-
+import globalconfig from '../../config';
 
 const chatbotVersion = '1.0';
 const chatbotChangeLog = 'v1.0 - 2023-08 - initial roll out';
@@ -81,6 +81,22 @@ function getFormattedTime() {
   return `The current time is ${formattedHours}:${formattedMinutes} ${ampm}`;
 }
 
+function socLinks() {
+  return (`
+                <a target='_new' rel='nofollow' href=${globalconfig.link.twitter}>
+                  <li>twitter(X)
+                </a>
+                <a target='_new' rel='nofollow' href=${globalconfig.link.linkedin}>
+                  <li>linkedin
+                </a>
+                <a target='_new' rel='nofollow' href=${globalconfig.link.youtube}>
+                  <li>youtube
+                </a>
+                <a target='_new' rel='nofollow' href=${globalconfig.link.github}>
+                  <li>github
+                </a>
+                `);
+}
 
 // TODO - might need to strip common words and phrases - example I tried "tell me about your projects" - and about gets keyed to the about response only - could we search & remove "tell me about" for example in this case?
 
@@ -89,6 +105,11 @@ const intents = {
     patterns: ['options'],
     responses: ['common options to use:'],
     quickReplies: ['commands','contact','about','soft skills'],
+    replies: 0,
+  },
+  socialMedia: {
+    patterns: ['social','social media','socialmedia','youtube','twitter','linkedin','linked in','github','whatsapp','facebook','instagram','insta','reddit','flickr','tiktok','tumblr','discord','slack','wechat','telegram','snapchat','quora','twitch','mastodon','threads'],
+    responses: ["Here are our current primary social media links:<br>" + socLinks()],
     replies: 0,
   },
   donate: {
@@ -112,7 +133,7 @@ const intents = {
     replies: 0,
   },
   controversy: {
-    patterns: ['blm','black lives','vaccine','covid','ukraine','russia','war','lockdown','trans','gender', 'genders', 'trump','biden','trudeau'],
+    patterns: ['blm','black lives','vaccine','covid','ukraine','russia','war','lockdown','trans','gender', 'genders', 'trump','biden','trudeau','tranny','trannies','drag queen','censorship','liberalism','queer','defund the police','abortion','vaccines','vaccinate','wuhan','vaccination','lockdown','masks'],
     responses: ['As in the famous words of U.S. President Joe Biden, "no comment".'],
     replies: 0,
   },
@@ -146,12 +167,12 @@ const intents = {
     replies: 0,
   },
   datetoday: {
-    patterns: ['what day is it',`today's date`, 'todays date', 'date today','today'],
+    patterns: ['what day is it',`today's date`, 'todays date', 'date today','today','date','date now'],
     responses: [getFormattedDate()],
     replies: 0,
   },
   timenow: {
-    patterns: ['what time is it','current time','time now','time today'],
+    patterns: ['what time is it','current time','time now','time today','time'],
     responses: [getFormattedTime()],
     replies: 0,
   },
@@ -171,7 +192,7 @@ const intents = {
     replies: 0,
   },
   hobbies: {
-    patterns: ['hobby', 'interests', 'hobbies','photography','scuba','hiking','dog','dogs','photos'],
+    patterns: ['hobby', 'interests', 'hobbies','photography','scuba','hiking','dog','dogs','photos','photo'],
     responses: ['Ernie does have numerous hobbies and interests outside of web and app development.  Some of these hobbies include travelling, photography, scuba diving, hiking, and going on adventures with his dog, Guinness.'],
     replies: 0,
   },
@@ -400,6 +421,7 @@ function Chatbot() {
     handleSubmit().then(() => {
       // Handle success here
       console.log('chatterbot log sent');
+      unMatchedInputs.length = 0;
     }).catch((error) => {
       console.error('Error submitting form:', error);
       // Handle error here
