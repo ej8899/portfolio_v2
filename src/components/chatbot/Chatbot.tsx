@@ -38,12 +38,12 @@ const intents = {
     replies: 0,
   },
   greetings: {
-    patterns: ['hello', 'hi', 'hey','wassup','sup','greetings'],
+    patterns: ['hello', 'hi', 'hey','wassup','sup','greetings',],
     responses: ['Hello!', 'Hi there!', 'Hey! How can I assist you?'],
     replies: 0,
   },
   help: {
-    patterns: ['help', 'support', 'assistance'],
+    patterns: ['help', 'support', 'assistance','assist'],
     responses: ['Sure, I\'m here to help!', 'What do you need assistance with?', 'I\'m here to assist you.'],
     replies: 0,
   },
@@ -55,6 +55,11 @@ const intents = {
   contact: {
     patterns: ['contact', 'phone', 'email','operator','support','live'],
     responses: ['You can contact Ernie through the <a href="#contact">contact</a> section of the site, or email ernie@erniejohnson.ca'],
+    replies: 0,
+  },
+  hobbies: {
+    patterns: ['hobby', 'interests', 'hobbies','photography','scuba','hiking','dog','dogs','photos'],
+    responses: ['Ernie does have numerous hobbies and interests outside of web and app development.  Some of these hobbies include travelling, photography, scuba diving, hiking, and going on adventures with his dog, Guinness.'],
     replies: 0,
   },
   feedback: {
@@ -70,6 +75,11 @@ const intents = {
   codeSkills: {
     patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages','json','javascript','react','typescript','nextjs','c','perl','php','bootstrap','materialui','tailwind'],
     responses: ['Ernie has experience in Javascript, Typescript, React, NextJS, C, C++, and more. He is also skilled with backend technologies like NodeJS, Perl, PHP, MySQL, PostgreSQL and more.<br><br>You can find additional skills in the <a href="#about">about</a> section.<BR>Is there something more specific you need?'],
+    replies: 0,
+  },
+  scoring: {
+    patterns: ['score','my score','about score','scoring'],
+    responses: ['The score you see on Chatterbox is a measure of how many responses we have avaialble to you and how many you have found. It is a bit of a gamification to the chat bot, but at the same time, helps us measure how effective Chatterbot is to answering your questions!'],
     replies: 0,
   },
   workOptions: {
