@@ -205,7 +205,7 @@ function Chatbot() {
       { sender, message }
     ]);
   };
-  
+ 
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -216,7 +216,10 @@ function Chatbot() {
   useEffect(() => {
     // get timeframe of day (morning, afternoon, evening)
     const timePeriod = getTimePeriod();
-    if(!userName) addMessage('Bot', `ue Good ${timePeriod}!<br>What is your name?`);
+    if (messageHistory.length === 0) {
+      if(!userName) addMessage('Bot', `ue Good ${timePeriod}!<br>What is your name?`);
+    }
+    console.log(messageHistory);
   }, []);
 
   return (
