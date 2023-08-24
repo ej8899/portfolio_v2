@@ -107,6 +107,11 @@ const intents = {
     quickReplies: ['commands','contact','about','soft skills'],
     replies: 0,
   },
+  cheatCode: {
+    patterns: ["up up down down left right left right",'up, up, down, down, left, right, left, right','up,up,down,down,left,right,left,right','up-up-down-down-left-right-left-right'],
+    responses: ['cheaters gonna cheat!','cheat mode on',`you've unlocked the secret to Chatterbot unlimited messages!`],
+    replies: 0,
+  },
   socialMedia: {
     patterns: ['social','social media','socialmedia','youtube','twitter','linkedin','linked in','github','whatsapp','facebook','instagram','insta','reddit','flickr','tiktok','tumblr','discord','slack','wechat','telegram','snapchat','quora','twitch','mastodon','threads'],
     responses: ["Here are our current primary social media links:<br>" + socLinks()],
@@ -217,13 +222,23 @@ const intents = {
     replies: 0,
   },
   workOptions: {
-    patterns: ['work', 'freelance', 'availability'],
+    patterns: ['available to work', 'available for work', 'freelance', 'availability','take new projects','new work','new job'],
     responses: ['Ernie is currently available for freelance, part-time and full-time work. '],
     replies: 0,
   },
   hackAttempt: {
     patterns: ['script', 'link', 'iframe','${','hack','backdoor','password','cybersecurity','security'],
-    responses: ['Ernie has experience in cybersecurity for applications and tends not to leave security vulnerabilities open for possible hack attempts.'],
+    responses: ['Ernie has experience in cybersecurity for applications and tends not to leave security vulnerabilities open for possible hack attempts.  In 2023, Ernie completed the Google Cybersecurity Professional Certification program.'],
+    replies: 0,
+  },
+  education: {
+    patterns: ['education', 'courses', 'certification', 'certifications'],
+    responses: [`Much of Ernie's developer education is from a self-taught perspective.  From growing up in the 80's with learning BASIC on Commodore and Tandy computers and progressing into C and C++ programming on PC's and later into web development with HTML, early CSS, Perl, CGI and PHP. This progressed into knowing the foundations of SQL through applications like dBase and MySQL. As web technologies progressed, Ernie was quick to become proficient in Javascript coding.  To this day, he continues to hone his skills largely in Javascript, Typescript, Python, Kotlin and Swift.<br><br>Ernie also is eager to pick up extra certifications in cybersecurity, general IT and networking support.`],
+    replies: 0,
+  },
+  operatingSystems: {
+    patterns: ['operating systems','windows','mac','macos','ventura','linux','ubuntu','redhat','sonoma','monterey','big sur','mint', 'debian','manjaro','pop','fedora','suse','elementary','puppy','networking'],
+    responses: ['On a day to day basis, Ernie is using MacOS, Windows and Linux systems.<br><br>He tries to stay fairly up to date with developer beta versions to see what is new and coming for OS releases.<br><br>OS experience also includes network administration on Linux and Windows sytems back as far as Windows 2000 Server!'],
     replies: 0,
   },
   aboutBot: {
@@ -237,8 +252,13 @@ const intents = {
     replies: 0,
   },
   downloads: {
-    patterns: ['resume','download','downloads'],
+    patterns: ['resume','download','downloads','your cv','cv'],
     responses: ['Ernie&#39;s resume can be downloaded <a href="http://www.erniejohnson.ca/resume.pdf">here</a>'],
+    replies: 0,
+  },
+  downloads: {
+    patterns: ['work in canada','work remotely','remote work','work in usa','work in us','work canada','work usa','work us'],
+    responses: ['Ernie is Canadian and can work anywhere across Canada.<br>Life has dictated a necessity for remote work with the possibility of a hybrid schedule. Ernie can and has also recently worked in the USA on a B1 Business Visa and for outsourced freelance jobs.'],
     replies: 0,
   },
   useAI: {
