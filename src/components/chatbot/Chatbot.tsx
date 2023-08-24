@@ -112,14 +112,26 @@ const intents = {
     responses: ['cheaters gonna cheat!','cheat mode on',`you've unlocked the secret to Chatterbot unlimited messages!`],
     replies: 0,
   },
+  whyChatbot: {
+    patterns: ['why chatbot','why a chatbot','why a chat bot','why chatterbot','why a bot','why chatbots','why have chatbots','chat bots'],
+    responses: [`Chatbots offer several benefits to enchance user experience and engagement on a web site.
+      <li>provide instant assistance to questions that may not be answered elsewhere,
+      <li>engaging to visitors with interactive and dynamic content,
+      <li>showcasing skills as a developer,
+      <li>learning tool with AI and development techniques,
+      <li>efficiency as chat bots can handle multiple 'conversations' simultaneously
+      <br><br>Of course this isn't an all inclusive list, and we encourage you to contact us if you're looking for a chat bot for yoru own web site!
+      `],
+    replies: 0,
+  },
   socialMedia: {
     patterns: ['social','social media','socialmedia','youtube','twitter','linkedin','linked in','github','whatsapp','facebook','instagram','insta','reddit','flickr','tiktok','tumblr','discord','slack','wechat','telegram','snapchat','quora','twitch','mastodon','threads'],
     responses: ["Here are our current primary social media links:<br>" + socLinks()],
     replies: 0,
   },
   donate: {
-    patterns: ['donate','donations','buy me a coffee', 'buy coffee', 'tips'],
-    responses: ['That is great that you want to buy the developer a coffee! <a href="https://www.buymeacoffee.com/ej88994">click here</a> to "buy me a coffee"'],
+    patterns: ['donate','donations','buy me a coffee', 'buy coffee', 'tips','coffee'],
+    responses: ['That is great that you want to buy the developer a coffee! <a href="https://www.buymeacoffee.com/ej88994">click here</a> to "buy me a coffee "☕'],
     replies: 0,
   },
   otherStuff: {
@@ -138,8 +150,8 @@ const intents = {
     replies: 0,
   },
   controversy: {
-    patterns: ['blm','black lives','vaccine','covid','ukraine','russia','war','lockdown','trans','gender', 'genders', 'trump','biden','trudeau','tranny','trannies','drag queen','censorship','liberalism','queer','defund the police','abortion','vaccines','vaccinate','wuhan','vaccination','lockdown','masks'],
-    responses: ['As in the famous words of U.S. President Joe Biden, "no comment".'],
+    patterns: ['blm','black lives','vaccine','covid','ukraine','russia','war','lockdown','trans','gender', 'genders', 'trump','biden','trudeau','tranny','trannies','drag queen','censorship','liberalism','liberals','queer','defund the police','abortion','vaccines','vaccinate','wuhan','vaccination','lockdown','masks','netzero','climate change','global warming','climate denier','great reset','fauci'],
+    responses: ['As in the famous words of U.S. President Joe Biden, "no comment".','As U.S. President Joe Biden would say, "Trunalimunumaprzure Badakathcare"'],
     replies: 0,
   },
   greetings: {
@@ -192,8 +204,8 @@ const intents = {
     replies: 0,
   },
   contact: {
-    patterns: ['contact', 'phone', 'email','operator','support','live'],
-    responses: ['You can contact Ernie through the <a href="#contact">contact</a> section of the site, or email ernie@erniejohnson.ca'],
+    patterns: ['contact', 'phone', 'email','operator','support','live','chat','live chat'],
+    responses: ['Live chat is not presently available.<br><br>You can contact Ernie through the <a href="#contact">contact</a> section of the site, or email ernie@erniejohnson.ca'],
     replies: 0,
   },
   hobbies: {
@@ -224,6 +236,11 @@ const intents = {
   workOptions: {
     patterns: ['available to work', 'available for work', 'freelance', 'availability','take new projects','new work','new job'],
     responses: ['Ernie is currently available for freelance, part-time and full-time work. '],
+    replies: 0,
+  },
+  currentWork: {
+    patterns: ['where do you work now','current work','working currently','employed now','working now','where do you work','work now'],
+    responses: ['Ernie is presently working on various freelance projects in Canada, including providing management of a WAN that supports an engineering firm operating from offices in Calgary, Regina and Windsor.'],
     replies: 0,
   },
   hackAttempt: {
@@ -507,6 +524,10 @@ function Chatbot() {
     }
   }, []);
 
+
+  //
+  // MAIN JSX
+  //
   return (
     <div className={`chatbot-popup ${isOpen ? 'open' : ''}`}>
       <div className="chatbot-content"> 
@@ -525,7 +546,10 @@ function Chatbot() {
             )}
             <div key={index} className={`message ${msg.sender}`}>
               <div className="message-content">
-                {msg.message.includes('<a href=') || msg.message.includes('<b>') || msg.message.includes('<br>') ? (
+                {msg.message.includes('<a href=') || 
+                  msg.message.includes('<li>') ||
+                  msg.message.includes('<b>') || 
+                  msg.message.includes('<br>') ? (
                     <div dangerouslySetInnerHTML={{ __html: msg.message }} />
                   ) : msg.message.includes('{userName}') ? (
                     msg.message.replace('{userName}', userName)
