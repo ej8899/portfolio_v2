@@ -18,6 +18,10 @@ const chatbotChangeLog = 'v1.0 - 2023-08 - initial roll out';
 let showQuickReplies = false;
 let chatbotScore = 0;
 
+// avatar coming from free API here: https://ui-avatars.com/
+// example usage: https://ui-avatars.com/api/?name=%22billy%20bob%22&length=1&rounded=true&background=1481c1
+// return is the image stream itself
+let userAvatar = '';
 
 //
 // EASTER EGG Stuff.
@@ -521,6 +525,7 @@ function Chatbot() {
       }
     } else {
       addMessage('Bot',`Good ${timePeriod} & welcome back, ${savedUserName}!`);
+      userAvatar = `https://ui-avatars.com/api/?name=${savedUserName}&length=1&rounded=true&background=1481c1`;
     }
   }, []);
 
@@ -558,6 +563,13 @@ function Chatbot() {
                   )}
               </div>
             </div>
+            {msg.sender === 'User' && (
+              <div className="avatar-circle">
+                <img src={userAvatar} alt="user avatar"></img>
+              </div>
+            )}
+            
+
           </div>
         ))}
             {showQuickReplies && 
