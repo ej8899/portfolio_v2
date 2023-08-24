@@ -124,7 +124,7 @@ const intents = {
   options: {
     patterns: ['options'],
     responses: ['common options to use:'],
-    quickReplies: ['commands','contact','about','soft skills'],
+    quickReplies: ['commands','contact','about chatterbot','soft skills'],
     replies: 0,
   },
   greetingsDay: {
@@ -286,7 +286,12 @@ const intents = {
   },
   education: {
     patterns: ['education', 'courses', 'certification', 'certifications'],
-    responses: [`Much of Ernie's developer education is from a self-taught perspective.  From growing up in the 80's with learning BASIC on Commodore and Tandy computers and progressing into C and C++ programming on PC's and later into web development with HTML, early CSS, Perl, CGI and PHP. This progressed into knowing the foundations of SQL through applications like dBase and MySQL. As web technologies progressed, Ernie was quick to become proficient in Javascript coding.  To this day, he continues to hone his skills largely in Javascript, Typescript, Python, Kotlin and Swift.<br><br>Ernie also is eager to pick up extra certifications in cybersecurity, general IT and networking support.`],
+    responses: [`Much of Ernie's developer education is from a self-taught perspective.  From growing up in the 80's with learning BASIC on [Commodore] and [Tandy] computers and progressing into C and C++ programming on PC's and later into web development with HTML, early CSS, Perl, CGI and PHP. This progressed into knowing the foundations of SQL through applications like dBase and MySQL. As web technologies progressed, Ernie was quick to become proficient in Javascript coding.  To this day, he continues to hone his skills largely in Javascript, Typescript, Python, Kotlin and Swift.<br><br>Ernie also is eager to pick up extra certifications in cybersecurity, general IT and networking support.`],
+    replies: 0,
+  },
+  commodore: {
+    patterns: ['commodore'],
+    responses: ['Commodore Vic-20, C64, C128.'],
     replies: 0,
   },
   operatingSystems: {
@@ -295,7 +300,7 @@ const intents = {
     replies: 0,
   },
   aboutBot: {
-    patterns: ['about chatterbot','about chatbot','about chat bot', 'chatterbot','who are you'],
+    patterns: ['about chatterbot','about chatbot','about chat bot', 'chatterbot','who are you','about yourself'],
     responses: ['I am Chatterbot.<br><br>Although in my infancy, I am built as a React component to work within this project<br><br>As an extra "did you know", Chatterbot was built largely by an AI system with a few prompts from Ernie, followed up with some of his human tweaks of course!'],
     replies: 0,
   },
@@ -310,7 +315,7 @@ const intents = {
     replies: 0,
   },
   workavailble: {
-    patterns: ['work in canada','work remotely','remote work','work in usa','work in us','work canada','work usa','work us'],
+    patterns: ['work in canada','work remotely','remote work','work in usa','work in america', 'work in us','work canada','work usa','work us'],
     responses: ['Ernie is Canadian and can work anywhere across Canada.<br>Life has dictated a necessity for remote work with the possibility of a hybrid schedule. Ernie can and has also recently worked in the USA on a B1 Business Visa and for outsourced freelance jobs.'],
     replies: 0,
   },
@@ -411,13 +416,17 @@ function getResponse(message) {
 }
 
 function getRandomResponse(responses) {
-  return responses[Math.floor(Math.random() * responses.length)];
+  return parseKeywords(responses[Math.floor(Math.random() * responses.length)]);
+  
 }
 
 function personalizeResponse(response) {
   return response.replace("{username}",theuserName);
 }
 
+function parseKeywords(responses) {
+  return(responses.replace(/\[(.*?)\]/g, '<a class="keyword-link" data-keyword="$1">$1</a>'));
+}
 
 
 
@@ -463,6 +472,12 @@ function Chatbot() {
     showQuickReplies = false;
   };
 
+  const handleKeywordReply = (intent) => {
+    const botResponse = getResponse(intent);
+    addMessage('User', intent);
+    addMessage('Bot', botResponse);
+    showQuickReplies = false;
+  };
   
   const handleSendMessage = () => {
     if (userInput.trim() == '' && !userName) {
@@ -500,6 +515,7 @@ function Chatbot() {
   //
   function handlerSubmit() {
     console.log('in handlersubmit');
+    if(unMatchedInputs.length < 1) return;
     handleSubmit().then(() => {
       // Handle success here
       console.log('chatterbot log sent');
@@ -542,7 +558,7 @@ function Chatbot() {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-    console.log('messageHistory:',messageHistory);
+    // console.log('messageHistory:',messageHistory);
   }, [messageHistory]);
   
   useEffect(() => {
@@ -550,6 +566,16 @@ function Chatbot() {
   }, [chatbotScore]);
 
   useEffect(() => {
+    const handleClick = (event) => {
+      if (event.target.classList.contains('keyword-link')) {
+        event.stopPropagation(); // Prevent event propagation
+        const keyword = event.target.dataset.keyword;
+        // Process the clicked keyword and trigger appropriate action
+        console.log('Clicked keyword:', keyword);
+      }
+    };
+    document.addEventListener('click', handleClick);
+
     // get timeframe of day (morning, afternoon, evening)
     const timePeriod = getTimePeriod();
 
@@ -566,9 +592,14 @@ function Chatbot() {
         if(!userName) addMessage('Bot', `ue Good ${timePeriod}!<br>What is your name?`);
       }
     } else {
-      addMessage('Bot',`Good ${timePeriod} & welcome back, ${savedUserName}!`);
+      addMessage('Bot',`Good ${timePeriod} & welcome back, ${savedUserName}!<br>How can I be of assistance?`);
       userAvatar = `https://ui-avatars.com/api/?name=${savedUserName}&length=1&rounded=true&background=1481c1`;
     }
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
   }, []);
 
 
