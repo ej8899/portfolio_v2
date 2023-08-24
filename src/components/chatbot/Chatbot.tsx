@@ -352,6 +352,15 @@ function sumPositiveReplies(obj) {
 // HELPER FUNCTIONS
 //
 
+function calculatePercentage(number, total) {
+  if (total === 0) {
+    return 0;
+  }
+  
+  const percentage = (number / total) * 100;
+  return percentage.toFixed(0); 
+}
+
 function getResponse(message) {
   const lowerMessage = message.toLowerCase();
 
@@ -362,7 +371,7 @@ function getResponse(message) {
       if (regexPattern.test(lowerMessage)) {
         // chatbotScore++;
         intent.replies++;
-        chatbotScore = sumPositiveReplies(intents);
+        chatbotScore = calculatePercentage(sumPositiveReplies(intents),chatbotScoreMax);
         console.log('intent:',intent,' replies:',intent.replies);
         // console.log('# of intents:',Object.keys(intents).length);
         if(intentName === 'options') { 
@@ -551,7 +560,7 @@ function Chatbot() {
       <div className="chatbot-content"> 
       <div className="chatbot-header">
         <div className="title">ChatterBot</div>
-        <div className="score">Score: {score}/{chatbotScoreMax}</div>
+        <div className="score">Score: {score}%</div>
         <button className="close-button" onClick={toggleChatbot}>Close</button>
       </div>
       <div className="message-history">
