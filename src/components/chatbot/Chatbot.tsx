@@ -116,6 +116,10 @@ function socLinks() {
 
 // TODO - might need to strip common words and phrases - example I tried "tell me about your projects" - and about gets keyed to the about response only - could we search & remove "tell me about" for example in this case?
 
+//
+// dynamic variables we can use:
+// {username} - replaces with actual users name
+//
 const intents = {
   options: {
     patterns: ['options'],
@@ -155,6 +159,11 @@ const intents = {
     responses: ['That is great that you want to buy the developer a coffee! <a href="https://www.buymeacoffee.com/ej88994">click here</a> to "buy me a coffee "☕'],
     replies: 0,
   },
+  biden: {
+    patterns: ['corn pop','cornpop','joe biden','biden'],
+    responses: ['sniff sniff','truinnerashuvaduprezure','Four more years of George, uh, George, uh, he, uh.',"I get a lot of credit I don't deserve.","we're gonna um, get a lot of unfinished business we're gonna get done","I took control. I shoudn't do that. I'm not allowed to do that.","I'll lead an effective strategy to, um, um.. Zzzzz."],
+    replies: 0,
+  },
   otherStuff: {
     patterns: ['play a game','todays weather','weather'],
     responses: [`We're hoping to implement a simple game and yes, even weather reporting into Chatterbot soon!  Come back later to check in with Chatterbot... BUT some of Chatterbot's features will be 'hidden' for you to find out on your own!`],
@@ -167,17 +176,17 @@ const intents = {
   },
   commands: {
     patterns: ['command','commands',],
-    responses: ['Sure thing!<br><br>Here are a few common commands:<br>quit, support, feedback, about chatterbot, developer skills.'],
+    responses: ['Sure thing {username}!<br><br>Here are a few common commands:<br>quit, support, feedback, about chatterbot, developer skills.'],
     replies: 0,
   },
   controversy: {
-    patterns: ['blm','black lives','vaccine','covid','ukraine','russia','war','lockdown','trans','gender', 'genders', 'trump','biden','trudeau','tranny','trannies','drag queen','censorship','liberalism','liberals','queer','defund the police','abortion','vaccines','vaccinate','wuhan','vaccination','lockdown','masks','netzero','climate change','global warming','climate denier','great reset','fauci'],
+    patterns: ['blm','black lives','vaccine','covid','ukraine','russia','war','lockdown','trans','gender', 'genders', 'trump','trudeau','tranny','trannies','drag queen','censorship','liberalism','liberals','queer','defund the police','abortion','vaccines','vaccinated','vaccinate','wuhan','vaccination','lockdown','masks','netzero','climate change','global warming','climate denier','great reset','fauci','vegan','pronouns','greta','climate hoax','pronoun'],
     responses: ['As in the famous words of U.S. President Joe Biden, "no comment".','As U.S. President Joe Biden would say, "Trunalimunumaprzure Badakathcare"'],
     replies: 0,
   },
   greetings: {
     patterns: ['hello', 'hi', 'hey','wassup','sup','greetings',],
-    responses: ['Hello!', 'Hi there!', 'Hey! How can I assist you?'],
+    responses: ['Hello!', 'Hi there!', 'Hey! How can I assist you {username}?'],
     replies: 0,
   },
   beamMeUp: {
@@ -205,7 +214,7 @@ const intents = {
     replies: 0,
   },
   datetoday: {
-    patterns: ['what day is it',`today's date`, 'todays date', 'date today','today','date','date now'],
+    patterns: ['what day is it',`today's date`, 'todays date', 'date today','today','date','date now','day'],
     responses: [getFormattedDate()],
     replies: 0,
   },
@@ -216,7 +225,7 @@ const intents = {
   },
   help: {
     patterns: ['help', 'support', 'assistance','assist'],
-    responses: ['Sure, I\'m here to help!', 'What do you need assistance with?', 'I\'m here to assist you.'],
+    responses: ['Sure, {username}I\'m here to help!', 'What do you need assistance with?', 'I\'m here to assist you.'],
     replies: 0,
   },
   bye: {
@@ -247,6 +256,12 @@ const intents = {
   codeSkills: {
     patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages','json','javascript','react','typescript','nextjs','c','perl','php','bootstrap','materialui','tailwind'],
     responses: ['Ernie has experience in Javascript, Typescript, React, NextJS, C, C++, and more. He is also skilled with backend technologies like NodeJS, Perl, PHP, MySQL, PostgreSQL and more.<br><br>You can find additional skills in the <a href="#about">about</a> section.<BR>Is there something more specific you need?'],
+    replies: 0,
+  },
+  shareware: {
+    patterns: ['shareware','share-ware'],
+    responses: ['Shareware is a type of proprietary software that is initially shared by the owner for trial use at little or no cost. Often the software has limited functionality until the user sends payment to the software developer. Shareware differs from freeware, which is fully-featured software distributed at no cost to the user but without source code being made available; and free and open-source software, in which the source code is freely available for anyone to inspect and alter.'],
+    links: ['https://en.wikipedia.org/wiki/Shareware'],
     replies: 0,
   },
   scoring: {
@@ -294,7 +309,7 @@ const intents = {
     responses: ['Ernie&#39;s resume can be downloaded <a href="http://www.erniejohnson.ca/resume.pdf">here</a>'],
     replies: 0,
   },
-  downloads: {
+  workavailble: {
     patterns: ['work in canada','work remotely','remote work','work in usa','work in us','work canada','work usa','work us'],
     responses: ['Ernie is Canadian and can work anywhere across Canada.<br>Life has dictated a necessity for remote work with the possibility of a hybrid schedule. Ernie can and has also recently worked in the USA on a B1 Business Visa and for outsourced freelance jobs.'],
     replies: 0,
@@ -363,6 +378,7 @@ function calculatePercentage(number, total) {
 
 function getResponse(message) {
   const lowerMessage = message.toLowerCase();
+  let additionalLink = '';
 
   for (const intentName in intents) {
     const intent = intents[intentName];
@@ -370,6 +386,9 @@ function getResponse(message) {
       const regexPattern = new RegExp(`\\b${pattern}\\b`, 'i'); // Create regex with word boundaries
       if (regexPattern.test(lowerMessage)) {
         // chatbotScore++;
+        if (intent.links) {
+          additionalLink = ` <a href=${intent.links} target=_new>(more info)</a>`;
+        }
         intent.replies++;
         chatbotScore = calculatePercentage(sumPositiveReplies(intents),chatbotScoreMax);
         console.log('intent:',intent,' replies:',intent.replies);
@@ -379,7 +398,8 @@ function getResponse(message) {
         } else {
           showQuickReplies = false;
         }
-        return personalizeResponse(getRandomResponse(intent.responses));
+        // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+        return ((personalizeResponse(getRandomResponse(intent.responses))) + additionalLink);
       }
     }
   }
@@ -590,8 +610,6 @@ function Chatbot() {
                 <img src={userAvatar} alt="user avatar"></img>
               </div>
             )}
-            
-
           </div>
         ))}
             {showQuickReplies && 
