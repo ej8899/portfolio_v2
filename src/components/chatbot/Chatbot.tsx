@@ -425,7 +425,8 @@ function personalizeResponse(response) {
 }
 
 function parseKeywords(responses) {
-  return(responses.replace(/\[(.*?)\]/g, '<a class="keyword-link" data-keyword="$1">$1</a>'));
+  return responses;
+  // return(responses.replace(/\[(.*?)\]/g, '<span class="keyword-link" data-keyword="$1">$1</span>'));
 }
 
 
@@ -461,6 +462,10 @@ function Chatbot() {
     }
   };
 
+  const handleQuickLinks = (responseToParse) => {
+    return(responseToParse.replace(/\[(.*?)\]/g, `<span class="keyword-link" data-keyword="$1">$1</span>`));
+  };
+
   const handleQuickReply = (intent) => {
     // You can add the selected quick reply as a user message
     // setChatHistory([...chatHistory, { message: intent, type: "user" }]);
@@ -469,13 +474,6 @@ function Chatbot() {
     addMessage('User', intent);
     addMessage('Bot', botResponse);
     // setChatHistory([...chatHistory, { message: response.message, type: "bot" }]);
-    showQuickReplies = false;
-  };
-
-  const handleKeywordReply = (intent) => {
-    const botResponse = getResponse(intent);
-    addMessage('User', intent);
-    addMessage('Bot', botResponse);
     showQuickReplies = false;
   };
   
@@ -491,7 +489,7 @@ function Chatbot() {
         addMessage('Bot', `Hi ${userInput}!<br>How can I assist you today?`);
       } else {
         addMessage('User', userInput);
-        const botResponse = getResponse(userInput);
+        const botResponse = handleQuickLinks(getResponse(userInput));
         addMessage('Bot', botResponse);
       }
       // Scroll to the bottom of the chat history
@@ -554,27 +552,18 @@ function Chatbot() {
   //
   // HOOKS
   //
-  useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-    // console.log('messageHistory:',messageHistory);
-  }, [messageHistory]);
   
-  useEffect(() => {
-    setScore(chatbotScore);
-  }, [chatbotScore]);
 
   useEffect(() => {
-    const handleClick = (event) => {
+    const chatbotContainer = document.querySelector('.chatbot-popup');
+    chatbotContainer.addEventListener('click', (event) => {
       if (event.target.classList.contains('keyword-link')) {
-        event.stopPropagation(); // Prevent event propagation
-        const keyword = event.target.dataset.keyword;
-        // Process the clicked keyword and trigger appropriate action
-        console.log('Clicked keyword:', keyword);
+        const keyword = event.target.textContent;
+        // handleSendMessage(keyword); // Call the function with the keyword
+        console.log(keyword);
+        handleQuickReply(keyword);
       }
-    };
-    document.addEventListener('click', handleClick);
+    });
 
     // get timeframe of day (morning, afternoon, evening)
     const timePeriod = getTimePeriod();
@@ -596,12 +585,22 @@ function Chatbot() {
       userAvatar = `https://ui-avatars.com/api/?name=${savedUserName}&length=1&rounded=true&background=1481c1`;
     }
 
-    // Clean up the event listener when the component unmounts
+    // deal with any cleanups
     return () => {
-      document.removeEventListener('click', handleClick);
+      chatbotContainer.removeEventListener('click', (event) => { /* ... */ });
     };
   }, []);
 
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+    // console.log('messageHistory:',messageHistory);
+  }, [messageHistory]);
+  
+  useEffect(() => {
+    setScore(chatbotScore);
+  }, [chatbotScore]);
 
   //
   // MAIN JSX
@@ -626,6 +625,7 @@ function Chatbot() {
               <div className="message-content">
                 {msg.message.includes('<a href=') || 
                   msg.message.includes('<li>') ||
+                  msg.message.includes('<span>') ||
                   msg.message.includes('<b>') || 
                   msg.message.includes('<br>') ? (
                     <div dangerouslySetInnerHTML={{ __html: msg.message }} />
