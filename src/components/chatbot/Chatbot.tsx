@@ -28,6 +28,23 @@ let theuserName = '';
 // EASTER EGG Stuff.
 //
 
+
+async function fetchFido() {
+  try {
+    const response = await fetch('https://dog.ceo/api/breeds/image/random', { headers: {
+      Accept: "application/json",
+    },
+    });
+    const data = await response.json();
+    return data.message;
+  } catch (error) {
+    console.error('Error fetching fido photo:', error);
+    return [];
+  }
+}
+const fidoImageURL = await fetchFido();
+console.log("fidoURL",fidoImageURL);
+
 // location by API
 // https://ip-api.com/docs/api:json
 async function fetchIPGeolocation() {
@@ -252,6 +269,12 @@ const intents = {
     responses: [await fetchJokes() + ' 😆',await fetchJokes() + ' 🤣', await fetchJokes() + ' 😂', await fetchJokes() + ' 🤓', await fetchJokes() + ' 🤨'],
     replies: 0,
   },
+  dogPhoto: {
+    patterns: ['show me a dog','dog photo'],
+    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+    responses: [`<img alt="dog of the day" src="${fidoImageURL}">`],
+    replies: 0,
+  },
   chucknorris: {
     patterns: ['chuck norris','norris','chucknorris','chuck'],
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
@@ -366,6 +389,11 @@ const intents = {
   ecommerce: {
     patterns: ['ecommerce','e-commerce',],
     responses: ['Ernie has experience in building, maintaining and even operating e-commerce web applications.  From the early days of the internet, Ernie build and ran several e-commerce sites and was the lead developer for these applications using HTML, CSS and Javascript on the front end, which tied to PHP/Perl/CGI on the backend along with interfacing to MySQL database engine.'],
+    replies: 0,
+  },
+  botAPI: {
+    patterns: ['what api',"what api's","api in"],
+    responses: ['Chatterbot is built to not use any API calls in my main programming features. I am strictly a front-end operating chat bot system.<br><br>That being said, I do use a few API calls for additional user experience in this demo. We use Dad Jokes API, Weather API, GeoLocation by IP API, Chuck Norris API and a few others.'],
     replies: 0,
   },
   aboutBot: {
@@ -731,6 +759,7 @@ function Chatbot() {
               <div className="message-content">
                 {msg.message.includes('<a href=') || 
                   msg.message.includes('<li>') ||
+                  msg.message.includes('<img') ||
                   msg.message.includes('<span>') ||
                   msg.message.includes('<b>') || 
                   msg.message.includes('<br>') ? (
