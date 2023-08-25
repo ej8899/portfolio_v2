@@ -291,8 +291,16 @@ const intents = {
   },
   commodore: {
     patterns: ['commodore'],
-    responses: ['Commodore Vic-20, C64, C128.'],
+    responses: ['Are you showing your age too, or just curious?<br>I used the Commodore VIC-20, C-64, and my favorite, the C-128. Accessories included a tape drive on the VIC-20 and 5.25" floppy drive on the C-128!<br><br>Did you use any of these computers?  Which was your favorite?'],
     replies: 0,
+  },
+  vic20: {
+    patterns: ['vic20','vic-20','c64','c-64','c-128','c128'],
+    responses: ["{prevresponse}, cool! "]
+  },
+  tandy: {
+    patterns: ['tandy'],
+    responses: [`I used primarily the CoCo3...<br><br>... that was about 35 years ago for me!<br>Crazy to think, 128kb of RAM was "lots"!`]
   },
   operatingSystems: {
     patterns: ['operating systems','windows','mac','macos','ventura','linux','ubuntu','redhat','sonoma','monterey','big sur','mint', 'debian','manjaro','pop','fedora','suse','elementary','puppy','networking'],
@@ -396,6 +404,10 @@ function getResponse(message) {
         }
         intent.replies++;
         chatbotScore = calculatePercentage(sumPositiveReplies(intents),chatbotScoreMax);
+
+        // TODO replace {prevresponse} with 'pattern'
+
+
         console.log('intent:',intent,' replies:',intent.replies);
         // console.log('# of intents:',Object.keys(intents).length);
         if(intentName === 'options') { 
@@ -404,7 +416,11 @@ function getResponse(message) {
           showQuickReplies = false;
         }
         // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-        return ((personalizeResponse(getRandomResponse(intent.responses))) + additionalLink);
+        let returnString = personalizeResponse(getRandomResponse(intent.responses)) + additionalLink;
+        returnString = returnString.replace("{prevresponse}",pattern);
+        return returnString;
+        
+        // return ((personalizeResponse(getRandomResponse(intent.responses))) + additionalLink);
       }
     }
   }
@@ -557,6 +573,7 @@ function Chatbot() {
   useEffect(() => {
     const chatbotContainer = document.querySelector('.chatbot-popup');
     chatbotContainer.addEventListener('click', (event) => {
+      event.stopPropagation();
       if (event.target.classList.contains('keyword-link')) {
         const keyword = event.target.textContent;
         // handleSendMessage(keyword); // Call the function with the keyword
