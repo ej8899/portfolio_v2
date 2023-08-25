@@ -556,14 +556,13 @@ function parseKeywords(responses) {
 // main Chatbot() system
 //
 function Chatbot(props) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState('');
   const [userInput, setUserInput] = useState('');
   const [messageHistory, setMessageHistory] = useState([]);
   const [userName, setUserName] = useState('');
   const messagesEndRef = useRef(null);
   const [quickReplies, setQuickReplies] = useState('quickreplyitem');
   const [score, setScore] = useState(chatbotScore);
-  const [isVisible, setIsVisible] = useState(true);
 
   const toggleChatbot = () => {
     console.log("open status:",isOpen);
@@ -691,8 +690,6 @@ function Chatbot(props) {
   //
   // HOOKS
   //
-  
-
   useEffect(() => {
     const chatbotContainer = document.querySelector('.chatbot-popup');
     // chatbotContainer.addEventListener('click', (event) => {
@@ -709,6 +706,10 @@ function Chatbot(props) {
     // Add the event listener
     chatbotContainer.addEventListener('click', handleLinkClick);
 
+    setTimeout(() => {
+      console.log('sleeping for slide in');
+      setIsOpen(false);
+    }, 300); 
 
     // get timeframe of day (morning, afternoon, evening)
     const timePeriod = getTimePeriod();
@@ -752,7 +753,7 @@ function Chatbot(props) {
   // MAIN JSX
   //
   return (
-    <div id='chatboot-root' className={`chatbot-popup ${isOpen ? 'closed' : 'open'} ${isVisible ? 'visible' : 'hidden'}`}>
+    <div id='chatboot-root' className={`chatbot-popup ${isOpen ? 'closed' : 'open'}`}>
       <div className="chatbot-content"> 
       <div className="chatbot-header">
         <div className="title">ChatterBot</div>
@@ -772,6 +773,7 @@ function Chatbot(props) {
                 {msg.message.includes('<a href=') || 
                   msg.message.includes('<li>') ||
                   msg.message.includes('<img') ||
+                  msg.message.includes('<i>') ||
                   msg.message.includes('<span>') ||
                   msg.message.includes('<b>') || 
                   msg.message.includes('<br>') ? (
