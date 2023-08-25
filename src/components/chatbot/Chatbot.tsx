@@ -28,6 +28,42 @@ let theuserName = '';
 // EASTER EGG Stuff.
 //
 
+// location by API
+// https://ip-api.com/docs/api:json
+async function fetchIPGeolocation() {
+  try {
+    const response = await fetch('http://ip-api.com/json/', { headers: {
+      Accept: "application/json",
+    },
+    });
+    const data = await response.json();
+    return {region: data.regionName, city: data.city};
+  } catch (error) {
+    console.error('Error fetching geo IP:', error);
+    return [];
+  }
+}
+const geoIP = await fetchIPGeolocation();
+console.log("GEO IP",geoIP);
+
+// weather  API
+// https://ip-api.com/docs/api:json
+async function fetchWx() {
+  try {
+    const response = await fetch(`https://wttr.in/${geoIP.city},${geoIP.region}?format=3`, { headers: {
+      Accept: "application/html",
+    },
+    });
+    const data = await response.text();
+    return data;
+  } catch (error) {
+    console.error('Error fetching wx:', error);
+    return [];
+  }
+}
+const weatherReport = await fetchWx();
+console.log("wx",weatherReport);
+
 // dad jokes
 async function fetchJokes() {
   try {
@@ -119,6 +155,7 @@ function socLinks() {
 //
 // dynamic variables we can use:
 // {username} - replaces with actual users name
+// {prevresponse} - replaces with previous user message 'keyword'
 //
 const intents = {
   options: {
@@ -135,6 +172,11 @@ const intents = {
   cheatCode: {
     patterns: ["up up down down left right left right",'up, up, down, down, left, right, left, right','up,up,down,down,left,right,left,right','up-up-down-down-left-right-left-right'],
     responses: ['Cheaters gonna cheat!','Cheat mode on!',`You've unlocked the secret to Chatterbot unlimited messages!`],
+    replies: 0,
+  },
+  cheatMode: {
+    patterns: ['cheat mode','cheat code','cheat access',],
+    responses: ['That, my friend is the answer.<br>What is the proper input?'],
     replies: 0,
   },
   whyChatbot: {
@@ -165,8 +207,18 @@ const intents = {
     replies: 0,
   },
   otherStuff: {
-    patterns: ['play a game','todays weather','weather'],
+    patterns: ['play a game',],
     responses: [`We're hoping to implement a simple game and yes, even weather reporting into Chatterbot soon!  Come back later to check in with Chatterbot... BUT some of Chatterbot's features will be 'hidden' for you to find out on your own!`],
+    replies: 0,
+  },
+  weather: {
+    patterns: ['todays weather','weather'],
+    responses: [`Here is the current weather for you:<br>${weatherReport}<br><br>We use your public IP address to figure out your location and therefore your weather, so fingers crossed we got it right!  If not, perhaps you're behind a firewall!`],
+    replies: 0,
+  },
+  whereami: {
+    patterns: ['my location','geolocation','my address','where am i'],
+    responses: [`Currently, your computer is showing you in <br>${geoIP.city},${geoIP.region}.<br><br>We use your public IP address to figure out your location and therefore your weather, so fingers crossed we got it right!  If not, perhaps you're behind a firewall!`],
     replies: 0,
   },
   adventureGame: {
@@ -225,7 +277,7 @@ const intents = {
   },
   help: {
     patterns: ['help', 'support', 'assistance','assist'],
-    responses: ['Sure, {username}I\'m here to help!', 'What do you need assistance with?', 'I\'m here to assist you.'],
+    responses: ['Sure, {username} I\'m here to help!', 'What do you need assistance with?', 'I\'m here to assist you.'],
     replies: 0,
   },
   bye: {
@@ -254,8 +306,8 @@ const intents = {
     replies: 0,
   },
   codeSkills: {
-    patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages','json','javascript','react','typescript','nextjs','c','perl','php','bootstrap','materialui','tailwind'],
-    responses: ['Ernie has experience in Javascript, Typescript, React, NextJS, C, C++, and more. He is also skilled with backend technologies like NodeJS, Perl, PHP, MySQL, PostgreSQL and more.<br><br>You can find additional skills in the <a href="#about">about</a> section.<BR>Is there something more specific you need?'],
+    patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages','json','javascript','react','typescript','nextjs','perl','php','bootstrap','materialui','tailwind','jquery','mysql','postgresql','nosql'],
+    responses: ['Ernie has experience in Javascript, jQuery, Typescript, React, NextJS, C, C++, and more. He is also skilled with backend technologies like NodeJS, Perl, PHP, MySQL, PostgreSQL and more.<br><br>You can find additional skills in the <a href="#about">about</a> section.<BR>Is there something more specific your looking to know?'],
     replies: 0,
   },
   shareware: {
@@ -291,12 +343,16 @@ const intents = {
   },
   commodore: {
     patterns: ['commodore'],
-    responses: ['Are you showing your age too, or just curious?<br>I used the Commodore VIC-20, C-64, and my favorite, the C-128. Accessories included a tape drive on the VIC-20 and 5.25" floppy drive on the C-128!<br><br>Did you use any of these computers?  Which was your favorite?'],
+    responses: ['Ernie used the Commodore VIC-20, and later upgraded to my favorite, the C-128. Accessories included a tape drive on the VIC-20 and 5.25" floppy drive on the C-128!<br><br>Did you use any of these computers?<br><br>Which was your favorite?'],
     replies: 0,
   },
   vic20: {
     patterns: ['vic20','vic-20','c64','c-64','c-128','c128'],
     responses: ["{prevresponse}, cool! "]
+  },
+  noyes: {
+    patterns: ['no','yes'],
+    responses: ['cool','ok'],
   },
   tandy: {
     patterns: ['tandy'],
@@ -307,9 +363,30 @@ const intents = {
     responses: ['On a day to day basis, Ernie is using MacOS, Windows and Linux systems.<br><br>He tries to stay fairly up to date with developer beta versions to see what is new and coming for OS releases.<br><br>OS experience also includes network administration on Linux and Windows sytems back as far as Windows 2000 Server!'],
     replies: 0,
   },
+  ecommerce: {
+    patterns: ['ecommerce','e-commerce',],
+    responses: ['Ernie has experience in building, maintaining and even operating e-commerce web applications.  From the early days of the internet, Ernie build and ran several e-commerce sites and was the lead developer for these applications using HTML, CSS and Javascript on the front end, which tied to PHP/Perl/CGI on the backend along with interfacing to MySQL database engine.'],
+    replies: 0,
+  },
   aboutBot: {
     patterns: ['about chatterbot','about chatbot','about chat bot', 'chatterbot','who are you','about yourself'],
-    responses: ['I am Chatterbot.<br><br>Although in my infancy, I am built as a React component to work within this project<br><br>As an extra "did you know", Chatterbot was built largely by an AI system with a few prompts from Ernie, followed up with some of his human tweaks of course!'],
+    responses: ['I am Chatterbot.<br><br>Although in my infancy, I am built as a React component to work within this project<br><br>As an extra "did you know", Chatterbot was built in-part by an AI system with a few prompts from Ernie, followed up with some of his human tweaks (& corrections) of course!'],
+    replies: 0,
+  },
+  merryChristmas: {
+    patterns: ['merry christmas','merry xmas','xmas','christmas time','christmas'],
+    responses: ["Merry Christmas! 🎄 Wishing you joy, peace, and festive celebrations!",
+      "Happy holidays! 🎅 May your Christmas be filled with warmth and happiness.",
+      "Wishing you a wonderful Christmas season! 🌟 Enjoy the magic of this special time.",
+    ],
+    replies: 0,
+  },
+  happyHalloween: {
+    patterns: ['happy halloween','holloween','hallowen','hallowean','halloween'],
+    responses: ["Happy Halloween! 🎃 May your day be filled with spooky fun and sweet treats!",
+      "Wishing you a spook-tacular Halloween! 👻 Enjoy the thrills of the season.",
+      "Have a hauntingly good time this Halloween! 🕷️ Stay safe and enjoy the festivities.",
+    ],
     replies: 0,
   },
   botChangeLog: {
@@ -323,7 +400,7 @@ const intents = {
     replies: 0,
   },
   workavailble: {
-    patterns: ['work in canada','work remotely','remote work','work in usa','work in america', 'work in us','work canada','work usa','work us'],
+    patterns: ['work in canada','work remotely','remote work','work remote','work in usa','work in america', 'work in us','work canada','work usa','work us'],
     responses: ['Ernie is Canadian and can work anywhere across Canada.<br>Life has dictated a necessity for remote work with the possibility of a hybrid schedule. Ernie can and has also recently worked in the USA on a B1 Business Visa and for outsourced freelance jobs.'],
     replies: 0,
   },
@@ -408,7 +485,7 @@ function getResponse(message) {
         // TODO replace {prevresponse} with 'pattern'
 
 
-        console.log('intent:',intent,' replies:',intent.replies);
+        // console.log('intent:',intent,' replies:',intent.replies);
         // console.log('# of intents:',Object.keys(intents).length);
         if(intentName === 'options') { 
           showQuickReplies = true; 
@@ -564,6 +641,12 @@ function Chatbot() {
     }
   };
 
+  const handleLinkClick = (event) => {
+    if (event.target.classList.contains('keyword-link')) {
+      const keyword = event.target.textContent;
+      handleQuickReply(keyword); // Call the function with the keyword
+    }
+  };
 
   //
   // HOOKS
@@ -572,28 +655,33 @@ function Chatbot() {
 
   useEffect(() => {
     const chatbotContainer = document.querySelector('.chatbot-popup');
-    chatbotContainer.addEventListener('click', (event) => {
-      event.stopPropagation();
-      if (event.target.classList.contains('keyword-link')) {
-        const keyword = event.target.textContent;
-        // handleSendMessage(keyword); // Call the function with the keyword
-        console.log(keyword);
-        handleQuickReply(keyword);
-      }
-    });
+    // chatbotContainer.addEventListener('click', (event) => {
+    //   event.stopPropagation();
+    //   if (event.target.classList.contains('keyword-link')) {
+    //     const keyword = event.target.textContent;
+    //     // handleSendMessage(keyword); // Call the function with the keyword
+    //     console.log(keyword);
+    //     handleQuickReply(keyword);
+    //   }
+    // });
+  
+
+    // Add the event listener
+    chatbotContainer.addEventListener('click', handleLinkClick);
+
 
     // get timeframe of day (morning, afternoon, evening)
     const timePeriod = getTimePeriod();
 
     const savedUserName = localStorage.getItem("userName");
     theuserName = savedUserName || '';
-    console.log(savedUserName);
+    // console.log(savedUserName);
     if (savedUserName) {
       setUserName(savedUserName);
     }
 
     if (!savedUserName) {
-      console.log("message history length:",messageHistory.length);
+      // console.log("message history length:",messageHistory.length);
       if (messageHistory.length === 0) {
         if(!userName) addMessage('Bot', `ue Good ${timePeriod}!<br>What is your name?`);
       }
@@ -604,7 +692,8 @@ function Chatbot() {
 
     // deal with any cleanups
     return () => {
-      chatbotContainer.removeEventListener('click', (event) => { /* ... */ });
+      // chatbotContainer.removeEventListener('click', (event) => { /* ... */ });
+      chatbotContainer.removeEventListener('click', handleLinkClick);
     };
   }, []);
 
