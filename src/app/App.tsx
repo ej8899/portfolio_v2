@@ -123,7 +123,7 @@ function App() {
           <i className='fas fa-comment-alt'></i>
         </div>
       </div>
-      {isChatOpen && <Chatbot />}
+      {isChatOpen && <Chatbot onClose={toggleChat} />}
     </>
     // </WindowContext.Provider>
   );

@@ -1,6 +1,6 @@
 .chatbot-popup {
   position: fixed;
-  bottom: 700px;
+  bottom: 80px;
   right: 20px;
   width: 440px;
   height: 580px;
@@ -8,7 +8,7 @@
   border-radius: 5px;
   transform: translateY(100%);
   transition: transform 0.3s ease-in-out;
-  z-index: 11;
+  z-index: 51;
   background-color: #fff;
   box-shadow: 0 0 15px #000;
   display: flex;
@@ -16,11 +16,32 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  transform: translateX(550px);
+  //display: none;
+  opacity: 1;
 }
 
+.chatbot-popup.active {
+  transform: translateX(0); /* Slide in to the viewport */
+}
+.chatbot-popup.closed {
+  transform: translateX(550px);
+}
 .chatbot-popup.open {
-  transform: translateY(0);
-  display: none;
+  transform: translateX(0);
+  //display: visible;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s, transform 0.3s; // Adjust duration as needed
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.3s, transform 0.3s; // Adjust duration as needed
 }
 
 .avatar-circle {

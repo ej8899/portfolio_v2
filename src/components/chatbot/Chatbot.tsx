@@ -555,7 +555,7 @@ function parseKeywords(responses) {
 //
 // main Chatbot() system
 //
-function Chatbot() {
+function Chatbot(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [userInput, setUserInput] = useState('');
   const [messageHistory, setMessageHistory] = useState([]);
@@ -563,14 +563,26 @@ function Chatbot() {
   const messagesEndRef = useRef(null);
   const [quickReplies, setQuickReplies] = useState('quickreplyitem');
   const [score, setScore] = useState(chatbotScore);
-  
+  const [isVisible, setIsVisible] = useState(true);
+
   const toggleChatbot = () => {
     console.log("open status:",isOpen);
     if(!isOpen) {
       // is open, will need to close so lets send chat stats:
       handlerSubmit();
+      setIsOpen(!isOpen);
+      // eslint-disable-next-line react/prop-types
+      if (typeof props.onClose === 'function') {
+        console.log("chatterbot: props closing from within bot");
+        
+        setTimeout(() => {
+          // Code to execute after the delay
+          console.log('Sleeping for 1 second...');
+          // eslint-disable-next-line react/prop-types
+          props.onClose();
+        }, 500);
+      }
     }
-    setIsOpen(!isOpen);
   };
 
   const handleUserInput = (event) => {
@@ -740,7 +752,7 @@ function Chatbot() {
   // MAIN JSX
   //
   return (
-    <div className={`chatbot-popup ${isOpen ? 'open' : ''}`}>
+    <div id='chatboot-root' className={`chatbot-popup ${isOpen ? 'closed' : 'open'} ${isVisible ? 'visible' : 'hidden'}`}>
       <div className="chatbot-content"> 
       <div className="chatbot-header">
         <div className="title">ChatterBot</div>
