@@ -177,21 +177,23 @@ function socLinks() {
 const intents = {
   options: {
     patterns: ['options'],
-    responses: ['common options to use:'],
-    quickReplies: ['commands','contact','about chatterbot','soft skills'],
+    responses: ['common options to use:<br>[commands],[contact],[about chatterbot]'],
+    quickReplies: [
+      { display: 'common commands',
+        response: 'commands'
+      },
+      { display: 'contact Ernie',
+        response: 'contact'
+      },
+      { display: 'learn about Chatterbot',
+      response: 'about chatterbot'
+      },
+    ],
     replies: 0,
   },
   greetingsDay: {
     patterns: ['good morning','good afternoon','good evening'],
     responses: [`Good ${getTimePeriod()} to you as well {username}!`],
-    quickReplies: [
-      { display: 'chat bot version',
-        response: 'version'
-      },
-      { display: 'enable cheats',
-        response: 'cheat mode'
-      },
-    ],
     replies: 0,
   },
   cheatCode: {
@@ -554,10 +556,8 @@ function getResponse(message) {
 
         // console.log('intent:',intent,' replies:',intent.replies);
         // console.log('# of intents:',Object.keys(intents).length);
-        if(intent.quickReplies) {
+        if(intent.quickReplies && intent.quickReplies.length > 0) {
           console.log('quick replies available in ',intentName);
-          console.log(intent.quickReplies[1]);
-          console.log(intentName);
           showQuickReplies = intentName;
           console.log(intents[showQuickReplies].quickReplies);
         } else {
@@ -571,8 +571,23 @@ function getResponse(message) {
         // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
         let returnString = personalizeResponse(getRandomResponse(intent.responses)) + additionalLink;
         returnString = returnString.replace("{prevresponse}",pattern);
-        return returnString;
-        
+
+        // if(intent.quickReplies && intent.quickReplies.length > 0) {
+        //   // eslint-disable-next-line @typescript-eslint/no-loop-func
+        //   const quickReplyButtons = intent.quickReplies.map((reply, qrindex) => (
+        //     <button
+        //       className='quickReplies'
+        //       key={qrindex}
+        //       onClick={() => handleQuickReply(reply.response)}
+        //     >
+        //       {reply.display}
+        //     </button>
+        //   ));
+        //   // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+        //   return returnString + quickReplyButtons;
+        // } else {
+          return returnString;
+        // }
         // return ((personalizeResponse(getRandomResponse(intent.responses))) + additionalLink);
       }
     }
@@ -611,6 +626,18 @@ function Chatbot(props) {
   const messagesEndRef = useRef(null);
   const [quickReplies, setQuickReplies] = useState('quickreplyitem');
   const [score, setScore] = useState(chatbotScore);
+  const chatInputRef = useRef(null);
+
+  
+  // collect duration of use stats
+  const [startTime, setStartTime] = useState(null);
+  const [endTime, setEndTime] = useState(null);
+
+
+  const handleCloseChatbot = () => {
+    // collect end of use stats
+    setEndTime(new Date());
+  };
 
   const toggleChatbot = () => {
     console.log("open status:",isOpen);
@@ -622,9 +649,16 @@ function Chatbot(props) {
       if (typeof props.onClose === 'function') {
         console.log("chatterbot: props closing from within bot");
         
+        // stats collection (duration chatbot is used)
+        handleCloseChatbot();
+        const timeUsed = calculateTimeDifference();
+        console.log("time in chatbot (s):",timeUsed);
+        console.log('chatbot started:',startTime);
+        
         setTimeout(() => {
           // Code to execute after the delay
           console.log('Sleeping for close...');
+          console.log('chatbot ended:',endTime);
           // eslint-disable-next-line react/prop-types
           props.onClose();
         }, 300);
@@ -647,29 +681,29 @@ function Chatbot(props) {
   };
 
   const handleQuickReply = (intent) => {
-    // You can add the selected quick reply as a user message
-    // setChatHistory([...chatHistory, { message: intent, type: "user" }]);
-    // You can also directly call `getResponse` with the selected intent
-    const botResponse = getResponse(intent);
-    addMessage('User', intent);
-    addMessage('Bot', botResponse);
-    // setChatHistory([...chatHistory, { message: response.message, type: "bot" }]);
-    showQuickReplies = false;
+    handleSendMessage(intent);
   };
   
-  const handleSendMessage = () => {
-    if (userInput.trim() == '' && !userName) {
+  const handleSendMessage = (inputvalue) => {
+    let theuserInput = '';
+    if(inputvalue) {
+      theuserInput = inputvalue;
+      console.log(`in handleSendMessage:|${inputvalue}|${userInput}|`);
+    } else {
+      theuserInput = userInput;
+    }
+    if (theuserInput.trim() == '' && !userName) {
       // addMessage('Bot', `What is your name?`);
       return;
     }
-    if (userInput.trim() !== '') {
+    if (theuserInput.trim() !== '') {
       if(!userName) {
-        setUserName(userInput);
-        localStorage.setItem("userName", userInput);
-        addMessage('Bot', `Hi ${userInput}!<br>How can I assist you today?`);
+        setUserName(theuserInput);
+        localStorage.setItem("userName", theuserInput);
+        addMessage('Bot', `Hi ${theuserInput}!<br>How can I assist you today?`);
       } else {
-        addMessage('User', userInput);
-        const botResponse = handleQuickLinks(getResponse(userInput));
+        addMessage('User', theuserInput);
+        const botResponse = handleQuickLinks(getResponse(theuserInput));
         addMessage('Bot', botResponse);
       }
       // Scroll to the bottom of the chat history
@@ -704,6 +738,7 @@ function Chatbot(props) {
     });
   }
   const handleSubmit = async (e) => {
+    const timeUsed = calculateTimeDifference();
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -714,7 +749,8 @@ function Chatbot(props) {
           access_key: '7160e73c-4a32-4952-ab02-e07ea131ed58',
           from_name: 'erniejohnson.ca',
           subject: 'erniejohnson.ca - chatterbot: FAILED responses',
-          message: unMatchedInputs,
+          // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+          message: unMatchedInputs + '\n\nduration in chatterbot (s): ' + timeUsed,
           name: 'chatterbot on erniejohnson.ca',
           email: 'ej8899@gmail.com',
           botcheck: '',
@@ -728,6 +764,7 @@ function Chatbot(props) {
     }
   };
 
+  // quicklink handler
   const handleLinkClick = (event) => {
     if (event.target.classList.contains('keyword-link')) {
       const keyword = event.target.textContent;
@@ -735,11 +772,28 @@ function Chatbot(props) {
     }
   };
 
+  const calculateTimeDifference = () => {
+    if (startTime && endTime) {
+      const difference = endTime - startTime;
+      const seconds = Math.floor(difference / 1000);
+      return seconds;
+    }
+    return null;
+  };
+
+  
+  
   //
   // HOOKS
   //
+
+  // INITIAL LOAD
   useEffect(() => {
     const chatbotContainer = document.querySelector('.chatbot-popup');
+    
+    // user stats collection (duration used)
+    setStartTime(new Date());
+    window.addEventListener("beforeunload", handleCloseChatbot);
 
     // Add the event listener for link clicks
     chatbotContainer.addEventListener('click', handleLinkClick);
@@ -773,6 +827,7 @@ function Chatbot(props) {
     return () => {
       // chatbotContainer.removeEventListener('click', (event) => { /* ... */ });
       chatbotContainer.removeEventListener('click', handleLinkClick);
+      window.removeEventListener("beforeunload", handleCloseChatbot);
     };
   }, []);
 
@@ -829,27 +884,13 @@ function Chatbot(props) {
               </div>
             )}
           </div>
-        ))}
-          {showQuickReplies && 
-            <div>
-              <div className="quick-replies">
-              {intents[showQuickReplies].quickReplies.map((reply, qrindex) => (
-                  <button
-                    className='quickReplies'
-                    key={qrindex}
-                    onClick={() => handleQuickReply(reply.response)}
-                  >
-                    {reply.display}
-                  </button>
-                ))}
-              </div>
-            </div>
-            }           
+        ))}           
 
         <div ref={messagesEndRef}></div> {/* This ensures scrolling to bottom */}
       </div>
       <div className="user-input">
         <input
+          ref={chatInputRef} 
           type="text"
           value={userInput}
           onChange={handleUserInput}
