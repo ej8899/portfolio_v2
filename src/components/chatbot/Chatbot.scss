@@ -27,12 +27,13 @@
 .chatbot-popup.closed {
   transform: translateX(550px);
   //transform: translateX(100%);
-  transition: opacity 0.3s, transform 0.3s; // Adjust duration as neede
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.3s; // Adjust duration as neede
 }
 .chatbot-popup.open {
   opacity: 1;
   transform: translateX(0);
-  transition: opacity 0.3s, transform 0.3s; // Adjust duration as needed
+  transition: opacity 0.5s, transform 0.3s; // Adjust duration as needed
 }
 
 
@@ -50,6 +51,7 @@
   // top: 0;
   // right: 0;
   flex: 0 0 30px;
+  border: 1px solid black;
 }
 
 .avatar-circle img {

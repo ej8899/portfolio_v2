@@ -556,7 +556,7 @@ function parseKeywords(responses) {
 // main Chatbot() system
 //
 function Chatbot(props) {
-  const [isOpen, setIsOpen] = useState('');
+  const [isOpen, setIsOpen] = useState(true);
   const [userInput, setUserInput] = useState('');
   const [messageHistory, setMessageHistory] = useState([]);
   const [userName, setUserName] = useState('');
@@ -576,10 +576,10 @@ function Chatbot(props) {
         
         setTimeout(() => {
           // Code to execute after the delay
-          console.log('Sleeping for 1 second...');
+          console.log('Sleeping for close...');
           // eslint-disable-next-line react/prop-types
           props.onClose();
-        }, 500);
+        }, 300);
       }
     }
   };
