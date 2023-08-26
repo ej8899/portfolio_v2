@@ -294,7 +294,7 @@ const intents = {
     replies: 0,
   },
   timenow: {
-    patterns: ['what time is it','current time','time now','time today','time'],
+    patterns: ['what time is it','current time','time now','time today','the time'],
     responses: [getFormattedTime()],
     replies: 0,
   },
@@ -314,7 +314,7 @@ const intents = {
     replies: 0,
   },
   salaries: {
-    patterns: ['salary','salaries','rate of pay','starting salary'],
+    patterns: ['salary','salaries','rate of pay','starting salary','hourly rate'],
     responses: ['It is best to discuss offer of employment including salaries via in person, phone or video conversation. That being said, a starting salary can be quite negotiable depending on the terms of employment and responsibilities.'],
     replies: 0,
   },
@@ -350,7 +350,7 @@ const intents = {
     replies: 0,
   },
   workOptions: {
-    patterns: ['available to work', 'available for work', 'freelance', 'availability','take new projects','new work','new job'],
+    patterns: ['available to work', 'available for work', 'freelance', 'availability','take new projects','new work','new job','part time','full time','part-time','full-time'],
     responses: ['Ernie is currently available for freelance, part-time and full-time work. '],
     replies: 0,
   },
