@@ -184,6 +184,14 @@ const intents = {
   greetingsDay: {
     patterns: ['good morning','good afternoon','good evening'],
     responses: [`Good ${getTimePeriod()} to you as well {username}!`],
+    quickReplies: [
+      { display: 'chat bot version',
+        response: 'version'
+      },
+      { display: 'enable cheats',
+        response: 'cheat mode'
+      },
+    ],
     replies: 0,
   },
   cheatCode: {
@@ -230,7 +238,7 @@ const intents = {
   },
   weather: {
     patterns: ['todays weather','weather'],
-    responses: [`Here is the current weather for you:<br>${weatherReport}<br><br>We use your public IP address to figure out your location and therefore your weather, so fingers crossed we got it right!  If not, perhaps you're behind a firewall!`],
+    responses: [`Here is the current weather for you:<br>${weatherReport}<br><br>We use your public IP address to figure out your location and therefore your weather, so fingers crossed we got it right!  If not, perhaps you're behind a firewall!<br><br>If we got your town right, and are a bit concerned about privacy, you might want to study up on [cybersecurity] and how to protect your online identity!`],
     replies: 0,
   },
   whereami: {
@@ -249,7 +257,7 @@ const intents = {
     replies: 0,
   },
   controversy: {
-    patterns: ['blm','black lives','vaccine','covid','ukraine','russia','war','lockdown','trans','gender', 'genders', 'trump','trudeau','tranny','trannies','drag queen','censorship','liberalism','liberals','queer','defund the police','abortion','vaccines','vaccinated','vaccinate','wuhan','vaccination','lockdown','masks','netzero','climate change','global warming','climate denier','great reset','fauci','vegan','pronouns','greta','climate hoax','pronoun'],
+    patterns: ['blm','black lives','vaccine','covid','ukraine','russia','war','lockdown','trans','gender', 'genders', 'trump','trudeau','tranny','trannies','drag queen','censorship','liberalism','liberals','queer','defund the police','abortion','vaccines','vaccinated','vaccinate','wuhan','vaccination','lockdown','lockdowns', 'lock downs','lock down','masks','netzero','climate change','global warming','climate denier','great reset','fauci','vegan','pronouns','greta','climate hoax','pronoun'],
     responses: ['As in the famous words of U.S. President Joe Biden, "no comment".','As U.S. President Joe Biden would say, "Trunalimunumaprzure Badakathcare"'],
     replies: 0,
   },
@@ -309,7 +317,7 @@ const intents = {
     replies: 0,
   },
   contact: {
-    patterns: ['contact', 'phone', 'email','operator','support','assistant','chat','live chat'],
+    patterns: ['contact', 'administrator', 'phone', 'email','operator','support','assistant','chat','live chat'],
     responses: ['Live chat is not presently available.<br><br>You can contact Ernie through the <a href="#contact">contact</a> section of the site, or email ernie@erniejohnson.ca'],
     replies: 0,
   },
@@ -339,7 +347,7 @@ const intents = {
     replies: 0,
   },
   shareware: {
-    patterns: ['shareware','share-ware'],
+    patterns: ['shareware','share-ware','freeware','adware','donationware','donatation ware','donation-ware','freemium'],
     responses: ['Shareware is a type of proprietary software that is initially shared by the owner for trial use at little or no cost. Often the software has limited functionality until the user sends payment to the software developer. Shareware differs from freeware, which is fully-featured software distributed at no cost to the user but without source code being made available; and free and open-source software, in which the source code is freely available for anyone to inspect and alter.'],
     links: ['https://en.wikipedia.org/wiki/Shareware'],
     replies: 0,
@@ -354,9 +362,14 @@ const intents = {
     responses: ['Ernie is currently available for freelance, part-time and full-time work. '],
     replies: 0,
   },
+  workRelocation: {
+    patterns: ['can you relocate','relocate',"travel for work",'available for travel','available to travel'],
+    responses: ['Relocation for on-site work may be considered an option depending on the offer of employment.  This is something that would need further discussion direclty with Ernie.'],
+    replies: 0,
+  },
   currentWork: {
-    patterns: ['where do you work now','current work','working currently','employed now','working now','where do you work','work now'],
-    responses: ['Ernie is presently working on various freelance projects in Canada, including providing management of a WAN that supports an engineering firm operating from offices in Calgary, Regina and Windsor.'],
+    patterns: ['where do you work now','current work','working currently','employed now','working now','where do you work','work now','current job','current employer','current employment','looking for a job','job wanted',],
+    responses: ['Ernie is presently working on various freelance projects in Canada, including providing management of a WAN that supports an engineering firm operating from offices in Calgary, Regina and Windsor.<br><br>Ernie is available and interested in additional opportunities which would include additional freelance work, project collaboration, part-time and full-time opportunities.'],
     replies: 0,
   },
   hackAttempt: {
@@ -365,8 +378,14 @@ const intents = {
     replies: 0,
   },
   education: {
-    patterns: ['education', 'courses', 'certification', 'certifications'],
-    responses: [`Much of Ernie's developer education is from a self-taught perspective.  From growing up in the 80's with learning BASIC on [Commodore] and [Tandy] computers and progressing into C and C++ programming on PC's and later into web development with HTML, early CSS, Perl, CGI and PHP. This progressed into knowing the foundations of SQL through applications like dBase and MySQL. As web technologies progressed, Ernie was quick to become proficient in Javascript coding.  To this day, he continues to hone his skills largely in Javascript, Typescript, Python, Kotlin and Swift.<br><br>Ernie also is eager to pick up extra certifications in cybersecurity, general IT and networking support.`],
+    patterns: ['education', 'courses', 'certification', 'certifications','school','where did you go to school','where did ernie go to school','go to school','self taught','college','university'],
+    responses: [`Much of Ernie's developer education is from a self-taught perspective.  From growing up in the 80's with learning BASIC on [Commodore] and [Tandy] computers and progressing into C and C++ programming on PC's and later into web development with HTML, early CSS, Perl, CGI and PHP. This progressed into knowing the foundations of SQL through applications like dBase and MySQL. As web technologies progressed, Ernie was quick to become proficient in Javascript coding.  To this day, he continues to hone his skills largely in Javascript, Typescript, Python, Kotlin and Swift.<br><br>Ernie recently completed a coding '[bootcamp]' at [Lighthouse Labs] to get his knowledge up to current trends.<br><br>Ernie also is eager to pick up extra certifications in [cybersecurity], general IT and networking support.`],
+    replies: 0,
+  },
+  lighthouselabs: {
+    patterns: ['bootcamp','lighthouselabs','lighthouse labs','bootcamps'],
+    responses: ['Ernie has attended Lighthouse Labs coding bootcamp in 2022-2023.<br><br>This was a great experience and a way to fast-track into the current technologies being used in web development since it had been some time since Ernie was in web development.<br><br>Although expensive, Lighthouse Labs was a great experience and a great way to work in teams on web application development.'],
+    links: ['https://lighthouselabs.ca'],
     replies: 0,
   },
   commodore: {
@@ -396,6 +415,12 @@ const intents = {
     responses: ['Ernie has experience in building, maintaining and even operating e-commerce web applications.  From the early days of the internet, Ernie build and ran several e-commerce sites and was the lead developer for these applications using HTML, CSS and Javascript on the front end, which tied to PHP/Perl/CGI on the backend along with interfacing to MySQL database engine.'],
     replies: 0,
   },
+  databases: {
+    patterns: ['database','databases','sql','mysql','postgresql','nosql'],
+    responses: ['Ernie has experience with SQL - largely using MySQL and PostreSQL systems.<br><br>Including these relational databases, Ernie also has experience with "flat file" type databases for smaller applications<br><br>This also ties into knowledge and the understanding of the necessity of file locking requirements in multi-user applications.'],
+    replies: 0,
+  },
+  
   botAPI: {
     patterns: ['what api',"what api's","api in","api's you use","api used","api's used"],
     responses: ['Chatterbot is built to not use any API calls in my main programming features. I am strictly a front-end operating chat bot system.<br><br>That being said, I do use a few API calls for additional user experience in this demo. We use Dad Jokes API, Weather API, GeoLocation by IP API, Chuck Norris API and a few others.'],
@@ -444,7 +469,7 @@ const intents = {
     replies: 0,
   },
   workavailble: {
-    patterns: ['work in canada','work remotely','remote work','work remote','work in usa','work in america', 'work in us','work canada','work usa','work us'],
+    patterns: ['work in canada','work remotely','remote work','work remote','work in usa','work in america', 'work in us','work canada','work usa','work us','work in the usa','work in the us','where are you from','where from'],
     responses: ['Ernie is Canadian and can work anywhere across Canada.<br>Life has dictated a necessity for remote work with the possibility of a hybrid schedule. Ernie can and has also recently worked in the USA on a B1 Business Visa and for outsourced freelance jobs.'],
     replies: 0,
   },
@@ -526,16 +551,23 @@ function getResponse(message) {
         intent.replies++;
         chatbotScore = calculatePercentage(sumPositiveReplies(intents),chatbotScoreMax);
 
-        // TODO replace {prevresponse} with 'pattern'
-
 
         // console.log('intent:',intent,' replies:',intent.replies);
         // console.log('# of intents:',Object.keys(intents).length);
-        if(intentName === 'options') { 
-          showQuickReplies = true; 
+        if(intent.quickReplies) {
+          console.log('quick replies available in ',intentName);
+          console.log(intent.quickReplies[1]);
+          console.log(intentName);
+          showQuickReplies = intentName;
+          console.log(intents[showQuickReplies].quickReplies);
         } else {
-          showQuickReplies = false;
+          showQuickReplies = null;
         }
+        // if(intentName === 'options') { 
+        //   showQuickReplies = true; 
+        // } else {
+        //   showQuickReplies = false;
+        // }
         // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
         let returnString = personalizeResponse(getRandomResponse(intent.responses)) + additionalLink;
         returnString = returnString.replace("{prevresponse}",pattern);
@@ -708,18 +740,8 @@ function Chatbot(props) {
   //
   useEffect(() => {
     const chatbotContainer = document.querySelector('.chatbot-popup');
-    // chatbotContainer.addEventListener('click', (event) => {
-    //   event.stopPropagation();
-    //   if (event.target.classList.contains('keyword-link')) {
-    //     const keyword = event.target.textContent;
-    //     // handleSendMessage(keyword); // Call the function with the keyword
-    //     console.log(keyword);
-    //     handleQuickReply(keyword);
-    //   }
-    // });
-  
 
-    // Add the event listener
+    // Add the event listener for link clicks
     chatbotContainer.addEventListener('click', handleLinkClick);
 
     setTimeout(() => {
@@ -808,21 +830,22 @@ function Chatbot(props) {
             )}
           </div>
         ))}
-            {showQuickReplies && 
+          {showQuickReplies && 
             <div>
               <div className="quick-replies">
-                {intents.options.quickReplies.map((reply, qrindex) => (
+              {intents[showQuickReplies].quickReplies.map((reply, qrindex) => (
                   <button
                     className='quickReplies'
                     key={qrindex}
-                    onClick={() => handleQuickReply(reply)}
+                    onClick={() => handleQuickReply(reply.response)}
                   >
-                    {reply}
+                    {reply.display}
                   </button>
                 ))}
               </div>
             </div>
-            }
+            }           
+
         <div ref={messagesEndRef}></div> {/* This ensures scrolling to bottom */}
       </div>
       <div className="user-input">
