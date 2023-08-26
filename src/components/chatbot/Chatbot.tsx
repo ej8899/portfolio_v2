@@ -309,8 +309,13 @@ const intents = {
     replies: 0,
   },
   contact: {
-    patterns: ['contact', 'phone', 'email','operator','support','live','chat','live chat'],
+    patterns: ['contact', 'phone', 'email','operator','support','assistant','chat','live chat'],
     responses: ['Live chat is not presently available.<br><br>You can contact Ernie through the <a href="#contact">contact</a> section of the site, or email ernie@erniejohnson.ca'],
+    replies: 0,
+  },
+  salaries: {
+    patterns: ['salary','salaries','rate of pay','starting salary'],
+    responses: ['It is best to discuss offer of employment including salaries via in person, phone or video conversation. That being said, a starting salary can be quite negotiable depending on the terms of employment and responsibilities.'],
     replies: 0,
   },
   hobbies: {
@@ -340,8 +345,8 @@ const intents = {
     replies: 0,
   },
   scoring: {
-    patterns: ['score','my score','about score','scoring'],
-    responses: ['The score you see on Chatterbox is a measure of how many responses we have avaialble to you and how many you have found. It is a bit of a gamification to the chat bot, but at the same time, helps us measure how effective Chatterbot is to answering your questions!'],
+    patterns: ['score','my score','about score','scoring','perfect score','how to get 100','get 100', 'score 100'],
+    responses: ["The score you see on Chatterbox is a measure of how many responses we have avaialable to you and how many you have found. It adds a bit of a gamification to the chat bot, but at the same time, helps us measure how effective Chatterbot is to answering your questions!<br><br>To get a score of 100%, means you've found all the responses within Chatterbot!"],
     replies: 0,
   },
   workOptions: {
@@ -392,13 +397,19 @@ const intents = {
     replies: 0,
   },
   botAPI: {
-    patterns: ['what api',"what api's","api in"],
+    patterns: ['what api',"what api's","api in","api's you use","api used","api's used"],
     responses: ['Chatterbot is built to not use any API calls in my main programming features. I am strictly a front-end operating chat bot system.<br><br>That being said, I do use a few API calls for additional user experience in this demo. We use Dad Jokes API, Weather API, GeoLocation by IP API, Chuck Norris API and a few others.'],
     replies: 0,
   },
+  
   aboutBot: {
-    patterns: ['about chatterbot','about chatbot','about chat bot', 'chatterbot','who are you','about yourself'],
-    responses: ['I am Chatterbot.<br><br>Although in my infancy, I am built as a React component to work within this project<br><br>As an extra "did you know", Chatterbot was built in-part by an AI system with a few prompts from Ernie, followed up with some of his human tweaks (& corrections) of course!'],
+    patterns: ['about chatterbot','about chatbot','about chat bot', 'what is chatterbot','who are you','about yourself'],
+    responses: ['I am Chatterbot.<br><br>Although in my infancy, I am built as a React component to work within this project<br><br>As an extra "did you know", Chatterbot was built in-part by an AI system with a few prompts from Ernie, followed up with some of his human tweaks (& corrections) of course!.<br><br>Chatterbog [changelog].'],
+    replies: 0,
+  },
+  chatterbot: {
+    patterns: ['chatterbot','chatbot','chatbots','chat bot','chat bots'],
+    responses: ["I know a few things about myself, Chatterbot, as well as things about chat bots in general.  Can you describe with a bit more detail about what you're looking for?<br><br>You try [about chatterbot] or [why chatbot] for example."],
     replies: 0,
   },
   merryChristmas: {
@@ -425,6 +436,11 @@ const intents = {
   downloads: {
     patterns: ['resume','download','downloads','your cv','cv'],
     responses: ['Ernie&#39;s resume can be downloaded <a href="http://www.erniejohnson.ca/resume.pdf">here</a>'],
+    replies: 0,
+  },
+  volunteer: {
+    patterns: ['volunteer work','volunteer',],
+    responses: ['Ernie has extensive volunteer experience, mostly in emergency medical services, but has also completed a few web projects for non profit/charitable organizations in the past.'],
     replies: 0,
   },
   workavailble: {
