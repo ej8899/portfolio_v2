@@ -547,6 +547,11 @@ function getResponse(message) {
   const lowerMessage = message.toLowerCase();
   let additionalLink = '';
 
+  if (theuserName === '') {
+    theuserName = message;
+    return "Your name has been changed!";
+  }
+
   for (const intentName in intents) {
     const intent = intents[intentName];
     for (const pattern of intent.patterns || []) {
@@ -561,7 +566,10 @@ function getResponse(message) {
 
         if (intentName === 'nameChange') {
           // TODO how to reset user name at this point
+          console.log("getResponse -> nameChange");
+          theuserName = '';
         }
+        
 
         console.log("intentName:",intentName);
         console.log('intent:',intent,' replies:',intent.replies);
@@ -737,7 +745,7 @@ function Chatbot(props) {
       setTimeout(() => {
         messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
       }, 0);
-      
+      // setUserName('');
       setUserInput('');
     }
   };
@@ -833,6 +841,7 @@ function Chatbot(props) {
     // get timeframe of day (morning, afternoon, evening)
     const timePeriod = getTimePeriod();
 
+    // user name processing
     const savedUserName = localStorage.getItem("userName");
     theuserName = savedUserName || '';
     // console.log(savedUserName);
@@ -868,6 +877,11 @@ function Chatbot(props) {
   useEffect(() => {
     setScore(chatbotScore);
   }, [chatbotScore]);
+
+  useEffect(() => {
+    console.log("useeffect on theuserName");
+    localStorage.setItem("userName", theuserName);
+  }, [theuserName]);
 
 
   //
@@ -933,5 +947,8 @@ function Chatbot(props) {
   </div>
   );
 }
+
+// TODO - evaluate react controlled components and using defaultValue instead of value here -- this might solve our chrome autofill
+// BUG - chrome autofill
 
 export default Chatbot;
