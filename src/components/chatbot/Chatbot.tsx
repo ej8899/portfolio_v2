@@ -486,13 +486,18 @@ const intents = {
     replies: 0,
   },
   usersName: {
-    patterns: ['name'],
+    patterns: ['my name','is my name'],
     responses: ['Your name is {userName}'],
     replies: 0,
   },
   saveMessages: {
     patterns: ['save','message history','history'],
     responses: ['Appologies,<br>but this is something I can not do quite yet.'],
+    replies: 0,
+  },
+  nameChange: {
+    patterns: ['change name','change my name','name reset'],
+    responses: ['Sure thing, just enter your new name:'],
     replies: 0,
   },
   default: {
@@ -538,6 +543,7 @@ function calculatePercentage(number, total) {
 }
 
 function getResponse(message) {
+  if (typeof message === 'function') return;
   const lowerMessage = message.toLowerCase();
   let additionalLink = '';
 
@@ -553,13 +559,17 @@ function getResponse(message) {
         intent.replies++;
         chatbotScore = calculatePercentage(sumPositiveReplies(intents),chatbotScoreMax);
 
+        if (intentName === 'nameChange') {
+          // TODO how to reset user name at this point
+        }
 
-        // console.log('intent:',intent,' replies:',intent.replies);
+        console.log("intentName:",intentName);
+        console.log('intent:',intent,' replies:',intent.replies);
         // console.log('# of intents:',Object.keys(intents).length);
         if(intent.quickReplies && intent.quickReplies.length > 0) {
-          console.log('quick replies available in ',intentName);
+          // console.log('quick replies available in ',intentName);
           showQuickReplies = intentName;
-          console.log(intents[showQuickReplies].quickReplies);
+          // console.log(intents[showQuickReplies].quickReplies);
         } else {
           showQuickReplies = null;
         }
@@ -667,6 +677,11 @@ function Chatbot(props) {
     }
   };
 
+  const resetUserName = (newName) => {
+    setUserName(newName);
+    localStorage.setItem("userName", newName);
+  };
+
   const handleUserInput = (event) => {
     setUserInput(event.target.value);
   };
@@ -682,7 +697,7 @@ function Chatbot(props) {
   };
 
   const handleQuickReply = (intent) => {
-    setUserInput(intent);
+    // flushSync(() => { setUserInput(intent) });;
 
     console.log("handleQuickLinks:state:",intent);
     handleSendMessage(intent);
@@ -691,6 +706,8 @@ function Chatbot(props) {
   
   const handleSendMessage = (inputIntent) => {
     // setIsTyping(true);
+    // TODO why is setState not functioning as expected  - because of async flow -- but how can we solve the problem better than this way?
+
     if (inputIntent) {
       addMessage('User', inputIntent);
       const botResponse = handleQuickLinks(getResponse(inputIntent));
@@ -902,6 +919,7 @@ function Chatbot(props) {
       <div className="user-input">
         <input
           ref={chatInputRef}
+          autoComplete='off'
           id='chat-input'
           type="text"
           value={userInput}
