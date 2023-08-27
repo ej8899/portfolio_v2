@@ -27,7 +27,7 @@ let theuserName = '';
 // collect duration of use stats
 // const [startTime, setStartTime] = useState(null);
 // const [endTime, setEndTime] = useState(null);
-const startTime = new Date();
+let startTime = new Date();
 let endTime = new Date();
 let timeUsed = 0;
 const calculateTimeDifference = () => {
@@ -35,6 +35,7 @@ const calculateTimeDifference = () => {
   timeUsed = Math.floor(difference / 1000);
   console.log('time in app currently (s):',timeUsed);
 };
+
 
 
 //
@@ -252,7 +253,7 @@ const intents = {
     replies: 0,
   },
   feelings: {
-    patterns: ['how are you today','how do you feel today','do you feel','how are you'],
+    patterns: ['how are you today','how do you feel today','do you feel','how are you','can you feel'],
     responses: [`I feel grrrreat!`,`I'm a computer... I don't have feelings!`,`Today, I'm feeling great!`,`Feeling great!<br>Thanks for asking!`],
     replies: 0,
   },
@@ -831,10 +832,10 @@ function Chatbot(props) {
   // HOOKS
   //
 
-  // INITIAL LOAD
+  // INITIAL LOAD ITEMS
   useEffect(() => {
     const chatbotContainer = document.querySelector('.chatbot-popup');
-    
+    startTime = new Date();
     // user stats collection (duration used)
     // setStartTime(new Date());
     // startTime = new Date();
