@@ -627,7 +627,8 @@ function Chatbot(props) {
   const [quickReplies, setQuickReplies] = useState('quickreplyitem');
   const [score, setScore] = useState(chatbotScore);
   const chatInputRef = useRef(null);
-
+  const buttonRef = useRef(null);
+  const [isTyping, setIsTyping] = useState(false);
   
   // collect duration of use stats
   const [startTime, setStartTime] = useState(null);
@@ -681,29 +682,38 @@ function Chatbot(props) {
   };
 
   const handleQuickReply = (intent) => {
+    setUserInput(intent);
+
+    console.log("handleQuickLinks:state:",intent);
     handleSendMessage(intent);
+    // buttonRef.current.click();
   };
   
-  const handleSendMessage = (inputvalue) => {
-    let theuserInput = '';
-    if(inputvalue) {
-      theuserInput = inputvalue;
-      console.log(`in handleSendMessage:|${inputvalue}|${userInput}|`);
-    } else {
-      theuserInput = userInput;
+  const handleSendMessage = (inputIntent) => {
+    // setIsTyping(true);
+    if (inputIntent) {
+      addMessage('User', inputIntent);
+      const botResponse = handleQuickLinks(getResponse(inputIntent));
+      addMessage('Bot', botResponse);
+      setTimeout(() => {
+        messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+      }, 0);
+      setUserInput('');
+      return;
     }
-    if (theuserInput.trim() == '' && !userName) {
+
+    if (userInput.trim() == '' && !userName) {
       // addMessage('Bot', `What is your name?`);
       return;
     }
-    if (theuserInput.trim() !== '') {
+    if (userInput.trim() !== '') {
       if(!userName) {
-        setUserName(theuserInput);
-        localStorage.setItem("userName", theuserInput);
-        addMessage('Bot', `Hi ${theuserInput}!<br>How can I assist you today?`);
+        setUserName(userInput);
+        localStorage.setItem("userName", userInput);
+        addMessage('Bot', `Hi ${userInput}!<br>How can I assist you today?`);
       } else {
-        addMessage('User', theuserInput);
-        const botResponse = handleQuickLinks(getResponse(theuserInput));
+        addMessage('User', userInput);
+        const botResponse = handleQuickLinks(getResponse(userInput));
         addMessage('Bot', botResponse);
       }
       // Scroll to the bottom of the chat history
@@ -842,6 +852,7 @@ function Chatbot(props) {
     setScore(chatbotScore);
   }, [chatbotScore]);
 
+
   //
   // MAIN JSX
   //
@@ -890,14 +901,15 @@ function Chatbot(props) {
       </div>
       <div className="user-input">
         <input
-          ref={chatInputRef} 
+          ref={chatInputRef}
+          id='chat-input'
           type="text"
           value={userInput}
           onChange={handleUserInput}
           placeholder="Type your message..."
           onKeyDown={handleKeyDown}
         />
-        &nbsp;&nbsp;&nbsp;<button onClick={handleSendMessage}>Send</button>
+        &nbsp;&nbsp;&nbsp;<button ref={buttonRef} onClick={handleSendMessage}>Send</button>
       </div>
     </div>
   </div>
