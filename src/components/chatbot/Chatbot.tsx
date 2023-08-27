@@ -24,6 +24,19 @@ let chatbotScore = 0;
 let userAvatar = '';
 let theuserName = '';
 
+// collect duration of use stats
+// const [startTime, setStartTime] = useState(null);
+// const [endTime, setEndTime] = useState(null);
+const startTime = new Date();
+let endTime = new Date();
+let timeUsed = 0;
+const calculateTimeDifference = () => {
+  const difference = (new Date()) - startTime;
+  timeUsed = Math.floor(difference / 1000);
+  console.log('time in app currently (s):',timeUsed);
+};
+
+
 //
 // EASTER EGG Stuff.
 //
@@ -548,7 +561,8 @@ function calculatePercentage(number, total) {
 }
 
 function getResponse(message) {
-  if (typeof message === 'function') return;
+  calculateTimeDifference();
+  if (typeof message != 'string') return;
   const lowerMessage = message.toLowerCase();
   let additionalLink = '';
 
@@ -653,14 +667,12 @@ function Chatbot(props) {
   const buttonRef = useRef(null);
   const [isTyping, setIsTyping] = useState(false);
   
-  // collect duration of use stats
-  const [startTime, setStartTime] = useState(null);
-  const [endTime, setEndTime] = useState(null);
+  
 
-
-  const handleCloseChatbot = () => {
+  const handleCloseChatbot = () => { 
     // collect end of use stats
-    setEndTime(new Date());
+    // setEndTime(new Date());
+    endTime = new Date();
   };
 
   const toggleChatbot = () => {
@@ -675,7 +687,6 @@ function Chatbot(props) {
         
         // stats collection (duration chatbot is used)
         handleCloseChatbot();
-        const timeUsed = calculateTimeDifference();
         console.log("time in chatbot (s):",timeUsed);
         console.log('chatbot started:',startTime);
         
@@ -683,6 +694,7 @@ function Chatbot(props) {
           // Code to execute after the delay
           console.log('Sleeping for close...');
           console.log('chatbot ended:',endTime);
+          console.log('time in chatbot:',timeUsed);
           // eslint-disable-next-line react/prop-types
           props.onClose();
         }, 300);
@@ -770,7 +782,7 @@ function Chatbot(props) {
     if(unMatchedInputs.length < 1) return;
     handleSubmit().then(() => {
       // Handle success here
-      console.log('chatterbot log sent');
+      console.log('chatterbot log: attempt to send');
       unMatchedInputs.length = 0;
     }).catch((error) => {
       console.error('Error submitting form:', error);
@@ -778,7 +790,6 @@ function Chatbot(props) {
     });
   }
   const handleSubmit = async (e) => {
-    const timeUsed = calculateTimeDifference();
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -800,7 +811,7 @@ function Chatbot(props) {
 
       if (!json.success) throw new Error('Something went wrong.');
     } catch (err) {
-      console.log('chatterbot - send log error');
+      console.log('chatterbot - send log error:',err);
     }
   };
 
@@ -812,14 +823,7 @@ function Chatbot(props) {
     }
   };
 
-  const calculateTimeDifference = () => {
-    if (startTime && endTime) {
-      const difference = endTime - startTime;
-      const seconds = Math.floor(difference / 1000);
-      return seconds;
-    }
-    return null;
-  };
+
 
   
   
@@ -832,7 +836,8 @@ function Chatbot(props) {
     const chatbotContainer = document.querySelector('.chatbot-popup');
     
     // user stats collection (duration used)
-    setStartTime(new Date());
+    // setStartTime(new Date());
+    // startTime = new Date();
     window.addEventListener("beforeunload", handleCloseChatbot);
 
     // Add the event listener for link clicks
