@@ -27,6 +27,7 @@ let theuserName = '';
 // collect duration of use stats
 // const [startTime, setStartTime] = useState(null);
 // const [endTime, setEndTime] = useState(null);
+// TODO below just seems sloppy way to do this - but then, we also don't need 'state' in react, nor do we need ms accuracy in the updates.  do a bit more research.
 let startTime = new Date();
 let endTime = new Date();
 let timeUsed = 0;
