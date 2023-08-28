@@ -223,7 +223,7 @@ const intents = {
   },
   whyChatbot: {
     patterns: ['why chatbot','why a chatbot','why a chat bot','why chatterbot','why a bot','why chatbots','why have chatbots','chat bots'],
-    responses: [`Chatbots offer several benefits to enchance user experience and engagement on a web site.
+    responses: [`Chatbots offer several benefits to enhance user experience and engagement on a web site.
       <li>provide instant assistance to questions that may not be answered elsewhere,
       <li>engaging to visitors with interactive and dynamic content,
       <li>showcasing skills as a developer,
@@ -240,7 +240,7 @@ const intents = {
   },
   donate: {
     patterns: ['donate','donations','buy me a coffee', 'buy coffee', 'tips','coffee'],
-    responses: ['That is great that you want to buy the developer a coffee! <a href="https://www.buymeacoffee.com/ej88994">click here</a> to "buy me a coffee "☕'],
+    responses: ['That is great that you want to buy the developer a coffee! <a class="keyword-link" href="https://www.buymeacoffee.com/ej88994">click here</a> to "buy me a coffee "☕'],
     replies: 0,
   },
   biden: {
@@ -330,7 +330,7 @@ const intents = {
   },
   contact: {
     patterns: ['contact', 'administrator', 'phone', 'email','operator','support','assistant','chat','live chat'],
-    responses: ['Live chat is not presently available.<br><br>You can contact Ernie through the <a href="#contact">contact</a> section of the site, or email ernie@erniejohnson.ca'],
+    responses: ['Live chat is not presently available.<br><br>You can contact Ernie through the <a class="keyword-link" href="#contact">contact</a> section of the site, or email ernie@erniejohnson.ca'],
     replies: 0,
   },
   salaries: {
@@ -345,7 +345,7 @@ const intents = {
   },
   feedback: {
     patterns: ['feedback','comments','comment'],
-    responses: ['Your feedback will be valuable! Share your thoughts and suggestions in the "<a href="#contact">contact</a>" section!'],
+    responses: ['Your feedback will be valuable!<br><br>Share your thoughts and suggestions in the "<a class="keyword-link"   href="#contact">contact</a>" section!'],
     replies: 0,
   },
   softSkills: {
@@ -355,7 +355,27 @@ const intents = {
   },
   codeSkills: {
     patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages','json','javascript','react','typescript','nextjs','perl','php','bootstrap','materialui','tailwind','jquery','mysql','postgresql','nosql'],
-    responses: ['Ernie has experience in Javascript, jQuery, Typescript, React, NextJS, C, C++, and more. He is also skilled with backend technologies like NodeJS, Perl, PHP, MySQL, PostgreSQL and more.<br><br>You can find additional skills in the <a href="#about">about</a> section.<BR>Is there something more specific your looking to know?'],
+    responses: ['Ernie has experience in Javascript, jQuery, Typescript, React, NextJS, C, C++, and more. He is also skilled with backend technologies like NodeJS, Perl, PHP, MySQL, PostgreSQL and more.<br><br>You can find additional skills in the <a class="keyword-link" href="#about">about</a> section.<BR>Is there something more specific your looking to know?'],
+    replies: 0,
+  },
+  wordpress: {
+    patterns: ['wordpress','word press',],
+    responses: ["Yes, Ernie has experience with WordPress, along with the installation of different themes and plugins and also with doing some customization of these themes and plugins.<br><br>Ernie actually has a shared hosting service that he runs hosting a variety of WordPress sites for friends, family and as a small business for people who need something simple.  He's also quite versed in technical support for WordPress installs."],
+    replies: 0,
+  },
+  fullstack: {
+    patterns: ['fullstack','full stack','full-stack'],
+    responses: ['TODO add full stack info'],
+    replies: 0,
+  },
+  frontend: {
+    patterns: ['font end','frontend','front-end'],
+    responses: ["Ernie enjoys the challenges of front-end development to ensure a smooth, fast and effective user experience through user interface design as well as streamlining code used in the front-end development. <br><br>Ernie is also skilled in [back-end] development and can handle [full-stack] applications."],
+    replies: 0,
+  },
+  backend: {
+    patterns: ['back end','backend','back-end'],
+    responses: ["Ernie can do back-end development just as well as [front-end] work.<br><br>He has experience with [SQL] and flat file databases, RESTful API's and takes pride in ensuring back end code follows full file-sharing rules, fast & efficient respones and maintaining a secure code base at the same time."],
     replies: 0,
   },
   shareware: {
@@ -380,7 +400,7 @@ const intents = {
     replies: 0,
   },
   currentWork: {
-    patterns: ['where do you work now','current work','working currently','employed now','working now','where do you work','work now','current job','current employer','current employment','looking for a job','job wanted',],
+    patterns: ['where do you work now','current work','working currently','employed now','working now','where do you work','work now','current job','current employer','current employment','looking for a job','job wanted','current employer','employer'],
     responses: ['Ernie is presently working on various freelance projects in Canada, including providing management of a WAN that supports an engineering firm operating from offices in Calgary, Regina and Windsor.<br><br>Ernie is available and interested in additional opportunities which would include additional freelance work, project collaboration, part-time and full-time opportunities.'],
     replies: 0,
   },
@@ -472,7 +492,7 @@ const intents = {
   },
   downloads: {
     patterns: ['resume','download','downloads','your cv','cv'],
-    responses: ['Ernie&#39;s resume can be downloaded <a href="http://www.erniejohnson.ca/resume.pdf">here</a>'],
+    responses: ['Ernie&#39;s resume can be downloaded <a class="keyword-link" href="http://www.erniejohnson.ca/resume.pdf">here</a>'],
     replies: 0,
   },
   volunteer: {
@@ -580,7 +600,7 @@ function getResponse(message) {
       if (regexPattern.test(lowerMessage)) {
         // chatbotScore++;
         if (intent.links) {
-          additionalLink = ` <a href=${intent.links} target=_new>(more info)</a>`;
+          additionalLink = ` <a class="keyword-link" href=${intent.links} target=_new>(more info)</a>`;
         }
         intent.replies++;
         chatbotScore = calculatePercentage(sumPositiveReplies(intents),chatbotScoreMax);
@@ -917,7 +937,7 @@ function Chatbot(props) {
             )}
             <div key={index} className={`message ${msg.sender}`}>
               <div className="message-content">
-                {msg.message.includes('<a href=') || 
+                {msg.message.includes('<a') || 
                   msg.message.includes('<li>') ||
                   msg.message.includes('<img') ||
                   msg.message.includes('<i>') ||
