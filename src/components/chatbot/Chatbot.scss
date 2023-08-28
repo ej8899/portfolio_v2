@@ -112,6 +112,7 @@
   border-radius: 5px;
   display: flex;
   font-size: 1.1rem;
+  z-index: 53;
   //clear: both;
 }
 
@@ -208,17 +209,42 @@ button {
   //border: 1px solid red;
   // border-radius: 5px;
   cursor: pointer;
-
-  transform: rotate(5deg);
-  border-radius: 1em 0 1em 0;
-  background-image: linear-gradient(
+  position: relative;
+  z-index: 52;
+  white-space:nowrap;
+}
+.keyword-link::before {
+  // transform: rotate(5deg);
+  // position: absolute;
+  // border: 2px solid red;
+  // border-radius: 1em 0 1em 0;
+  // background-image: linear-gradient(
+  //   -100deg,
+  //   rgba(255, 224, 0, 0.2),
+  //   rgba(255, 224, 0, 0.7) 95%,
+  //   rgba(255, 224, 0, 0.1)
+  // );
+  // background-size: 200% 100%;
+  // background-position: 100% 0;
+  
+    /* Highlight color */
+    //background-color: #46b96c;
+    background-image: linear-gradient(
     -100deg,
-    rgba(255, 224, 0, 0.2),
-    rgba(255, 224, 0, 0.7) 95%,
+    rgba(78, 175, 18, 0.421),
+    rgba(39, 213, 8, 0.7) 95%,
     rgba(255, 224, 0, 0.1)
-  );
-  background-size: 200% 100%;
-  background-position: 100% 0;
+    );
+      // background-size: 200% 100%;
+  // background-position: 100% 0;
+    content: "";
+    position: absolute;
+    width: calc(100% + 4px);
+    height: 75%;
+    left: -2px;
+    bottom: 0;
+    z-index: -1;
+    transform: rotate(-3deg);
 }
 
 
