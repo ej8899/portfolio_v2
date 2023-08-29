@@ -351,6 +351,12 @@ const intents = {
     responses: ['Your feedback will be valuable!<br><br>Share your thoughts and suggestions in the "<a class="keyword-link"   href="#contact">contact</a>" section!'],
     replies: 0,
   },
+  engineer: {
+    patterns: ['software engineer','engineer'],
+    responses: [`Ernie is not a software engineer in the professional term of 'engineer'.<br><br>Although Ernie has the skills, training and experience of what is typically coined a "software engineer", here in Canada, we are not allowed to utilitze the term "engineer" unless licensed through a provincial licensing regulator.<br><br>`],
+    links: ['https://engineerscanada.ca/news-and-events/news/engineering-regulators-reiterate-licensure-requirements-for-those-using-software-engineer-and-other-it-titles'],
+    replies: 0,
+  },
   softSkills: {
     patterns: ['softskills','soft skills','project management'],
     responses: ['Ernie has, of course, numerous "soft skills" he has gained during many years of employment across several different industries. The ability to work independently and within a team, communications, project management and more.'],
@@ -404,7 +410,7 @@ const intents = {
   },
   currentWork: {
     patterns: ['where do you work now','current work','working currently','employed now','working now','where do you work','work now','current job','current employer','current employment','looking for a job','job wanted','current employer','employer'],
-    responses: ['Ernie is presently working on various freelance projects in Canada, including providing management of a WAN that supports an engineering firm operating from offices in Calgary, Regina and Windsor.<br><br>Ernie is available and interested in additional opportunities which would include additional freelance work, project collaboration, part-time and full-time opportunities.'],
+    responses: ['Ernie is presently working on various freelance projects in Canada, including providing management of a WAN that supports a heavy civil engineering firm operating from offices in Calgary, Regina and Windsor.<br><br>Ernie is available and interested in additional opportunities which would include additional freelance work, project collaboration, part-time and full-time opportunities.'],
     replies: 0,
   },
   hackAttempt: {
