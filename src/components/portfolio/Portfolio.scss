@@ -15,7 +15,11 @@
 
     margin-bottom: min(3.5vw, 3rem);
     padding: 1rem;
-
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
     color: var(--clr-neutral-100);
 
     opacity: 0;
