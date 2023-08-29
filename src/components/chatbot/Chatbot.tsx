@@ -287,7 +287,7 @@ const intents = {
     replies: 0,
   },
   greetings: {
-    patterns: ['hello', 'hi', 'hey','wassup','sup','greetings',],
+    patterns: ['hello', 'hi', 'hey','wassup','sup','greetings','good day',],
     responses: ['Hello!', 'Hi there!', 'Hey! How can I assist you {username}?'],
     replies: 0,
   },
@@ -941,12 +941,12 @@ function Chatbot(props) {
             <div key={index} className={`message ${msg.sender}`}>
               <div className="message-content">
                 {msg.message.includes('<a') || 
-                  msg.message.includes('<li>') ||
+                  msg.message.includes('<li') ||
                   msg.message.includes('<img') ||
-                  msg.message.includes('<i>') ||
-                  msg.message.includes('<span>') ||
-                  msg.message.includes('<b>') || 
-                  msg.message.includes('<br>') ? (
+                  msg.message.includes('<i') ||
+                  msg.message.includes('<span') ||
+                  msg.message.includes('<b') || 
+                  msg.message.includes('<br') ? (
                     <div dangerouslySetInnerHTML={{ __html: msg.message }} />
                   ) : msg.message.includes('{userName}') ? (
                     msg.message.replace('{userName}', userName)

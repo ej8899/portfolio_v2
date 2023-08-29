@@ -222,8 +222,8 @@ button {
 .keyword-link::before {
     background-image: linear-gradient(
     -100deg,
-    rgba(72, 144, 216, 0.412),
-    rgba(74, 131, 188, 0.635) 95%,
+    rgba(72, 144, 216, 0.21),
+    rgba(100, 154, 208, 0.615) 95%,
     rgba(255, 224, 0, 0.1)
     );
       // background-size: 200% 100%;
@@ -236,7 +236,7 @@ button {
     bottom: 0;
     z-index: -1;
     border-radius: 0px 0px 29px 0px;
-    transform: rotate(-4deg);
+    transform: rotate(-3deg);
 }
 
 
