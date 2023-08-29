@@ -48,14 +48,15 @@
       font-size: 80px;
       line-height: 1.2;
       margin: 15px 0 0 0;
+      
       text-transform: uppercase;
       letter-spacing: 0.05em;
       text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgba(0, 0, 0, 0.2);
-      margin-bottom: calc(var(--spacer) * 0.5);
+      margin-bottom: calc(var(--spacer) * 1.5);
 
       font-weight: var(--fw-xbold);
       font-size: clamp(2.0rem, 8vw, 5rem);
-
+      transform: rotate(-2deg) skew(-5deg);
       color: var(--clr-neutral-200);
     }
 
@@ -70,25 +71,32 @@
       letter-spacing: 0.1px;
       font-size: clamp(1.25rem, 6vw, 3rem);
       color: var(--clr-neutral-800);
+      //transform: rotate(-2deg) skew(-5deg);
+      text-shadow: 
+      -1px -1px 0 rgba(144, 145, 145, 0.691),  
+      1px -1px 0 rgba(144, 145, 145, 0.691),
+      -1px 1px 0 rgba(144, 145, 145, 0.691),
+      1px 1px 0 rgba(144, 145, 145, 0.691);
       
       // user title 2 (underline)
       span {
         position: relative;
-
+        // z-index: +1;
         // Underline
         &:before {
           content: '';
           position: absolute;
 
-          bottom: max(calc(-4px - 1.2vw), -16px);
-          right: 12.5%;
-
-          height: min(1.5vw, 12px);
-          width: 75%;
+          bottom: max(calc(-4px - 1.2vw), -8px);
+          right: 8.5%;
+          z-index: -1;
+          height: min(1.5vw, 20px);
+          width: 85%;
 
           background-color: var(--clr-primary-100);
 
-          transform: rotate(-2deg) skew(-5deg);
+          transform: rotate(2deg) skew(-5deg);
+          //transform:  skew(-5deg);
           animation: pulseSkewScale 1s infinite ease-in-out;
         }
       }

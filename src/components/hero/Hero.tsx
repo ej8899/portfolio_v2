@@ -19,7 +19,7 @@ function Hero() {
             <span>
               <b id='line1'>Ernie</b>
               <br />
-              <span id='line2'>Johnson</span>
+              &nbsp;<span id='line2'>Johnson</span>
             </span>
           </h2>
           <h3>
