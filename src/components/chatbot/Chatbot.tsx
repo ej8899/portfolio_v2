@@ -194,7 +194,7 @@ function socLinks() {
 //
 const intents = {
   options: {
-    patterns: ['options'],
+    patterns: ['options','what can i do','can i ask'],
     responses: ['common options to use:<br>[commands],[contact],[about chatterbot]'],
     quickReplies: [
       { display: 'common commands',
@@ -278,7 +278,7 @@ const intents = {
   },
   commands: {
     patterns: ['command','commands',],
-    responses: ['Sure thing {username}!<br><br>Here are a few common commands:<br>quit, support, feedback, about chatterbot, developer skills.'],
+    responses: [`Sure thing {username}!<br><br>Here are a few common commands:<br>[quit], [support], [feedback], [about chatterbot], [developer skills], [what is front-end], [Ernie's education].`],
     replies: 0,
   },
   controversy: {
