@@ -204,7 +204,12 @@ button {
   z-index: 11;
 }
 
-
+.popoutIcon {
+  white-space:nowrap;
+  display: inline-block;
+  position: relative;
+  top: -5px;
+}
 .keyword-link {
   text-decoration: underline;
   //border: 1px solid red;
