@@ -1,4 +1,4 @@
-# ErnieJohnson.ca Personal Portfolio.
+# ErnieJohnson.ca Personal Portfolio
 
 Welcome to Ernie Johnson's Personal Portfolio Project. 
 The goal of this repo is to practice the following skill sets:
