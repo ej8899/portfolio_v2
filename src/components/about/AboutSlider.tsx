@@ -37,7 +37,7 @@ function AboutSlider() {
         modules={[Pagination, Navigation, EffectFade, Autoplay]}
         {...servicesSliderProps}
         pagination={true}
-        className='swiper-slide column centered_grid aboutslidercontainer'
+        className='column centered_grid aboutslidercontainer'
       >
         <SwiperSlide className='swiper-slide'>
           <div className='services-item'>
@@ -66,6 +66,7 @@ function AboutSlider() {
                 backgroundImage: 'url(src/assets/images/pat-2.png)',
               }}
             />
+            <i className='fa-solid fa-laptop-code fa-slider'></i>
           </div>
         </SwiperSlide>
         <SwiperSlide className='swiper-slide'>
@@ -93,6 +94,34 @@ function AboutSlider() {
                 backgroundImage: 'url(src/assets/images/pat-2.png)',
               }}
             />
+            <i className='fa-solid fa-database fa-slider'></i>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+          <div className='services-item'>
+            <div className='lui-subtitle'>
+              <span> Hardware </span>
+            </div>
+            <div className='icon' />
+            <h5 className='lui-title'>
+              <span> Hardware & Servicing </span>
+            </h5>
+            <div className='lui-text'>
+              <div>
+                <p>
+                  I love working on hardware - from building custom PCs to building custom servers -
+                  and yes, even wiring!
+                </p>
+              </div>
+            </div>
+            &nbsp;
+            <div
+              className='image'
+              style={{
+                backgroundImage: 'url(src/assets/images/pat-2.png)',
+              }}
+            />
+            <i className='fa-solid fa-microchip fa-slider'></i>
           </div>
         </SwiperSlide>
         <SwiperSlide className='swiper-slide'>
@@ -124,17 +153,17 @@ function AboutSlider() {
         <SwiperSlide className='swiper-slide'>
           <div className='services-item'>
             <div className='lui-subtitle'>
-              <span> Hardware </span>
+              <span> Soft Skills </span>
             </div>
             <div className='icon' />
             <h5 className='lui-title'>
-              <span> Hardware Upgrades & Servicing </span>
+              <span> Team Communicator </span>
             </h5>
             <div className='lui-text'>
               <div>
                 <p>
-                  I love working on hardware - from building custom PCs to building custom servers -
-                  and yes, even wiring!
+                  I work equally well either on my own or as part of a team and enjoy the
+                  communications of team environments.
                 </p>
               </div>
             </div>
@@ -145,22 +174,23 @@ function AboutSlider() {
                 backgroundImage: 'url(src/assets/images/pat-2.png)',
               }}
             />
+            <i className='fa-solid fa-comments fa-slider'></i>
           </div>
         </SwiperSlide>
         <SwiperSlide className='swiper-slide'>
           <div className='services-item'>
             <div className='lui-subtitle'>
-              <span> Hardware </span>
+              <span> Project Skills </span>
             </div>
             <div className='icon' />
             <h5 className='lui-title'>
-              <span> Hardware Upgrades & Servicing </span>
+              <span> Project Management </span>
             </h5>
             <div className='lui-text'>
               <div>
                 <p>
-                  I love working on hardware - from building custom PCs to building custom servers -
-                  and yes, even wiring!
+                  I enjoy setting up project flow, task delegation and overall project management
+                  through the most effective means available to the team.
                 </p>
               </div>
             </div>
@@ -171,32 +201,7 @@ function AboutSlider() {
                 backgroundImage: 'url(src/assets/images/pat-2.png)',
               }}
             />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className='swiper-slide'>
-          <div className='services-item'>
-            <div className='lui-subtitle'>
-              <span> Hardware </span>
-            </div>
-            <div className='icon' />
-            <h5 className='lui-title'>
-              <span> Hardware Upgrades & Servicing </span>
-            </h5>
-            <div className='lui-text'>
-              <div>
-                <p>
-                  I love working on hardware - from building custom PCs to building custom servers -
-                  and yes, even wiring!
-                </p>
-              </div>
-            </div>
-            &nbsp;
-            <div
-              className='image'
-              style={{
-                backgroundImage: 'url(src/assets/images/pat-2.png)',
-              }}
-            />
+            <i className='fa-solid fa-list-check fa-slider'></i>
           </div>
         </SwiperSlide>
       </Swiper>
