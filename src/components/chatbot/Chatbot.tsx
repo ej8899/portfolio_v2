@@ -216,6 +216,11 @@ const intents = {
     responses: [`Asleep at the keyboard are you?`],
     replies: 0,
   },
+  about: {
+    patterns: ['about'],
+    responses: [`You'll want to elaborate further - perhaps add an additional word or two on what you're looking for.`],
+    replies: 0,
+  },
   greetingsDay: {
     patterns: ['good morning','good afternoon','good evening'],
     responses: [`Good ${getTimePeriod()} to you as well {username}!`],
@@ -996,7 +1001,7 @@ function Chatbot(props) {
           placeholder="Type your message..."
           onKeyDown={handleKeyDown}
         />
-        &nbsp;&nbsp;&nbsp;<button ref={buttonRef} onClick={handleSendMessage}><SendIcon/></button>
+        &nbsp;&nbsp;&nbsp;<button ref={buttonRef} onClick={handleSendMessage}><SendIcon clasName='sendicon'/></button>
       </div>
     </div>
   </div>
