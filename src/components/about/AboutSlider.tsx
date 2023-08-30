@@ -25,16 +25,17 @@ function AboutSlider() {
   // const swiperElRef = useRef(null);
 
   return (
-    <div
-      className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started aboutslidercontainer'
-      data-animate='active'
-    >
-      <h2>test for swiper slider</h2>
+    <section className='faqs' aria-labelledby='my skills and tools'>
+      <div className='column centered_grid'>
+        <h2 id='faqs' className='faqs__title'>
+          faqs and more
+        </h2>
+      </div>
       <Swiper
         modules={[Pagination, Navigation, EffectFade, Autoplay]}
         {...servicesSliderProps}
         pagination={true}
-        className='swiper-slide'
+        className='swiper-slide column centered_grid aboutslidercontainer'
       >
         <SwiperSlide className='swiper-slide'>
           <div className='services-item'>
@@ -118,11 +119,86 @@ function AboutSlider() {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide className='swiper-slide'>4afdsfkdlsl</SwiperSlide>
-        <SwiperSlide className='swiper-slide'>5asfdf afdsf</SwiperSlide>
-        <SwiperSlide className='swiper-slide'>6sdfdsfdss</SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+          <div className='services-item'>
+            <div className='lui-subtitle'>
+              <span> Hardware </span>
+            </div>
+            <div className='icon' />
+            <h5 className='lui-title'>
+              <span> Hardware Upgrades & Servicing </span>
+            </h5>
+            <div className='lui-text'>
+              <div>
+                <p>
+                  I love working on hardware - from building custom PCs to building custom servers -
+                  and yes, even wiring!
+                </p>
+              </div>
+            </div>
+            &nbsp;
+            <div
+              className='image'
+              style={{
+                backgroundImage: 'url(src/assets/images/pat-2.png)',
+              }}
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+          <div className='services-item'>
+            <div className='lui-subtitle'>
+              <span> Hardware </span>
+            </div>
+            <div className='icon' />
+            <h5 className='lui-title'>
+              <span> Hardware Upgrades & Servicing </span>
+            </h5>
+            <div className='lui-text'>
+              <div>
+                <p>
+                  I love working on hardware - from building custom PCs to building custom servers -
+                  and yes, even wiring!
+                </p>
+              </div>
+            </div>
+            &nbsp;
+            <div
+              className='image'
+              style={{
+                backgroundImage: 'url(src/assets/images/pat-2.png)',
+              }}
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+          <div className='services-item'>
+            <div className='lui-subtitle'>
+              <span> Hardware </span>
+            </div>
+            <div className='icon' />
+            <h5 className='lui-title'>
+              <span> Hardware Upgrades & Servicing </span>
+            </h5>
+            <div className='lui-text'>
+              <div>
+                <p>
+                  I love working on hardware - from building custom PCs to building custom servers -
+                  and yes, even wiring!
+                </p>
+              </div>
+            </div>
+            &nbsp;
+            <div
+              className='image'
+              style={{
+                backgroundImage: 'url(src/assets/images/pat-2.png)',
+              }}
+            />
+          </div>
+        </SwiperSlide>
       </Swiper>
-    </div>
+    </section>
   );
 }
 

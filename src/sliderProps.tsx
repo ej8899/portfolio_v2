@@ -8,15 +8,18 @@
 
 export const servicesSliderProps = {
   slidesPerView: 3,
-  spaceBetween: 40,
-  watchSlidesProgress: false,
+  spaceBetween: 20,
+  watchSlidesProgress: true,
   noSwipingSelector: 'a',
+  centeredSlides: true,
   loop: true,
   speed: 1000,
-  // effect: 'fade',
+  effect: 'slide',
+
+  watchOverflow: true,
   autoplay: {
     delay: 5000,
-    disableOnInteraction: true,
+    disableOnInteraction: false,
   },
   grabCursor: true,
   pagination: {
@@ -47,7 +50,7 @@ export const servicesSliderProps = {
 export const testimonialsSliderProps = {
   slidesPerView: 3,
   spaceBetween: 40,
-  watchSlidesProgress: true,
+  watchSlidesProgress: false,
   noSwipingSelector: 'a',
   loop: true,
   speed: 1000,
