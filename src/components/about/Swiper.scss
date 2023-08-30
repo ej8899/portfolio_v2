@@ -2,7 +2,7 @@
   --faqs-gap: min(4.5vh, 3rem);
   
   position: relative;
-  // padding-block: var(--section-vertical-padding);
+  padding-block: var(--section-vertical-padding);
   z-index: 2;
   //color: var(--clr-neutral-900);
   background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
@@ -158,7 +158,7 @@
 
 .aboutslidercontainer {
   // background-color: rgb(179, 179, 28);
-  height: 100%;
+  height: 500px;
   z-index: 2;
   position: relative;
   mask-image: linear-gradient(to right, rgba(5, 2, 5, 0.2), rgb(5, 5, 5) 10%, rgba(5, 5, 5, 1) 90%, rgba(255, 255, 255, 0.2));
@@ -249,7 +249,7 @@
 }
 
 .swiper-pagination {
-  top:410px;
+  top:470px;
 }
 
 
@@ -375,4 +375,13 @@
   color: black;
   filter: drop-shadow(2px 2px 3px teal);
   // background: linear-gradient(to left top, rgb(181, 118, 0) 0%, rgba(255,165,0,1) 30%);
+}
+
+.swiper-slide-active > .services-item {
+  transform: rotate(3deg) scale(1.0);
+  background-color: orange;
+}
+.swiper-slide-active .fa-slider {
+  color: black;
+  filter: drop-shadow(2px 2px 3px teal);
 }

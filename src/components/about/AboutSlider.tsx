@@ -127,17 +127,18 @@ function AboutSlider() {
         <SwiperSlide className='swiper-slide'>
           <div className='services-item'>
             <div className='lui-subtitle'>
-              <span> Hardware </span>
+              <span> Code Versioning </span>
             </div>
             <div className='icon' />
             <h5 className='lui-title'>
-              <span> Hardware Upgrades & Servicing </span>
+              <span> Git Version Control </span>
             </h5>
             <div className='lui-text'>
               <div>
                 <p>
-                  I love working on hardware - from building custom PCs to building custom servers -
-                  and yes, even wiring!
+                  I recall the days of having to constantly save files with different version
+                  numbers attached, and then doing manual code merges with different team members.
+                  Today, I just use Git.
                 </p>
               </div>
             </div>
@@ -148,6 +149,7 @@ function AboutSlider() {
                 backgroundImage: 'url(src/assets/images/pat-2.png)',
               }}
             />
+            <i className='fa-solid fa-code-branch fa-slider'></i>
           </div>
         </SwiperSlide>
         <SwiperSlide className='swiper-slide'>

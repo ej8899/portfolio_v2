@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable import/no-extraneous-dependencies */
 // eslint-disable
 
@@ -28,6 +31,23 @@ export const servicesSliderProps = {
     clickable: true,
   },
   navigation: true,
+
+  on: {
+    // eslint-disable-next-line object-shorthand
+    slideChange: function () {
+      const activeIndex = this.activeIndex; // Index of the active (middle) slide
+      const slides = this.slides; // All slides in the carousel
+
+      // Remove 'swiper-slide-active' class from all slides
+      slides.forEach((slide) => {
+        slide.classList.remove('swiper-slide-active');
+      });
+
+      // Add 'swiper-slide-active' class to the active (middle) slide
+      slides[activeIndex].classList.add('swiper-slide-active');
+    },
+  },
+
   breakpoints: {
     // when window width is >= 320px
     0: {
