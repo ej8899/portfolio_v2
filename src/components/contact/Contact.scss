@@ -118,7 +118,7 @@
 
     input,
     textarea {
-      --border-thickness: 3px;
+      --border-thickness: 2px;
       --border-invalid: var(--border-thickness) solid var(--clr-error);
       --border-valid: var(--border-thickness) solid var(--clr-success);
       --border-focus: var(--border-thickness) solid var(--clr-neutral-500);
@@ -144,7 +144,6 @@
 
       &:focus {
         outline: var(--border-focus);
-
         + .validation-message {
           color: var(--clr-neutral-500);
         }
@@ -315,6 +314,10 @@
 	padding-left: 130px;
 	margin-bottom: 40px;
 }
+.numbers-item:hover > .icon {
+  background-color: orange;
+  color: black;
+}
 
 .numbers-item .icon {
 	border: 2px solid #000;
@@ -336,7 +339,6 @@
 .numbers-item .icon:hover {
   background-color: orange;
   color: black;
-  transition: all 1s;
 }
 
 .numbers-item .icon:after {
