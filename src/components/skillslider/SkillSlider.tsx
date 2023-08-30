@@ -20,7 +20,7 @@ const SkillSlider = () => {
     <section className='skills' aria-labelledby='my skills and tools'>
       <div className='column centered_grid'>
         <h2 id='skills' className='skills__title'>
-          Skills & Tools
+          Languages & Tools
         </h2>
       </div>
       <div>

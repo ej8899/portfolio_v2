@@ -139,8 +139,10 @@
       font-family: var(--ff-accent);
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-weight: var(--fw-thin);
+      // font-weight: var(--fw-thin);
       color: var(--clr-neutral-500);
+      // TODO switch to vars
+      color: black;
     }
 
     &-p {

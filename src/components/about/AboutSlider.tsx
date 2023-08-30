@@ -19,6 +19,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, EffectFade, Autoplay } from 'swiper/modules';
 
 // TODO - swiper - how to use breakpoints in this style of usage?
+// TODO - swiper pagination isn't clickable for some reason.
+// TODO - check styles - might need webkit mask for firefox
 
 function AboutSlider() {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -28,7 +30,7 @@ function AboutSlider() {
     <section className='faqs' aria-labelledby='my skills and tools'>
       <div className='column centered_grid'>
         <h2 id='faqs' className='faqs__title'>
-          faqs and more
+          Skills & Traits
         </h2>
       </div>
       <Swiper
