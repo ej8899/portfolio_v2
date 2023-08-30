@@ -155,9 +155,11 @@
 
 .rotate3r {
   transform: rotate(4deg);
+  transition: all 0.3s ease-in-out;
 }
 .rotate3l {
   transform: rotate(-4deg);
+  transition: all 0.3s ease-in-out;
 }
 
 .greyscale {
@@ -264,12 +266,11 @@
 	padding: 0 20px;
   transition: transform background-color 0.3s ease-in-out;
   transition: transform 0.25s ease-in-out;
+  transition: all 0.3s ease-in-out;
   &:hover {
     // TODO change to variable
-    background-color: orange;
+    background-color: teal;
     transition: background-color 0.3s ease-in-out;
-    transition: transform 0.25s ease-in-out;
-    transform: rotate(0deg);
   }
 }
 
