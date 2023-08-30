@@ -1,5 +1,6 @@
 .about {
   --about-gap: min(4.5vh, 3rem);
+  
   position: relative;
   // padding-block: var(--section-vertical-padding);
   z-index: 2;
@@ -9,18 +10,23 @@
   //background-color: rgb(172, 138, 138);
   h2 {
     position: relative;
-
+    
     margin-bottom: var(--about-gap);
 
     color: var(--clr-neutral-900);
 
+    text-shadow: 
+        -1px 1px 6px var(--clr-neutral-400),
+        1px 1px 6px var(--clr-neutral-400);
+
     &::after {
       content: '';
       position: absolute;
-      top: 100%;
+      z-index: -1;
+      top: 70%;
       left: 4.6ch;
       width: 2ch;
-      height: 0.35ch;
+      height: 0.45ch;
       background: var(--clr-primary-100);
       animation: pulseSkewScale infinite 1s ease-in-out;
     }
@@ -54,7 +60,7 @@
 
     h2 {
       position: relative;
-
+      
       margin-bottom: var(--about-gap);
 
       color: var(--clr-neutral-900);
@@ -62,10 +68,10 @@
       &::after {
         content: '';
         position: absolute;
-        top: 100%;
+        top: 50%;
         left: 4.6ch;
         width: 2ch;
-        height: 0.35ch;
+        height: 0.55ch;
         background: var(--clr-primary-100);
         animation: pulseSkewScale infinite 1s ease-in-out;
       }

@@ -39,19 +39,21 @@
 
     h2 {
       position: relative;
-
+      text-shadow: 
+      -1px 1px 6px var(--clr-neutral-400),
+      1px 1px 6px var(--clr-neutral-400);
       //text-transform: uppercase;
 
       &::after {
         content: '';
         position: absolute;
-        top: 105%;
+        top: 70%;
         left: 1ch;
         transform: translateX(-50%);
 
         width: 80%;
-        height: 0.3ch;
-
+        height: 0.45ch;
+        z-index: -1;
         background: var(--clr-primary-100);
 
         animation: pulseSkewScale infinite 1s ease-in-out;

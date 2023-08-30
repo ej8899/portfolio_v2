@@ -18,8 +18,8 @@
     text-shadow: 
         -1px -1px 0 #000,  
         1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
+        -1px 1px 6px #000,
+        1px 1px 6px #000;
     color: var(--clr-neutral-100);
 
     opacity: 0;
@@ -35,12 +35,12 @@
     &::after {
       content: '';
       position: absolute;
-      top: 80%;
+      top: 65%;
       left: 3.1ch;
 
       width: 5ch;
-      height: 0.3ch;
-
+      height: 0.45ch;
+      z-index: -1;
       background: var(--clr-primary-100);
 
       animation: pulseSkewScale infinite 1s ease-in-out;

@@ -66,17 +66,20 @@
     // user title 1
     h3 {
       margin-bottom: calc(var(--spacer) * 4);
-
+      text-shadow: 
+      -1px 1px 4px  #01645792,
+      1px 1px 4px #01645792;
+      
       font-weight: var(--fw-bold);
       letter-spacing: 0.1px;
       font-size: clamp(1.25rem, 6vw, 3rem);
       color: var(--clr-neutral-800);
       //transform: rotate(-2deg) skew(-5deg);
-      text-shadow: 
-      -1px -1px 0 rgba(144, 145, 145, 0.691),  
-      1px -1px 0 rgba(144, 145, 145, 0.691),
-      -1px 1px 0 rgba(144, 145, 145, 0.691),
-      1px 1px 0 rgba(144, 145, 145, 0.691);
+      // text-shadow: 
+      // -1px -1px 0 rgba(144, 145, 145, 0.691),  
+      // 1px -1px 0 rgba(144, 145, 145, 0.691),
+      // -1px 1px 0 rgba(144, 145, 145, 0.691),
+      // 1px 1px 0 rgba(144, 145, 145, 0.691);
       
       // user title 2 (underline)
       span {

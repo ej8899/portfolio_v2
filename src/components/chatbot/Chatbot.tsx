@@ -352,8 +352,8 @@ const intents = {
     replies: 0,
   },
   engineer: {
-    patterns: ['software engineer','engineer'],
-    responses: [`Ernie is not a software engineer in the professional term of 'engineer'.<br><br>Although Ernie has the skills, training and experience of what is typically coined a "software engineer", here in Canada, we are not allowed to utilitze the term "engineer" unless licensed through a provincial licensing regulator.<br><br>`],
+    patterns: ['software engineer','engineer','software engineering'],
+    responses: [`Ernie is not a software engineer in the professional term of 'engineer'.<br><br>Although Ernie has the skills, training and experience of what is typically coined a "software engineer", here in Canada, we are not allowed to utilitze the term "engineer" unless licensed through a provincial licensing regulator.<br>`],
     links: ['https://engineerscanada.ca/news-and-events/news/engineering-regulators-reiterate-licensure-requirements-for-those-using-software-engineer-and-other-it-titles'],
     replies: 0,
   },
