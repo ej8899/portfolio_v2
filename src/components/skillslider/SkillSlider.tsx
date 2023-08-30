@@ -25,10 +25,12 @@ const SkillSlider = () => {
       </div>
       <div>
         <br />
-        <div className='centered_container'>
+        <div className='centered_container column centered_grid'>
           <p className='centered_item'>
             I do utilize a fair number of tools, frameworks and libraries as I develop applications.
+            <br />
             The deciding factor(s) of what I&#39;ll use and when depend on the application, client
+            <br />
             needs, and the requirements of the web site or application itself.
           </p>
         </div>
