@@ -182,3 +182,24 @@
 .circle-tooltip:hover::before {
   opacity: 1;
 }
+svg {
+  transition: all 0.5s ease-in-out;
+}
+use {
+  transition: all 0.3s ease-in-out;
+}
+svg:hover  {
+  //transform: rotate(3deg) scale(1.0);
+  // TODO cleanup unused styles here if we're content with things!
+
+  color: black !important;
+  //filter: drop-shadow(1px 1px 0px black);
+  // box-shadow: 0px 0px 2px 2px black; /*any color you want*/
+  // border: 1px solid teal;
+  transform: scale(1.4);
+  
+  // background: linear-gradient(to left top, rgb(181, 118, 0) 0%, rgba(255,165,0,1) 30%);
+}
+svg:hover > use {
+  fill: teal !important;
+}

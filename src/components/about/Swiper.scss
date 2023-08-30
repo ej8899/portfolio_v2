@@ -179,7 +179,7 @@
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-  padding: 20px;
+  padding: 25px;
   opacity: 1;
 }
 
@@ -305,14 +305,14 @@
   background: #e3a35f;
 	border-radius: 18px;
   box-shadow: 5px 5px 10px 3px teal;
-  transform: rotate(-3deg) scale(0.9);
+  //transform: rotate(-3deg) scale(0.9);
   transition: all 0.5s ease-in-out;
   
   border: 2px solid black;
 }
 .services-item:hover {
-  transform: rotate(3deg) scale(1.0) !important;
-
+  // transform: rotate(3deg) scale(1.0) !important;
+  transform: scale(1.03) !important;
   background-color: orange;
   // background: linear-gradient(to left top, rgb(181, 118, 0) 0%, rgba(255,165,0,1) 30%);
 }
@@ -380,8 +380,26 @@
 .swiper-slide-active > .services-item {
   transform: rotate(0deg) scale(1.0);
   background-color: orange;
+  filter: drop-shadow(0px 0px 10px black);
 }
 .swiper-slide-active .fa-slider {
   color: black;
   filter: drop-shadow(2px 2px 3px teal);
+}
+
+.swiper-slide-prev > .services-item {
+  // background-color: red;
+  // this is slide to LEFT of center
+  /* Add any other styles you want */
+  transform: rotate(-3deg) scale(0.85);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Apply styles to the slide after the active slide */
+.swiper-slide-next .services-item {
+  // background-color: lightblue;
+  transform: rotate(3deg) scale(0.85);
+  transition: all 0.5s ease-in-out;
+  // this is slide to RIGHT of center
+  /* Add any other styles you want */
 }
