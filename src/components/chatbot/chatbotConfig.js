@@ -2,7 +2,7 @@
 // configData - for chatterbot
 //
 
-export const configData = {
+export const chatbotConfigData = {
   debugMode: false,
   brandingTitle: 'ChatterBot',
   version: '1.0',

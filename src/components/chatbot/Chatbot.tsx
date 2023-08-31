@@ -14,6 +14,13 @@ import './Chatbot.scss';
 import globalconfig from '../../config';
 import popOut from './newWindow';
 import SendIcon from './sendIcon';
+
+// TODO use this filter
+import badWordsArray from 'badwords.js';
+
+// TODO use config options from here
+import chatbotConfigData from 'chatbotConfig.js';
+
 const chatbotVersion = '1.0';
 const chatbotChangeLog = 'v1.0 - 2023-08 - initial roll out';
 let showQuickReplies = false;
