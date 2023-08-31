@@ -29,6 +29,7 @@
   transform: scale(1);
   &::before {
     font-size:10px;
+    transform: scale(1);
   }
   &::after {
     content: attr(data-tooltip);

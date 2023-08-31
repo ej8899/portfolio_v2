@@ -37,7 +37,7 @@ function AboutSlider() {
         modules={[Pagination, Navigation, EffectFade, Autoplay]}
         {...servicesSliderProps}
         pagination={true}
-        className='column centered_grid aboutslidercontainer'
+        className='column centered_grid aboutslidercontainer scrolla-element-anim-1 scroll-animate'
       >
         <SwiperSlide className='swiper-slide'>
           <div className='services-item'>

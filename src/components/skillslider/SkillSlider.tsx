@@ -46,158 +46,158 @@ const SkillSlider = () => {
         >
           <div className='marquee'>
             <div className='marquee__group'>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#js' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#bootstrap' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#cpp' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#html' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#css' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#python' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#ts' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#mui' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#mysql' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#postgresql' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#nextjs' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#sass' />
               </svg>
             </div>
 
             <div aria-hidden='true' className='marquee__group'>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#js' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#bootstrap' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#cpp' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#html' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#css' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#python' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#ts' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#mui' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#mysql' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#postgresql' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#nextjs' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#sass' />
               </svg>
             </div>
           </div>
           <div className='marquee marquee--reverse'>
             <div className='marquee__group'>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#macos' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#notion' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#windows' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#ubuntu' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#vscode' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#aws' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#ps' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#xcode' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#gcloud' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#docker' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#pi' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#figma' />
               </svg>
             </div>
 
             <div aria-hidden='true' className='marquee__group'>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#macos' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#notion' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#windows' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#ubuntu' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#vscode' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#aws' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#ps' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#xcode' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#gcloud' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#docker' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#pi' />
               </svg>
-              <svg>
+              <svg className='devsvg'>
                 <use xlinkHref='#figma' />
               </svg>
             </div>

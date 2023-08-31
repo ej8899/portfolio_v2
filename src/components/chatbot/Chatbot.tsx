@@ -74,7 +74,13 @@ async function fetchIPGeolocation() {
     },
     });
     const data = await response.json();
-    return {region: data.regionName, city: data.city};
+    let city = '';
+    if (data.city == 'Amhertsburg') {
+      city = 'Amherstburg';
+    } else {
+      city = data.city;
+    }
+    return {region: data.regionName, city};
   } catch (error) {
     console.error('Error fetching geo IP:', error);
     return [];

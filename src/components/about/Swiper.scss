@@ -301,19 +301,19 @@
 	position: relative;
 	overflow: hidden;
 	padding: 30px 35px;
-	background: #e9e6e6;
-  background: #e3a35f;
+  background:linear-gradient(to bottom right , orange 65%, rgb(220, 133, 2));
 	border-radius: 18px;
   box-shadow: 5px 5px 10px 3px teal;
   //transform: rotate(-3deg) scale(0.9);
   transition: all 0.5s ease-in-out;
-  
+  filter: grayscale(25%);
   border: 2px solid black;
 }
 .services-item:hover {
   // transform: rotate(3deg) scale(1.0) !important;
   transform: scale(1.03) !important;
   background-color: orange;
+  filter: grayscale(0);
   // background: linear-gradient(to left top, rgb(181, 118, 0) 0%, rgba(255,165,0,1) 30%);
 }
 
