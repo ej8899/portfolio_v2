@@ -11,6 +11,7 @@
     "css": "node_modules/.bin/postcss dist/assets/*.css --replace -v"
   },
   "dependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "splitting": "^1.0.6",

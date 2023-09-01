@@ -71,7 +71,12 @@
         top: 50%;
         left: 4.6ch;
         width: 2ch;
+<<<<<<< Updated upstream
         height: 0.55ch;
+=======
+        height: 0.35ch;
+        border: 1px solid red;
+>>>>>>> Stashed changes
         background: var(--clr-primary-100);
         animation: pulseSkewScale infinite 1s ease-in-out;
       }

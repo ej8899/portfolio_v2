@@ -2,9 +2,10 @@ import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 import { defineConfig } from 'vite';
 import eslint from 'vite-plugin-eslint';
+import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
-  plugins: [react(), eslint()],
+  plugins: [react(), eslint(), vue()],
 
   // "@" becomes the default path for src
   resolve: {
@@ -12,4 +13,9 @@ export default defineConfig({
     // fix plugin-react-swc error {
     preserveSymlinks: true,
   },
+  server: {
+    watch: {
+      usePolling: true,
+    }
+  }
 });
