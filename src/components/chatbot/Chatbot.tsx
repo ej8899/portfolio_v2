@@ -16,10 +16,10 @@ import popOut from './newWindow';
 import SendIcon from './sendIcon';
 
 // TODO use this filter
-import badWordsArray from 'badwords.js';
+import badWordsArray from './badwords';
 
 // TODO use config options from here
-import chatbotConfigData from 'chatbotConfig.js';
+import chatbotConfigData from './chatbotConfig';
 
 const chatbotVersion = '1.0';
 const chatbotChangeLog = 'v1.0 - 2023-08 - initial roll out';

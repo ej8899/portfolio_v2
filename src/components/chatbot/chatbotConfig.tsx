@@ -2,7 +2,7 @@
 // configData - for chatterbot
 //
 
-export const chatbotConfigData = {
+const chatbotConfigData = {
   debugMode: false,
   brandingTitle: 'ChatterBot',
   version: '1.0',
@@ -21,3 +21,5 @@ export const chatbotConfigData = {
   allowJokes: true,
 
 };
+
+export default chatbotConfigData;
