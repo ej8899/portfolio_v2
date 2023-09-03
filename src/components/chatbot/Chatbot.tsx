@@ -404,7 +404,7 @@ const intents = {
   },
   fullstack: {
     patterns: ['fullstack','full stack','full-stack'],
-    responses: ['TODO add full stack info'],
+    responses: ['Ernie is indeed a full-stack developer  as he is capable of handling all stages of development, from designing user interfaces and client-side scripting [(front-end)] to managing servers and databases on the [back-end]. This versatility allows Ernie to create and maintain entire web applications independently or as part of a team'],
     replies: 0,
   },
   frontend: {
