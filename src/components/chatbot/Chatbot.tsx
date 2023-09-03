@@ -403,8 +403,8 @@ const intents = {
     replies: 0,
   },
   fullstack: {
-    patterns: ['fullstack','full stack','full-stack'],
-    responses: ['Ernie is indeed a full-stack developer  as he is capable of handling all stages of development, from designing user interfaces and client-side scripting [(front-end)] to managing servers and databases on the [back-end]. This versatility allows Ernie to create and maintain entire web applications independently or as part of a team'],
+    patterns: ['fullstack','full stack','full-stack','web development','web developer','web dev','developer'],
+    responses: ['Ernie is indeed a full-stack web and (app developer) as he is capable of handling all stages of development, from designing user interfaces and client-side scripting [(front-end)] to managing servers and databases on the [back-end]. This versatility allows Ernie to create and maintain entire web applications independently or as part of a team'],
     replies: 0,
   },
   frontend: {
@@ -415,6 +415,16 @@ const intents = {
   backend: {
     patterns: ['back end','backend','back-end'],
     responses: ["Ernie can do back-end development just as well as [front-end] work.<br><br>He has experience with [SQL] and flat file databases, RESTful API's and takes pride in ensuring back end code follows full file-sharing rules, fast & efficient respones and maintaining a secure code base at the same time."],
+    replies: 0,
+  },
+  appDev: {
+    patterns: ['app developer','mobile app','mobile apps','iphone','android'],
+    responses: ["I enjoy crafting interactive mobile applications that cater to both Android and iOS platforms. My expertise extends to creating seamless user experiences through comprehensive (front-end) and (back-end) development, ensuring a (holistic approach) to app functionality and design."],
+    replies: 0,
+  },
+  holisticDev: {
+    patterns: ['holistic'],
+    responses: ["Holistic design is a design approach that suggests looking at the product from different angles, considering all the aspects, stakeholders, and the environment."],
     replies: 0,
   },
   shareware: {
