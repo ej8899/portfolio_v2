@@ -545,7 +545,7 @@ const intents = {
     replies: 0,
   },
   workavailble: {
-    patterns: ['work in canada','work remotely','remote work','work remote','work in usa','work in america', 'work in us','work canada','work usa','work us','work in the usa','work in the us','where are you from','where from'],
+    patterns: ['work in canada','work remotely','remote work','work remote','work in usa','work in america', 'work in us','work canada','work usa','work us','work in the usa','work in the us','where are you from','where from','work in china','work in russia','work anywhere','work in europe','work in mexico'],
     responses: ['Ernie is Canadian and can work anywhere across Canada.<br>Life has dictated a necessity for remote work with the possibility of a hybrid schedule. Ernie can and has also recently worked in the USA on a B1 Business Visa and for outsourced freelance jobs.'],
     replies: 0,
   },
