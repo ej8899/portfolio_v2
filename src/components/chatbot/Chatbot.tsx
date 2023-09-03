@@ -393,7 +393,7 @@ const intents = {
     replies: 0,
   },
   codeSkills: {
-    patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages','json','javascript','react','typescript','nextjs','perl','php','bootstrap','materialui','tailwind','jquery','mysql','postgresql','nosql'],
+    patterns: ['coding skills', 'skills', 'frameworks', 'libraries','languages','json','javascript','react','typescript','nextjs','perl','php','bootstrap','materialui','tailwind','jquery','mysql','postgresql','nosql','python','sass'],
     responses: ['Ernie has experience in Javascript, jQuery, Typescript, React, NextJS, C, C++, and more. He is also skilled with backend technologies like NodeJS, Perl, PHP, MySQL, PostgreSQL and more.<br><br>You can find additional skills in the <a class="keyword-link" href="#about">about</a> section.<BR>Is there something more specific your looking to know?'],
     replies: 0,
   },
@@ -482,7 +482,7 @@ const intents = {
     responses: [`I used primarily the CoCo3...<br><br>... that was about 35 years ago for me!<br>Crazy to think, 128kb of RAM was "lots"!`]
   },
   operatingSystems: {
-    patterns: ['operating systems','windows','mac','macos','ventura','linux','ubuntu','redhat','sonoma','monterey','big sur','mint', 'debian','manjaro','pop','fedora','suse','elementary','puppy','networking'],
+    patterns: ['operating systems','windows','mac','macos','ventura','linux','ubuntu','redhat','sonoma','monterey','big sur','mint', 'debian','manjaro','pop','fedora','suse','elementary','puppy','networking','apple'],
     responses: ['On a day to day basis, Ernie is using MacOS, Windows and Linux systems.<br><br>He tries to stay fairly up to date with developer beta versions to see what is new and coming for OS releases.<br><br>OS experience also includes network administration on Linux and Windows sytems back as far as Windows 2000 Server!'],
     replies: 0,
   },
