@@ -195,6 +195,9 @@ button {
 .user-input button:hover {
   background-color: #e66e00; /* Darker shade on hover */
 }
+.user-input .sendicon:hover {
+  fill: white;
+}
 
 .quickReplies {
   background-color: teal;

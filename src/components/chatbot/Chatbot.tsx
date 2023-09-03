@@ -249,6 +249,11 @@ const intents = {
     responses: ['That, my friend is the answer.<br>What is the proper input?'],
     replies: 0,
   },
+  location: {
+    patterns: ['where are you','your location', 'address',],
+    responses: ['Ernie is located in Canada and travels between two primary locations - Windsor Ontario and Calgary Alberta.  [Relocation] is a possibility, so [contact] Ernie if it is a requirement.'],
+    replies: 0,
+  },
   whyChatbot: {
     patterns: ['why chatbot','why a chatbot','why a chat bot','why chatterbot','why a bot','why chatbots','why have chatbots','chat bots'],
     responses: [`Chatbots offer several benefits to enhance user experience and engagement on a web site.
@@ -429,7 +434,7 @@ const intents = {
     replies: 0,
   },
   workRelocation: {
-    patterns: ['can you relocate','relocate',"travel for work",'available for travel','available to travel'],
+    patterns: ['can you relocate','relocate', 'relocation', "travel for work",'available for travel','available to travel'],
     responses: ['Relocation for on-site work may be considered an option depending on the offer of employment.  This is something that would need further discussion direclty with Ernie.'],
     replies: 0,
   },
