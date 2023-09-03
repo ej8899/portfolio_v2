@@ -372,7 +372,7 @@ const intents = {
     replies: 0,
   },
   hobbies: {
-    patterns: ['hobby', 'interests', 'hobbies','photography','scuba','hiking','dog','dogs','photos','photo'],
+    patterns: ['hobby', 'hobbies', 'leisure', 'interests', 'hobbies','photography','scuba','hiking','dog','dogs','photos','photo'],
     responses: ['Ernie does have numerous hobbies and interests outside of web and app development.  Some of these hobbies include travelling, photography, scuba diving, hiking, and going on adventures with his dog, Guinness.'],
     replies: 0,
   },
@@ -388,7 +388,7 @@ const intents = {
     replies: 0,
   },
   softSkills: {
-    patterns: ['softskills','soft skills','project management'],
+    patterns: ['softskills','soft skills','project management','interpersonal'],
     responses: ['Ernie has, of course, numerous "soft skills" he has gained during many years of employment across several different industries. The ability to work independently and within a team, communications, project management and more.'],
     replies: 0,
   },
@@ -431,6 +431,11 @@ const intents = {
   workOptions: {
     patterns: ['available to work', 'available for work', 'freelance', 'availability','take new projects','new work','new job','part time','full time','part-time','full-time','when start work','start date','available date','availability'],
     responses: ['Ernie is currently available for freelance, part-time and full-time work. '],
+    replies: 0,
+  },
+  gameDev: {
+    patterns: ['game dev','game development','game developer'],
+    responses: ['Ernie has a strong interest in game development and has a history in doing early game development quite some time ago before the day of enhanced graphics. These were text based games, or games utilizing very simple sprites and collision detection routines.<br><br>That being said, Ernie would thoroughly enjoy working with a team on more modern day game development!'],
     replies: 0,
   },
   workRelocation: {
