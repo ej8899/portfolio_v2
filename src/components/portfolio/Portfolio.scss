@@ -83,7 +83,7 @@
 .extraprojects-wrapper {
   transition: max-height 0.8s ease-out;
   max-height: 0;
-  overflow: hidden;
+  overflow: hidden; // BUG this blocks some extra project info in the title - the # to the left and on the R the tooltip
 }
 .nowopen {
   max-height: 1000px; /* Adjust to your required  max height */
