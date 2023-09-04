@@ -10,6 +10,7 @@ function Portfolio() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [renderAllProjects, setRenderAllProjects] = useState(false);
   const isOnScreen = useElementOnScreen(titleRef);
+  let projectNum = 0;
 
   useEffect(() => {
     if (!isOnScreen) return;
@@ -40,6 +41,7 @@ function Portfolio() {
 
         {/* featured projects */}
         {PROJECTS.filter((project) => project.featured).map((project, i) => {
+          projectNum++;
           return <Project data={project} number={i} key={project.title} />;
         })}
 
@@ -57,12 +59,12 @@ function Portfolio() {
         <p className='portfolio__view-more-label'>
           {renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}
         </p>
-
         {/* remainder of projects */}
         <div className={`extraprojects-wrapper ${renderAllProjects ? 'nowopen' : 'closed'}`}>
           <div className='portfolio__extra_projects'>
             {PROJECTS.filter((project) => !project.featured).map((project, i) => {
-              return <Project data={project} number={i} key={project.title} />;
+              projectNum++;
+              return <Project data={project} number={projectNum - 1} key={project.title} />;
             })}
           </div>
         </div>
