@@ -366,3 +366,36 @@
   display: flex;
   justify-content: center;
 }
+
+
+
+
+
+.customshapewrapper {
+ // position: relative;
+  background-color: red;
+  height:0px;
+}
+.custom-shape-divider-top-1693860419 {
+  position: relative;
+  top: -180px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1693860419 svg {
+  //position: relative;
+  //border: 1px solid red;
+  // width: calc(300% + 1.3px);
+  height: 180px;
+  
+  display: block;
+  width: calc(300% + 1.3px);
+  //height: var(--section-separator-height);
+}
+
+.custom-shape-divider-top-1693860419 .shape-fill {
+  fill: #008080;
+}
