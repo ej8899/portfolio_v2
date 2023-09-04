@@ -5,7 +5,8 @@
   place-items: center;
 
   // offset padding-top to accommodate for the wavy separator
-  padding-block: calc(var(--section-vertical-padding) * 2) var(--section-vertical-padding);
+  // padding-block: calc(var(--section-vertical-padding) * 2) var(--section-vertical-padding);
+  padding-top: var(--section-vertical-padding);
   // padding-block-end: 0px;
 
   background: teal;
@@ -113,6 +114,7 @@ color: var(--clr-neutral-100);
   padding-right: 60px;
 
   background-color: #058585;
+  border-radius: 20px;
   // BUG - wrapper isn't going to full width - or at least full width as we expect in first version of project list - should we just put extra projects in their own 'section'?
   width: 100%;
   //background: yellow;

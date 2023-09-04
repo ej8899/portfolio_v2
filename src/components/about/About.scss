@@ -3,6 +3,7 @@
   
   position: relative;
   // padding-block: var(--section-vertical-padding);
+  padding-top: var(--section-vertical-padding);
   z-index: 2;
   //color: var(--clr-neutral-900);
   background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
