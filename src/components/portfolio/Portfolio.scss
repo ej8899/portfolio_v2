@@ -58,6 +58,7 @@
     border: 0;
 
     cursor: pointer;
+    
 
     svg {
       width: min(50px, 10vw);
@@ -73,6 +74,8 @@
     &-label {
       margin-block: 0.75rem;
       color: var(--clr-neutral-500);
+      color: black;
+      // TODO above - fix variable
       font-size: var(--fs-responsive-small);
     }
   }
