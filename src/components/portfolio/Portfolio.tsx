@@ -52,20 +52,20 @@ function Portfolio() {
           return <Project data={project} number={i} key={project.title} />;
         })}
 
-        <button
-          className='portfolio__view-more'
-          // data-tooltip='View All Projects'
-          onClick={() => {
-            setRenderAllProjects((prev) => !prev);
-          }}
-          aria-label={`${renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}`}
-        >
-          {renderAllProjects ? <Minus /> : <Plus />}
-        </button>
+        <span className='portfolio__additional-projects'>
+          <h3>Additional Projects:</h3>
+          <button
+            className='portfolio__view-more portfolio__additional-projects-title'
+            // data-tooltip='View All Projects'
+            onClick={() => {
+              setRenderAllProjects((prev) => !prev);
+            }}
+            aria-label={`${renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}`}
+          >
+            {renderAllProjects ? <Minus /> : <Plus />}
+          </button>
+        </span>
 
-        <p className='portfolio__view-more-label'>
-          {renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}
-        </p>
         {/* remainder of projects */}
         <div
           ref={extraProjectsRef}

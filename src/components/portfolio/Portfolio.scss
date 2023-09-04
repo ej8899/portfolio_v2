@@ -61,11 +61,12 @@
     
 
     svg {
-      width: min(50px, 10vw);
-      border-radius: 1rem;
+      width: min(40px, 5vw);
+      border-radius: 1.2rem;
       padding: min(0.5rem, 3vw);
 
-      fill: var(--clr-neutral-500);
+      //fill: var(--clr-neutral-500);
+      fill: orange;
       background: var(--clr-neutral-800);
 
       animation: pulseScale 1.25s infinite;
@@ -84,6 +85,26 @@
     margin-top: 3vh;
   }
 }
+.portfolio__additional-projects {
+  display: flex;
+  align-items: end; /* Vertically center the content */
+  justify-content: space-between; /* Add space between the items */
+  text-shadow: 
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 6px #000,
+  1px 1px 6px #000;
+color: var(--clr-neutral-100);
+}
+.portfolio__additional-projects-title {
+  text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 6px #000,
+        1px 1px 6px #000;
+    color: var(--clr-neutral-100);
+}
+
 .extraprojects-wrapper {
   transition: max-height 0.8s ease-in-out;
   //transition: display 0.8s ease-in-out;
@@ -95,7 +116,9 @@
   width: 100%;
   //background: yellow;
   //display: visible;
-  border: 1px solid red;
+
+  // TODO below border is just testing purposes - but perhaps a decent looking border could be applied?
+  border: 1px inset orange;
   overflow: hidden; // BUG this blocks some extra project info in the title - the # to the left and on the R the tooltip
   //overflow-y: hidden;
   //overflow-x: visible;
