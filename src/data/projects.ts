@@ -48,10 +48,10 @@ const PROJECTS: IProject[] = [
     },
     techIcons: ['react', 'sass', 'postgres', 'express', 'node'],
     screenshots: [
-      { url: learnthisHome, alt: 'The Comedy DB Desktop Home Screenshot' },
-      { url: learnthisLessons, alt: 'The Comedy DB Desktop Special Screenshot' },
-      { url: learnthisClipper, alt: 'The Comedy DB Desktop Special Screenshot' },
-      { url: learnthisAbout, alt: 'The Comedy DB Desktop Special Screenshot' },
+      { url: learnthisHome, alt: 'LearnThis! Screenshot' },
+      { url: learnthisLessons, alt: 'LearnThis! Screenshot' },
+      { url: learnthisClipper, alt: 'LearnThis! Screenshot' },
+      { url: learnthisAbout, alt: 'LearnThis! Screenshot' },
     ],
     description: [
       { type: 'header', value: 'The Inspiration' },
@@ -61,7 +61,7 @@ const PROJECTS: IProject[] = [
           '1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       },
       {
-        type: 'p',
+        type: 'more',
         value:
           '2Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       },
@@ -94,10 +94,10 @@ const PROJECTS: IProject[] = [
     },
     techIcons: ['react', 'sass', 'postgres', 'express', 'node'],
     screenshots: [
-      { url: learnthisHome, alt: 'The Comedy DB Desktop Home Screenshot' },
-      { url: learnthisLessons, alt: 'The Comedy DB Desktop Special Screenshot' },
-      { url: learnthisClipper, alt: 'The Comedy DB Desktop Special Screenshot' },
-      { url: learnthisAbout, alt: 'The Comedy DB Desktop Special Screenshot' },
+      { url: learnthisHome, alt: 'LearnThis! Screenshot' },
+      { url: learnthisLessons, alt: 'LearnThis! Screenshot' },
+      { url: learnthisClipper, alt: 'LearnThis! Screenshot' },
+      { url: learnthisAbout, alt: 'LearnThis! Screenshot' },
     ],
     description: [
       { type: 'header', value: 'The Inspiration' },
@@ -123,7 +123,7 @@ const PROJECTS: IProject[] = [
           '4Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
       },
       {
-        type: 'p',
+        type: 'more',
         value:
           '5RLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       },
