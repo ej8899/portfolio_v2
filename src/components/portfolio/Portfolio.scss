@@ -6,6 +6,7 @@
 
   // offset padding-top to accommodate for the wavy separator
   padding-block: calc(var(--section-vertical-padding) * 2) var(--section-vertical-padding);
+  padding-block-end: 0px;
 
   background: teal;
   color: var(--clr-neutral-200);
@@ -83,7 +84,7 @@
 .extraprojects-wrapper {
   transition: max-height 0.8s ease-out;
   max-height: 0;
-  background: yellow;
+  //background: yellow;
   border: 1px solid red;
   //overflow: hidden; // BUG this blocks some extra project info in the title - the # to the left and on the R the tooltip
   //overflow-y: hidden;
