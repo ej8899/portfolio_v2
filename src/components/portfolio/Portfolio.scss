@@ -6,7 +6,7 @@
 
   // offset padding-top to accommodate for the wavy separator
   padding-block: calc(var(--section-vertical-padding) * 2) var(--section-vertical-padding);
-  padding-block-end: 0px;
+  // padding-block-end: 0px;
 
   background: teal;
   color: var(--clr-neutral-200);
@@ -82,21 +82,30 @@
   }
 }
 .extraprojects-wrapper {
-  transition: max-height 0.8s ease-out;
+  transition: max-height 0.8s ease-in-out;
+  //transition: display 0.8s ease-in-out;
   max-height: 0;
+  padding-left: 60px;
+  padding-right: 60px;
+
+  // BUG - wrapper isn't going to full width - or at least full width as we expect in first version of project list - should we just put extra projects in their own 'section'?
+  width: 100%;
   //background: yellow;
+  //display: visible;
   border: 1px solid red;
-  //overflow: hidden; // BUG this blocks some extra project info in the title - the # to the left and on the R the tooltip
+  overflow: hidden; // BUG this blocks some extra project info in the title - the # to the left and on the R the tooltip
   //overflow-y: hidden;
   //overflow-x: visible;
 
 }
 .nowopen {
   max-height: 1000px; /* Adjust to your required  max height */
+ // display: visible;
   //max-height: max-content;
 }
 .closed {
   max-height: 0px;
+ // display: none;
 }
 
 .custom-shape-divider-top-1681930915 {
