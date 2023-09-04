@@ -170,8 +170,8 @@ function Project({ data, number }: TProps) {
                 );
               if (type === 'more')
                 return (
-                  <Collapse title='more info' key={value}>
-                    <p>{value}</p>
+                  <Collapse title='' key={value}>
+                    <p className='project__text-p'>{value}</p>
                   </Collapse>
                 );
               else

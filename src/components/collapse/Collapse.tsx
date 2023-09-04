@@ -20,7 +20,7 @@ function Collapse({ title, children }) {
           aria-label={`Toggle ${isCollapsed ? 'Expand' : 'Collapse'}`}
         ></button>
       </div>
-      {!isCollapsed && <div className='collapsible-content'>{children}</div>}
+      {!isCollapsed && <div className='collapsible-content '>{children}</div>}
     </div>
   );
 }
