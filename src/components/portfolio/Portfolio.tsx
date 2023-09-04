@@ -8,14 +8,21 @@ import './Portfolio.scss';
 
 function Portfolio() {
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const extraProjectsRef = useRef(null);
   const [renderAllProjects, setRenderAllProjects] = useState(false);
   const isOnScreen = useElementOnScreen(titleRef);
+  const isExtraOnScreen = useElementOnScreen(extraProjectsRef);
   let projectNum = 0;
 
   useEffect(() => {
     if (!isOnScreen) return;
     titleRef.current?.classList.add('animate-in');
   }, [isOnScreen]);
+  useEffect(() => {
+    if (!isExtraOnScreen) {
+      setRenderAllProjects(false);
+    }
+  }, [isExtraOnScreen]);
 
   return (
     <section id='portfolio' className='portfolio' aria-label='my portfolio'>
@@ -60,7 +67,10 @@ function Portfolio() {
           {renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}
         </p>
         {/* remainder of projects */}
-        <div className={`extraprojects-wrapper ${renderAllProjects ? 'nowopen' : 'closed'}`}>
+        <div
+          ref={extraProjectsRef}
+          className={`extraprojects-wrapper ${renderAllProjects ? 'nowopen' : 'closed'}`}
+        >
           <div className='portfolio__extra_projects'>
             {PROJECTS.filter((project) => !project.featured).map((project, i) => {
               projectNum++;
