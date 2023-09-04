@@ -83,6 +83,8 @@
 .extraprojects-wrapper {
   transition: max-height 0.8s ease-out;
   max-height: 0;
+  background: yellow;
+  border: 1px solid red;
   //overflow: hidden; // BUG this blocks some extra project info in the title - the # to the left and on the R the tooltip
   //overflow-y: hidden;
   //overflow-x: visible;

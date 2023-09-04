@@ -67,6 +67,7 @@ function Portfolio() {
           </div>
         </div>
       </div>
+      <hr />
     </section>
   );
 }
