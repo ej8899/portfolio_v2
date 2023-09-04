@@ -38,8 +38,6 @@ const SkillSlider = () => {
         <article
           className='marquee_wrapper scrolla-element-anim-1 scroll-animate'
           style={{
-            backgroundImage:
-              'linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0))',
             WebkitMaskImage:
               'linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0))',
           }}
