@@ -48,7 +48,9 @@ header {
     a {
       transition: transform 0.2s ease;
       padding-block: var(--padding);
-
+      &:hover {
+        color: black !important;
+      }
       &::after {
         content: '';
         position: absolute;
