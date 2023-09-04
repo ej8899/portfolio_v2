@@ -59,16 +59,17 @@ function Portfolio() {
         </p>
 
         {/* remainder of projects */}
-        {renderAllProjects && (
-          <div className='portfolio__extra-projects'>
+        <div className={`extraprojects-wrapper ${renderAllProjects ? 'nowopen' : 'closed'}`}>
+          <div className='portfolio__extra_projects'>
             {PROJECTS.filter((project) => !project.featured).map((project, i) => {
               return <Project data={project} number={i} key={project.title} />;
             })}
           </div>
-        )}
+        </div>
       </div>
     </section>
   );
 }
+// TODO when scrolls off screen - close the extra projects toggle
 
 export default Portfolio;

@@ -78,8 +78,19 @@
 
   &__extra-projects {
     margin-top: 3vh;
-    transition: max-height 0.3s ease-out;
   }
+}
+.extraprojects-wrapper {
+  transition: max-height 0.8s ease-out;
+  max-height: 0;
+  overflow: hidden;
+}
+.nowopen {
+  max-height: 1000px; /* Adjust to your required  max height */
+  //max-height: max-content;
+}
+.closed {
+  max-height: 0px;
 }
 
 .custom-shape-divider-top-1681930915 {
