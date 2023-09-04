@@ -19,6 +19,7 @@ import Carousel from '../carousel/Carousel';
 import DevIcon from '../dev_icon/DevIcon';
 import './Project.scss';
 import Express from '../../assets/components/Express';
+import Collapse from '../collapse/Collapse';
 
 type TProps = {
   data: IProject;
@@ -166,6 +167,12 @@ function Project({ data, number }: TProps) {
                   <p className='project__text-header' key={value}>
                     {value}
                   </p>
+                );
+              if (type === 'more')
+                return (
+                  <Collapse title='more info' key={value}>
+                    <p>{value}</p>
+                  </Collapse>
                 );
               else
                 return (
