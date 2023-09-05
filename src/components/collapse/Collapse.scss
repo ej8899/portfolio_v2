@@ -2,8 +2,26 @@
 //
 //
 
+// TODO setup vars for anythign specific - including time delay
 
 .collapsearrows {
   fill: black;
   height: 50px;
+}
+
+.collapsible-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.collapsible-wrapper.open {
+  max-height: 1000px; /* Adjust this value based on your content's size */
+}
+.collapsible-wrapper.closed {
+  //
+}
+.collapsible-wrapper {
+  overflow: hidden;
+  transition: max-height 0.8s ease-in-out;
+  max-height: 0;
 }

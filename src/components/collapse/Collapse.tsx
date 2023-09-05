@@ -33,8 +33,7 @@ function Collapse({ title, children }) {
         }
         </button>
       </div>
-      {!isCollapsed && <div className='collapsible-content '>{children}</div>}
-
+      <div className={`collapsible-wrapper ${isCollapsed ? '' : 'open'}`}>{children}</div>
       <svg
           style={{
             display: 'none',
