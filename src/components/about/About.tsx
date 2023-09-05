@@ -19,19 +19,6 @@ function About() {
 
   return (
     <div>
-      <div className='about-custom-shape-divider-top-1681930915'>
-        <svg
-          data-name='Layer 1'
-          xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 1920 1080'
-          preserveAspectRatio='none'
-        >
-          <path
-            d='M0,144.271L106.667,136.358C213.333,128.446,426.667,112.621,640,158.459C853.333,204.298,1066.667,311.799,1280,373.049C1493.333,434.298,1706.667,449.295,1813.333,456.793L1920,464.291L1920,1080L1813.333,1080C1706.667,1080,1493.333,1080,1280,1080C1066.667,1080,853.333,1080,640,1080C426.667,1080,213.333,1080,106.667,1080L0,1080Z'
-            className='about-shape-fill'
-          ></path>
-        </svg>
-      </div>
       <section id='about' className='about about-parallax-wrapper' aria-labelledby='about__title'>
         <div className='column full_height centered_grid'>
           <h2 id='about__title' className='js-parallax'>
