@@ -4,9 +4,39 @@
 
 // TODO setup vars for anythign specific - including time delay
 
-.collapsearrows {
+.button-container {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  justify-content: center; /* Horizontally center items */
+  gap: 5px; /* Adjust the gap between text and arrow */
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.button-text {
+  //
+}
+
+.collapse-button {
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.collapse-button:hover {
+  background-color: teal;
+}
+
+.collapse-arrows {
   fill: black;
-  height: 50px;
+  height: 24px;
+  width: 24px;
+  // height: 50px;
+  // margin: 20px;
+}
+.collapse-arrows:hover {
+  fill: white;
 }
 
 .collapsible-section {

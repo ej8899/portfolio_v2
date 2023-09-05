@@ -22,15 +22,12 @@ function Collapse({ title, children }) {
           onClick={toggleCollapse}
           aria-label={`Toggle ${isCollapsed ? 'Expand' : 'Collapse'}`}
         >
-        {isCollapsed ? 
-          <svg className='collapsearrows'>
-            <use xlinkHref='#downarrow' />
-          </svg> 
-          :
-          <svg className='collapsearrows'>
-            <use xlinkHref='#uparrow' />
-          </svg>
-        }
+        <div className="button-container">
+            <span>{isCollapsed ? 'More' : 'Less'}</span>
+            <svg className='collapse-arrows'>
+              <use xlinkHref={isCollapsed ? '#downarrow' : '#uparrow'} />
+            </svg>
+          </div>
         </button>
       </div>
       <div className={`collapsible-wrapper ${isCollapsed ? '' : 'open'}`}>{children}</div>
