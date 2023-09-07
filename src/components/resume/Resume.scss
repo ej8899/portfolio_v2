@@ -8,7 +8,7 @@
   padding-block: var(--section-vertical-padding);
   //padding-top: var(--section-vertical-padding);
   margin-bottom: 0px;
-padding-bottom: 250px;
+// padding-bottom: 250px;
   z-index: 2;
   //padding-top: 0px;
   background-color: white;
@@ -115,7 +115,7 @@ padding-bottom: 250px;
 
 .scroll-section {
   position: relative; /* To create a reference for absolute positioning */
-  height: 2000px; /* Set the section height to the viewport height */
+  height: 1000px; /* Set the section height to the viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,25 +141,6 @@ padding-bottom: 250px;
   //background-image: repeating-linear-gradient(#ffd754,#672990);
 }
 
-.overlay-fade-top {
-  height: 50px;
-  background-image: linear-gradient(var(--clr-about-bg-top),rgba(10,10,10,0));
-  position:absolute;
-  top: 0%;
-  bottom: auto;
-  left: 0%;
-  right: 0%;
-}
-
-.overlay-fade-bottom {
-  height: 50px;
-  background-image: linear-gradient(rgba(10,10,10,0),var(--clr-about-bg-top));
-  position:absolute;
-  top: auto;
-  bottom: 0%;
-  left: 0%;
-  right: 0%;
-}
 
 
 
@@ -177,37 +158,70 @@ $text: #FFFFFF;
 $primary-text: #212121;
 $secondary-text: #757575;
 $accent: #FF4081;
+$rotate: 2deg;
+$timebarwidth: 5px;
 
+.overlay-fade-top {
+  height: 30px;
+  background-image: linear-gradient(var(--clr-about-bg-top),rgba(10,10,10,0));
+  position:absolute;
+  top: 0%;
+  bottom: auto;
+  left: 0%;
+  right: 0%;
+  width: $timebarwidth+1;
+  left: 49.7%;
+  //border: 2px solid green;
+}
 
+.overlay-fade-bottom {
+  height: 30px;
+  background-image: linear-gradient(rgba(10,10,10,0),var(--clr-about-bg-top));
+  position:absolute;
+  top: auto;
+  bottom: 5%;
+  width: $timebarwidth+1;
+  left: 49.7%;
+  right: 0%;
+  //border: 1px solid green;
+}
 
 
 .timeline {
-
+  border: 2px solid red;
 	position: relative;
+  //background-image: repeating-linear-gradient(#ffd754,#672990);
 
 	&::before {
 		content: '';
 		background: $light-primary;
     background: red;
     background-image: repeating-linear-gradient(#ffd754,#672990);
-		width: 5px;
+		width: $timebarwidth;
 		height: 95%;
+    
 		position: absolute;
 		left: 50%;
+    top: 0;
 		transform: translateX(-50%);
+    //border: 1px solid black;
 	}
+}
+.timeline-container {
+border: 2px solid yellow;
 }
 
 .timeline-item {
 	width: 100%;
 	margin-bottom: 70px;
+  border: 2px solid blue;
 
 	&:nth-child(even) {
 
 		.timeline-content {
 			float: right;
 			padding: 40px 30px 10px 30px;
-
+      transform: rotate($rotate);
 			.date {
 				right: auto;
 				left: 0;
@@ -242,7 +256,7 @@ $accent: #FF4081;
 	border-radius: 4px;
 	background: #f5f5f5;
 	box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
-
+  transform: rotate(-$rotate);
 	&::after {
 		content: '';
 		position: absolute;
