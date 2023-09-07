@@ -24,6 +24,7 @@ import SkillSlider from '../components/skillslider/SkillSlider';
 import globalconfig from '../config';
 import AboutSlider from '../components/about/AboutSlider';
 import Chatbot from '../components/chatbot/Chatbot';
+import Resume from '../components/resume/Resume';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
 
@@ -111,6 +112,7 @@ function App() {
         <AboutSlider />
         <SkillSlider />
         <Portfolio />
+        <Resume />
         <Contact />
         <Footer />
       </div>
