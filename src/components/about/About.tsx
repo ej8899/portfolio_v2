@@ -4,6 +4,7 @@ import useElementOnScreen from '../../hooks/useElementOnScreen';
 import './About.scss';
 import './AboutParallax.scss';
 import Aboutimage from './Aboutimage';
+import Collapse from '../collapse/Collapse';
 
 function About() {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -18,8 +19,31 @@ function About() {
   }, [isOnScreen]);
 
   return (
-    <div>
+    <>
       <section id='about' className='about about-parallax-wrapper' aria-labelledby='about__title'>
+        <div className='about-header-wrapper'>
+          <div className='custom-shape-divider-bottom-1694044314'>
+            <svg
+              data-name='Layer 1'
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 1200 120'
+              preserveAspectRatio='none'
+            >
+              <path d='M1200 120L0 16.48 0 0 1200 0 1200 120z' className='shape-fill'></path>
+            </svg>
+          </div>
+          <div className='custom-shape-divider-bottom-1694044314b'>
+            <svg
+              data-name='Layer 1'
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 1200 120'
+              preserveAspectRatio='none'
+            >
+              <path d='M1200 120L0 16.48 0 0 1200 0 1200 120z' className='shape-fillb'></path>
+            </svg>
+          </div>
+        </div>
+        <div className='whiteout'></div>
         <div className='column full_height centered_grid'>
           <h2 id='about__title' className='js-parallax'>
             About Me
@@ -39,6 +63,15 @@ function About() {
                 <span data-tooltip='Blackberry and PalmPilot'>early mobile devices</span>
                 and then into the early days of web development - from static web pages, to web to
                 full-stack e-commerce applications.
+                <Collapse title='' key='1'>
+                  <p>
+                    extra info here - tooltips ok?{' '}
+                    <span data-tooltip='freeware and shareware'>applications</span> in BASIC
+                    <br />
+                    tool tips work, but can be broken depending on position. best to avoid.
+                    <hr />
+                  </p>
+                </Collapse>
               </p>
               <p>
                 Life happened, and I decided to re-think my career choices - I made a sudden shift
@@ -84,7 +117,7 @@ function About() {
           &nbsp;
         </div>
       </section>
-    </div>
+    </>
   );
 }
 
