@@ -41,7 +41,7 @@
     //border: 1px solid red;
 
     //transform: translateX(-30%);
-    padding-bottom: 20px;
+    padding-bottom: 5%;
     transition: opacity 1.25s ease-out, transform 0.5s ease-out;
 
     &.animate-in {
@@ -182,7 +182,6 @@ $timebarwidth: 7px;
 .timeline {
   //border: 2px solid red;
 	position: relative;
-  
 
 	&::before {
 		content: '';
@@ -206,7 +205,7 @@ $timebarwidth: 7px;
 .timeline-item {
 	width: 100%;
 	margin-bottom: 70px;
-  border: 2px solid blue;
+  // border: 2px solid blue;
 
 	&:nth-child(even) {
 		.timeline-content {
@@ -248,7 +247,7 @@ $timebarwidth: 7px;
 
 .timeline-content {
 	position: relative;
-	width: 45%;
+	width: 46%;
 	padding: 10px 30px;
 	border-radius: 4px;
 	//background: #f5f5f5;
@@ -269,9 +268,7 @@ $timebarwidth: 7px;
 		border-color: transparent transparent transparent #f5f5f5;
 	}
 }
-.timeline-content-wrapper {
-  transform: rotate(-$rotate);
-}
+
 
 .timeline-img {
 	width: 30px;
