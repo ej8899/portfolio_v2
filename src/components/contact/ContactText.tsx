@@ -56,6 +56,7 @@ function ContactText() {
           src='src/assets/images/qrcode-contact2.png'
           alt='qr code to scan for contact card'
           width='150px'
+          className='qrcode'
         ></img>
       </div>
     </div>

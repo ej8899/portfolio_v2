@@ -408,3 +408,11 @@ padding-bottom: 250px;
 .contact-divider-fill {
   fill: var(--clr-about-bg-bottom);
 }
+
+.qrcode {
+  cursor:none;
+  transition: transform var(--transition-short) ease-in-out;
+}
+.qrcode:hover {
+  transform: scale(1.3);
+}
