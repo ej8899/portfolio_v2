@@ -7,6 +7,7 @@ import './Resume.scss'; // You can name your CSS file accordingly
 
 function Resume() {
   const sectionRef = useRef(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
@@ -48,8 +49,24 @@ function Resume() {
 
   return (
     <section id='resume' className='resume' aria-labelledby='contact__title' ref={sectionRef}>
+      <div className='custom-shape-divider-top-1681930915'>
+        <svg
+          data-name='Layer 1'
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 1200 120'
+          preserveAspectRatio='none'
+        >
+          <path d='M1200 120L0 16.48 0 0 1200 0 1200 120z' className='contact-divider-fill'></path>
+        </svg>
+      </div>
+
       {/* section content */}
       <div className='column centered_grid'>
+        <div className='resume__header' ref={headerRef}>
+          <h2 id='resume__title'>Resume</h2> <br />
+          <p className='thanksmessage'>click here to download my full resume</p>
+        </div>
+
         <section className='timeline'>
           <div className='overlay-grower' style={progressBarStyle}></div>
           <div className='overlay-fade-top'></div>
@@ -98,15 +115,10 @@ function Resume() {
 
               <div className='timeline-content timeline-card js--fadeInRight'>
                 <div className='timeline-img-header'>
-                  <h2>LighthouseLabs.ca</h2>
+                  <h2>Marigold Infrastructure</h2>
                 </div>
-                <div className='date'>FEB 2023</div>
-                <p>
-                  Graduate from LighthouseLabs.ca web developer bootcamp program (30 week program).
-                  <br />
-                  Study the basics of what is new in web development technologies like HTML, CSS,
-                  jQuery, React, Ruby, Ruby on Rails and more.
-                </p>
+                <div className='date'>2022</div>
+                <p>mapping, powerapps, beta test 3d modelling</p>
                 <button className='bnt-more'>More</button>
               </div>
             </div>
