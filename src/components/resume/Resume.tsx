@@ -31,7 +31,7 @@ function Resume() {
   const item4OnScreen = useElementOnScreen(timelineItem4, '-30%');
 
   const timelineItem5 = useRef<HTMLDivElement>(null);
-  const item5OnScreen = useElementOnScreen(timelineItem4, '-30%');
+  const item5OnScreen = useElementOnScreen(timelineItem5, '-30%');
 
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
@@ -182,7 +182,7 @@ function Resume() {
 
             <div className='timeline-item'>
               <div className='timeline-img'>
-                <i className='fa-solid fa-road'></i>
+                <i className='fa-solid fa-helicopter'></i>
               </div>
 
               <div className='timeline-content timeline-card' ref={timelineItem5}>

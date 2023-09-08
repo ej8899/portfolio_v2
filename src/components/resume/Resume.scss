@@ -60,7 +60,7 @@
         content: '';
         position: absolute;
         top: 70%;
-        left: 5.7ch;
+        left: 4.9ch;
         transform: translateX(-50%);
 
         width: 30%;
@@ -107,10 +107,6 @@
       transition: all 0.6s cubic-bezier(0.3, 0, 0.3, 1);
 	    -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.3, 1);
     }
-  }
-  
-  a {
-    color: orange;
   }
 
   p {
