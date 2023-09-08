@@ -8,7 +8,10 @@ import './Resume.scss'; // You can name your CSS file accordingly
 
 function useAnimateOnScreen(itemOnScreen, timelineRef, animationClass: string) {
   useEffect(() => {
-    if (!itemOnScreen) return;
+    if (!itemOnScreen) {
+      timelineRef.current?.classList.remove(animationClass);
+      return;
+    }
     timelineRef.current?.classList.add(animationClass);
   }, [itemOnScreen]);
 }
