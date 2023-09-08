@@ -80,6 +80,5 @@ function Portfolio() {
     </section>
   );
 }
-// TODO when scrolls off screen - close the extra projects toggle
 
 export default Portfolio;
