@@ -20,7 +20,10 @@ function Resume() {
       const percentage = (scrollY / sectionHeight) * 100;
       // console.log('scrolly:', scrollY);
       // Ensure the percentage is between 0 and 100
-      const clampedPercentage = Math.min(100, Math.max(0, percentage));
+      let clampedPercentage = Math.min(100, Math.max(0, percentage));
+      if (clampedPercentage > 75) {
+        clampedPercentage = 75;
+      }
       setScrollPercentage(clampedPercentage);
     };
 
@@ -48,142 +51,61 @@ function Resume() {
       {/* section content */}
       <div className='column centered_grid'>
         <section className='timeline'>
+          <div className='overlay-grower' style={progressBarStyle}></div>
           <div className='overlay-fade-top'></div>
           <div className='timeline-container'>
             <div className='timeline-item'>
-              <div className='timeline-img'></div>
+              <div className='timeline-img'>
+                <i className='fa-solid fa-person-digging'></i>
+              </div>
 
               <div className='timeline-content js--fadeInLeft'>
-                <h2>Title</h2>
-                <div className='date'>1 MAY 2016</div>
+                <h2>Fluor Canada</h2>
+                <div className='date'>2023</div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione
-                  alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,
-                  nostrum excepturi amet in dolores. Alias, ullam.
+                  Create Sharepoint site for mega-project specific jobs, integrate sharepoint
+                  dashboard, and integrate custom mapping application for shortcuts to sharepoint
+                  data to facilitate team sharing of required data, photos, and tasks.
                 </p>
                 <button className='bnt-more'>More</button>
               </div>
             </div>
 
             <div className='timeline-item'>
-              <div className='timeline-img'></div>
+              <div className='timeline-img'>
+                <i className='fa-solid fa-code'></i>
+              </div>
 
               <div className='timeline-content timeline-card js--fadeInRight'>
                 <div className='timeline-img-header'>
-                  <h2>Card Title</h2>
+                  <h2>LighthouseLabs.ca</h2>
                 </div>
-                <div className='date'>25 MAY 2016</div>
+                <div className='date'>FEB 2023</div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione
-                  alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,
-                  nostrum excepturi amet in dolores. Alias, ullam.
+                  Graduate from LighthouseLabs.ca web developer bootcamp program (30 week program).
+                  <br />
+                  Study the basics of what is new in web development technologies like HTML, CSS,
+                  jQuery, React, Ruby, Ruby on Rails and more.
                 </p>
                 <button className='bnt-more'>More</button>
               </div>
             </div>
 
             <div className='timeline-item'>
-              <div className='timeline-img'></div>
-
-              <div className='timeline-content js--fadeInLeft'>
-                <div className='date'>3 JUN 2016</div>
-                <h2>Quote</h2>
-                <blockquote>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis
-                  omnis dolor iste fugit totam quasi inventore!
-                </blockquote>
+              <div className='timeline-img'>
+                <i className='fa-solid fa-code'></i>
               </div>
-            </div>
-
-            <div className='timeline-item'>
-              <div className='timeline-img'></div>
-
-              <div className='timeline-content js--fadeInRight'>
-                <h2>Title</h2>
-                <div className='date'>22 JUN 2016</div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione
-                  omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae
-                  nostrum excepturi amet in dolores. Alias, ullam.
-                </p>
-                <button className='bnt-more'>More</button>
-              </div>
-            </div>
-
-            <div className='timeline-item'>
-              <div className='timeline-img'></div>
-
-              <div className='timeline-content timeline-card js--fadeInLeft'>
-                <div className='timeline-img-header'>
-                  <h2>Card Title</h2>
-                </div>
-                <div className='date'>10 JULY 2016</div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione
-                  alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,
-                  nostrum excepturi amet in dolores. Alias, ullam.
-                </p>
-                <button className='bnt-more'>More</button>
-              </div>
-            </div>
-
-            <div className='timeline-item'>
-              <div className='timeline-img'></div>
 
               <div className='timeline-content timeline-card js--fadeInRight'>
                 <div className='timeline-img-header'>
-                  <h2>Card Title</h2>
+                  <h2>LighthouseLabs.ca</h2>
                 </div>
-                <div className='date'>30 JULY 2016</div>
+                <div className='date'>FEB 2023</div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione
-                  alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,
-                  nostrum excepturi amet in dolores. Alias, ullam.
-                </p>
-                <button className='bnt-more'>More</button>
-              </div>
-            </div>
-
-            <div className='timeline-item'>
-              <div className='timeline-img'></div>
-
-              <div className='timeline-content js--fadeInLeft'>
-                <div className='date'>5 AUG 2016</div>
-                <h2>Quote</h2>
-                <blockquote>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis
-                  omnis dolor iste fugit totam quasi inventore!
-                </blockquote>
-              </div>
-            </div>
-
-            <div className='timeline-item'>
-              <div className='timeline-img'></div>
-
-              <div className='timeline-content timeline-card js--fadeInRight'>
-                <div className='timeline-img-header'>
-                  <h2>Card Title</h2>
-                </div>
-                <div className='date'>19 AUG 2016</div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione
-                  alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,
-                  nostrum excepturi amet in dolores. Alias, ullam.
-                </p>
-                <button className='bnt-more'>More</button>
-              </div>
-            </div>
-
-            <div className='timeline-item'>
-              <div className='timeline-img'></div>
-
-              <div className='timeline-content js--fadeInLeft'>
-                <div className='date'>1 SEP 2016</div>
-                <h2>Title</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione
-                  alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,
-                  nostrum excepturi amet in dolores. Alias, ullam.
+                  Graduate from LighthouseLabs.ca web developer bootcamp program (30 week program).
+                  <br />
+                  Study the basics of what is new in web development technologies like HTML, CSS,
+                  jQuery, React, Ruby, Ruby on Rails and more.
                 </p>
                 <button className='bnt-more'>More</button>
               </div>
