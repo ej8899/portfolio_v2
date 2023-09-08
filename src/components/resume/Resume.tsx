@@ -3,11 +3,33 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useEffect, useRef, useState } from 'react';
+import useElementOnScreen from '../../hooks/useElementOnScreen';
 import './Resume.scss'; // You can name your CSS file accordingly
+
+function useAnimateOnScreen(itemOnScreen, timelineRef, animationClass: string) {
+  useEffect(() => {
+    if (!itemOnScreen) return;
+    timelineRef.current?.classList.add(animationClass);
+  }, [itemOnScreen]);
+}
 
 function Resume() {
   const sectionRef = useRef(null);
   const headerRef = useRef<HTMLDivElement>(null);
+
+  // timeline items for slide in
+  const timelineItem1 = useRef<HTMLDivElement>(null);
+  const item1OnScreen = useElementOnScreen(timelineItem1, '-30%');
+
+  const timelineItem2 = useRef<HTMLDivElement>(null);
+  const item2OnScreen = useElementOnScreen(timelineItem2, '-30%');
+
+  const timelineItem3 = useRef<HTMLDivElement>(null);
+  const item3OnScreen = useElementOnScreen(timelineItem3, '-30%');
+
+  const timelineItem4 = useRef<HTMLDivElement>(null);
+  const item4OnScreen = useElementOnScreen(timelineItem4, '-30%');
+
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
@@ -22,8 +44,8 @@ function Resume() {
       // console.log('scrolly:', scrollY);
       // Ensure the percentage is between 0 and 100
       let clampedPercentage = Math.min(100, Math.max(0, percentage));
-      if (clampedPercentage > 75) {
-        clampedPercentage = 75;
+      if (clampedPercentage > 85) {
+        clampedPercentage = 85;
       }
       setScrollPercentage(clampedPercentage);
     };
@@ -42,6 +64,12 @@ function Resume() {
       console.log(scrollPercentage);
     }
   }, [scrollPercentage]);
+
+  // Custom hook for animating items on screen
+  useAnimateOnScreen(item1OnScreen, timelineItem1, 'fadeIn');
+  useAnimateOnScreen(item2OnScreen, timelineItem2, 'fadeIn');
+  useAnimateOnScreen(item3OnScreen, timelineItem3, 'fadeIn');
+  useAnimateOnScreen(item4OnScreen, timelineItem4, 'fadeIn');
 
   const progressBarStyle = {
     height: `${scrollPercentage}%`, // Set the progress bar height based on scroll percentage
@@ -75,16 +103,14 @@ function Resume() {
               <div className='timeline-img'>
                 <i className='fa-solid fa-person-digging'></i>
               </div>
-
-              <div className='timeline-content js--fadeInLeft'>
-                <h2>Fluor Canada</h2>
+              <div className='timeline-content' ref={timelineItem1}>
+                <h3>Fluor Canada</h3>
                 <div className='date'>2023</div>
                 <p>
                   Create Sharepoint site for mega-project specific jobs, integrate sharepoint
-                  dashboard, and integrate custom mapping application for shortcuts to sharepoint
-                  data to facilitate team sharing of required data, photos, and tasks.
+                  dashboard, integrate custom mapping application in order to visually organize (&
+                  sort) data to facilitate team sharing of required data, photos, and tasks.
                 </p>
-                <button className='bnt-more'>More</button>
               </div>
             </div>
 
@@ -92,36 +118,52 @@ function Resume() {
               <div className='timeline-img'>
                 <i className='fa-solid fa-code'></i>
               </div>
-
-              <div className='timeline-content timeline-card js--fadeInRight'>
+              <div className='timeline-content timeline-card' ref={timelineItem2}>
                 <div className='timeline-img-header'>
-                  <h2>LighthouseLabs.ca</h2>
+                  <h3>LighthouseLabs.ca</h3>
                 </div>
-                <div className='date'>FEB 2023</div>
+                <div className='date'>JUL 2022 - FEB 2023</div>
                 <p>
                   Graduate from LighthouseLabs.ca web developer bootcamp program (30 week program).
+                  <br />
                   <br />
                   Study the basics of what is new in web development technologies like HTML, CSS,
                   jQuery, React, Ruby, Ruby on Rails and more.
                 </p>
+                <button>More</button>
+              </div>
+            </div>
+
+            <div className='timeline-item'>
+              <div className='timeline-img'>
+                <i className='fa-solid fa-train'></i>
+              </div>
+
+              <div className='timeline-content timeline-card' ref={timelineItem3}>
+                <div className='timeline-img-header'>
+                  <h3>Marigold Infrastructure</h3>
+                </div>
+                <div className='date'>2021 - 2022</div>
+                <p>mapping, powerapps, beta test 3d modelling</p>
                 <button className='bnt-more'>More</button>
               </div>
             </div>
 
             <div className='timeline-item'>
               <div className='timeline-img'>
-                <i className='fa-solid fa-code'></i>
+                <i className='fa-solid fa-road'></i>
               </div>
 
-              <div className='timeline-content timeline-card js--fadeInRight'>
+              <div className='timeline-content timeline-card' ref={timelineItem4}>
                 <div className='timeline-img-header'>
-                  <h2>Marigold Infrastructure</h2>
+                  <h3>KGL Constructors</h3>
                 </div>
-                <div className='date'>2022</div>
+                <div className='date'>2021 - 2022</div>
                 <p>mapping, powerapps, beta test 3d modelling</p>
                 <button className='bnt-more'>More</button>
               </div>
             </div>
+            {''}
           </div>
           <div className='overlay-fade-bottom'></div>
         </section>
