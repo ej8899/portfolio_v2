@@ -51,6 +51,12 @@ function ContactText() {
           <span> +1 705 - 331 - 8899 </span>
         </div>
       </div>
+      <div className='numbers-item'>
+        <img
+          src='src/assets/images/qrcode-contact.png'
+          alt='qr code to scan for contact card'
+        ></img>
+      </div>
     </div>
   );
 }
