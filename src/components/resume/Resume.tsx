@@ -119,7 +119,7 @@ function Resume() {
                 <i className='fa-solid fa-code'></i>
               </div>
               <div className='timeline-content timeline-card' ref={timelineItem2}>
-                <div className='timeline-img-header'>
+                <div className='timeline-img-header img-lhl'>
                   <h3>LighthouseLabs.ca</h3>
                 </div>
                 <div className='date'>JUL 2022 - FEB 2023</div>
@@ -140,7 +140,7 @@ function Resume() {
               </div>
 
               <div className='timeline-content timeline-card' ref={timelineItem3}>
-                <div className='timeline-img-header'>
+                <div className='timeline-img-header img-marigold'>
                   <h3>Marigold Infrastructure</h3>
                 </div>
                 <div className='date'>2021 - 2022</div>
@@ -155,7 +155,7 @@ function Resume() {
               </div>
 
               <div className='timeline-content timeline-card' ref={timelineItem4}>
-                <div className='timeline-img-header'>
+                <div className='timeline-img-header img-kgl'>
                   <h3>KGL Constructors</h3>
                 </div>
                 <div className='date'>2021 - 2022</div>
