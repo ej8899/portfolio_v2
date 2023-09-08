@@ -128,6 +128,8 @@ function Resume() {
                   dashboard, integrate custom mapping application in order to visually organize (&
                   sort) data to facilitate team sharing of required data, photos, and tasks.
                   <br />
+                  $4.5B project.
+                  <br />
                   &nbsp;
                 </p>
               </div>
@@ -163,7 +165,15 @@ function Resume() {
                   <h3>Marigold Infrastructure</h3>
                 </div>
                 <div className='date'>2021 - 2022</div>
-                <p>mapping, powerapps, beta test 3d modelling</p>
+                <p>
+                  Develop mapping system for tracking of shared documents and work packages
+                  throughout project area. Work with developer team to establish MS Power Apps for
+                  buried utility identification and inspections. Work with developer team to
+                  implement and beta test vGIS systems for augmented reality buried utility
+                  identification.
+                  <br />
+                  $2.7B project.
+                </p>
                 <button className='bnt-more'>More</button>
               </div>
             </div>
@@ -178,7 +188,11 @@ function Resume() {
                   <h3>KGL Constructors</h3>
                 </div>
                 <div className='date'>2018 - 2021</div>
-                <p>mapping, interactive documents, </p>
+                <p>
+                  mapping, interactive documents,
+                  <br />
+                  $1.4B project.
+                </p>
                 <button className='bnt-more'>More</button>
               </div>
             </div>
