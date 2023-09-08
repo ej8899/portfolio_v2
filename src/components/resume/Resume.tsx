@@ -30,6 +30,9 @@ function Resume() {
   const timelineItem4 = useRef<HTMLDivElement>(null);
   const item4OnScreen = useElementOnScreen(timelineItem4, '-30%');
 
+  const timelineItem5 = useRef<HTMLDivElement>(null);
+  const item5OnScreen = useElementOnScreen(timelineItem4, '-30%');
+
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
@@ -70,6 +73,7 @@ function Resume() {
   useAnimateOnScreen(item2OnScreen, timelineItem2, 'fadeIn');
   useAnimateOnScreen(item3OnScreen, timelineItem3, 'fadeIn');
   useAnimateOnScreen(item4OnScreen, timelineItem4, 'fadeIn');
+  useAnimateOnScreen(item5OnScreen, timelineItem5, 'fadeIn');
 
   const progressBarStyle = {
     height: `${scrollPercentage}%`, // Set the progress bar height based on scroll percentage
@@ -92,7 +96,15 @@ function Resume() {
       <div className='column centered_grid'>
         <div className='resume__header' ref={headerRef}>
           <h2 id='resume__title'>Resume</h2> <br />
-          <p className='thanksmessage'>click here to download my full resume</p>
+          <p className='resume-message'>
+            Here are just a few recent and/or key moments from my resume.
+            <br />
+            click here to download my full resume, or{' '}
+            <a href='https://flowcv.com/resume/0chloacpte' target='_new'>
+              view online here
+            </a>
+            .
+          </p>
         </div>
 
         <section className='timeline'>
@@ -101,15 +113,19 @@ function Resume() {
           <div className='timeline-container'>
             <div className='timeline-item'>
               <div className='timeline-img'>
-                <i className='fa-solid fa-person-digging'></i>
+                <i className='fa-solid fa-bridge'></i>
               </div>
-              <div className='timeline-content' ref={timelineItem1}>
-                <h3>Fluor Canada</h3>
+              <div className='timeline-content timeline-card' ref={timelineItem1}>
+                <div className='timeline-img-header img-fluor'>
+                  <h3>Fluor Canada</h3>
+                </div>
                 <div className='date'>2023</div>
                 <p>
                   Create Sharepoint site for mega-project specific jobs, integrate sharepoint
                   dashboard, integrate custom mapping application in order to visually organize (&
                   sort) data to facilitate team sharing of required data, photos, and tasks.
+                  <br />
+                  &nbsp;
                 </p>
               </div>
             </div>
@@ -158,8 +174,27 @@ function Resume() {
                 <div className='timeline-img-header img-kgl'>
                   <h3>KGL Constructors</h3>
                 </div>
-                <div className='date'>2021 - 2022</div>
-                <p>mapping, powerapps, beta test 3d modelling</p>
+                <div className='date'>2018 - 2021</div>
+                <p>mapping, interactive documents, </p>
+                <button className='bnt-more'>More</button>
+              </div>
+            </div>
+
+            <div className='timeline-item'>
+              <div className='timeline-img'>
+                <i className='fa-solid fa-road'></i>
+              </div>
+
+              <div className='timeline-content timeline-card' ref={timelineItem5}>
+                <div className='timeline-img-header img-forces'>
+                  <h3>Canadian Forces</h3>
+                </div>
+                <div className='date'>2001 - 2003</div>
+                <p>
+                  <li>Canadian Forces School of Aerospace & Technology,</li>
+                  <li>Canadian Forces School of Communications & Electronics,</li>
+                  <li>Performance Oriented Electronics Technician</li>
+                </p>
                 <button className='bnt-more'>More</button>
               </div>
             </div>

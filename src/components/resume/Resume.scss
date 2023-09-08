@@ -60,10 +60,10 @@
         content: '';
         position: absolute;
         top: 70%;
-        left: 2.5ch;
+        left: 5.7ch;
         transform: translateX(-50%);
 
-        width: 50%;
+        width: 30%;
         height: 0.45ch;
         z-index: -1;
         background: var(--clr-primary-100);
@@ -108,6 +108,10 @@
 	    -webkit-transition: all 0.6s cubic-bezier(0.3, 0, 0.3, 1);
     }
   }
+  
+  a {
+    color: orange;
+  }
 
   p {
     color: var(--clr-neutral-200);
@@ -138,6 +142,7 @@ $secondary-text: #757575;
 $accent: orange;
 $rotate: 2deg;
 $timebarwidth: 7px;
+$timebarbasecolor: #00bfb250;
 
 .overlay-fade-top {
   height: 30px;
@@ -189,7 +194,7 @@ $timebarwidth: 7px;
 
 	&::before {
 		content: '';
-		background: $light-primary;
+		background: $timebarbasecolor;
     //background: red;
     //background-image: linear-gradient(--clr-about-bg-bottom,--clr-about-bg-top);
 		width: $timebarwidth;
@@ -322,7 +327,10 @@ $timebarwidth: 7px;
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('src/assets/images/port-mapping.png') center center no-repeat;
   }
   .img-fluor {
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('src/assets/images/port-buried.png') center center no-repeat;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('src/assets/images/port-fluor.png') center center no-repeat;
+  }
+  .img-forces {
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('src/assets/images/port-forces.png') center center no-repeat;
   }
 }
 
