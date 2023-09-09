@@ -217,7 +217,7 @@ use {
   flex: 1;
   margin: 10px;
   //padding: 20px;
-  border: 1px solid #ddd;
+  //border: 1px solid #ddd;
   //background-color: #f9f9f9;
   text-align: center;
 }
@@ -256,24 +256,24 @@ use {
   top: -15px;
   //right: -15px;
   left: 0px;
-  background: orange;
+  background: rgb(255,215,84);
+  background: linear-gradient(180deg, rgba(255,215,84,1) 0%, rgba(255,165,0,1) 65%);
   height:220px;
   width: 10px;
   border-radius: 32px;
   transform: scale(1);
   transform-origin: 50% 50%;
-  transition: transform 0.25s ease-out;
+  transition: transform 0.3s ease-out;
 }
 
 .skill-card:hover::before{
-    transition-delay:0.2s ;
-
-  transform: scale(80);
+  transition-delay:0.3s ;
+  transform: scale(80,1.5);
 }
 
 .skill-card:hover{
-    color: #ffffff;
-
+  color: #ffffff;
+  color: black;
 }
 
 .skill-card p{
