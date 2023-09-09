@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { useEffect, useRef } from 'react';
 // import SkillSlider from '../skillslider/SkillSlider';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
@@ -5,12 +6,57 @@ import './About.scss';
 import './AboutParallax.scss';
 import Aboutimage from './Aboutimage';
 import Collapse from '../collapse/Collapse';
+import { useModal } from '../modal/ModalManager';
 
 function About() {
   const aboutRef = useRef<HTMLDivElement>(null);
   const leftColumnRef = useRef<HTMLDivElement>(null);
   const rightColumnRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useElementOnScreen(aboutRef, '-100px');
+  const { openModal } = useModal();
+
+  const handleOpenModal = () => {
+    console.log('about- opening modal');
+    const modalContent = (
+      <div>
+        <h2>Quarum ambarum rerum cum medicinam pollicetur, luxuriae licentiam pollicetur.</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Unum nescio, quo modo possit, si
+          luxuriosus sit, finitas cupiditates habere. Hoc est non modo cor non habere, sed ne
+          palatum quidem. Sic, et quidem diligentius saepiusque ista loquemur inter nos agemusque
+          communiter. Paulum, cum regem Persem captum adduceret, eodem flumine invectio? Quid igitur
+          dubitamus in tota eius natura quaerere quid sit effectum? Duo Reges: constructio
+          interrete.{' '}
+        </p>
+
+        <h3>Ut proverbia non nulla veriora sint quam vestra dogmata.</h3>
+
+        <p>
+          Quasi vero, inquit, perpetua oratio rhetorum solum, non etiam philosophorum sit. Tria
+          genera cupiditatum, naturales et necessariae, naturales et non necessariae, nec naturales
+          nec necessariae. Sin aliud quid voles, postea. Consequatur summas voluptates non modo
+          parvo, sed per me nihilo, si potest;{' '}
+        </p>
+
+        <p>
+          Cur igitur easdem res, inquam, Peripateticis dicentibus verbum nullum est, quod non
+          intellegatur? Primum in nostrane potestate est, quid meminerimus? Eam tum adesse, cum
+          dolor omnis absit; Quodsi ipsam honestatem undique pertectam atque absolutam. Aliam vero
+          vim voluptatis esse, aliam nihil dolendi, nisi valde pertinax fueris, concedas necesse
+          est. Nec enim, cum tua causa cui commodes, beneficium illud habendum est, sed faeneratio,
+          nec gratia deberi videtur ei, qui sua causa commodaverit. Universa enim illorum ratione
+          cum tota vestra confligendum puto. Sed residamus, inquit, si placet. Sed vobis voluptatum
+          perceptarum recordatio vitam beatam facit, et quidem corpore perceptarum. Itaque primos
+          congressus copulationesque et consuetudinum instituendarum voluntates fieri propter
+          voluptatem; Ita enim se Athenis collocavit, ut sit paene unus ex Atticis, ut id etiam
+          cognomen videatur habiturus. Atque hoc loco similitudines eas, quibus illi uti solent,
+          dissimillimas proferebas.{' '}
+        </p>
+      </div>
+    );
+
+    openModal('Software Engineer...', modalContent);
+  };
 
   useEffect(() => {
     if (!isOnScreen) return;
@@ -50,7 +96,14 @@ function About() {
           </h2>
           <div className='about__content' ref={aboutRef}>
             <div className='about__text' ref={leftColumnRef}>
-              <p>I am a Construction Manager-transitioned- Web & Applications Developer.</p>
+              <p>
+                I am a Construction Manager-transitioned- Web & Applications Developer.
+                <br />(
+                <button className='button-text' onClick={handleOpenModal}>
+                  why not a software engineer?
+                </button>
+                )
+              </p>
               <p>
                 In all honesty, I&apos;ve now come &quot;full-circle&quot; in my career journey and
                 am coming back to web and applications development.
