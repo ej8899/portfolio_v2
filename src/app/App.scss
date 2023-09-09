@@ -13,6 +13,19 @@
   min-height: 100vh;
 }
 
+.button-text {
+  all: revert;
+  border: 0;
+  color: var(--clr-primary-100);
+  font-weight: bold;
+  font-size: clamp(0.9rem, 3.15vw, 1.1rem);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.button-text:hover {
+  text-decoration: underline;
+}
+
 .centered_grid {
   display: grid;
   place-items: center;
