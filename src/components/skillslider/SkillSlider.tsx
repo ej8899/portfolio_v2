@@ -201,7 +201,37 @@ const SkillSlider = () => {
             </div>
           </div>
         </article>
-
+        <div className='centered_container column centered_grid'>
+          <div className='skill-details-container'>
+            <div className='skill-details-column'>
+              <div className='skill-card'>
+                <h4>What is a Frontend Develoment?</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique
+                  aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.
+                </p>
+              </div>
+            </div>
+            <div className='skill-details-column'>
+              <div className='skill-card'>
+                <h4>What is a Frontend Develoment?</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique
+                  aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.
+                </p>
+              </div>
+            </div>
+            <div className='skill-details-column'>
+              <div className='skill-card'>
+                <h4>What is a Frontend Develoment?</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique
+                  aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <svg
           style={{
             display: 'none',
