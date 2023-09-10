@@ -8,7 +8,7 @@ import Aboutimage from './Aboutimage';
 import Collapse from '../collapse/Collapse';
 import { useModal } from '../modal/ModalManager';
 
-function About() {
+function About(props) {
   const aboutRef = useRef<HTMLDivElement>(null);
   const leftColumnRef = useRef<HTMLDivElement>(null);
   const rightColumnRef = useRef<HTMLDivElement>(null);
@@ -66,7 +66,13 @@ function About() {
 
   return (
     <>
-      <section id='about' className='about about-parallax-wrapper' aria-labelledby='about__title'>
+      <section
+        id='about'
+        className='about about-parallax-wrapper'
+        aria-labelledby='about__title'
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, react/prop-types
+        ref={props.reference}
+      >
         <div className='about-header-wrapper'>
           <div className='custom-shape-divider-bottom-1694044314'>
             <svg

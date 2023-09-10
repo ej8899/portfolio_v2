@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
@@ -16,7 +17,7 @@ function useAnimateOnScreen(itemOnScreen, timelineRef, animationClass: string) {
   }, [itemOnScreen]);
 }
 
-function Resume() {
+function Resume(props) {
   const sectionRef = useRef(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -83,7 +84,7 @@ function Resume() {
   };
 
   return (
-    <section id='resume' className='resume' aria-labelledby='contact__title' ref={sectionRef}>
+    <section id='resume' className='resume' aria-labelledby='contact__title' ref={props.reference}>
       <div className='custom-shape-divider-top-1681930915'>
         <svg
           data-name='Layer 1'
@@ -94,7 +95,6 @@ function Resume() {
           <path d='M1200 120L0 16.48 0 0 1200 0 1200 120z' className='resume-divider-fill'></path>
         </svg>
       </div>
-
       {/* section content */}
       <div className='column centered_grid'>
         <div className='resume__header' ref={headerRef}>

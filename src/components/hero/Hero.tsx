@@ -6,9 +6,15 @@ import globalconfig from '../../config';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import { FormEvent, useEffect, useRef, useState } from 'react';
 
-function Hero() {
+function Hero(props) {
   return (
-    <section id='hero' className='hero' aria-label='hero with github & linkedin links'>
+    <section
+      id='hero'
+      className='hero'
+      aria-label='hero with github & linkedin links'
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, react/prop-types
+      ref={props.reference}
+    >
       <div className='hero-content column centered_grid full_height'>
         <div className='hero__text'>
           <h2

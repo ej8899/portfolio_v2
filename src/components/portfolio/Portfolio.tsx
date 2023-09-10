@@ -6,8 +6,9 @@ import useElementOnScreen from '../../hooks/useElementOnScreen';
 import Project from '../project/Project';
 import './Portfolio.scss';
 
-function Portfolio() {
+function Portfolio(props) {
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const sectionRef = useRef<HTMLHeadingElement>(null);
   const extraProjectsRef = useRef(null);
   const [renderAllProjects, setRenderAllProjects] = useState(false);
   const isOnScreen = useElementOnScreen(titleRef);
@@ -25,7 +26,8 @@ function Portfolio() {
   }, [isExtraOnScreen]);
 
   return (
-    <section id='portfolio' className='portfolio' aria-label='my portfolio'>
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, react/prop-types, @typescript-eslint/no-unsafe-member-access
+    <section id='portfolio' className='portfolio' aria-label='my portfolio' ref={props.reference}>
       <div className='custom-shape-divider-top-1681930915'>
         <svg
           data-name='Layer 1'
