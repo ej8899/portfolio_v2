@@ -47,7 +47,7 @@ function App() {
   };
 
   const handleEnter = (sectionName) => {
-    // setActiveSection(section);
+    setActiveSection(sectionName);
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     console.log(`Section entered: ${sectionName}`);
   };
@@ -56,7 +56,7 @@ function App() {
   const handleLeave = (sectionName) => {
     // setActiveSection(null);
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    console.log(`Section left: ${sectionName}`);
+    // console.log(`Section left: ${sectionName}`);
   };
 
   // chatbot
@@ -124,14 +124,18 @@ function App() {
         <SectionObserver sectionName='hero' onEnter={handleEnter} onLeave={handleLeave}>
           <Hero vscroll={scrollY} reference={sectionRefs.hero} />
         </SectionObserver>
-        <About reference={sectionRefs.about} />
-        <AboutSlider />
-        <SkillSlider reference={sectionRefs.skillslider} />
+        <SectionObserver sectionName='about' onEnter={handleEnter} onLeave={handleLeave}>
+          <About reference={sectionRefs.about} />
+          <AboutSlider />
+          <SkillSlider reference={sectionRefs.skillslider} />
+        </SectionObserver>
         <SectionObserver sectionName='portfolio' onEnter={handleEnter} onLeave={handleLeave}>
           <Portfolio reference={sectionRefs.portfolio} />
         </SectionObserver>
-        <Resume reference={sectionRefs.resume} />
-        <Contact />
+        <SectionObserver sectionName='contact' onEnter={handleEnter} onLeave={handleLeave}>
+          <Resume reference={sectionRefs.resume} />
+          <Contact />
+        </SectionObserver>
         <Footer />
       </div>
       <button id='scrollToTopButton' title='Scroll to Top'>
