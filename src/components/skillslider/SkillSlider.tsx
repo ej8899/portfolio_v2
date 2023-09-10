@@ -7,7 +7,7 @@ https://ryanmulligan.dev/blog/css-marquee/
 some of this was used below:
 */
 
-const SkillSlider = () => {
+const SkillSlider = (props) => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const isOnScreen = useElementOnScreen(titleRef);
 
@@ -17,7 +17,8 @@ const SkillSlider = () => {
   }, [isOnScreen]);
 
   return (
-    <section className='skills' aria-labelledby='my skills and tools'>
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, react/prop-types, @typescript-eslint/no-unsafe-member-access
+    <section className='skills' aria-labelledby='my skills and tools' ref={props.reference}>
       <div className='column centered_grid'>
         <h2 id='skills' className='skills__title'>
           Languages & Tools
