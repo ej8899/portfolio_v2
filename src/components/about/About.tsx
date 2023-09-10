@@ -15,7 +15,8 @@ function About(props) {
   const isOnScreen = useElementOnScreen(aboutRef, '-100px');
   const { openModal } = useModal();
 
-  const handleOpenModal = () => {
+  const handleOpenModal = (modalItem) => {
+    let modalTitle = '';
     console.log('about- opening modal');
     const modalContent = (
       <div>
@@ -54,8 +55,17 @@ function About(props) {
         </p>
       </div>
     );
-
-    openModal('Software Engineer...', modalContent);
+    switch (modalItem) {
+      case 'engineer':
+        modalTitle = 'Software Engineers in Canada...';
+        break;
+      case 'majorprojects':
+        modalTitle = 'Major Projects...';
+        break;
+      default:
+        break;
+    }
+    openModal(modalTitle, modalContent);
   };
 
   useEffect(() => {
@@ -103,10 +113,14 @@ function About(props) {
           <div className='about__content' ref={aboutRef}>
             <div className='about__text' ref={leftColumnRef}>
               <p>
-                I am a Construction Manager-transitioned- Web & Applications Developer.
-                <br />(
-                <button className='button-text' onClick={handleOpenModal}>
-                  why not a software engineer?
+                I am a Construction Manager-transitioned- Web & Applications Developer. (
+                <button
+                  className='button-text'
+                  onClick={() => {
+                    handleOpenModal('engineer');
+                  }}
+                >
+                  Why am I not a software engineer?
                 </button>
                 )
               </p>
@@ -135,9 +149,16 @@ function About(props) {
               <p>
                 Life happened, and I decided to re-think my career choices - I made a sudden shift
                 into first responder & emergency service roles. A few years years later and I found
-                my self involved in construction management of &quot;
-                <span data-tooltip='multi-billion dollar jobs'>major projects</span>&quot; across
-                Canada.
+                myself involved in construction management of &quot;
+                <button
+                  className='button-text'
+                  onClick={() => {
+                    handleOpenModal('majorprojects');
+                  }}
+                >
+                  major projects
+                </button>
+                &quot; across Canada.
               </p>
               <p>
                 Fast forwarding into 2021, life-happened once again, and I&apos;ve once again
