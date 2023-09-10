@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/jsx-no-comment-textnodes */
@@ -7,7 +10,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import { useEffect, useState } from 'react';
+import { SetStateAction, useEffect, useRef, useState } from 'react';
 import About from '../components/about/About';
 import Contact from '../components/contact/Contact';
 import Footer from '../components/footer/Footer';
@@ -19,18 +22,42 @@ import { stickyNav, initCursor, activeAnimation } from '../utils';
 // eslint-disable-next-line import/extensions, import/no-extraneous-dependencies
 import Splitting from 'splitting';
 import SkillSlider from '../components/skillslider/SkillSlider';
-
+import SectionObserver from '../components/SectionObserver';
 // extras
 import globalconfig from '../config';
 import AboutSlider from '../components/about/AboutSlider';
 import Chatbot from '../components/chatbot/Chatbot';
 import Resume from '../components/resume/Resume';
+import useElementOnScreen from '../hooks/useElementOnScreen';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
 
 function App() {
-  // const { height, width } = useWindowDimensions();
+  const { height, width } = useWindowDimensions();
+  // console.log('window height:', height);
+  // what element is on screenconst [activeSection, setActiveSection] = useState(null);
   const [activeSection, setActiveSection] = useState(null);
+  const sectionRefs = {
+    portfolio: useRef(null),
+    hero: useRef(null),
+    skillslider: useRef(null),
+    about: useRef(null),
+    resume: useRef(null),
+  };
+
+  const handleEnter = (sectionName) => {
+    // setActiveSection(section);
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    console.log(`Section entered: ${sectionName}`);
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleLeave = (sectionName) => {
+    // setActiveSection(null);
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    console.log(`Section left: ${sectionName}`);
+  };
 
   // chatbot
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -59,50 +86,15 @@ function App() {
     console.log('appwrapper height:', contentHeight);
     console.log('viewport height:', viewportHeight);
 
-    function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return rect.top <= 20;
-    }
-
+    //
+    // back to top button
+    //
     window.addEventListener('scroll', () => {
-      const scrollPosition = window.scrollY;
-
-      const section1 = document.getElementById('portfolio');
-      const section2 = document.getElementById('hero');
-      if (isInViewport(section1)) {
-        console.log('viewing portfolio');
-        setActiveSection('white');
-      } else if (isInViewport(section2)) {
-        console.log('viewing hero');
-        setActiveSection('white');
-      } else {
-        setActiveSection(null); // No section in view
-      }
-
-      scrollY = window.scrollY;
-      // console.log('in app.tsx scrollY:', scrollY);
-      // items.forEach((item) => {
-      //   const scrollRatio = item.getAttribute('data-scroll-ratio');
-      //   const translateY = -scrollY * scrollRatio;
-
-      //   item.style.transform = `translateY(${translateY}px)`;
-      //   console.log('parallax event on', item);
-      // });
       //
-      // bring footer to surface for clickable links
-      /*
-      if (contentHeight - scrollY - viewportHeight < lastPixelsToShow) {
-        if (globalconfig.debug) {
-          console.log('debug: setting zindex on footer to 1');
-        }
-        targetElement.style.zIndex = 1;
-      } else {
-        if (globalconfig.debug) {
-          // console.log('debug: setting zindex on footer to -1');
-        }
-        targetElement.style.zIndex = -1;
-      }
-      */
+      // scroll position for back to top button
+      //
+      const scrollPosition = window.scrollY;
+      scrollY = window.scrollY;
       // add the scroll to top button
       if (window.scrollY > 300) {
         scrollToTopButton.classList.add('active');
@@ -129,12 +121,16 @@ function App() {
     <>
       <div className='appwrapper'>
         <Header />
-        <Hero vscroll={scrollY} />
-        <About />
+        <SectionObserver sectionName='hero' onEnter={handleEnter} onLeave={handleLeave}>
+          <Hero vscroll={scrollY} reference={sectionRefs.hero} />
+        </SectionObserver>
+        <About reference={sectionRefs.about} />
         <AboutSlider />
-        <SkillSlider />
-        <Portfolio />
-        <Resume />
+        <SkillSlider reference={sectionRefs.skillslider} />
+        <SectionObserver sectionName='portfolio' onEnter={handleEnter} onLeave={handleLeave}>
+          <Portfolio reference={sectionRefs.portfolio} />
+        </SectionObserver>
+        <Resume reference={sectionRefs.resume} />
         <Contact />
         <Footer />
       </div>
