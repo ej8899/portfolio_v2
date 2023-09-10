@@ -1,20 +1,29 @@
 /* eslint-disable prettier/prettier */
 /* eslint react/prop-types: 0 */
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Collapse.scss';
+import useElementOnScreen from '../../hooks/useElementOnScreen';
 
 // up and down arrow fonts:
 // Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. 
 
 function Collapse({ title, children }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const collapseRef = useRef(null);
+  const isOnScreen = useElementOnScreen(collapseRef);
 
+  useEffect(() => {
+    if (!isOnScreen) {
+      setIsCollapsed(true);
+    }
+  }, [isOnScreen]);
+  
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
   };
 
   return (
-    <div className='collapsible-section'>
+    <div className='collapsible-section' ref={collapseRef}>
       <div className='collapsible-header'>
         <h3>{title}</h3>
         <button
