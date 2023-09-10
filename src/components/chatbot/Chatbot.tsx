@@ -273,7 +273,7 @@ const intents = {
   },
   donate: {
     patterns: ['donate','donations','buy me a coffee', 'buy coffee', 'tips','coffee'],
-    responses: ['That is great that you want to buy the developer a coffee! <a class="keyword-link" href="https://www.buymeacoffee.com/ej88994">click here</a> to "buy me a coffee "☕'],
+    responses: ['That is great that you want to buy the developer a coffee! <a class="keyword-link" href="https://www.buymeacoffee.com/ej88994" target="_blank">click here</a> to "buy me a coffee "☕'],
     replies: 0,
   },
   biden: {
