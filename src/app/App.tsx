@@ -30,6 +30,7 @@ import Resume from '../components/resume/Resume';
 
 function App() {
   // const { height, width } = useWindowDimensions();
+  const [activeSection, setActiveSection] = useState(null);
 
   // chatbot
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -57,7 +58,27 @@ function App() {
     let scrollY;
     console.log('appwrapper height:', contentHeight);
     console.log('viewport height:', viewportHeight);
+
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return rect.top <= 20;
+    }
+
     window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+
+      const section1 = document.getElementById('portfolio');
+      const section2 = document.getElementById('hero');
+      if (isInViewport(section1)) {
+        console.log('viewing portfolio');
+        setActiveSection('white');
+      } else if (isInViewport(section2)) {
+        console.log('viewing hero');
+        setActiveSection('white');
+      } else {
+        setActiveSection(null); // No section in view
+      }
+
       scrollY = window.scrollY;
       // console.log('in app.tsx scrollY:', scrollY);
       // items.forEach((item) => {
@@ -93,6 +114,7 @@ function App() {
         line2.classList.remove('nowblack');
       }
     });
+
     scrollToTopButton.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
