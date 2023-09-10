@@ -25,7 +25,7 @@
   display: flex;
 	align-items: center;
 	justify-content: center;
-  //background-color: rgba(0, 0, 0, 0.4); /* Adjust the alpha value for the desired level of opacity */
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust the alpha value for the desired level of opacity */
   //backdrop-filter: blur(6px) opacity(0);  /* Adjust the blur amount as needed */
   // z-index: 1000; /* Ensure the backdrop is displayed above other content */
   opacity: 0;
@@ -81,15 +81,16 @@
   opacity: 1;
   
   pointer-events: auto;
-  //animation: blur-in 1500ms 2s forwards;
+  animation: modal-blur-in 1500ms 2s forwards;
 }
 @keyframes modal-blur-in {
   from {
     backdrop-filter: blur(0px);
+    background-color: rgba(0, 0, 0, 0.4);
   }
   to {
     backdrop-filter: blur(6px);
-    //background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 
