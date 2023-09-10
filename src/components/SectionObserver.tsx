@@ -21,25 +21,6 @@ const SectionObserver = ({ sectionName, onEnter, onLeave, children }) => {
       });
     };
 
-    // const handleScroll = () => {
-    //   const currentScrollY = window.scrollY;
-    //   const scrollingDown = currentScrollY > prevScrollY;
-
-    //   // Determine rootMargin based on scrolling direction
-    //   const rootMargin = scrollingDown ? '-50px 0px 0px 0px' : '0px 0px 0px 0px';
-    //   // console.log('scrolling down:', scrollingDown);
-    //   // Apply the IntersectionObserver with the updated rootMargin
-    //   const observer = new IntersectionObserver(callback, { rootMargin });
-
-    //   if (sectionRef.current) {
-    //     observer.observe(sectionRef.current);
-    //   }
-
-    //   // Update the previous scroll position
-    //   setPrevScrollY(currentScrollY);
-    // };
-    // window.addEventListener('scroll', handleScroll);
-
     const options = {
       root: null, // Use the viewport as the root
       rootMargin: '-50px 0px 0px 0px', // No margin

@@ -40,7 +40,9 @@ function Resume(props) {
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
+    console.log('resume:useeffect');
     const handleScroll = () => {
+      console.log('resume:in scroller');
       if (!sectionRef.current) return;
 
       const windowMiddle = window.innerHeight / 2;
@@ -48,7 +50,7 @@ function Resume(props) {
       const sectionHeight = section.clientHeight;
       const scrollY = window.scrollY - section.offsetTop + windowMiddle;
       const percentage = (scrollY / sectionHeight) * 100;
-      // console.log('scrolly:', scrollY);
+      console.log('resume:scrolly:', scrollY);
       // Ensure the percentage is between 0 and 100
       let clampedPercentage = Math.min(100, Math.max(0, percentage));
       if (clampedPercentage > 85) {
@@ -68,7 +70,7 @@ function Resume(props) {
     if (sectionRef.current) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       // sectionRef.current.style.width = `${scrollPercentage}%`;
-      // console.log(scrollPercentage);
+      console.log(scrollPercentage);
     }
   }, [scrollPercentage]);
 
@@ -84,7 +86,7 @@ function Resume(props) {
   };
 
   return (
-    <section id='resume' className='resume' aria-labelledby='contact__title' ref={props.reference}>
+    <section id='resume' className='resume' aria-labelledby='contact__title' ref={sectionRef}>
       <div className='custom-shape-divider-top-1681930915'>
         <svg
           data-name='Layer 1'
