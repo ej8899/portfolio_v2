@@ -98,11 +98,11 @@ function Resume(props) {
       {/* section content */}
       <div className='column centered_grid'>
         <div className='resume__header' ref={headerRef}>
-          <h2 id='resume__title'>Résumé</h2> <br />
+          <h2 id='resume__title'>Résumé</h2>
           <p className='resume-message'>
             Here are just a few recent and/or key moments from my résumé.
             <br />
-            click here to download my full résumé, or{' '}
+            Click here to download my full résumé, or{' '}
             <a href='https://flowcv.com/resume/0chloacpte' target='_new'>
               view online here
             </a>
