@@ -67,7 +67,7 @@ function Resume() {
     if (sectionRef.current) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       // sectionRef.current.style.width = `${scrollPercentage}%`;
-      console.log(scrollPercentage);
+      // console.log(scrollPercentage);
     }
   }, [scrollPercentage]);
 
