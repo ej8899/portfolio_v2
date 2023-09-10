@@ -188,8 +188,8 @@ padding-bottom: 250px;
   }
 
   svg.send-status {
-    width: min(300px, 80vw);
-    padding-block: 2rem;
+    // width: min(300px, 80vw);
+    // padding-block: 2rem;
   }
 
   button {
@@ -257,12 +257,15 @@ padding-bottom: 250px;
 }
 
 .thanksmessage {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
   align-items: center;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   color: black;
+  text-align: center;
+  font-family: "Caveat";
 }
 
 .ratio4-3 {
