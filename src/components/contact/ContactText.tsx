@@ -1,4 +1,6 @@
-import { FormEvent, useEffect, useRef, useState } from 'react';
+//
+// contact form - left side for text items only
+//
 
 function ContactText() {
   return (
