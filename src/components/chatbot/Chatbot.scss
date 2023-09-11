@@ -12,7 +12,7 @@
   width: 440px;
   height: 580px;
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 15px;
   transform: translateY(100%);
   transition: transform 0.3s ease-in-out;
   z-index: 51;
@@ -23,6 +23,7 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  overflow: hidden;
   transform: translateX(550px);
   //display: none;
   opacity: 0;
@@ -127,21 +128,23 @@
   display: flex; /* Create a flex container */
   //align-items: flex-start; /* Align items to the top */
   flex-direction: row;
+  align-items: flex-end;
   //justify-content: space-between;
   //border: 1px solid
+  
 }
 .row-Bot {
-  align-items: flex-start;
+  // align-items: flex-start;
 }
 .row-User {
-  justify-content: flex-end;;
+  justify-content: flex-end;
 }
 
 .User {
   background-color: #a6e7de;
   text-align: right;
   border: 2px solid #000000;
-  border-radius: 20px 00px 20px 20px;
+  border-radius: 20px 20px 0px 20px;
   margin-top: 10px;
   margin-right: 4px;
   //align-items: flex-end;
@@ -153,7 +156,7 @@
   background-color: #f9c186;
   text-align: left;
   border: 2px solid #000000;
-  border-radius: 0px 20px 20px 20px;
+  border-radius: 20px 20px 20px 0px;
   margin-top: 10px;
   //align-items: flex-start;
   //float: left;
