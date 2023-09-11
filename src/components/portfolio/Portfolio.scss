@@ -88,7 +88,7 @@
 }
 .portfolio__additional-projects {
   display: flex;
-  align-items: end; /* Vertically center the content */
+  align-items: flex-end; /* Vertically center the content */
   justify-content: space-between; /* Add space between the items */
   text-shadow: 
   -1px -1px 0 #000,  
