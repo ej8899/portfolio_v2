@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react';
 // import SkillSlider from '../skillslider/SkillSlider';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import './About.scss';
-import './AboutParallax.scss';
 import Aboutimage from './Aboutimage';
 import Collapse from '../collapse/Collapse';
 import { useModal } from '../modal/ModalManager';

@@ -117,15 +117,9 @@ color: var(--clr-neutral-100);
   border-radius: 20px;
   // BUG - wrapper isn't going to full width - or at least full width as we expect in first version of project list - should we just put extra projects in their own 'section'?
   width: 100%;
-  //background: yellow;
-  //display: visible;
-
-  // TODO below border is just testing purposes - but perhaps a decent looking border could be applied?
-  //border: 1px hidden;
   overflow: hidden; // BUG this blocks some extra project info in the title - the # to the left and on the R the tooltip
   //overflow-y: hidden;
   //overflow-x: visible;
-
 }
 .nowopen {
   max-height: 1000px; /* Adjust to your required  max height */

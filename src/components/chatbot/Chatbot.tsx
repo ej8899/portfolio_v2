@@ -15,7 +15,7 @@ import globalconfig from '../../config';
 import popOut from './newWindow';
 import SendIcon from './sendIcon';
 
-// TODO use this filter
+// TODO use badwords filter (build it)
 import badWordsArray from './badwords';
 
 // TODO use config options from here
