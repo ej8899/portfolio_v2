@@ -108,7 +108,7 @@ function Resume(props) {
             <a href='https://flowcv.com/resume/0chloacpte' target='_new'>
               Click to view my resume online
             </a>
-            &nbsp;|| Here to download it.
+            &nbsp;|| Here to download a PDF.
           </div>
         </div>
 
