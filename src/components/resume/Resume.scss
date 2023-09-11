@@ -60,10 +60,10 @@
         content: '';
         position: absolute;
         top: 70%;
-        left: 4.9ch;
+        left: 6.8ch;
         transform: translateX(-50%);
 
-        width: 30%;
+        width: 25%;
         height: 0.45ch;
         z-index: -1;
         background: var(--clr-primary-100);
@@ -262,6 +262,7 @@ $timebarbasecolor: #00bfb250;
   transform: rotate(-$rotate);
   transition: opacity 1s;
   opacity: 0;
+  
 	&::after {
 		content: '';
 		position: absolute;

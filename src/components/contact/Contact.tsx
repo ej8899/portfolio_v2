@@ -117,7 +117,7 @@ function Contact() {
       <div className='column centered_grid'>
         <div className='contact__header' ref={headerRef}>
           <h2 id='contact__title'>Contact Me</h2>
-          <p className='thanksmessage'>& let&apos;s work together!</p>
+          <div className='thanksmessage'>& let&apos;s work together!</div>
           {/* <p>Feedback is always appreciated!</p> */}
         </div>
       </div>

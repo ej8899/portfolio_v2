@@ -40,9 +40,9 @@ function Resume(props) {
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
-    console.log('resume:useeffect');
+    // console.log('resume:useeffect');
     const handleScroll = () => {
-      console.log('resume:in scroller');
+      // console.log('resume:in scroller');
       if (!sectionRef.current) return;
 
       const windowMiddle = window.innerHeight / 2;
@@ -50,7 +50,7 @@ function Resume(props) {
       const sectionHeight = section.clientHeight;
       const scrollY = window.scrollY - section.offsetTop + windowMiddle;
       const percentage = (scrollY / sectionHeight) * 100;
-      console.log('resume:scrolly:', scrollY);
+      // console.log('resume:scrolly:', scrollY);
       // Ensure the percentage is between 0 and 100
       let clampedPercentage = Math.min(100, Math.max(0, percentage));
       if (clampedPercentage > 85) {
@@ -70,7 +70,7 @@ function Resume(props) {
     if (sectionRef.current) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       // sectionRef.current.style.width = `${scrollPercentage}%`;
-      console.log(scrollPercentage);
+      // console.log(scrollPercentage);
     }
   }, [scrollPercentage]);
 
@@ -101,15 +101,15 @@ function Resume(props) {
       <div className='column centered_grid'>
         <div className='resume__header' ref={headerRef}>
           <h2 id='resume__title'>Résumé</h2>
-          <p className='resume-message'>
-            Here are just a few recent and/or key moments from my résumé.
-            <br />
-            Click here to download my full résumé, or{' '}
+          <div className='subtitle-message'>
+            Here are just a few recent and/or key moments from my résumé!
+          </div>
+          <div className='subtitle-message'>
             <a href='https://flowcv.com/resume/0chloacpte' target='_new'>
-              view online here
+              Click to view my resume online
             </a>
-            .
-          </p>
+            &nbsp;|| Here to download it.
+          </div>
         </div>
 
         <section className='timeline'>

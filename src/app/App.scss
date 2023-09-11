@@ -395,3 +395,23 @@
 }
 
 
+.subtitle-message {
+  font-size: 1.8rem;
+  font-weight: 700;
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  //color: black;
+  color: var(--clr-neutral-600);
+  text-align: center;
+  font-family: "Caveat";
+  line-height: 1.9;
+  a,
+  a:visited,
+  a:active {
+    color: orange;
+    font-weight: var(--fw-bold);
+  }
+  padding-top: 0px;
+}
