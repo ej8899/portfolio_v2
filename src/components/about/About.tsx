@@ -57,7 +57,7 @@ function About(props) {
     );
     switch (modalItem) {
       case 'engineer':
-        modalTitle = 'Software Engineers in Canada...';
+        modalTitle = 'Software Engineers in 🇨🇦...';
         break;
       case 'majorprojects':
         modalTitle = 'Major Projects...';
