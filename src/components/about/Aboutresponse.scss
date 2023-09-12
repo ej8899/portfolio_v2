@@ -1,5 +1,5 @@
 
-
+// TODO - strip down this file to only what's needed!
 
 
 /**
@@ -57,9 +57,10 @@
 	height: 680px;
 	z-index: 2;
 	background: var(--myorange);
-  background: linear-gradient(0deg, rgba(0,159,159,1) 0%, rgba(255,116,0,1) 77%);
+  background: linear-gradient(0deg, tomato 0%, orange 77%);
 	border-radius: 100%;
 	-webkit-border-radius: 100%;
+  border: 2px solid black;
 }
 
 .section.about-started .slide .circle.img-1 {
@@ -278,94 +279,5 @@
 	}
 }
 
-@media screen and (max-width: 767px) {
-	.lui-section {
-		padding-bottom: 120px;
-	}
-	.lui-section-about {
-		padding-bottom: 120px;
-	}
-	.container {
-		padding: 0 20px;
-	}
-	.offset-1,
-	.offset-2,
-	.offset-3,
-	.offset-4,
-	.offset-5,
-	.offset-6,
-	.offset-7,
-	.offset-8,
-	.offset-9,
-	.offset-10,
-	.offset-11,
-	.offset-12 {
-		margin-left: 0;
-	}
-	h1 {
-		font-size: 34px;
-	}
-	h2 {
-		font-size: 30px;
-	}
-	h3 {
-		font-size: 28px;
-	}
-	h4 {
-		font-size: 26px;
-	}
-	h5 {
-		font-size: 24px;
-	}
-	h6 {
-		font-size: 18px;
-	}
-	p {
-		margin: 20px 0;
-	}
-	.m-titles .m-title {
-		font-size: 26px;
-	}
-	.section.section-inner.started-heading .m-titles .m-title {
-		font-size: 34px;
-	}
 
-
-
-	/*started about*/
-	.section.about-started .content {
-		padding-top: 120px;
-	}
-	.section.about-started .titles {
-		margin-bottom: 420px;
-		min-height: 160px;
-	}
-	.section.about-started .title {
-		font-size: 40px;
-	}
-	.section.about-started .lui-subtitle {
-		font-size: 13px;
-	}
-	.section.about-started .label strong, .section.about-started .label b {
-		font-size: 24px;
-	}
-	.section.about-started .slide {
-		top: 680px;
-		transform: scale(0.5);
-	}
-	.about-started .btn-lnk {
-		margin-top: 20px;
-		padding-left: 0;
-		padding-top: 40px;
-		display: block;
-	}
-	a.btn-lnk:before, .btn-lnk:before {
-		left: 50%;
-		top: 0;
-		margin-left: -1px;
-		margin-top: 0;
-		height: 40px;
-		width: 2px;
-	}
-}
 

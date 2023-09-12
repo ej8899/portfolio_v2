@@ -105,21 +105,20 @@ function About(props) {
           </div>
         </div>
         <div className='whiteout'></div>
-        <div className='column full_height centered_grid'>
-          <h2 id='about__title' className='js-parallax'>
-            About Me
-          </h2>
+        <div className='column centered_grid'>
+          <h2 id='about__title'>About Me</h2>
           <div className='about__content' ref={aboutRef}>
             <div className='about__text' ref={leftColumnRef}>
               <p>
-                I am a Construction Manager-transitioned- Web & Applications Developer. (
+                I am a Construction Manager-transitioned- Web & Applications Developer.
+                <br />(
                 <button
                   className='button-text'
                   onClick={() => {
                     handleOpenModal('engineer');
                   }}
                 >
-                  Why am I not a software engineer?
+                  &nbsp;Why am I not a software engineer?&nbsp;
                 </button>
                 )
               </p>
@@ -191,9 +190,6 @@ function About(props) {
               <Aboutimage />
             </div>
           </div>
-          <br />
-          <br />
-          &nbsp;
         </div>
       </section>
     </>
