@@ -1,5 +1,7 @@
 import './About.scss';
 import './Aboutimage.scss';
+import './Aboutresponse.scss';
+
 import { useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 
@@ -30,21 +32,15 @@ function Aboutimage() {
   // TODO bug in circle if scrolling into view - it already fades in, then does the fadeInUp animation - need to keep circle off for start.
 
   return (
-    <div
-      className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started'
-      data-animate='active'
-    >
-      {/* TODO setup for @media resizing */}
-      {/* TODO setup for animation on scroll to view and parallax */}
-      <div className='photo-scaling'>
+    <div className='section about-started photo-scaling'>
+      <div className='slide'>
         <img
           decoding='async'
-          className='greyscale'
           data-scroll-ratio='0.9'
           src='src/assets/images/profile2.png'
           alt='<b>Ernie</b> Johnson'
         />
-        <span className='circle circle-1 animate__animated' ref={circleRef} />
+        <span className='circle circle-1'></span>
         <span
           className='circle img-1 animate__animated'
           ref={pat1Ref}

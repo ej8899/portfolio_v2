@@ -167,28 +167,28 @@
 .greyscale {
   filter: grayscale(80%);
   -webkit-filter: grayscale(80%);
-  position: relative !important;
-	left: -25px;
-  //left: 0;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	border-radius: 440px;
-	-webkit-border-radius: 440px;
-	z-index: 10;
-}
-
-.aboutimg {
-	// position: absolute;
-	// left: 0;
-	// top: 0;
+  // position: relative !important;
+	// left: -25px;
+  // //left: 0;
+	// top: 0px;
 	// width: 100%;
 	// height: 100%;
 	// object-fit: cover;
-	// border-radius: 480px;
-	// -webkit-border-radius: 480px;
+	// border-radius: 440px;
+	// -webkit-border-radius: 440px;
 	// z-index: 10;
+}
+
+.aboutimg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 380px;
+	-webkit-border-radius: 380px;
+	z-index: 10;
 }
 
 .circle.circle {
@@ -202,8 +202,8 @@
 
 .circle.circle-1 {
   position: absolute;
-	width: 440px;
-	height: 440px;
+	width: 680px;
+	height: 680px;
 	z-index: 2;
 	background: orange;
   background: linear-gradient(0deg, rgba(0,159,159,1) 0%, rgba(255,116,0,1) 77%);
