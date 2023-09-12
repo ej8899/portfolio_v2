@@ -25,10 +25,14 @@ padding-bottom: 250px;
     grid-template-columns: 1.25fr 1fr;
     gap: var(--contact-gap);
     padding-top: 2rem;
-
+    align-items: start !important;
     @media (max-width: 950px) {
       grid-template-columns: 1fr;
     }
+  }
+
+  &__text {
+    padding-top: 24px;
   }
 
   &__header {

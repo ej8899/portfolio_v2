@@ -4,7 +4,7 @@
 
 function ContactText() {
   return (
-    <div className='numbers-items'>
+    <div className='numbers-items contact__text'>
       <div className='numbers-item'>
         <div className='icon'>
           <i aria-hidden='true' className='far fa-map' />

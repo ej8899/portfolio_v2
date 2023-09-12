@@ -205,7 +205,6 @@ function Contact() {
               <Button type='outline'>Send Me A Message</Button>
             </form>
           )}
-
           {/* animated hourglass */}
           {isSendPending && (
             <div className='centered_container'>
@@ -238,7 +237,6 @@ function Contact() {
               </div>
             </div>
           )}
-
           {/* green checkmark icon */}
           {isSent && (
             <>
@@ -262,7 +260,6 @@ function Contact() {
               </div>
             </>
           )}
-
           {/* error during send */}
           {isError && (
             <>

@@ -1,4 +1,5 @@
 import './About.scss';
+import './Aboutimage.scss';
 import { useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 
@@ -30,22 +31,22 @@ function Aboutimage() {
 
   return (
     <div
-      className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started parallax-section'
+      className='section hero-started slide scrolla-element-anim-1 scroll-animate lui-section lui-section-hero lui-gradient-top lui-started'
       data-animate='active'
     >
       {/* TODO setup for @media resizing */}
       {/* TODO setup for animation on scroll to view and parallax */}
-      <div>
+      <div className='photo-scaling'>
         <img
           decoding='async'
-          className='greyscale aboutimage parallax-item'
+          className='greyscale'
           data-scroll-ratio='0.9'
           src='src/assets/images/profile2.png'
           alt='<b>Ernie</b> Johnson'
         />
         <span className='circle circle-1 animate__animated' ref={circleRef} />
         <span
-          className='circle img-1 parallax-item animate__animated'
+          className='circle img-1 animate__animated'
           ref={pat1Ref}
           data-scroll-ratio='0.1'
           id='item1'
@@ -54,7 +55,7 @@ function Aboutimage() {
           }}
         />
         <span
-          className='circle img-2 parallax-item animate__animated'
+          className='circle img-2  animate__animated'
           ref={pat2Ref}
           data-scroll-ratio='0.1'
           id='item2'
@@ -63,7 +64,7 @@ function Aboutimage() {
           }}
         />
         <span
-          className='circle img-3 parallax-about-item-bubbles animate__animated'
+          className='circle img-3  animate__animated'
           ref={pat3Ref}
           style={{
             backgroundImage: 'url(src/assets/images/pat-2.png)',
@@ -71,10 +72,7 @@ function Aboutimage() {
         />
         <div className='info-list'>
           <ul>
-            <li
-              className='rotate3l parallax-about-item-info animate__animated animate__delay-1s'
-              ref={infoRef1}
-            >
+            <li className='rotate3l animate__animated animate__delay-1s' ref={infoRef1}>
               <span className='num'>
                 2 <strong>+</strong>
               </span>
