@@ -5,7 +5,9 @@ import useElementOnScreen from '../../hooks/useElementOnScreen';
 import './About.scss';
 import Aboutimage from './Aboutimage';
 import Collapse from '../collapse/Collapse';
+
 import { useModal } from '../modal/ModalManager';
+import { modalContentEngineer, modalContent2 } from './ModalContent'; // Import the modal content
 
 function About(props) {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -17,46 +19,9 @@ function About(props) {
   const handleOpenModal = (modalItem) => {
     let modalTitle = '';
     console.log('about- opening modal');
-    const modalContent = (
-      <div>
-        <h2>Quarum ambarum rerum cum medicinam pollicetur, luxuriae licentiam pollicetur.</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Unum nescio, quo modo possit, si
-          luxuriosus sit, finitas cupiditates habere. Hoc est non modo cor non habere, sed ne
-          palatum quidem. Sic, et quidem diligentius saepiusque ista loquemur inter nos agemusque
-          communiter. Paulum, cum regem Persem captum adduceret, eodem flumine invectio? Quid igitur
-          dubitamus in tota eius natura quaerere quid sit effectum? Duo Reges: constructio
-          interrete.{' '}
-        </p>
-
-        <h3>Ut proverbia non nulla veriora sint quam vestra dogmata.</h3>
-
-        <p>
-          Quasi vero, inquit, perpetua oratio rhetorum solum, non etiam philosophorum sit. Tria
-          genera cupiditatum, naturales et necessariae, naturales et non necessariae, nec naturales
-          nec necessariae. Sin aliud quid voles, postea. Consequatur summas voluptates non modo
-          parvo, sed per me nihilo, si potest;{' '}
-        </p>
-
-        <p>
-          Cur igitur easdem res, inquam, Peripateticis dicentibus verbum nullum est, quod non
-          intellegatur? Primum in nostrane potestate est, quid meminerimus? Eam tum adesse, cum
-          dolor omnis absit; Quodsi ipsam honestatem undique pertectam atque absolutam. Aliam vero
-          vim voluptatis esse, aliam nihil dolendi, nisi valde pertinax fueris, concedas necesse
-          est. Nec enim, cum tua causa cui commodes, beneficium illud habendum est, sed faeneratio,
-          nec gratia deberi videtur ei, qui sua causa commodaverit. Universa enim illorum ratione
-          cum tota vestra confligendum puto. Sed residamus, inquit, si placet. Sed vobis voluptatum
-          perceptarum recordatio vitam beatam facit, et quidem corpore perceptarum. Itaque primos
-          congressus copulationesque et consuetudinum instituendarum voluntates fieri propter
-          voluptatem; Ita enim se Athenis collocavit, ut sit paene unus ex Atticis, ut id etiam
-          cognomen videatur habiturus. Atque hoc loco similitudines eas, quibus illi uti solent,
-          dissimillimas proferebas.{' '}
-        </p>
-      </div>
-    );
     switch (modalItem) {
       case 'engineer':
-        modalTitle = 'Software Engineers in 🇨🇦...';
+        openModal('Software Engineers in 🇨🇦', modalContentEngineer);
         break;
       case 'majorprojects':
         modalTitle = 'Major Projects...';
@@ -64,7 +29,6 @@ function About(props) {
       default:
         break;
     }
-    openModal(modalTitle, modalContent);
   };
 
   useEffect(() => {
