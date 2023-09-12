@@ -105,13 +105,10 @@ function About(props) {
           </div>
         </div>
         <div className='whiteout'></div>
-
-        <div className='column centered_grid'>
+        <div className='column full_height centered_grid'>
           <h2 id='about__title' className='js-parallax'>
             About Me
           </h2>
-        </div>
-        <div className='column centered_grid'>
           <div className='about__content' ref={aboutRef}>
             <div className='about__text' ref={leftColumnRef}>
               <p>
@@ -190,7 +187,7 @@ function About(props) {
                 </span>
               </p>
             </div>
-            <div className='about__text' ref={rightColumnRef}>
+            <div ref={rightColumnRef}>
               <Aboutimage />
             </div>
           </div>
