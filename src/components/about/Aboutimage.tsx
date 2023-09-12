@@ -1,5 +1,4 @@
 import './About.scss';
-import './Aboutimage.scss';
 import './Aboutresponse.scss';
 
 import { useEffect, useRef } from 'react';

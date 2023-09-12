@@ -1,10 +1,30 @@
 
 
+.about-rightcol-top {
+  display: flex;
+  align-items: flex-start;
+  //max-width: 300px;
+}
 
 
-/**
-* Section about Started
-**/
+.photo-scaling {
+  transform: scale(1.0);
+  transition: transform 0.4s;
+  //padding-top:500px;
+  position: relative;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .photo-scaling {
+    // transform: scale(1.0);
+    // padding-top:600px;
+    position: relative;
+  }
+}
+
+
 
 
 .section.about-started {
@@ -12,32 +32,42 @@
 }
 
 .section.about-started .slide {
-	margin-top: -390px;
-	position: absolute;
-	top: 50%;
-	right: -20px;
-	width: 680px;
-	height: 800px;
+	//margin-top: -450px;
+	// position: absolute;
+	//top: 50%;
+	// right: -20px;
+	//width: 680px;
+	//height: 800px;
+  width: 453px;
+	height: 533px;
+  
 	z-index: 2;
 }
 
 
-@media screen and (min-width: 1700px) {
-	.section.about-started .slide {
-		margin-top: -400px;
-		right: -50px;
-	}
-}
+// @media screen and (min-width: 1700px) {
+// 	.section.about-started .slide {
+// 		margin-top: -400px;
+// 		right: -50px;
+// 	}
+// }
+
+// @media (max-width: 1024px) {
+//   .section.about-started .slide {
+// 		top: 380px;
+// 		//transform: scale(0.8);
+// 	}
+// }
 
 .section.about-started .slide img {
 	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
+	left: -40px;
+	top: 52px;
+	width: 90%;
+	height: 90%;
 	object-fit: cover;
-	border-radius: 380px;
-	-webkit-border-radius: 380px;
+	border-radius: 800px;
+	-webkit-border-radius: 800px;
 	z-index: 10;
   filter: grayscale(80%);
   -webkit-filter: grayscale(80%);
@@ -53,8 +83,9 @@
 }
 
 .section.about-started .slide .circle.circle-1 {
-	width: 680px;
-	height: 680px;
+  position: absolute;
+	width: 400px;
+	height: 400px;
 	z-index: 2;
 	background: var(--myorange);
   background: linear-gradient(0deg, rgba(0,159,159,1) 0%, rgba(255,116,0,1) 77%);
@@ -63,8 +94,8 @@
 }
 
 .section.about-started .slide .circle.img-1 {
-	top: 25px;
-	right: 35px;
+	top: 75px;
+	right: 125px;
 	left: auto;
 	width: 226px;
 	height: 226px;
@@ -81,7 +112,7 @@
 
 .section.about-started .slide .circle.img-3 {
 	bottom: 10px;
-	right: 10px;
+	right: 100px;
 	top: auto;
 	left: auto;
 	width: 141px;
@@ -97,58 +128,6 @@
 	.section.about-started .content {
 		padding-top: 20px;
 	}
-}
-
-.section.about-started .titles {
-	max-width: 640px;
-	z-index: 3;
-}
-
-.section.about-started .title {
-	font-family: "Jost";
-	font-size: 90px;
-	line-height: 1.2;
-	color: #FFF;
-	font-weight: 700;
-	margin: 15px 0 0 0;
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
-	text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgba(0, 0, 0, 0.2);
-}
-
-.section.about-started .lui-subtitle {
-	font-size: 15px;
-}
-
-.section.about-started .label strong,
-.section.about-started .label b {
-	font-family: 'Caveat';
-	font-size: 30px;
-	font-weight: 700;
-	letter-spacing: 0;
-	text-transform: none;
-	margin-left: 10px;
-	color: #000;
-}
-
-.section.about-started .description {
-	padding: 40px 0 40px 0;
-	font-size: 18px;
-	max-width: 520px;
-}
-
-.section.about-started .description p {
-	margin: 0;
-	opacity: 0.8;
-}
-
-.section.about-started .bts {
-	font-size: 0;
-}
-
-.section.about-started .social-links {
-	margin-top: 30px;
-	line-height: 1;
 }
 
 .section.about-started .info-list {
@@ -177,6 +156,14 @@
 	-webkit-border-radius: 82px;
 	width: 250px;
 	padding: 0 20px;
+  transition: transform background-color 0.3s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    // TODO change to variable
+    background-color: teal;
+    transition: background-color 0.3s ease-in-out;
+  }
 }
 
 .section.about-started .info-list ul li:nth-child(1) {
@@ -218,154 +205,12 @@
 **/
 
 
-
 @media screen and (max-width: 1024px) {
-	/*base*/
-	.cursor {
-		display: none;
-	}
-	.preloader:before {
-		left: -25%;
-		width: 150%;
-	}
-	.m-titles .m-title {
-    margin-bottom: 10px;
-    font-size: 34px;
-	}
-	.m-titles .m-subtitle strong, .m-titles .m-subtitle b {
-		font-size: 24px;
-	}
-	.section.section-inner.started-heading {
-		padding-top: 170px;
-		padding-bottom: 70px;
-	}
-	.section.section-inner.started-heading .m-titles .m-title {
-		font-size: 44px;
-	}
-	.section.section-inner.m-archive {
-		padding-top: 50px;
-		padding-bottom: 50px;
-	}
-	.v-line-block {
-		display: none;
-	}
 
-
-
-	/*about started*/
-	.section.about-started .content {
-		padding-top: 140px;
-		text-align: center;
-	}
-	.section.about-started .titles {
-		margin-bottom: 760px;
-		max-width: 100%;
-	}
-	.section.about-started .title {
-		font-size: 64px;
-	}
 	.section.about-started .slide {
-		margin-left: -340px;
-		bottom: auto;
-		top: 140px;
-		right: auto;
-		left: 50%;
-		transform: scale(0.9);
-		transform-origin: top center;
-	}
-	.section.about-started .description {
-		margin: 0 auto;
-	}
-}
-
-@media screen and (max-width: 767px) {
-	.lui-section {
-		padding-bottom: 120px;
-	}
-	.lui-section-about {
-		padding-bottom: 120px;
-	}
-	.container {
-		padding: 0 20px;
-	}
-	.offset-1,
-	.offset-2,
-	.offset-3,
-	.offset-4,
-	.offset-5,
-	.offset-6,
-	.offset-7,
-	.offset-8,
-	.offset-9,
-	.offset-10,
-	.offset-11,
-	.offset-12 {
-		margin-left: 0;
-	}
-	h1 {
-		font-size: 34px;
-	}
-	h2 {
-		font-size: 30px;
-	}
-	h3 {
-		font-size: 28px;
-	}
-	h4 {
-		font-size: 26px;
-	}
-	h5 {
-		font-size: 24px;
-	}
-	h6 {
-		font-size: 18px;
-	}
-	p {
-		margin: 20px 0;
-	}
-	.m-titles .m-title {
-		font-size: 26px;
-	}
-	.section.section-inner.started-heading .m-titles .m-title {
-		font-size: 34px;
-	}
-
-
-
-	/*started about*/
-	.section.about-started .content {
-		padding-top: 120px;
-	}
-	.section.about-started .titles {
-		margin-bottom: 420px;
-		min-height: 160px;
-	}
-	.section.about-started .title {
-		font-size: 40px;
-	}
-	.section.about-started .lui-subtitle {
-		font-size: 13px;
-	}
-	.section.about-started .label strong, .section.about-started .label b {
-		font-size: 24px;
-	}
-	.section.about-started .slide {
-		top: 680px;
-		transform: scale(0.5);
-	}
-	.about-started .btn-lnk {
-		margin-top: 20px;
-		padding-left: 0;
-		padding-top: 40px;
-		display: block;
-	}
-	a.btn-lnk:before, .btn-lnk:before {
-		left: 50%;
-		top: 0;
-		margin-left: -1px;
-		margin-top: 0;
-		height: 40px;
-		width: 2px;
+		top: 380px;
+		transform: scale(0.7);
+    padding: 0px;
 	}
 }
 
