@@ -17,14 +17,13 @@ function About(props) {
   const { openModal } = useModal();
 
   const handleOpenModal = (modalItem) => {
-    let modalTitle = '';
     console.log('about- opening modal');
     switch (modalItem) {
       case 'engineer':
         openModal('Software Engineers in 🇨🇦', modalContentEngineer);
         break;
       case 'majorprojects':
-        modalTitle = 'Major Projects...';
+        openModal('Major Projects...', 'fdfdfd');
         break;
       default:
         break;
