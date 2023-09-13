@@ -37,6 +37,9 @@ function Resume(props) {
   const timelineItem5 = useRef<HTMLDivElement>(null);
   const item5OnScreen = useElementOnScreen(timelineItem5, '-30%');
 
+  const timelineItem6 = useRef<HTMLDivElement>(null);
+  const item6OnScreen = useElementOnScreen(timelineItem6, '-30%');
+
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
@@ -80,6 +83,7 @@ function Resume(props) {
   useAnimateOnScreen(item3OnScreen, timelineItem3, 'fadeIn');
   useAnimateOnScreen(item4OnScreen, timelineItem4, 'fadeIn');
   useAnimateOnScreen(item5OnScreen, timelineItem5, 'fadeIn');
+  useAnimateOnScreen(item6OnScreen, timelineItem6, 'fadeIn');
 
   const progressBarStyle = {
     height: `${scrollPercentage}%`, // Set the progress bar height based on scroll percentage
@@ -116,6 +120,26 @@ function Resume(props) {
           <div className='overlay-grower' style={progressBarStyle}></div>
           <div className='overlay-fade-top'></div>
           <div className='timeline-container'>
+            <div className='timeline-item'>
+              <div className='timeline-img'>
+                <i className='fa-solid fa-shield-halved'></i>
+              </div>
+              <div className='timeline-content timeline-card' ref={timelineItem6}>
+                <div className='timeline-img-header img-gsecurity'>
+                  <h3>
+                    Google
+                    <br />
+                    Cybersecurity Professional
+                  </h3>
+                </div>
+                <div className='date'>2023</div>
+                <p>
+                  Study essential topics such as network security, operating system security, cloud
+                  security, and incident response. Demonstrate expertise in safeguarding digital
+                  assets and combating cyber threats. &nbsp;
+                </p>
+              </div>
+            </div>
             <div className='timeline-item'>
               <div className='timeline-img'>
                 <i className='fa-solid fa-bridge'></i>
