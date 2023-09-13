@@ -177,3 +177,11 @@ color: var(--clr-neutral-100);
   left: 390px; /* Position at the left of the parent */
   z-index: 9; /* Ensure it's above other content */
 }
+/* CSS for the ArrowSketch component */
+ArrowSketch {
+  position: absolute;
+  top: 0; /* Position at the top of the parent */
+  left: 0; /* Position at the left of the parent */
+  z-index: 2; /* Ensure it's above other content */
+  margin-bottom: -20px; /* Adjust the negative margin to your liking */
+}
