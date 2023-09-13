@@ -169,10 +169,11 @@ color: var(--clr-neutral-100);
 
 /* CSS for the ArrowSketch component */
 .arrow-sketch {
+  animation: pulseSkewScale infinite 2s ease-in-out;
   border: 1px solid yellow;
   width: 200px;
   position: absolute;
   top: -88px; /* Position at the top of the parent */
   left: 390px; /* Position at the left of the parent */
-  z-index: 1; /* Ensure it's above other content */
+  z-index: 9; /* Ensure it's above other content */
 }
