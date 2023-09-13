@@ -234,6 +234,34 @@ function AboutSlider() {
             <i className='fa-solid fa-shield-halved fa-slider'></i>
           </div>
         </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+          <div className='services-item'>
+            <div className='lui-subtitle'>
+              <span> ai engineering </span>
+            </div>
+            <div className='icon' />
+            <h5 className='lui-title'>
+              <span> AI Prompting </span>
+            </h5>
+            <div className='lui-text'>
+              <div>
+                <p>
+                  AI is here and is a powerful tool to use is web development and much more.fdsfl.
+                  secure. I prefer to have a &apos;security-first&apos; mentality when I build an
+                  application, rather than chasing down security leaks later on.
+                </p>
+              </div>
+            </div>
+            &nbsp;
+            <div
+              className='image'
+              style={{
+                backgroundImage: 'url(src/assets/images/pat-2.png)',
+              }}
+            />
+            <i className='fa-solid fa-brain fa-slider'></i>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </section>
   );
