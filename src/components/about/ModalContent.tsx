@@ -3,7 +3,7 @@
 
 // Define your modal content as variables
 const modalContentEngineer = (
-  <div>
+  <>
     <p>
       Software developers cannot use the term "software engineer" in Canada as the title of
       "engineer" is protected by law and can only be used by individuals who are licensed by one of
@@ -62,14 +62,13 @@ const modalContentEngineer = (
         Regulating Software Engineers to Protect Public Safety | APEGA.
       </a>
     </p>
-  </div>
+  </>
 );
 
 const modalContent2 = (
-  <div>
-    <h2>Modal 2 Title</h2>
+  <>
     <p>Modal 2 content goes here.</p>
-  </div>
+  </>
 );
 
 // Export the variables
