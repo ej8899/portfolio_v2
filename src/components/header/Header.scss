@@ -27,7 +27,11 @@ header {
       letter-spacing: 2px;
 
       font-size: 2rem;
-      color: var(--link-color);
+      
+      transition: color 1s;
+      // TODO find a var for the nav bar:
+      color: black;
+      font-weight: bold;
     }
 
     li {
@@ -96,6 +100,10 @@ header {
         animation: none;
       }
     }
+  }
+
+  .nav-invert {
+    color: var(--link-color);
   }
 
   .hamburger-menu {
@@ -173,6 +181,9 @@ header {
 	top: 0;
 	transform: translateZ(0) translateY(0);
 	-webkit-transform: translateZ(0)  translateY(0);
+}
+.header-portfolio {
+  background-color:yellow;
 }
 
 @media screen and (max-width: 1200px) {

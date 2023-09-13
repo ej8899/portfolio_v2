@@ -37,7 +37,7 @@ function App() {
   const { height, width } = useWindowDimensions();
   // console.log('window height:', height);
   // what element is on screenconst [activeSection, setActiveSection] = useState(null);
-  const [activeSection, setActiveSection] = useState(null);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const sectionRefs = {
     portfolio: useRef(null),
     hero: useRef(null),
@@ -49,7 +49,7 @@ function App() {
   const handleEnter = (sectionName, intersectionRatio) => {
     setActiveSection(sectionName);
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    console.log(`Section entered: ${sectionName}|${intersectionRatio}`);
+    console.log(`Section entered: ${sectionName}`);
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -120,7 +120,7 @@ function App() {
     // <WindowContext.Provider value={{ height, width }}>
     <>
       <div className='appwrapper'>
-        <Header />
+        <Header sectionName={activeSection} />
         <SectionObserver sectionName='hero' onEnter={handleEnter} onLeave={handleLeave}>
           <Hero vscroll={scrollY} reference={sectionRefs.hero} />
         </SectionObserver>

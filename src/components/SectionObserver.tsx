@@ -1,55 +1,55 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable react/prop-types */
+
 import { useRef, useEffect, useState } from 'react';
 
 const SectionObserver = ({ sectionName, onEnter, onLeave, children }) => {
   const sectionRef = useRef(null);
-  const [activeSection, setActiveSection] = useState(''); // Track the active section
+  const [isInViewport, setIsInViewport] = useState(false);
+  const [timeoutId, setTimeoutId] = useState(null);
 
+  const isElementInViewport = () => {
+    const rect = sectionRef.current.getBoundingClientRect();
+    return rect.top <= 50 && rect.bottom >= 0;
+  };
+
+  // below we use timeouts as we have fringe cases when sections are both at our trigger point.
+  // the timeout loosely solves this issue.
   useEffect(() => {
-    const callback = (entries) => {
-      entries.forEach((entry) => {
-        let intersectionRatio = 0;
-        if (entry.isIntersecting) {
-          // Calculate the intersection ratio
-          intersectionRatio = entry.intersectionRatio;
-
-          // Check if this section has higher visibility than the current active section
-          if (!activeSection || intersectionRatio > activeSection.intersectionRatio) {
-            setActiveSection({ sectionName, intersectionRatio });
-          }
-
-          // Section enters the viewport
-          onEnter(sectionName, intersectionRatio);
-        } else {
-          // Section leaves the viewport
-          onLeave(sectionName, intersectionRatio);
-        }
-      });
-    };
-
-    const options = {
-      root: null, // Use the viewport as the root
-      rootMargin: '-50px 0px 0px 0px', // No margin
-      threshold: 0, // threshold logic in callback
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      // Cleanup: Disconnect the observer when unmounting
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+    const handleScroll = () => {
+      if (isElementInViewport() && !isInViewport) {
+        // The section entered the viewport
+        clearTimeout(timeoutId);
+        const newTimeoutId = setTimeout(() => {
+          onEnter(sectionName);
+          setIsInViewport(true);
+        }, 200); // Adjust the delay as needed
+        setTimeoutId(newTimeoutId);
+      } else if (!isElementInViewport() && isInViewport) {
+        // The section left the viewport
+        clearTimeout(timeoutId);
+        const newTimeoutId = setTimeout(() => {
+          onLeave(sectionName);
+          setIsInViewport(false);
+        }, 200); // Adjust the delay as needed
+        setTimeoutId(newTimeoutId);
       }
     };
-  }, [onEnter, onLeave]);
+
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Initial check when the component mounts
+    handleScroll();
+
+    return () => {
+      // Cleanup: Remove the scroll event listener when unmounting
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [onEnter, onLeave, sectionName, isInViewport, timeoutId]);
 
   return <div ref={sectionRef}>{children}</div>;
 };

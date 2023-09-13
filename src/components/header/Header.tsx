@@ -1,15 +1,18 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from 'react';
 import BMIcon from '../../assets/components/BMIcon';
 import HamburgerIcon from '../../assets/components/HamburgerIcon';
 import useElementOffScreen from '../../hooks/useElementOffScreen';
 import './Header.scss';
 
-function Header() {
+function Header(props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const isHeaderOffScreen = useElementOffScreen(headerRef);
-
+  // props.sectionName - if portfolio, change header theme
+  console.log('header: ', props);
   useEffect(() => {
     if (!isHeaderOffScreen) {
       hamburgerRef.current?.classList.remove('hamburger-menu__sticky');
@@ -19,11 +22,16 @@ function Header() {
   }, [isHeaderOffScreen]);
 
   return (
-    <div className='centered_nav header'>
+    <div className={'centered_nav header'}>
       <header className='column' aria-label='header with navigation' ref={headerRef}>
         <BMIcon />
         <nav className={isMenuOpen ? 'nav__open' : 'nav__closed'}>
-          <ul>
+          <ul
+            className={`${
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              props.sectionName === 'portfolio' ? 'nav-invert' : ''
+            }`}
+          >
             <li>
               <a href='#hero' onClick={() => setIsMenuOpen(false)}>
                 home
