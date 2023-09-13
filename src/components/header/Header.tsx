@@ -29,7 +29,7 @@ function Header(props) {
           <ul
             className={`${
               // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-              props.sectionName === 'portfolio' ? 'nav-invert' : ''
+              props.sectionName === 'portfolio' || props.sectionName === 'hero' ? 'nav-invert' : ''
             }`}
           >
             <li>
