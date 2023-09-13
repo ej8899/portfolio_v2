@@ -107,8 +107,8 @@ header {
   }
 
   .hamburger-menu {
-    background: none;
-    border: 0;
+    background: teal;
+    border: 3px solid orange;
     z-index: 11;
 
     &:focus {
@@ -118,10 +118,14 @@ header {
     &__sticky {
       position: fixed;
       z-index: 20;
-      bottom: -4px;
-      left: 50%;
+      //bottom: -4px;
+      //left: 50%;
+      // top: 0;
+      // left: 0;
+      // right: 0;
+      // bottom: 0;
       transform: translateX(-50%);
-      background: var(--clr-neutral-900-t);
+      // background: var(--clr-neutral-900-t);
       backdrop-filter: blur(12px);
       border-radius: var(--border-radius-100);
       animation: fadeInFromLeft 0.35s linear forwards;
@@ -129,6 +133,7 @@ header {
 
     @media (min-width: 500px) {
       display: none;
+      border: none;
     }
   }
 
