@@ -5,6 +5,7 @@ import PROJECTS from '../../data/projects';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import Project from '../project/Project';
 import './Portfolio.scss';
+import ArrowSketch from '../../assets/components/ArrowSketch';
 
 function Portfolio(props) {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -51,19 +52,24 @@ function Portfolio(props) {
           return <Project data={project} number={i} key={project.title} />;
         })}
 
-        <span className='portfolio__additional-projects'>
-          <h3>Additional Projects:</h3>
-          <button
-            className='portfolio__view-more portfolio__additional-projects-title'
-            // data-tooltip='View All Projects'
-            onClick={() => {
-              setRenderAllProjects((prev) => !prev);
-            }}
-            aria-label={`${renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}`}
-          >
-            {renderAllProjects ? <Minus /> : <Plus />}
-          </button>
-        </span>
+        <div className='arrow-div'>
+          <span className='arrow-sketch'>
+            <ArrowSketch />
+          </span>
+          <span className='portfolio__additional-projects'>
+            <h3>Additional Projects:</h3>
+            <button
+              className='portfolio__view-more portfolio__additional-projects-title'
+              // data-tooltip='View All Projects'
+              onClick={() => {
+                setRenderAllProjects((prev) => !prev);
+              }}
+              aria-label={`${renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}`}
+            >
+              {renderAllProjects ? <Minus /> : <Plus />}
+            </button>
+          </span>
+        </div>
 
         {/* remainder of projects */}
         <div
@@ -78,7 +84,6 @@ function Portfolio(props) {
           </div>
         </div>
       </div>
-      <hr />
     </section>
   );
 }
