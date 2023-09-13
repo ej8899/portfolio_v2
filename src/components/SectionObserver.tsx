@@ -1,22 +1,32 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable react/prop-types */
 import { useRef, useEffect, useState } from 'react';
 
 const SectionObserver = ({ sectionName, onEnter, onLeave, children }) => {
   const sectionRef = useRef(null);
-  const [prevScrollY, setPrevScrollY] = useState(window.scrollY);
+  const [activeSection, setActiveSection] = useState(''); // Track the active section
 
   useEffect(() => {
-    const callback = (entries: any[]) => {
+    const callback = (entries) => {
       entries.forEach((entry) => {
+        let intersectionRatio = 0;
         if (entry.isIntersecting) {
+          // Calculate the intersection ratio
+          intersectionRatio = entry.intersectionRatio;
+
+          // Check if this section has higher visibility than the current active section
+          if (!activeSection || intersectionRatio > activeSection.intersectionRatio) {
+            setActiveSection({ sectionName, intersectionRatio });
+          }
+
           // Section enters the viewport
-          onEnter(sectionName);
+          onEnter(sectionName, intersectionRatio);
         } else {
           // Section leaves the viewport
-          onLeave(sectionName);
+          onLeave(sectionName, intersectionRatio);
         }
       });
     };
@@ -34,13 +44,12 @@ const SectionObserver = ({ sectionName, onEnter, onLeave, children }) => {
     }
 
     return () => {
-      // window.removeEventListener('scroll', handleScroll);
       // Cleanup: Disconnect the observer when unmounting
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, [prevScrollY, onEnter, onLeave]);
+  }, [onEnter, onLeave]);
 
   return <div ref={sectionRef}>{children}</div>;
 };

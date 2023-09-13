@@ -46,10 +46,10 @@ function App() {
     resume: useRef(null),
   };
 
-  const handleEnter = (sectionName) => {
+  const handleEnter = (sectionName, intersectionRatio) => {
     setActiveSection(sectionName);
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    console.log(`Section entered: ${sectionName}`);
+    console.log(`Section entered: ${sectionName}|${intersectionRatio}`);
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
