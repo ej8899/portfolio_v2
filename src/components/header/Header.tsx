@@ -12,7 +12,7 @@ function Header(props) {
   const headerRef = useRef<HTMLElement>(null);
   const isHeaderOffScreen = useElementOffScreen(headerRef);
   // props.sectionName - if portfolio, change header theme
-  console.log('header: ', props);
+
   useEffect(() => {
     if (!isHeaderOffScreen) {
       hamburgerRef.current?.classList.remove('hamburger-menu__sticky');
