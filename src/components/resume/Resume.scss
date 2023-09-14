@@ -206,7 +206,7 @@ $timebarbasecolor: #00bfb250;
 .timeline-item {
 	width: 100%;
 	margin-bottom: -100px;
-  border: 2px solid blue;
+  // border: 2px solid blue;
 
 	&:nth-child(even) {
 		.timeline-content {

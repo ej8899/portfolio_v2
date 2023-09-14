@@ -46,6 +46,7 @@ header {
 
     &.nav__closed {
       animation: fadeOut 0.35s linear forwards;
+      top: 100%;
     }
 
     // fancy hover effect
@@ -110,7 +111,7 @@ header {
     background: #f78104;
     border: 3px solid #faab36;
     z-index: 11;
-
+    padding: 0px;
     &:focus {
       outline: var(--a11y-outline);
     }
