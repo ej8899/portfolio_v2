@@ -83,7 +83,7 @@ header {
         justify-content: flex-end;
         align-items: center;
         gap: 2vw;
-        margin: 0;
+        //margin: 0;
         font-size: clamp(0.8rem, 1vw, 1rem);
       }
 
@@ -107,8 +107,8 @@ header {
   }
 
   .hamburger-menu {
-    background: teal;
-    border: 3px solid orange;
+    background: #f78104;
+    border: 3px solid #faab36;
     z-index: 11;
 
     &:focus {
@@ -133,7 +133,7 @@ header {
 
     @media (min-width: 500px) {
       display: none;
-      border: none;
+      border: 3px solid red;
     }
   }
 
@@ -189,6 +189,15 @@ header {
 }
 .header-portfolio {
   background-color:yellow;
+}
+
+@media screen and (max-width: 500px) {
+  ul {
+    color: black !important;
+  }
+  .nav__closed {
+    height: 0px !important;
+  }
 }
 
 @media screen and (max-width: 1200px) {

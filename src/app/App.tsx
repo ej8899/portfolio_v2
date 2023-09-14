@@ -86,6 +86,11 @@ function App() {
     console.log('appwrapper height:', contentHeight);
     console.log('viewport height:', viewportHeight);
 
+    // monitor for resizes
+    window.addEventListener('resize', () => {
+      stickyNav();
+    });
+
     //
     // back to top button
     //
@@ -109,6 +114,7 @@ function App() {
 
     scrollToTopButton.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.removeEventListener('resize', handleResize);
     });
   }, []);
 
