@@ -52,7 +52,10 @@ function Portfolio(props) {
           return <Project data={project} number={i} key={project.title} />;
         })}
 
-        <div>
+        <div className='arrow-div'>
+          <span className='arrow-sketch'>
+            <ArrowSketch />
+          </span>
           <span className='portfolio__additional-projects'>
             <h3>Additional Projects:</h3>
             <button

@@ -25,11 +25,11 @@ export const servicesSliderProps = {
     disableOnInteraction: false,
   },
   grabCursor: true,
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true,
-  },
+  // pagination: {
+  //   el: '.swiper-pagination',
+  //   type: 'bullets',
+  //   clickable: true,
+  // },
   navigation: true,
 
   on: {

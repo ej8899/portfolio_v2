@@ -37,7 +37,7 @@ function AboutSlider() {
         <Swiper
           modules={[Pagination, Autoplay]}
           {...servicesSliderProps}
-          pagination={true}
+          pagination={false}
           className='column aboutslidercontainer'
         >
           <SwiperSlide className='swiper-slide'>

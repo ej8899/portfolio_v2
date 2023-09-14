@@ -23,13 +23,18 @@
     -webkit-overflow-scrolling: touch;
 
     background: none;
-    border: 0;
-
+    
+    border-radius: var(--border-radius-200);
     cursor: pointer;
-
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     img {
       scroll-snap-align: start;
+      border: 2px solid black;
       object-fit: cover;
+      width: auto;
+      height:100%;
+      display: block;
+      margin: 0 auto;
     }
 
     &::-webkit-scrollbar {
@@ -52,7 +57,7 @@
     gap: min(1rem, 2.5vw);
 
     button {
-      height: var(--button-size);
+      // height: var(--button-size);
       aspect-ratio: 1;
       border-radius: 50vw;
 
