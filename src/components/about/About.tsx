@@ -40,7 +40,7 @@ function About(props) {
     <>
       <section
         id='about'
-        className='about about-parallax-wrapper'
+        className='about'
         aria-labelledby='about__title'
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, react/prop-types
         ref={props.reference}
@@ -56,18 +56,20 @@ function About(props) {
               <path d='M1200 120L0 16.48 0 0 1200 0 1200 120z' className='shape-fill'></path>
             </svg>
           </div>
-          <div className='custom-shape-divider-bottom-1694044314b'>
-            <svg
-              data-name='Layer 1'
-              xmlns='http://www.w3.org/2000/svg'
-              viewBox='0 0 1200 120'
-              preserveAspectRatio='none'
-            >
-              <path d='M1200 120L0 16.48 0 0 1200 0 1200 120z' className='shape-fillb'></path>
-            </svg>
+          <div className='custom-shape-divider-containerb'>
+            <div className='custom-shape-divider-bottom-1694044314b'>
+              <svg
+                data-name='Layer 1'
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 1200 120'
+                preserveAspectRatio='none'
+              >
+                <path d='M1200 120L0 16.48 0 0 1200 0 1200 120z' className='shape-fillb'></path>
+              </svg>
+            </div>
           </div>
         </div>
-        <div className='whiteout'></div>
+
         <div className='column centered_grid'>
           <h2 id='about__title'>About Me</h2>
           <div className='about__content' ref={aboutRef}>

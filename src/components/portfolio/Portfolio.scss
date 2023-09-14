@@ -165,11 +165,7 @@ color: var(--clr-neutral-100);
 
 /* CSS for the parent div containing ArrowSketch */
 .arrow-div {
-  // border: 1px solid red;
-  //height: 200px;
-  //width: 400px;
-  position: relative; /* Make it a positioning context for the absolute child */
-  /// width: fit-content; /* Adjust this to your desired width */
+  position: relative; /* Make it a positioning context for the absolute child */  
   margin: 0 auto; /* Center it horizontally */
 }
 

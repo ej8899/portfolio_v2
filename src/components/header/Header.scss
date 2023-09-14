@@ -42,6 +42,14 @@ header {
       display: grid;
       opacity: 0;
       animation: fadeInOpacity 0.35s linear forwards;
+      @media (max-width: 500px) {
+        display: visible;
+        border: 3px solid red;
+        padding: 0px !important;
+        margin: 0px !important;
+        height: 100% !important;
+        width: 100% !important;
+      }
     }
 
     &.nav__closed {
@@ -119,8 +127,8 @@ header {
     &__sticky {
       position: fixed;
       z-index: 20;
-      //bottom: -4px;
-      //left: 50%;
+      bottom: -4px;
+      left: 50%;
       // top: 0;
       // left: 0;
       // right: 0;
@@ -130,6 +138,7 @@ header {
       backdrop-filter: blur(12px);
       border-radius: var(--border-radius-100);
       animation: fadeInFromLeft 0.35s linear forwards;
+      border: 2px solid blue;
     }
 
     @media (min-width: 500px) {
@@ -195,6 +204,7 @@ header {
 @media screen and (max-width: 500px) {
   ul {
     color: black !important;
+    padding: 0px !important;
   }
   .nav__closed {
     height: 0px !important;

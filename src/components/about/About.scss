@@ -308,7 +308,7 @@
 }
 
 .about-header-wrapper {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 140px;
   //border: 2px solid blue;
@@ -334,8 +334,9 @@
   bottom: 10px;
   left: 20px;
   width: 100%;
-  overflow: hidden;
+  height: auto;
   line-height: 0;
+  //transform-origin: top left;
   transform: rotate(187deg);
   z-index: -1;
 }

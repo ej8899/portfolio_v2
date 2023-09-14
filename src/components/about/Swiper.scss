@@ -161,7 +161,9 @@
   height: 500px;
   z-index: 2;
   position: relative;
+  overflow: hidden;
   mask-image: linear-gradient(to right, rgba(5, 2, 5, 0.2), rgb(5, 5, 5) 10%, rgba(5, 5, 5, 1) 90%, rgba(255, 255, 255, 0.2));
+  border: 2px solid blue;
 }
 
 .swiper-container {
