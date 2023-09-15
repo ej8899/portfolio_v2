@@ -56,7 +56,7 @@ function Portfolio(props) {
           <span className='arrow-sketch'>
             <ArrowSketch />
           </span>
-          <span className='portfolio__additional-projects'>
+          <div className='portfolio__additional-projects'>
             <h3>Additional Projects:</h3>
             <button
               className='portfolio__view-more portfolio__additional-projects-title'
@@ -68,7 +68,7 @@ function Portfolio(props) {
             >
               {renderAllProjects ? <Minus /> : <Plus />}
             </button>
-          </span>
+          </div>
         </div>
 
         {/* remainder of projects */}

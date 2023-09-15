@@ -50,8 +50,8 @@
   }
 
   &__view-more {
-    display: grid;
-    place-items: center;
+    //display: grid;
+    //place-items: center;
 
     margin-top: 2rem;
 
@@ -64,13 +64,16 @@
     svg {
       width: min(40px, 5vw);
       border-radius: 1.2rem;
-      padding: min(0.5rem, 3vw);
+      padding: min(0.2rem, 3vw);
 
       //fill: var(--clr-neutral-500);
       fill: orange;
       background: var(--clr-neutral-800);
 
       animation: pulseScale 1.25s infinite;
+      @media (max-width: 500px) {
+        width: 2rem;
+      }
     }
 
     &-label {
@@ -80,6 +83,11 @@
       // TODO above - fix variable
       font-size: var(--fs-responsive-small);
     }
+    display: flex;
+    flex-direction: row;
+    @media (max-width: 500px) {
+      flex-direction: column;  
+    }
   }
 
   &__extra-projects {
@@ -88,6 +96,7 @@
 }
 .portfolio__additional-projects {
   display: flex;
+  flex-direction: row;
   align-items: flex-end; /* Vertically center the content */
   justify-content: space-between; /* Add space between the items */
   text-shadow: 
@@ -95,7 +104,7 @@
   1px -1px 0 #000,
   -1px 1px 6px #000,
   1px 1px 6px #000;
-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-100);
 }
 .portfolio__additional-projects-title {
   text-shadow: 
