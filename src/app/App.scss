@@ -56,8 +56,9 @@
     
     transform: scale(0);
 
-    width: max-content;
-    max-width: 30ch;
+    //width: max-content;
+    max-width: calc(100vw - 2rem); /* Set a maximum width based on the viewport width minus some padding */
+    //max-width: 30ch;
     padding: 0.75rem 1rem;
 
     background: var(--clr-neutral-800);
@@ -69,6 +70,10 @@
 
     line-height: 1.35;
     transition: transform var(--transition-short) ease-in-out;
+
+    white-space: nowrap; /* Prevent line breaks within the tooltip text */
+    overflow: hidden; /* Hide any overflowing content */
+    text-overflow: ellipsis; /* Add an ellipsis (...) to indicate text truncation */
   }
 
   &:hover {
