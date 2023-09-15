@@ -27,6 +27,10 @@
   transform: translateX(550px);
   //display: none;
   opacity: 0;
+  @media (max-width: 500px) {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .chatbot-popup.active {
