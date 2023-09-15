@@ -23,13 +23,11 @@ const SkillSlider = (props) => {
         <h2 id='skills' className='skills__title'>
           Languages & Tools
         </h2>
+        <div className='subtitle-message'>
+          Just a few of my favorite tools, languages & platforms!
+        </div>
       </div>
       <div>
-        <div className='centered_container column centered_grid'>
-          <div className='subtitle-message'>
-            Just a few of my favorite tools, languages & platforms!
-          </div>
-        </div>
         <br />
         <article
           className='marquee_wrapper scrolla-element-anim-1 scroll-animate'
