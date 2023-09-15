@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from 'react';
-import BMIcon from '../../assets/components/BMIcon';
+import LogoIcon from '../../assets/components/LogoIcon';
 import HamburgerIcon from '../../assets/components/HamburgerIcon';
 import useElementOffScreen from '../../hooks/useElementOffScreen';
 import './Header.scss';
@@ -24,7 +24,7 @@ function Header(props) {
   return (
     <div className={'centered_nav header'}>
       <header className='column' aria-label='header with navigation' ref={headerRef}>
-        <BMIcon />
+        <LogoIcon />
         <nav className={isMenuOpen ? 'nav__open' : 'nav__closed'}>
           <ul
             className={`${

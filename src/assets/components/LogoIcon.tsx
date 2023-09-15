@@ -1,0 +1,120 @@
+/* eslint-disable react/no-unknown-property */
+function LogoIcon() {
+  return (
+    <svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='50' height='50'>
+      <svg viewBox='-135.2204 106.7658 1291.536 809.7287' xmlns='http://www.w3.org/2000/svg'>
+        <g transform='matrix(1.2915359735488892, 0, 0, 1.2955659627914429, -135.22035217285156, 106.76581573486325)'>
+          <svg
+            viewBox='0 0 576 360'
+            data-background-color='#ffffff'
+            preserveAspectRatio='xMidYMid meet'
+            height='625'
+            width='1000'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <g id='tight-bounds' transform='matrix(1,0,0,1,0,0)'>
+              <svg viewBox='0 0 576 360' height='360' width='576'>
+                <g>
+                  <svg></svg>
+                </g>
+                <g>
+                  <svg viewBox='0 0 576 360' height='360' width='576'>
+                    <g>
+                      <path
+                        xmlns='http://www.w3.org/2000/svg'
+                        d='M132.115 90l155.885-90 155.885 90v180l-155.885 90-155.885-90z'
+                        fill='#000000'
+                        fillRule='nonzero'
+                        stroke='none'
+                        strokeWidth='1'
+                        strokeLinecap='butt'
+                        strokeLinejoin='miter'
+                        strokeMiterlimit='10'
+                        strokeDasharray=''
+                        strokeDashoffset='0'
+                        fontFamily='none'
+                        fontWeight='none'
+                        fontSize='none'
+                        textAnchor='none'
+                        data-fill-palette-color='tertiary'
+                      ></path>
+                    </g>
+                    <g transform='matrix(1,0,0,1,186.18923076923073,99)'>
+                      <svg
+                        viewBox='0 0 203.6215384615385 162'
+                        height='162'
+                        width='203.6215384615385'
+                      >
+                        <g>
+                          <svg
+                            viewBox='0 0 203.6215384615385 162'
+                            height='162'
+                            width='203.6215384615385'
+                          >
+                            <g>
+                              <svg
+                                viewBox='0 0 203.6215384615385 162'
+                                height='162'
+                                width='203.6215384615385'
+                              >
+                                <g>
+                                  <svg
+                                    viewBox='0 0 203.6215384615385 162'
+                                    height='162'
+                                    width='203.6215384615385'
+                                  >
+                                    <g id='textblocktransform'>
+                                      <svg
+                                        viewBox='0 0 203.6215384615385 162'
+                                        height='162'
+                                        width='203.6215384615385'
+                                        id='textblock'
+                                      >
+                                        <g>
+                                          <svg
+                                            viewBox='0 0 203.6215384615385 162'
+                                            height='162'
+                                            width='203.6215384615385'
+                                          >
+                                            <g transform='matrix(1,0,0,1,0,0)'>
+                                              <svg
+                                                width='203.6215384615385'
+                                                viewBox='4.829999923706055 -31.850000381469727 40.839996337890625 32.5'
+                                                height='162'
+                                                data-palette-color='#ffffff'
+                                              >
+                                                <path
+                                                  d='M24.83 0L4.83 0 4.83-31.85 24.83-31.85 24.83-27.75 9.58-27.75 9.58-18.05 23.93-18.05 23.93-13.95 9.58-13.95 9.58-4.15 24.83-4.15 24.83 0ZM29.2-1.48L29.2-1.48 29.2-6.3Q31.07-5.15 32.9-4.58 34.72-4 36.4-4L36.4-4Q38.8-4 39.86-5.41 40.92-6.83 40.92-9.53L40.92-9.53 40.92-31.85 45.67-31.85 45.67-9.53Q45.67-5.9 44.56-3.66 43.45-1.43 41.44-0.39 39.42 0.65 36.75 0.65L36.75 0.65Q34.65 0.65 32.77 0.05 30.9-0.55 29.2-1.48Z'
+                                                  opacity='1'
+                                                  transform='matrix(1,0,0,1,0,0)'
+                                                  fill='#ffffff'
+                                                  className='wordmark-text-0'
+                                                  data-fill-palette-color='quaternary'
+                                                  id='text-0'
+                                                ></path>
+                                              </svg>
+                                            </g>
+                                          </svg>
+                                        </g>
+                                      </svg>
+                                    </g>
+                                  </svg>
+                                </g>
+                              </svg>
+                            </g>
+                          </svg>
+                        </g>
+                      </svg>
+                    </g>
+                  </svg>
+                </g>
+              </svg>
+            </g>
+          </svg>
+        </g>
+      </svg>
+    </svg>
+  );
+}
+
+export default LogoIcon;
