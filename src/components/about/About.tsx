@@ -92,8 +92,7 @@ function About(props) {
               <p>
                 When much younger, I did start coding mini games and{' '}
                 <span data-tooltip='freeware and shareware'>applications</span> in BASIC language on{' '}
-                <span data-tooltip='VIC-20 -> C64 -> C128'>Commodore</span> computers. Eventually,
-                this transitioned into PC&apos;s and{' '}
+                Commodore computers. Eventually, this transitioned into PC&apos;s and{' '}
                 <span data-tooltip='Blackberry and PalmPilot'>early mobile devices</span>
                 and then into the early days of web development - from static web pages, to web to
                 full-stack e-commerce applications.
