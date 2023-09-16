@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
@@ -8,35 +9,48 @@ import { useState, useRef, useEffect } from 'react';
 import './KeywordPopover.scss'; // Add your custom CSS styles
 
 const KeywordPopover = ({ keyword, content, header }) => {
+  const [isVisible, setIsVisible] = useState(false);
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const keywordRef = useRef(null);
 
   const handleMouseEnter = () => {
-    if (keywordRef.current) {
-      const keywordRect = keywordRef.current.getBoundingClientRect();
+    const keywordElement = keywordRef.current;
+    const keywordRect = keywordElement.getBoundingClientRect();
+    const keywordTop = keywordRect.top + window.scrollY;
+    const keywordLeft = keywordRect.left + window.scrollX;
 
-      // const popoverTop = keywordRect.bottom + window.scrollY + 5; // Adjust as needed
-      // const popoverLeft = keywordRect.left + window.scrollX + keywordRect.width / 2; // Center horizontally
-      const popoverTop = 20;
-      const popoverLeft = 20;
-      setPosition({ top: popoverTop, left: popoverLeft });
-    }
+    // Calculate the position relative to the keyword
+    let top = keywordTop + keywordRect.height + 10; // Add a buffer
+    let left = keywordLeft;
+    console.log(top, left);
+    top = 20;
+    left = 20;
+    setPosition({ top, left });
+    setIsVisible(true);
   };
 
   const handleMouseLeave = () => {
-    setPosition({ top: 0, left: 0 });
+    setIsVisible(false);
   };
 
+  useEffect(() => {
+    keywordRef.current.addEventListener('mouseenter', handleMouseEnter);
+    keywordRef.current.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      keywordRef.current.removeEventListener('mouseenter', handleMouseEnter);
+      keywordRef.current.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+
   return (
-    <span
-      ref={keywordRef}
-      className='keyword-popover-keyword'
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <span ref={keywordRef} className='keyword-popover-keyword'>
       {keyword}
-      {position.top !== 0 && (
-        <div className='keyword-popover' style={{ top: position.top, left: position.left }}>
+      {isVisible && (
+        <div
+          className='keyword-popover'
+          style={{ top: `${position.top}px`, left: `${position.left}px` }}
+        >
           {header && <div className='keyword-popover-header'>{header}</div>}
           <div className='keyword-popover-content'>{content}</div>
         </div>
