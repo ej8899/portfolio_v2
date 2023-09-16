@@ -162,15 +162,21 @@ function Project({ data, number }: TProps) {
         <div className='project__text'>
           {data.description &&
             data.description.map(({ type, value }) => {
-              if (type === 'header')
+              // Split the 'type' string by the pipe character (|)
+              const typeParts = type.split('|');
+
+              // Now 'typeParts' is an array containing the two words
+              const itemType = typeParts[0]; // Contains 'word1'
+              const typeDescription = typeParts[1]; // Contains 'word2'
+              if (itemType === 'header')
                 return (
                   <p className='project__text-header' key={value}>
                     {value}
                   </p>
                 );
-              if (type === 'more')
+              if (itemType === 'more')
                 return (
-                  <Collapse title='' key={value}>
+                  <Collapse title={typeDescription} key={value}>
                     <p className='project__text-p'>{value}</p>
                   </Collapse>
                 );
