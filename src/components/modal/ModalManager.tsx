@@ -18,12 +18,14 @@ export function useModal() {
 export function ModalManager({ children }) {
   const [modal, setModal] = useState(null);
   const [title, setTitle] = useState(null);
+  const [footer, setFooter] = useState(null);
   const [isActive, setIsActive] = useState(false);
 
   // Function to open a modal
-  const openModal = (modaltitle, content: SetStateAction<null>) => {
+  const openModal = (modaltitle, content: SetStateAction<null>, modalfooter) => {
     setModal(content);
     setTitle(modaltitle);
+    setFooter(modalfooter);
     setIsActive(false);
     console.log('modalmanager: openmodel()');
 
@@ -77,7 +79,7 @@ export function ModalManager({ children }) {
                 </button>
               </div>
               <section className='modal-container-body rtf'>{modal}</section>
-              <footer className='modal-container-footer'>&nbsp;Footer Text</footer>
+              <div className='modal-container-footer'>{footer}</div>
             </div>
           </div>
         </div>
