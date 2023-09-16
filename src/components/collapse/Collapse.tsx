@@ -25,14 +25,13 @@ function Collapse({ title, children }) {
   return (
     <div className='collapsible-section' ref={collapseRef}>
       <div className='collapsible-header'>
-        <h3>{title}</h3>
         <button
           className={`collapse-button ${isCollapsed ? 'down' : 'up'}`}
           onClick={toggleCollapse}
           aria-label={`Toggle ${isCollapsed ? 'Expand' : 'Collapse'}`}
         >
         <div className="button-container">
-            <span>{isCollapsed ? 'More' : 'Less'}</span>
+            <span>{title === null || title === undefined ? (isCollapsed ? 'More' : 'Less') : title}</span>
             <svg className='collapse-arrows'>
               <use xlinkHref={isCollapsed ? '#downarrow' : '#uparrow'} />
             </svg>
