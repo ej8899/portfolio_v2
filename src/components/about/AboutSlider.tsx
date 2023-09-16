@@ -18,7 +18,6 @@ register();
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, EffectFade, Autoplay } from 'swiper/modules';
 
-// TODO - swiper - how to use breakpoints in this style of usage?
 // TODO - swiper pagination isn't clickable for some reason.
 // TODO - check styles - might need webkit mask for firefox
 
