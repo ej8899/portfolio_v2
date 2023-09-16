@@ -8,6 +8,7 @@ import Collapse from '../collapse/Collapse';
 
 import { useModal } from '../modal/ModalManager';
 import { modalContentEngineer, modalContent2 } from './ModalContent'; // Import the modal content
+import KeywordPopover from '../popover/KeywordPopover';
 
 function About(props) {
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -92,7 +93,12 @@ function About(props) {
               <p>
                 When much younger, I did start coding mini games and{' '}
                 <span data-tooltip='freeware and shareware'>applications</span> in BASIC language on{' '}
-                Commodore computers. Eventually, this transitioned into PC&apos;s and{' '}
+                <KeywordPopover
+                  keyword='Commodore'
+                  content='This is the popover content. It can include rich text, images, and more.'
+                  header='Popover Header'
+                />{' '}
+                computers. Eventually, this transitioned into PC&apos;s and{' '}
                 <span data-tooltip='Blackberry and PalmPilot'>early mobile devices</span>
                 and then into the early days of web development - from static web pages, to web to
                 full-stack e-commerce applications.
