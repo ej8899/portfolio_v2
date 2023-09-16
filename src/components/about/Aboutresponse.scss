@@ -173,11 +173,16 @@
 	border: 2px solid #000;
 	background-color: #fff;
 	box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
-	height: 82px;
+	height: 111px;
 	border-radius: 82px;
 	-webkit-border-radius: 82px;
-	width: 250px;
+	width: 360px;
 	padding: 0 20px;
+  &:hover {
+    // TODO change to variable
+    background-color: teal;
+    transition: background-color 0.3s ease-in-out;
+  }
 }
 
 .section.about-started .info-list ul li:nth-child(1) {
@@ -185,17 +190,18 @@
 }
 
 .section.about-started .info-list ul li:nth-child(2) {
-	margin: -30px 0 0 520px;
+	margin: -60px 0 0 460px;
 }
 
 .section.about-started .info-list ul li .num {
 	display: block;
-	font-size: 37px;
+	font-size: 58px;
 	line-height: 20px;
 	text-transform: uppercase;
 	font-weight: 700;
 	width: 50%;
 	text-align: center;
+  color:orange;
 }
 
 .section.about-started .info-list ul li .num strong {
@@ -207,7 +213,7 @@
 	display: block;
 	width: 50%;
 	text-align: left;
-	font-size: 13px;
+	font-size: 23px;
 	line-height: 20px;
 	text-transform: uppercase;
 	font-weight: 700;
