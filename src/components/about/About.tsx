@@ -21,10 +21,10 @@ function About(props) {
     console.log('about- opening modal');
     switch (modalItem) {
       case 'engineer':
-        openModal('Software Engineers in 🇨🇦', modalContentEngineer);
+        openModal('Software Engineers in 🇨🇦', modalContentEngineer, 'footer text here');
         break;
       case 'majorprojects':
-        openModal('Major Projects...', 'fdfdfd');
+        openModal('Major Projects...', 'fdfdfd', '');
         break;
       default:
         break;

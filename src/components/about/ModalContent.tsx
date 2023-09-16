@@ -5,7 +5,7 @@
 const modalContentEngineer = (
   <>
     <p>
-      Software developers cannot use the term "software engineer" in Canada as the title of
+      Software developers cannot freely use the term "software engineer" in Canada as the title of
       "engineer" is protected by law and can only be used by individuals who are licensed by one of
       the provincial or territorial engineering regulators. These regulators are responsible for
       ensuring that engineers meet high standards of education, experience, ethics, and

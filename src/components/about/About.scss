@@ -226,86 +226,8 @@
 	height: 141px;
 }
 
+// TODO should be able to delete all these .section.hero-start classes
 
-.section.hero-started .info-list {
-	position: absolute;
-	top: 210px;
-	left: -195px;
-	z-index: 12;
-}
-
-.section.hero-started .info-list ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.section.hero-started .info-list ul li {
-	margin: 0;
-	display: flex;
-	align-items: center;
-	color: #000;
-	border: 2px solid #000;
-	background-color: #fff;
-	box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
-	height: 82px;
-	border-radius: 82px;
-	-webkit-border-radius: 82px;
-	width: 250px;
-	padding: 0 20px;
-  transition: transform background-color 0.3s ease-in-out;
-  transition: transform 0.25s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    // TODO change to variable
-    background-color: teal;
-    transition: background-color 0.3s ease-in-out;
-  }
-}
-
-.section.hero-started .info-list ul li:nth-child(1) {
-	margin: 160px 0 0 180px;
-}
-
-.section.hero-started .info-list ul li:nth-child(2) {
-	margin: -30px 0 0 420px;
-}
-
-.section.hero-started .info-list ul li .num {
-	display: block;
-	font-size: 37px;
-	line-height: 20px;
-	text-transform: uppercase;
-	font-weight: 700;
-	width: 50%;
-	text-align: center;
-}
-
-.section.hero-started .info-list ul li .num strong {
-	position: relative;
-	top: -4px;
-}
-
-.section.hero-started .info-list ul li .value {
-	display: block;
-	width: 50%;
-	text-align: left;
-	font-size: 13px;
-	line-height: 20px;
-	text-transform: uppercase;
-	font-weight: 700;
-	letter-spacing: 0.05em;
-}
-
-.section.hero-started .subtitle strong,
-.section.hero-started .title strong,
-.section.hero-started .info-list ul li strong,
-.section.hero-started .subtitle b,
-.section.hero-started .title b,
-.section.hero-started .info-list ul li b {
-  // bold text color here:
-	color: var(--myorange);
-}
 
 .about-header-wrapper {
   position: relative;
