@@ -14,6 +14,12 @@ import lightbnbMain from '../assets/project-lightbnb/screenshot-main.png';
 import lightbnbSearch from '../assets/project-lightbnb/screenshot-search-main.png';
 import lightbnbCurrency from '../assets/project-lightbnb/screenshot-currency.png';
 
+import tweeterOverview from '../assets/project-tweeter/image-tweeter-mockup.jpg';
+import tweeterMain from '../assets/project-tweeter/image-mainusing-desktop.png';
+import tweeterCompose from '../assets/project-tweeter/image-main-compose.png';
+import tweeterPagination from '../assets/project-tweeter/image-main-pagination.png';
+import tweeterMobile from '../assets/project-tweeter/image-tweeter-phone.jpg';
+
 export interface IProject {
   title: string;
   featured: boolean;
@@ -174,7 +180,7 @@ const PROJECTS: IProject[] = [
       live: 'https://github.com',
       repo: 'https://github.com/ej8899/lightBnB',
     },
-    techIcons: ['react', 'sass', 'postgres', 'express', 'node'],
+    techIcons: ['javascript', 'sass', 'postgres', 'express', 'node'],
     screenshots: [
       { url: lightbnbOverview, alt: 'using LightBnB application' },
       { url: lightbnbMain, alt: 'LightBnB main screen with Google Maps API' },
@@ -197,6 +203,54 @@ const PROJECTS: IProject[] = [
         type: 'more|what I learned...',
         value:
           'I really went overboard with LightBnB extra feature. One thing I got heavily invested in to was Google Maps API. I  plotted LightBnB locations on the map, and not only that, but they were plotted based on search results and were also interactive on the map to also search backwards into the main application. Additionally, this use of Google Maps had me dive into caching of API results rather quickly so I could save both costs and time in repeated API calls.',
+      },
+    ],
+    bulletPoints: ['SQL', 'Ajax', 'react-router-dom', 'vite'],
+  },
+
+  {
+    title: 'Tweeter',
+    featured: false,
+    links: {
+      live: 'https://github.com',
+      repo: 'https://github.com/ej8899/tweeter',
+    },
+    techIcons: ['javascript', 'sass', 'express', 'node'],
+    screenshots: [
+      { url: tweeterOverview, alt: 'using Tweeter application' },
+      {
+        url: tweeterMain,
+        alt: 'Tweeter main screen with reporting of mean Tweeters and tagging favorites',
+      },
+      {
+        url: tweeterCompose,
+        alt: 'Composing in Tweeter with input checking and dad jokes api',
+      },
+      {
+        url: tweeterMobile,
+        alt: 'Tweeter supports full responsive design for mobile use.',
+      },
+      {
+        url: tweeterPagination,
+        alt: 'Tweeter supports pagination - only required data is fetched!',
+      },
+    ],
+    description: [
+      { type: 'header', value: 'The Inspiration' },
+      {
+        type: 'p',
+        value:
+          'Tweeter is a Lighthouse Labs inspired clone of Twitter (now X) designed to give students some experience in dealing with CSS via SASS, jQuery, and to expand upon our general Javascript knowledge. ',
+      },
+      {
+        type: 'more|learning objectives...',
+        value:
+          'During our coursework, importance on a mobile-first development strategy was emphasized, and therefore it was important that responsive design was closely monitored with Tweeter.',
+      },
+      {
+        type: 'more|extra features...',
+        value:
+          'I added numerous extra features into Tweeter like dark mode, favorites, offensive message flagging, re-Tweeter functionality and a jokes API system. Also implemented was a pagination system - fetching only additional Tweeter messages from the Node implemented data system as required.',
       },
     ],
     bulletPoints: ['SQL', 'Ajax', 'react-router-dom', 'vite'],
