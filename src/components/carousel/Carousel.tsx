@@ -107,8 +107,15 @@ function Carousel({ imageArray, isTransitionDone }: TProps) {
               setScrollXPosition(xPosition);
             }}
           >
-            {imageArray.map(({ url, alt }) => {
-              return <img src={url} alt={`${alt}`} key={`${url}-image`} />;
+            {imageArray.map(({ url, alt }, index) => {
+              return (
+                <img
+                  src={url}
+                  alt={`${alt}`}
+                  key={`${url}-image`}
+                  className={`fade ${index === currentImageIndex ? 'cvisible' : 'chidden'}`}
+                />
+              );
             })}
           </div>
 
