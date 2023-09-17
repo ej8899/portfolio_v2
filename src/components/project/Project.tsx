@@ -19,6 +19,7 @@ import useElementOnScreen from '../../hooks/useElementOnScreen';
 import Carousel from '../carousel/Carousel';
 import DevIcon from '../dev_icon/DevIcon';
 import Jquery from '../../assets/components/Jquery';
+import Bootstrapicon from '../../assets/components/Bootstrapicon';
 
 import './Project.scss';
 import Express from '../../assets/components/Express';
@@ -117,6 +118,10 @@ function Project({ data, number }: TProps) {
               case 'html':
                 techComponent = <HTML />;
                 tooltip = 'HTML';
+                break;
+              case 'bootstrap':
+                techComponent = <Bootstrapicon />;
+                tooltip = 'Bootstrap';
                 break;
               case 'javascript':
                 techComponent = <JavaScript />;

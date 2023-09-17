@@ -20,6 +20,12 @@ import tweeterCompose from '../assets/project-tweeter/image-main-compose.png';
 import tweeterPagination from '../assets/project-tweeter/image-main-pagination.png';
 import tweeterMobile from '../assets/project-tweeter/image-tweeter-phone.jpg';
 
+import tinyOverview from '../assets/project-tinyapp/image-readme.png';
+import tinyServer from '../assets/project-tinyapp/image-server.png';
+import tinySignin from '../assets/project-tinyapp/image-login.png';
+import tinyList from '../assets/project-tinyapp/image-tinylist.png';
+import tinyStats from '../assets/project-tinyapp/image-createtinyurl.png';
+
 export interface IProject {
   title: string;
   featured: boolean;
@@ -54,6 +60,7 @@ type TTech =
   | 'eslint'
   | 'babel'
   | 'webpack'
+  | 'bootstrap'
   | 'postgres'
   | 'vite'
   | 'express';
@@ -253,6 +260,54 @@ const PROJECTS: IProject[] = [
         type: 'more|extra features...',
         value:
           'I added numerous extra features into Tweeter like dark mode, favorites, offensive message flagging, re-Tweeter functionality and a jokes API system. Also implemented was a pagination system - fetching only additional Tweeter messages from the Node implemented data system as required.',
+      },
+    ],
+    bulletPoints: ['SQL', 'Ajax', 'react-router-dom', 'vite'],
+  },
+
+  {
+    title: 'TinyApp!',
+    featured: false,
+    links: {
+      live: 'https://github.com',
+      repo: 'https://github.com/ej8899/tinyapp',
+    },
+    techIcons: ['javascript', 'bootstrap', 'sass', 'express', 'node'],
+    screenshots: [
+      { url: tinyOverview, alt: 'using TinyApp!' },
+      {
+        url: tinyServer,
+        alt: 'TinyApp! runs on Node with Express.',
+      },
+      {
+        url: tinySignin,
+        alt: 'TinyApp runs a secure login system with encrypted cookies for managing logged in state.',
+      },
+      {
+        url: tinyList,
+        alt: 'View your tiny urls, edit and delete them.',
+      },
+      {
+        url: tinyStats,
+        alt: 'Full click through stats are available for each Tiny URL created!',
+      },
+    ],
+    description: [
+      { type: 'header', value: 'The Inspiration' },
+      {
+        type: 'p',
+        value:
+          'TinyApp! is a Lighthouse Labs inspired clone of a typical URL shortening service (like bit.ly) designed to give students some experience in dealing with using libraries like Bootstrap, as well as user login and verification methods through persistent cookies. ',
+      },
+      {
+        type: 'more|learning objectives...',
+        value:
+          'TODO add in more stuff here.  blah blah blah lfaskdjfl aslfjdl fasdl ldsfls dlfjdlfj dljfdl',
+      },
+      {
+        type: 'more|extra features...',
+        value:
+          'I took the liberty to add in numerous extra features into TinyApp! on both the server and front end sides.  The server has verbose logging and a quiet mode and on the client/front end side we have a hidden menu bar if not logged in, incorrect password notification, duplicate account error checking, total click counting, unique click counting, and click through logs with graphs for each tiny URL created.',
       },
     ],
     bulletPoints: ['SQL', 'Ajax', 'react-router-dom', 'vite'],
