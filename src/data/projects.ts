@@ -9,6 +9,11 @@ import schedulerEdit from '../assets/project-scheduler/edit.png';
 import schedulerDark from '../assets/project-scheduler/darkmode.png';
 import schedulerAbout from '../assets/project-scheduler/about.png';
 
+import lightbnbOverview from '../assets/project-lightbnb/mockup.jpg';
+import lightbnbMain from '../assets/project-lightbnb/screenshot-main.png';
+import lightbnbSearch from '../assets/project-lightbnb/screenshot-search-main.png';
+import lightbnbCurrency from '../assets/project-lightbnb/screenshot-currency.png';
+
 export interface IProject {
   title: string;
   featured: boolean;
@@ -160,6 +165,41 @@ const PROJECTS: IProject[] = [
       },
     ],
     bulletPoints: ['react-router-dom', 'react-icons', 'react-router-dom', 'vite'],
+  },
+
+  {
+    title: 'Light BnB',
+    featured: false,
+    links: {
+      live: 'https://github.com',
+      repo: 'https://github.com/ej8899/lightBnB',
+    },
+    techIcons: ['react', 'sass', 'postgres', 'express', 'node'],
+    screenshots: [
+      { url: lightbnbOverview, alt: 'using LightBnB application' },
+      { url: lightbnbMain, alt: 'LightBnB main screen with Google Maps API' },
+      { url: lightbnbSearch, alt: 'Searching in LightBnB with various options' },
+      { url: lightbnbCurrency, alt: 'LightBnB supports multiple currencies!' },
+    ],
+    description: [
+      { type: 'header', value: 'The Inspiration' },
+      {
+        type: 'p',
+        value:
+          'Light BnB is a Lighthouse Labs (LHL) AirBnB type clone for students to work on SQL interactions via Ajax on a client-server application build. It came with a somewhat preassembled front end that was lacking in both style and functional design since this application was primarily for backend learning.',
+      },
+      {
+        type: 'more|learning objectives...',
+        value:
+          'My learning objectives were simple - take the existing project requirements and build more.  This happened with both front and back end -- by expanding and fixing the front end, I was able to build extra requirements for back-end API functions.',
+      },
+      {
+        type: 'more|what I learned...',
+        value:
+          'I really went overboard with LightBnB extra feature. One thing I got heavily invested in to was Google Maps API. I  plotted LightBnB locations on the map, and not only that, but they were plotted based on search results and were also interactive on the map to also search backwards into the main application. Additionally, this use of Google Maps had me dive into caching of API results rather quickly so I could save both costs and time in repeated API calls.',
+      },
+    ],
+    bulletPoints: ['SQL', 'Ajax', 'react-router-dom', 'vite'],
   },
 ];
 
