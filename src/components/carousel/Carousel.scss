@@ -37,7 +37,10 @@
       margin: 0 auto;
       //transition: opacity 0.5s ease-in-out;
       transition: transform 0.5s, filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
-      opacity: 0;
+      //opacity: 0;
+    }
+    img:focus {
+      outline: none;
     }
 
     &::-webkit-scrollbar {
@@ -89,11 +92,11 @@
 
 .cvisible {
   opacity: 1 !important;
-  filter: blur(0);
+  //filter: blur(0);
   z-index: 1;
 }
 .chidden {
-  opacity: 0.3 !important;
-  filter: blur(5px);
+  //opacity: 0.3 !important;
+  //filter: blur(5px);
   z-index: 0;
 }

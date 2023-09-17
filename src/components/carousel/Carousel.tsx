@@ -113,7 +113,7 @@ function Carousel({ imageArray, isTransitionDone }: TProps) {
                   src={url}
                   alt={`${alt}`}
                   key={`${url}-image`}
-                  className={`fade ${index === currentImageIndex ? 'cvisible' : 'chidden'}`}
+                  className={`cfade ${index === currentImageIndex ? 'cvisible' : 'chidden'}`}
                 />
               );
             })}
