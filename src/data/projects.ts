@@ -50,10 +50,12 @@ type TTech =
   | 'node'
   | 'html'
   | 'jest'
+  | 'jquery'
   | 'eslint'
   | 'babel'
   | 'webpack'
   | 'postgres'
+  | 'vite'
   | 'express';
 
 const PROJECTS: IProject[] = [
@@ -110,7 +112,7 @@ const PROJECTS: IProject[] = [
       live: 'http://erniejohnson.ca',
       repo: 'https://github.com/ej8899/portfolio_v2',
     },
-    techIcons: ['react', 'sass', 'typescript'],
+    techIcons: ['react', 'sass', 'typescript', 'vite'],
     screenshots: [
       { url: learnthisHome, alt: 'LearnThis! Screenshot' },
       { url: learnthisLessons, alt: 'LearnThis! Screenshot' },
@@ -180,7 +182,7 @@ const PROJECTS: IProject[] = [
       live: 'https://github.com',
       repo: 'https://github.com/ej8899/lightBnB',
     },
-    techIcons: ['javascript', 'sass', 'postgres', 'express', 'node'],
+    techIcons: ['javascript', 'sass', 'jquery', 'postgres', 'express', 'node'],
     screenshots: [
       { url: lightbnbOverview, alt: 'using LightBnB application' },
       { url: lightbnbMain, alt: 'LightBnB main screen with Google Maps API' },
@@ -215,7 +217,7 @@ const PROJECTS: IProject[] = [
       live: 'https://github.com',
       repo: 'https://github.com/ej8899/tweeter',
     },
-    techIcons: ['javascript', 'sass', 'express', 'node'],
+    techIcons: ['javascript', 'jquery', 'sass', 'express', 'node'],
     screenshots: [
       { url: tweeterOverview, alt: 'using Tweeter application' },
       {

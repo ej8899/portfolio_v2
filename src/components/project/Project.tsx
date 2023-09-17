@@ -11,12 +11,15 @@ import React from '../../assets/components/React';
 import Redux from '../../assets/components/Redux';
 import Sass from '../../assets/components/Sass';
 import TypeScript from '../../assets/components/TypeScript';
+import Vite from '../../assets/components/Vite';
 import Webpack from '../../assets/components/Webpack';
 import Postgres from '../../assets/components/Postgres';
 import { IProject } from '../../data/projects';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import Carousel from '../carousel/Carousel';
 import DevIcon from '../dev_icon/DevIcon';
+import Jquery from '../../assets/components/Jquery';
+
 import './Project.scss';
 import Express from '../../assets/components/Express';
 import Collapse from '../collapse/Collapse';
@@ -98,6 +101,14 @@ function Project({ data, number }: TProps) {
               case 'css':
                 techComponent = <CSS />;
                 tooltip = 'CSS';
+                break;
+              case 'jquery':
+                techComponent = <Jquery />;
+                tooltip = 'jQuery';
+                break;
+              case 'vite':
+                techComponent = <Vite />;
+                tooltip = 'Vite';
                 break;
               case 'firebase':
                 techComponent = <Firebase />;
