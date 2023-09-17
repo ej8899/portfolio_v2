@@ -178,9 +178,10 @@
 	-webkit-border-radius: 82px;
 	width: 360px;
 	padding: 0 20px;
-      // TODO change color to variable
-      background-color: white;
-      transition: background-color 0.3s ease-in-out;
+  // TODO change color to variable
+  background-color: white;
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.3, 1);
+      
   &:hover {
     background-color: teal;
   }
