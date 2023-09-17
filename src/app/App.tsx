@@ -114,7 +114,7 @@ function App() {
 
     scrollToTopButton.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      window.removeEventListener('resize', handleResize);
+      // window.removeEventListener('resize', handleResize);
     });
   }, []);
 
