@@ -20,9 +20,10 @@ import Carousel from '../carousel/Carousel';
 import DevIcon from '../dev_icon/DevIcon';
 import Jquery from '../../assets/components/Jquery';
 import Bootstrapicon from '../../assets/components/Bootstrapicon';
+import Express from '../../assets/components/Express';
 
 import './Project.scss';
-import Express from '../../assets/components/Express';
+
 import Collapse from '../collapse/Collapse';
 
 type TProps = {

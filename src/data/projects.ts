@@ -21,7 +21,6 @@ import tweeterPagination from '../assets/project-tweeter/image-main-pagination.p
 import tweeterMobile from '../assets/project-tweeter/image-tweeter-phone.jpg';
 
 import tinyOverview from '../assets/project-tinyapp/image-readme.png';
-import tinyServer from '../assets/project-tinyapp/image-server.png';
 import tinySignin from '../assets/project-tinyapp/image-login.png';
 import tinyList from '../assets/project-tinyapp/image-tinylist.png';
 import tinyStats from '../assets/project-tinyapp/image-createtinyurl.png';
@@ -275,10 +274,6 @@ const PROJECTS: IProject[] = [
     techIcons: ['javascript', 'bootstrap', 'sass', 'express', 'node'],
     screenshots: [
       { url: tinyOverview, alt: 'using TinyApp!' },
-      {
-        url: tinyServer,
-        alt: 'TinyApp! runs on Node with Express.',
-      },
       {
         url: tinySignin,
         alt: 'TinyApp runs a secure login system with encrypted cookies for managing logged in state.',
