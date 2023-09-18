@@ -21,6 +21,7 @@ import DevIcon from '../dev_icon/DevIcon';
 import Jquery from '../../assets/components/Jquery';
 import Bootstrapicon from '../../assets/components/Bootstrapicon';
 import Express from '../../assets/components/Express';
+import Mui from '../../assets/components/Mui';
 
 import './Project.scss';
 
@@ -123,6 +124,10 @@ function Project({ data, number }: TProps) {
               case 'bootstrap':
                 techComponent = <Bootstrapicon />;
                 tooltip = 'Bootstrap';
+                break;
+              case 'mui':
+                techComponent = <Mui />;
+                tooltip = 'MaterialUI';
                 break;
               case 'javascript':
                 techComponent = <JavaScript />;

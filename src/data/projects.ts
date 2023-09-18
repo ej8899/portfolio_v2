@@ -56,6 +56,7 @@ type TTech =
   | 'html'
   | 'jest'
   | 'jquery'
+  | 'mui'
   | 'eslint'
   | 'babel'
   | 'webpack'
@@ -72,7 +73,7 @@ const PROJECTS: IProject[] = [
       live: 'https://github.com',
       repo: 'https://github.com',
     },
-    techIcons: ['react', 'sass', 'postgres', 'express', 'node'],
+    techIcons: ['react', 'sass', 'mui', 'postgres', 'express', 'node'],
     screenshots: [
       { url: learnthisHome, alt: 'LearnThis! Screenshot' },
       { url: learnthisLessons, alt: 'LearnThis! Screenshot' },
