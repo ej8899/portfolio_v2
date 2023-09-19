@@ -109,7 +109,12 @@ const PROJECTS: IProject[] = [
       {
         type: 'p',
         value:
-          '5RLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          '5RLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,dfdfd quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      },
+      {
+        type: 'more|teamwork challenges...',
+        value:
+          'I cant say too much about there being challenges as I had  a great team to work with.  We did have some time zone differences between our group of three, but a weekly catch up meeting via Google Meet and some regular Discord chat messages were all that was required to keep the project on time and on track. Our main working system was to follow the minimal viable project (mvp) plan while myself, assuming role of project manager and front end designer/developer, was able to submit back-end/database API tickets into a shared Trello (Kanban) type board.',
       },
     ],
     bulletPoints: ['react-router-dom', 'react-icons', 'react-router-dom', 'vite'],
