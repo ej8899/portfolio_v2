@@ -95,9 +95,13 @@
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    
+    background-color: var(--clr-neutral-700);
+    border-radius: 2rem; // Adjust the radius as needed
+    padding: 0.5rem; // Add padding to create space inside the rounded container
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     transition: opacity var(--transition-short) ease-in-out;
-
+  
     > * {
       width: 32px;
     }
@@ -105,7 +109,7 @@
     @media (max-width: 850px) {
       > * {
         width: 24px;
-        margin-top: var(--p-gap);
+        //margin-top: var(--p-gap);
       }
 
       // tooltips extend beyond viewport on small screens
@@ -115,7 +119,7 @@
 
       // increase gap
       [data-tooltip] {
-        --tooltip-gap: 3rem;
+        --tooltip-gap: 1.5rem;
       }
     }
   }
