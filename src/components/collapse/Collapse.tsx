@@ -33,7 +33,7 @@ function Collapse({ title, children }) {
         <div className="button-container">
             <span>{title === null || title === undefined ? (isCollapsed ? 'More' : 'Less') : title}</span>
             <svg className='collapse-arrows'>
-              <use xlinkHref={isCollapsed ? '#rightcircle' : '#uparrow'} />
+              <use xlinkHref={isCollapsed ? '#rightarrow' : '#uparrow'} />
             </svg>
           </div>
         </button>

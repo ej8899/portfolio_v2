@@ -36,10 +36,11 @@
   transition: transform 0.2s ease;
   position: relative; /* Add relative positioning */
   transition: color 0.3s; /* Keep the color transition */
+  
   &:before {
     content: "";
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     right: 0;
     max-width: calc(100% - 38px);
@@ -63,11 +64,11 @@
 
 .collapse-arrows {
   fill: black;
-  height: 24px;
+  height: 20px;
   width: 24px;
 }
 .collapse-arrows:hover {
-  fill: orange;
+  fill: #ff6600;
 }
 
 .collapsible-section {
