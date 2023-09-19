@@ -18,7 +18,7 @@ function About(props) {
   const { openModal } = useModal();
 
   const handleOpenModal = (modalItem) => {
-    console.log('about- opening modal');
+    // console.log('about- opening modal');
     switch (modalItem) {
       case 'engineer':
         openModal('Software Engineers in 🇨🇦', modalContentEngineer, 'footer text here');

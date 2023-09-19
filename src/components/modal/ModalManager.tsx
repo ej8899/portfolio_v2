@@ -27,7 +27,7 @@ export function ModalManager({ children }) {
     setTitle(modaltitle);
     setFooter(modalfooter);
     setIsActive(false);
-    console.log('modalmanager: openmodel()');
+    // console.log('modalmanager: openmodel()');
 
     // After a short delay, remove the active class from modal-container to trigger the transition
     setTimeout(() => {
