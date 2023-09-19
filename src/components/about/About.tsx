@@ -103,15 +103,6 @@ function About(props) {
                 <span data-tooltip='Blackberry and PalmPilot'>early mobile devices</span>
                 and then into the early days of web development - from static web pages, to web to
                 full-stack e-commerce applications.
-                <Collapse title={null} key='1'>
-                  <p>
-                    extra info here - tooltips ok?{' '}
-                    <span data-tooltip='freeware and shareware'>applications</span> in BASIC
-                    <br />
-                    tool tips work, but can be broken depending on position. best to avoid.
-                    <hr />
-                  </p>
-                </Collapse>
               </p>
               <p>
                 Life happened, and I decided to re-think my career choices - I made a sudden shift
