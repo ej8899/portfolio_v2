@@ -54,6 +54,28 @@
   transition: transform 0.3s ease-in-out;
   transform: scale(0.8); /* Initial scale for animation */
   opacity: 0;
+
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: orange #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: orange;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
 }
 .modal-container.active {
   transform: scale(1); /* Scaled to 1 for full size */
