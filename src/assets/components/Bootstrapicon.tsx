@@ -1,5 +1,4 @@
 function Bootstrapicon() {
-  console.log('boostrap svg');
   return (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 204'>
       <path
