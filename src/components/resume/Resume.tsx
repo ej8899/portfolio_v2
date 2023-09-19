@@ -236,7 +236,7 @@ function Resume(props) {
                 <p>
                   <li>Canadian Forces School of Aerospace & Technology,</li>
                   <li>Canadian Forces School of Communications & Electronics,</li>
-                  <li>Performance Oriented Electronics Technician</li>
+                  <li>Performance Oriented Electronics Training</li>
                 </p>
                 <button className='bnt-more'>More</button>
               </div>
