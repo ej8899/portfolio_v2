@@ -63,17 +63,18 @@ function Project({ data, number }: TProps) {
                 </a>
               </h3>
 
-              <div className='project__links'>
-                <a href={data.links.live} target='_blank' rel='noreferrer'>
-                  LIVE
-                </a>
-                <p className='project__links-divider' aria-hidden='true'>
-                  {' '}
-                  |{' '}
-                </p>
-                <a href={data.links.repo} target='_blank' rel='noreferrer'>
-                  CODE
-                </a>
+              <div className='portfolio__project-links'>
+                {data.links.live && (
+                  <a href={data.links.live} target='_blank' rel='noopener noreferrer'>
+                    LIVE
+                  </a>
+                )}
+                {data.links.live && data.links.repo && <span> | </span>}
+                {data.links.repo && (
+                  <a href={data.links.repo} target='_blank' rel='noopener noreferrer'>
+                    CODE
+                  </a>
+                )}
               </div>
             </>
           ) : (
