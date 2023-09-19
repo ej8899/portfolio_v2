@@ -40,7 +40,7 @@
   &:before {
     content: "";
     position: absolute;
-    bottom: -2px;
+    bottom: -4px;
     left: 0;
     right: 0;
     max-width: calc(100% - 38px);
@@ -64,8 +64,8 @@
 
 .collapse-arrows {
   fill: black;
-  height: 20px;
-  width: 24px;
+  height: 15px;
+  width: 15px;
 }
 .collapse-arrows:hover {
   fill: #ff6600;

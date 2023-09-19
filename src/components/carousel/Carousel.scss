@@ -69,14 +69,14 @@
       // height: var(--button-size);
       aspect-ratio: 1;
       border-radius: 50vw;
-
-      cursor: pointer;
-
       border: 0;
+      border: 1px solid black;
+      cursor: pointer;
+      
       outline: 0;
       background: var(--clr-neutral-700);
 
-      transition: transform var(--transition-short) ease-in-out;
+      transition: all var(--transition-short) ease-in-out;
 
       &.currentImage {
         background: var(--clr-primary-100);
