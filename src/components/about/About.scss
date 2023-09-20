@@ -155,14 +155,18 @@
     }
   }
 }
-
+.opie{
+  opacity:1 !important;
+}
 .rotate3r {
   transform: rotate(4deg);
   transition: all 0.3s ease-in-out;
+  opacity: 1;
 }
 .rotate3l {
   transform: rotate(-4deg);
   transition: all 0.3s ease-in-out;
+  opacity: 1;
 }
 
 .greyscale {
@@ -199,6 +203,7 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: contain;
+  opacity: 1;
 }
 
 .circle.img-1 {
@@ -207,6 +212,7 @@
 	left: auto;
 	width: 226px;
 	height: 226px;
+  opacity: 1;
 }
 
 .circle.img-2 {
@@ -216,6 +222,7 @@
 	left: -60px;
 	width: 141px;
 	height: 141px;
+  opacity: 1;
 }
 
 .circle.img-3 {
@@ -225,6 +232,7 @@
 	left: auto;
 	width: 141px;
 	height: 141px;
+  opacity: 1;
 }
 
 .about-header-wrapper {
