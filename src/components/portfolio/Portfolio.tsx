@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { LegacyRef, useEffect, useRef, useState } from 'react';
 import Minus from '../../assets/components/Minus';
 import Plus from '../../assets/components/Plus';
 import PROJECTS from '../../data/projects';
@@ -7,7 +7,7 @@ import Project from '../project/Project';
 import './Portfolio.scss';
 import ArrowSketch from '../../assets/components/ArrowSketch';
 
-function Portfolio(props) {
+function Portfolio(props: { reference: LegacyRef<HTMLElement> | undefined }) {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const sectionRef = useRef<HTMLHeadingElement>(null);
   const extraProjectsRef = useRef(null);

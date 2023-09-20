@@ -17,7 +17,7 @@ function useAnimateOnScreen(itemOnScreen, timelineRef, animationClass: string) {
   }, [itemOnScreen]);
 }
 
-function Resume(props) {
+function Resume() {
   const sectionRef = useRef(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -176,6 +176,9 @@ function Resume(props) {
                   <br />
                   Study the basics of what is new in web development technologies like HTML, CSS,
                   jQuery, React, Ruby, Ruby on Rails and more.
+                  <br />
+                  <br />
+                  Develop web applications in solo and team based environments.
                 </p>
                 <button>More</button>
               </div>

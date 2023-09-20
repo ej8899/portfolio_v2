@@ -22,7 +22,7 @@ export function ModalManager({ children }) {
   const [isActive, setIsActive] = useState(false);
 
   // Function to open a modal
-  const openModal = (modaltitle, content: SetStateAction<null>, modalfooter) => {
+  const openModal = (modaltitle: string, content: SetStateAction<null>, modalfooter: string) => {
     setModal(content);
     setTitle(modaltitle);
     setFooter(modalfooter);

@@ -6,7 +6,7 @@ import HamburgerIcon from '../../assets/components/HamburgerIcon';
 import useElementOffScreen from '../../hooks/useElementOffScreen';
 import './Header.scss';
 
-function Header(props) {
+function Header(props: { sectionName: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const headerRef = useRef<HTMLElement>(null);

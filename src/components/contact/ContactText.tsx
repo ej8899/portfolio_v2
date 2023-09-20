@@ -50,7 +50,7 @@ function ContactText() {
           <span> Phone: </span>
         </div>
         <div className='lui-text'>
-          <span> +1 705 - 331 - 8899 </span>
+          <span> +1&nbsp;&nbsp;705 - 331 - 8899 </span>
         </div>
       </div>
     </div>

@@ -21,12 +21,15 @@ function Aboutimage() {
       infoRef2.current?.classList.remove('animate__zoomIn');
       return;
     }
-    infoRef1.current?.classList.add('animate__zoomIn');
-    infoRef2.current?.classList.add('animate__zoomIn');
-    circleRef.current?.classList.add('animate__fadeInUp');
-    pat1Ref.current?.classList.add('animate__fadeInTopRight');
-    pat3Ref.current?.classList.add('animate__fadeInBottomRight');
-    pat2Ref.current?.classList.add('animate__fadeInLeft');
+
+    setTimeout(() => {
+      infoRef1.current?.classList.add('animate__zoomIn');
+      infoRef2.current?.classList.add('animate__zoomIn');
+      circleRef.current?.classList.add('animate__fadeInUp');
+      pat1Ref.current?.classList.add('animate__fadeInTopRight');
+      pat3Ref.current?.classList.add('animate__fadeInBottomRight');
+      pat2Ref.current?.classList.add('animate__fadeInLeft');
+    }, 100);
   }, [isOnScreen]);
 
   // TODO bug in circle if scrolling into view - it already fades in, then does the fadeInUp animation - need to keep circle off for start.

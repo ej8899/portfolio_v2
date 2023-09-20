@@ -1,5 +1,5 @@
 import './SkillSlider.scss';
-import { useEffect, useRef } from 'react';
+import { LegacyRef, useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 
 /* good reference on sliders here:
@@ -7,7 +7,7 @@ https://ryanmulligan.dev/blog/css-marquee/
 some of this was used below:
 */
 
-const SkillSlider = (props) => {
+const SkillSlider = (props: { reference: LegacyRef<HTMLElement> | undefined }) => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const isOnScreen = useElementOnScreen(titleRef);
 

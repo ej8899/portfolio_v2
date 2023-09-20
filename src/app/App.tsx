@@ -28,7 +28,6 @@ import globalconfig from '../config';
 import AboutSlider from '../components/about/AboutSlider';
 import Chatbot from '../components/chatbot/Chatbot';
 import Resume from '../components/resume/Resume';
-import useElementOnScreen from '../hooks/useElementOnScreen';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
@@ -74,17 +73,17 @@ function App() {
     window.addEventListener('scroll', activeAnimation);
 
     // scroll listeners
-    const items = document.querySelectorAll('.parallax-item');
-    const targetElement = document.querySelector('.footer__wrapper');
-    const contentHeight = document.querySelector('.appwrapper').clientHeight;
-    const lastPixelsToShow = 50;
+    // const items = document.querySelectorAll('.parallax-item');
+    // const targetElement = document.querySelector('.footer__wrapper');
+    // const contentHeight = document.querySelector('.appwrapper').clientHeight;
+    // const lastPixelsToShow = 50;
     const scrollToTopButton = document.getElementById('scrollToTopButton');
     const line1 = document.getElementById('line1');
     const line2 = document.getElementById('line2');
-    const viewportHeight = window.innerHeight;
-    let scrollY;
-    console.log('appwrapper height:', contentHeight);
-    console.log('viewport height:', viewportHeight);
+    // const viewportHeight = window.innerHeight;
+    // let scrollY;
+    // console.log('appwrapper height:', contentHeight);
+    // console.log('viewport height:', viewportHeight);
 
     // monitor for resizes
     window.addEventListener('resize', () => {
@@ -99,7 +98,7 @@ function App() {
       // scroll position for back to top button
       //
       const scrollPosition = window.scrollY;
-      scrollY = window.scrollY;
+      // scrollY = window.scrollY;
       // add the scroll to top button
       if (window.scrollY > 300) {
         scrollToTopButton.classList.add('active');

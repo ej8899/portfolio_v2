@@ -4,9 +4,9 @@ import Button from '../button/Button';
 import './Hero.scss';
 import globalconfig from '../../config';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
-import { FormEvent, useEffect, useRef, useState } from 'react';
+import { FormEvent, LegacyRef, useEffect, useRef, useState } from 'react';
 
-function Hero(props) {
+function Hero(props: { reference: LegacyRef<HTMLElement> | undefined }) {
   return (
     <section
       id='hero'
