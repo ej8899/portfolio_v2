@@ -69,7 +69,7 @@ function About(props) {
           </div>
         </div>
 
-        <div className='column centered_grid'>
+        <div className='column centered_grid about__wrapper'>
           <h2 id='about__title'>About Me</h2>
           <div className='subtitle-message'>Get to know a bit more about me.</div>
           <div className='about__content' ref={aboutRef}>
