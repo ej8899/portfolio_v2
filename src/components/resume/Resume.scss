@@ -208,12 +208,13 @@ $timebarbasecolor: #00bfb250;
 	margin-bottom: -100px;
   // border: 2px solid blue;
 
+
 	&:nth-child(even) {
 		.timeline-content {
 			float: right;
 			padding: 40px 30px 10px 30px;
       transform: rotate($rotate);
-      
+
 			.date {
 				right: auto;
 				left: 0;
@@ -294,6 +295,10 @@ $timebarbasecolor: #00bfb250;
 
 
 .timeline-card {
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: 0 10px 25px 5px teal;
+  }
 	padding: 0!important;
 
 	p {
