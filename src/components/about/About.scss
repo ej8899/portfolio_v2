@@ -13,8 +13,9 @@
   h2 {
     position: relative;
     
-    margin-bottom: var(--about-gap);
-    
+    // margin-bottom: var(--about-gap);
+    padding-bottom: 0;
+    margin-bottom: 0;
     color: var(--clr-neutral-900);
 
     text-shadow: 
@@ -52,7 +53,7 @@
     z-index: 5;
     opacity: 0;
     transform: translateY(30%);
-
+    padding-top: 1rem;
     transition: opacity 1.25s ease-out, transform 0.5s ease-out;
 
     &.animate-in {

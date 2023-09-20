@@ -45,7 +45,9 @@ function Portfolio(props) {
         <h2 className='portfolio__title' ref={titleRef}>
           My Portfolio
         </h2>
-
+        <div className='portfolio__subtitle-message subtitle-message'>
+          A few favorite projects - past & present!
+        </div>
         {/* featured projects */}
         {PROJECTS.filter((project) => project.featured).map((project, i) => {
           projectNum++;

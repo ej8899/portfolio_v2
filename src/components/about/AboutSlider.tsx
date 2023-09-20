@@ -31,6 +31,7 @@ function AboutSlider() {
         <h2 id='faqs' className='faqs__title'>
           Skills & Traits
         </h2>
+        <div className='subtitle-message'>A little bit about my expertise.</div>
       </div>
       <div className='column centered_grid scrolla-element-anim-1 scroll-animate'>
         <Swiper

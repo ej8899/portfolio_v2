@@ -24,6 +24,9 @@
 
     background: none;
     transform: rotate(1.5deg);
+    @media screen and (max-width: 850px) {
+      transform: rotate(0deg);
+    }
     border-radius: var(--border-radius-200);
     cursor: pointer;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
