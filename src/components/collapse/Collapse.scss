@@ -43,7 +43,7 @@
     bottom: -5px;
     left: 0;
     right: 0;
-    max-width: calc(100% - 38px);
+    max-width: calc(100% - 30px);
     height: 3px; /* Set the height of the underline */
     background-color: transparent; /* Make it transparent by default */
     transition: background-color 0.3s; /* Add transition for the background color */
@@ -59,16 +59,18 @@
 }
 
 .collapse-button:hover {
-  background-color: teal;
+  //background-color: teal;
 }
 
 .collapse-arrows {
   fill: black;
+  background-color: orange;
   height: 15px;
   width: 15px;
 }
-.collapse-arrows:hover {
+.button-container:hover .collapse-arrows {
   fill: #ff6600;
+  background-color: black;
 }
 
 .collapsible-section {
