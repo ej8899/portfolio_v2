@@ -210,8 +210,23 @@ function Project({ data, number }: TProps) {
                   </p>
                 );
             })}
+          {data.bulletPoints && data.bulletPoints.length > 0 && (
+            <>
+              <div
+                className='project__text-header'
+                key='libraries used'
+                style={{ paddingBottom: '0px', marginBottom: '0.5rem' }}
+              >
+                Libraries Used:
+              </div>
+              <ul className='project__text-p'>
+                {data.bulletPoints.map((item, index) => (
+                  <li key={index}>- {item}</li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
-
         <div className='project__screenshots'>
           <Carousel imageArray={data.screenshots} isTransitionDone={isTransitionDone} />
         </div>
