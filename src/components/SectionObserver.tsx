@@ -3,16 +3,25 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/prop-types */
-
+import React from '../assets/components/React';
 import { useRef, useEffect, useState } from 'react';
 
-const SectionObserver = ({ sectionName, onEnter, onLeave, children }) => {
-  const sectionRef = useRef(null);
+type SectionObserverProps = {
+  sectionName: string; // Define the type for sectionName
+  onEnter: (sectionName: string) => void; // Adjust the function signature
+  onLeave: (sectionName: string) => void; // Adjust the function signature
+  children: React.ReactNode;
+};
+const SectionObserver = ({ sectionName, onEnter, onLeave, children }: SectionObserverProps) => {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const [isInViewport, setIsInViewport] = useState(false);
 
   const isElementInViewport = () => {
-    const rect = sectionRef.current.getBoundingClientRect();
-    return rect.top <= 50 && rect.bottom >= 0;
+    if (sectionRef.current) {
+      const rect = sectionRef.current.getBoundingClientRect();
+      return rect.top <= 50 && rect.bottom >= 0;
+    }
+    return false;
   };
 
   useEffect(() => {

@@ -8,6 +8,12 @@
   https://swiperjs.com/
   https://swiperjs.com/react#effects
 */
+import { Swiper } from 'swiper';
+
+type CustomEvent = {
+  activeIndex: number;
+  slides: HTMLElement[];
+};
 
 export const servicesSliderProps = {
   slidesPerView: 3,
@@ -33,10 +39,13 @@ export const servicesSliderProps = {
   navigation: true,
 
   on: {
-    // eslint-disable-next-line object-shorthand
-    slideChange: function () {
-      const activeIndex = this.activeIndex; // Index of the active (middle) slide
-      const slides = this.slides; // All slides in the carousel
+    slideChange(this: Swiper) {
+      const customEvent: CustomEvent = {
+        activeIndex: this.activeIndex,
+        slides: this.slides,
+      };
+      const activeIndex = customEvent.activeIndex; // Index of the active (middle) slide
+      const slides = customEvent.slides; // All slides in the carousel
 
       // Remove 'swiper-slide-active' class from all slides
       slides.forEach((slide) => {

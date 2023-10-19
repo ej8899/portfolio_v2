@@ -3,11 +3,16 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { useEffect, useRef, useState } from 'react';
+import React from '../../assets/components/React';
+import { LegacyRef, useEffect, useRef, useState } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import './Resume.scss'; // You can name your CSS file accordingly
 
-function useAnimateOnScreen(itemOnScreen, timelineRef, animationClass: string) {
+function useAnimateOnScreen(
+  itemOnScreen: boolean,
+  timelineRef: React.RefObject<HTMLElement>,
+  animationClass: string,
+) {
   useEffect(() => {
     if (!itemOnScreen) {
       timelineRef.current?.classList.remove(animationClass);
@@ -17,8 +22,8 @@ function useAnimateOnScreen(itemOnScreen, timelineRef, animationClass: string) {
   }, [itemOnScreen]);
 }
 
-function Resume() {
-  const sectionRef = useRef(null);
+function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
   // timeline items for slide in

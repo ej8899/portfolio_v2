@@ -1,17 +1,6 @@
+import React from './React';
 function ArrowSketch() {
-  const svgStyles = {
-    stroke: 'none',
-    strokeWidth: 0,
-    strokeDasharray: 'none',
-    strokeLinecap: 'butt',
-    strokeLinejoin: 'miter',
-    strokeMiterlimit: 10,
-    fill: 'none',
-    fillRule: 'nonzero',
-    opacity: 1,
-  };
-
-  const pathStyles = {
+  const pathStyles: React.CSSProperties = {
     stroke: 'none',
     strokeWidth: 1,
     strokeDasharray: 'none',

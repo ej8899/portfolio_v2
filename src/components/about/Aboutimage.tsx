@@ -6,8 +6,8 @@ import { useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 
 function Aboutimage() {
-  const infoRef1 = useRef<HTMLDivElement>(null);
-  const infoRef2 = useRef<HTMLDivElement>(null);
+  const infoRef1 = useRef<HTMLLIElement>(null);
+  const infoRef2 = useRef<HTMLLIElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
   const pat1Ref = useRef<HTMLDivElement>(null);
   const pat2Ref = useRef<HTMLDivElement>(null);

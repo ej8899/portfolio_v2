@@ -1,50 +1,48 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable react/prop-types */
-import { createContext, useContext, useState, useEffect, SetStateAction } from 'react';
+import React from '../../assets/components/React';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 import './Modal.scss';
 
-// Create a context to manage modals
-const ModalContext = createContext();
+type ModalContextType = {
+  openModal: (modalTitle: string, content: React.ReactNode, modalFooter: string) => void;
+  closeModal: () => void;
+};
 
-// Custom hook to access the ModalContext
+const ModalContext = createContext<ModalContextType | undefined>(undefined);
+
 export function useModal() {
-  return useContext(ModalContext);
+  const context = useContext(ModalContext);
+  if (context === undefined) {
+    throw new Error('useModal must be used within a ModalManager');
+  }
+  return context;
 }
 
-// Modal Manager component
-export function ModalManager({ children }) {
-  const [modal, setModal] = useState(null);
-  const [title, setTitle] = useState(null);
-  const [footer, setFooter] = useState(null);
+export function ModalManager({ children }: { children: React.ReactNode }) {
+  const [modal, setModal] = useState<React.ReactNode | null>(null);
+  const [title, setTitle] = useState<string | null>(null);
+  const [footer, setFooter] = useState<string | null>(null);
   const [isActive, setIsActive] = useState(false);
 
-  // Function to open a modal
-  const openModal = (modaltitle: string, content: SetStateAction<null>, modalfooter: string) => {
+  const openModal = (modalTitle: string, content: React.ReactNode, modalFooter: string) => {
     setModal(content);
-    setTitle(modaltitle);
-    setFooter(modalfooter);
+    setTitle(modalTitle);
+    setFooter(modalFooter);
     setIsActive(false);
-    // console.log('modalmanager: openmodel()');
 
-    // After a short delay, remove the active class from modal-container to trigger the transition
     setTimeout(() => {
       setIsActive(true);
     }, 100);
   };
 
-  // Function to close the current modal
   const closeModal = () => {
     setModal(null);
-    setIsActive(false); // Hide modal and backdrop
+    setIsActive(false);
   };
 
-  // Event listener to close the modal on Escape key press
   useEffect(() => {
-    const handleKeyPress = (e: { keyCode: number }) => {
-      if (e.keyCode === 27) {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
         closeModal();
       }
     };
@@ -65,8 +63,13 @@ export function ModalManager({ children }) {
     };
   }, []);
 
+  const modalContextValue = {
+    openModal,
+    closeModal,
+  };
+
   return (
-    <ModalContext.Provider value={{ openModal, closeModal }}>
+    <ModalContext.Provider value={modalContextValue}>
       {children}
       {modal && (
         <div className={`modal ${isActive ? 'modal-active' : ''}`}>

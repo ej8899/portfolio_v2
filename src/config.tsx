@@ -36,12 +36,12 @@ const globalconfig = {
   },
 
   // usage: isFalsey(value) - is true if false value - checks Nan, 0, null, undefined, false, and ""
-  isFalsey: function (value) {
+  isFalsey: function (value:any) {
     return !value;
   },
 
   // usage: global.config.goSleep(xxx).then(()=> { ... });
-  goSleep: function (ms) {
+  goSleep: function (ms:number) {
     return new Promise(resolve => setTimeout(resolve, ms));
   },
 };

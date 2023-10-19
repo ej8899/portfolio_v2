@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -26,6 +28,9 @@ const chatbotChangeLog = 'v1.0 - 2023-08 - initial roll out';
 let showQuickReplies = false;
 let chatbotScore = 0;
 
+// for APIs
+let geoIP;
+
 // avatar coming from free API here: https://ui-avatars.com/
 // example usage: https://ui-avatars.com/api/?name=%22billy%20bob%22&length=1&rounded=true&background=1481c1
 // return is the image stream itself
@@ -49,100 +54,6 @@ const popOutIcon =`<svg class="popoutIcon" xmlns='http://www.w3.org/2000/svg' he
 <path d='M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z' />
 </svg>`;
 
-
-
-//
-// EASTER EGG Stuff.
-//
-
-
-async function fetchFido() {
-  try {
-    const response = await fetch('https://dog.ceo/api/breeds/image/random', { headers: {
-      Accept: "application/json",
-    },
-    });
-    const data = await response.json();
-    return data.message;
-  } catch (error) {
-    console.error('Error fetching fido photo:', error);
-    return [];
-  }
-}
-const fidoImageURL = await fetchFido();
-console.log("fidoURL",fidoImageURL);
-
-// location by API
-// https://ip-api.com/docs/api:json
-async function fetchIPGeolocation() {
-  try {
-    const response = await fetch('http://ip-api.com/json/', { headers: {
-      Accept: "application/json",
-    },
-    });
-    const data = await response.json();
-    let city = '';
-    if (data.city == 'Amhertsburg') {
-      city = 'Amherstburg';
-    } else {
-      city = data.city;
-    }
-    return {region: data.regionName, city};
-  } catch (error) {
-    console.error('Error fetching geo IP:', error);
-    return [];
-  }
-}
-const geoIP = await fetchIPGeolocation();
-console.log("GEO IP",geoIP);
-
-// weather  API
-// https://ip-api.com/docs/api:json
-async function fetchWx() {
-  try {
-    const response = await fetch(`https://wttr.in/${geoIP.city},${geoIP.region}?format=3`, { headers: {
-      Accept: "application/html",
-    },
-    });
-    const data = await response.text();
-    return data;
-  } catch (error) {
-    console.error('Error fetching wx:', error);
-    return [];
-  }
-}
-const weatherReport = await fetchWx();
-console.log("wx",weatherReport);
-
-// dad jokes
-async function fetchJokes() {
-  try {
-    const response = await fetch('https://icanhazdadjoke.com/', { headers: {
-      Accept: "application/json",
-    },
-    });
-    const data = await response.json();
-    return data.joke;
-  } catch (error) {
-    console.error('Error fetching jokes:', error);
-    return [];
-  }
-}
-const jotd = await fetchJokes();
-
-async function fetchChuckNorris() {
-  try {
-    const response = await fetch('https://api.chucknorris.io/jokes/random', { headers: {
-      Accept: "application/json",
-    },
-    });
-    const data = await response.json();
-    return data.value;
-  } catch (error) {
-    console.error('Error fetching jokes:', error);
-    return [];
-  }
-}
 
 function getTimePeriod() {
   const currentHour = new Date().getHours();
@@ -293,12 +204,12 @@ const intents = {
   },
   weather: {
     patterns: ['todays weather','weather'],
-    responses: [`Here is the current weather for you:<br>${weatherReport}<br><br>We use your public IP address to figure out your location and therefore your weather, so fingers crossed we got it right!  If not, perhaps you're behind a firewall!<br><br>If we got your town right, and are a bit concerned about privacy, you might want to study up on [cybersecurity] and how to protect your online identity!`],
+    responses: [`Sorry, no weather report for today!`],
     replies: 0,
   },
   whereami: {
     patterns: ['my location','geolocation','my address','where am i'],
-    responses: [`Currently, your computer is showing you in <br>${geoIP.city},${geoIP.region}.<br><br>We use your public IP address to figure out your location and therefore your weather, so fingers crossed we got it right!  If not, perhaps you're behind a firewall!`],
+    responses: [`Sorry, we don't know where are!`],
     replies: 0,
   },
   adventureGame: {
@@ -329,25 +240,28 @@ const intents = {
   jokes: {
     patterns: ['tell me a joke','dad joke','jokes','joke','know any jokes','make me laugh'],
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-    responses: [await fetchJokes() + ' 😆',await fetchJokes() + ' 🤣', await fetchJokes() + ' 😂', await fetchJokes() + ' 🤓', await fetchJokes() + ' 🤨'],
+    responses: ['My wife said I should do lunges to stay in shape. That would be a big step forward.',
+    'I thought the dryer was shrinking my clothes. Turns out it was the refrigerator all along.',
+    'I thought the dryer was shrinking my clothes. Turns out it was the refrigerator all along.',
+    'What did the janitor say when he jumped out of the closet? Supplies!',
+    'Why don\'t eggs tell jokes? They\'d crack each other up.',
+    ],
     replies: 0,
   },
   dogPhoto: {
     patterns: ['show me a dog','dog photo'],
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-    responses: [`<img alt="dog of the day" src="${fidoImageURL}">`],
+    responses: [`we love dog photos too, but don't have any available right now`],
     replies: 0,
   },
   chucknorris: {
     patterns: ['chuck norris','norris','chucknorris','chuck'],
     // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-    responses: [await fetchChuckNorris(),
-      await fetchChuckNorris(),
-      await fetchChuckNorris(),
-      await fetchChuckNorris(),
-      await fetchChuckNorris(),
-      await fetchChuckNorris(),
-      await fetchChuckNorris(),
+    responses: [ 'Time waits for no man. Unless that man is Chuck Norris',
+    'When the Boogeyman goes to sleep every night he checks his closet for Chuck Norris',
+    'When Chuck Norris does a pushup, he is pushing the Earth down.',
+    'There has never been a hurricane named Chuck because it would have destroyed everything.',
+    'Chuck Norris never retreats; He just attacks in the opposite direction.'
     ],
     replies: 0,
   },

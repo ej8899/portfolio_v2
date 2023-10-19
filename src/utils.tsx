@@ -18,7 +18,7 @@ export function initCursor() {
       mouseY = window.innerHeight / 2;
 
   let cursor = {
-    el: document.querySelector(".cursor"),
+    el: document.querySelector(".cursor") as HTMLElement,
     x: window.innerWidth / 2,
     y: window.innerHeight / 2,
     w: 30,
@@ -26,7 +26,7 @@ export function initCursor() {
     update: function () {
       let l = this.x - this.w / 2;
       let t = this.y - this.h / 2;
-      this.el.style.transform = "translate3d(" + l + "px," + t + "px, 0)";
+      this.el!.style.transform = "translate3d(" + l + "px," + t + "px, 0)";
     },
   };
 
@@ -40,10 +40,10 @@ export function initCursor() {
   );
   link.forEach((link) => {
     link.addEventListener("mouseenter", () => {
-      cursor.el.classList.add("cursor-zoom");
+      cursor.el!.classList.add("cursor-zoom");
     });
     link.addEventListener("mouseleave", () => {
-      cursor.el.classList.remove("cursor-zoom");
+      cursor.el!.classList.remove("cursor-zoom");
     });
   });
 
@@ -53,14 +53,14 @@ export function initCursor() {
     cursor.y = lerp(cursor.y, mouseY, 0.08);
     cursor.update();
   }
-  function lerp(start, end, amt) {
+  function lerp(start:number, end:number, amt:number) {
     return (1 - amt) * start + amt * end;
   }
 }
 
 export const activeAnimation = () => {
-  const progress_inner = document.querySelectorAll(".scroll-animate"),
-    triggerBottom = (window.innerHeight / 5) * 5 - 20;
+  const progress_inner = document.querySelectorAll(".scroll-animate") as NodeListOf<HTMLElement>;
+  const triggerBottom = (window.innerHeight / 5) * 5 - 20;
   progress_inner.forEach((box) => {
     const boxTop = box.getBoundingClientRect().top;
     if (boxTop < triggerBottom) {

@@ -9,7 +9,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
+// @ts-ignore: Object is possibly 'null'.
+import React from '../assets/components/React';
 import { SetStateAction, useEffect, useRef, useState } from 'react';
 import About from '../components/about/About';
 import Contact from '../components/contact/Contact';
@@ -45,17 +46,17 @@ function App() {
     resume: useRef(null),
   };
 
-  const handleEnter = (sectionName, intersectionRatio) => {
+  const handleEnter = (sectionName: string) => {
     setActiveSection(sectionName);
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     console.log(`Section entered: ${sectionName}`);
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleLeave = (sectionName) => {
+  const handleLeave = (sectionName: string) => {
     // setActiveSection(null);
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    // console.log(`Section left: ${sectionName}`);
+    console.log(`Section left: ${sectionName}`);
   };
 
   // chatbot
@@ -101,20 +102,30 @@ function App() {
       // scrollY = window.scrollY;
       // add the scroll to top button
       if (window.scrollY > 300) {
-        scrollToTopButton.classList.add('active');
-        line1.classList.add('nowblack');
-        line2.classList.add('nowblack');
+        if (scrollToTopButton) {
+          scrollToTopButton.classList.add('active');
+          if (line1 && line2) {
+            line1.classList.add('nowblack');
+            line2.classList.add('nowblack');
+          }
+        }
       } else {
-        scrollToTopButton.classList.remove('active');
-        line1.classList.remove('nowblack');
-        line2.classList.remove('nowblack');
+        if (scrollToTopButton) {
+          scrollToTopButton.classList.remove('active');
+          if (line1 && line2) {
+            line1.classList.remove('nowblack');
+            line2.classList.remove('nowblack');
+          }
+        }
       }
     });
 
-    scrollToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      // window.removeEventListener('resize', handleResize);
-    });
+    if (scrollToTopButton) {
+      scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // window.removeEventListener('resize', handleResize);
+      });
+    }
   }, []);
 
   useEffect(() => {
@@ -125,9 +136,9 @@ function App() {
     // <WindowContext.Provider value={{ height, width }}>
     <>
       <div className='appwrapper'>
-        <Header sectionName={activeSection} />
+        <Header sectionName={activeSection || ''} />
         <SectionObserver sectionName='hero' onEnter={handleEnter} onLeave={handleLeave}>
-          <Hero vscroll={scrollY} reference={sectionRefs.hero} />
+          <Hero reference={sectionRefs.hero} />
         </SectionObserver>
         <SectionObserver sectionName='about' onEnter={handleEnter} onLeave={handleLeave}>
           <About reference={sectionRefs.about} />

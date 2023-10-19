@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="As a web developer, I specialize in creating functional and visually pleasing web applications using modern technologies such as React, TypeScript, Node, Firebase, and more. Explore my portfolio, about section and drop me a line in the contact form."
+      content="As a professional web and applications developer, I specialize in creating functional and visually pleasing  applications and web sites using modern technologies such as React, TypeScript, Node, PostgreSQL, and more. Explore here and drop me a line in the contact form when you're ready to work together!"
     />
-    <title>Ernie Johnson: Web Developer Portfolio</title>
+    <title>Ernie Johnson: Your Professional Web & Application Developer</title>
+
+
     <!-- FONTS -->
     <link
       rel="stylesheet"
@@ -29,23 +31,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link
-          rel="stylesheet"
-          href="assets/vendors/splitting.css"
-          type="text/css"
-          media="all"
-        />
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
-  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link
+    rel="stylesheet"
+    href="data:text/css;base64,LyogaHR0cHM6Ly9zcGxpdHRpbmcuanMub3JnL2d1aWRlLmh0bWwjd2hhdC1pcy1zcGxpdHRpbmcgKi8KCi8qIFJlY29tbWVuZGVkIHN0eWxlcyBmb3IgU3BsaXR0aW5nICovCi5zcGxpdHRpbmcgLndvcmQsCi5zcGxpdHRpbmcgLmNoYXIgewogIGRpc3BsYXk6IGlubGluZS1ibG9jazsKfQoKLyogUHN1ZWRvLWVsZW1lbnQgY2hhcnMgKi8KLnNwbGl0dGluZyAuY2hhciB7CiAgcG9zaXRpb246IHJlbGF0aXZlOwp9CgovKioKICogUG9wdWxhdGUgdGhlIHBzdWVkbyBlbGVtZW50cyB3aXRoIHRoZSBjaGFyYWN0ZXIgdG8gYWxsb3cgZm9yIGV4cGFuZGVkIGVmZmVjdHMKICogU2V0IHRvIGBkaXNwbGF5OiBub25lYCBieSBkZWZhdWx0OyBqdXN0IGFkZCBgZGlzcGxheTogYmxvY2tgIHdoZW4geW91IHdhbnQKICogdG8gdXNlIHRoZSBwc3VlZG8gZWxlbWVudHMKICovCi5zcGxpdHRpbmcgLmNoYXI6OmJlZm9yZSwKLnNwbGl0dGluZyAuY2hhcjo6YWZ0ZXIgewogIGNvbnRlbnQ6IGF0dHIoZGF0YS1jaGFyKTsKICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgdG9wOiAwOwogIGxlZnQ6IDA7CiAgdmlzaWJpbGl0eTogaGlkZGVuOwogIHRyYW5zaXRpb246IGluaGVyaXQ7CiAgdXNlci1zZWxlY3Q6IG5vbmU7Cn0KCi8qIEV4cGFuZGVkIENTUyBWYXJpYWJsZXMgKi8KCi5zcGxpdHRpbmcgewogIC8qIFRoZSBjZW50ZXIgd29yZCBpbmRleCAqLwogIC0td29yZC1jZW50ZXI6IGNhbGMoKHZhcigtLXdvcmQtdG90YWwpIC0gMSkgLyAyKTsKCiAgLyogVGhlIGNlbnRlciBjaGFyYWN0ZXIgaW5kZXggKi8KICAtLWNoYXItY2VudGVyOiBjYWxjKCh2YXIoLS1jaGFyLXRvdGFsKSAtIDEpIC8gMik7CgogIC8qIFRoZSBjZW50ZXIgY2hhcmFjdGVyIGluZGV4ICovCiAgLS1saW5lLWNlbnRlcjogY2FsYygodmFyKC0tbGluZS10b3RhbCkgLSAxKSAvIDIpOwp9Cgouc3BsaXR0aW5nIC53b3JkIHsKICAvKiBQZWNlbnQgKDAtMSkgb2YgdGhlIHdvcmQncyBwb3NpdGlvbiAqLwogIC0td29yZC1wZXJjZW50OiBjYWxjKHZhcigtLXdvcmQtaW5kZXgpIC8gdmFyKC0td29yZC10b3RhbCkpOwoKICAvKiBQZWNlbnQgKDAtMSkgb2YgdGhlIGxpbmUncyBwb3NpdGlvbiAqLwogIC0tbGluZS1wZXJjZW50OiBjYWxjKHZhcigtLWxpbmUtaW5kZXgpIC8gdmFyKC0tbGluZS10b3RhbCkpOwp9Cgouc3BsaXR0aW5nIC5jaGFyIHsKICAvKiBQZXJjZW50ICgwLTEpIG9mIHRoZSBjaGFyJ3MgcG9zaXRpb24gKi8KICAtLWNoYXItcGVyY2VudDogY2FsYyh2YXIoLS1jaGFyLWluZGV4KSAvIHZhcigtLWNoYXItdG90YWwpKTsKCiAgLyogT2Zmc2V0IGZyb20gY2VudGVyLCBwb3NpdGl2ZSAmIG5lZ2F0aXZlICovCiAgLS1jaGFyLW9mZnNldDogY2FsYyh2YXIoLS1jaGFyLWluZGV4KSAtIHZhcigtLWNoYXItY2VudGVyKSk7CgogIC8qIEFic29sdXRlIGRpc3RhbmNlIGZyb20gY2VudGVyLCBvbmx5IHBvc2l0aXZlICovCiAgLS1kaXN0YW5jZTogY2FsYygKICAgICAodmFyKC0tY2hhci1vZmZzZXQpICogdmFyKC0tY2hhci1vZmZzZXQpKSAvIHZhcigtLWNoYXItY2VudGVyKQogICk7CgogIC8qIERpc3RhbmNlIGZyb20gY2VudGVyIHdoZXJlIC0xIGlzIHRoZSBmYXIgbGVmdCwgMCBpcyBjZW50ZXIsIDEgaXMgZmFyIHJpZ2h0ICovCiAgLS1kaXN0YW5jZS1zaW5lOiBjYWxjKHZhcigtLWNoYXItb2Zmc2V0KSAvIHZhcigtLWNoYXItY2VudGVyKSk7CgogIC8qIERpc3RhbmNlIGZyb20gY2VudGVyIHdoZXJlIDEgaXMgZmFyIGxlZnQvZmFyIHJpZ2h0LCAwIGlzIGNlbnRlciAqLwogIC0tZGlzdGFuY2UtcGVyY2VudDogY2FsYygodmFyKC0tZGlzdGFuY2UpIC8gdmFyKC0tY2hhci1jZW50ZXIpKSk7Cn0KCi5zcGxpdHRpbmcuY2VsbHMgaW1nIHsgd2lkdGg6IDEwMCU7IGRpc3BsYXk6IGJsb2NrOyB9CgpAc3VwcG9ydHMgKCBkaXNwbGF5OiBncmlkICkgewogIC5zcGxpdHRpbmcuY2VsbHMgewogICAgcG9zaXRpb246IHJlbGF0aXZlOwogICAgb3ZlcmZsb3c6IGhpZGRlbjsKICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7CiAgICB2aXNpYmlsaXR5OiBoaWRkZW47CiAgfQoKICAuc3BsaXR0aW5nIC5jZWxsLWdyaWQgewogICAgYmFja2dyb3VuZDogaW5oZXJpdDsKICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICAgIHRvcDogMDsKICAgIGxlZnQ6IDA7CiAgICB3aWR0aDogMTAwJTsKICAgIGhlaWdodDogMTAwJTsKICAgIGRpc3BsYXk6IGdyaWQ7CiAgICBncmlkLXRlbXBsYXRlOiByZXBlYXQoIHZhcigtLXJvdy10b3RhbCksIDFmciApIC8gcmVwZWF0KCB2YXIoLS1jb2wtdG90YWwpLCAxZnIgKTsKICB9CgogIC5zcGxpdHRpbmcgLmNlbGwgewogICAgYmFja2dyb3VuZDogaW5oZXJpdDsKICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsKICAgIG92ZXJmbG93OiBoaWRkZW47CiAgfQoKICAuc3BsaXR0aW5nIC5jZWxsLWlubmVyIHsKICAgIGJhY2tncm91bmQ6IGluaGVyaXQ7CiAgICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgICB2aXNpYmlsaXR5OiB2aXNpYmxlOwogICAgLyogU2l6ZSB0byBmaXQgdGhlIHdob2xlIGNvbnRhaW5lciBzaXplICovCiAgICB3aWR0aDogY2FsYygxMDAlICogdmFyKC0tY29sLXRvdGFsKSk7CiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAqIHZhcigtLXJvdy10b3RhbCkpOwogICAgLyogUG9zaXRpb24gcHJvcGVybHkgKi8KICAgIGxlZnQ6IGNhbGMoLTEwMCUgKiB2YXIoLS1jb2wtaW5kZXgpKTsKICAgIHRvcDogY2FsYygtMTAwJSAqIHZhcigtLXJvdy1pbmRleCkpOwogIH0KCiAgLyogSGVscGVyIHZhcmlhYmxlcyBmb3IgYWR2YW5jZWQgZWZmZWN0cyAqLwogIC5zcGxpdHRpbmcgLmNlbGwgewogICAgLS1jZW50ZXIteDogY2FsYygodmFyKC0tY29sLXRvdGFsKSAtIDEpIC8gMik7CiAgICAtLWNlbnRlci15OiBjYWxjKCh2YXIoLS1yb3ctdG90YWwpIC0gMSkgLyAyKTsKCiAgICAvKiBPZmZzZXQgZnJvbSBjZW50ZXIsIHBvc2l0aXZlICYgbmVnYXRpdmUgKi8KICAgIC0tb2Zmc2V0LXg6IGNhbGModmFyKC0tY29sLWluZGV4KSAtIHZhcigtLWNlbnRlci14KSk7CiAgICAtLW9mZnNldC15OiBjYWxjKHZhcigtLXJvdy1pbmRleCkgLSB2YXIoLS1jZW50ZXIteSkpOwoKICAgIC8qIEFic29sdXRlIGRpc3RhbmNlIGZyb20gY2VudGVyLCBvbmx5IHBvc2l0aXZlICovCiAgICAtLWRpc3RhbmNlLXg6IGNhbGMoICh2YXIoLS1vZmZzZXQteCkgKiB2YXIoLS1vZmZzZXQteCkpIC8gdmFyKC0tY2VudGVyLXgpICk7CgogICAgLyogQWJzb2x1dGUgZGlzdGFuY2UgZnJvbSBjZW50ZXIsIG9ubHkgcG9zaXRpdmUgKi8KICAgIC0tZGlzdGFuY2UteTogY2FsYyggKHZhcigtLW9mZnNldC15KSAqIHZhcigtLW9mZnNldC15KSkgLyB2YXIoLS1jZW50ZXIteSkgKTsKICB9Cn0K"
+    type="text/css"
+    media="all"
+    />
+
+    <link
+    rel="stylesheet"
+    href="./assets/swiper-f6804cc5.css"
+    type="text/css"
+    media="all"
+  />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-
+  
+    <script type="module" crossorigin src="./assets/index-03b6db7c.js"></script>
+    <link rel="stylesheet" href="./assets/index-22bb8c81.css">
   </head>
+
   <body>
     <div id="root"></div>
     

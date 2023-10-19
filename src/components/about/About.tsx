@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
+import React from '../../assets/components/React';
 import { useEffect, useRef } from 'react';
 // import SkillSlider from '../skillslider/SkillSlider';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
@@ -10,14 +11,18 @@ import { useModal } from '../modal/ModalManager';
 import { modalContentEngineer, modalContent2 } from './ModalContent'; // Import the modal content
 import KeywordPopover from '../popover/KeywordPopover';
 
-function About(props) {
+interface AboutProps {
+  reference: React.RefObject<HTMLDivElement>;
+}
+
+function About(props: AboutProps) {
   const aboutRef = useRef<HTMLDivElement>(null);
   const leftColumnRef = useRef<HTMLDivElement>(null);
   const rightColumnRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useElementOnScreen(aboutRef, '-100px');
   const { openModal } = useModal();
 
-  const handleOpenModal = (modalItem) => {
+  const handleOpenModal = (modalItem: string) => {
     // console.log('about- opening modal');
     switch (modalItem) {
       case 'engineer':

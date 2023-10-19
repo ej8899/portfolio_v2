@@ -1,3 +1,4 @@
+import React from '../../assets/components/React';
 import './SkillSlider.scss';
 import { LegacyRef, useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';

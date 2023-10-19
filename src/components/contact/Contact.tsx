@@ -1,3 +1,4 @@
+import React from '../../assets/components/React';
 import { FormEvent, useEffect, useRef, useState } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import Button from '../button/Button';
@@ -7,7 +8,7 @@ import ContactText from './ContactText';
 function Contact() {
   const headerRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
-  const staticInfoRef = useRef<HTMLFormElement>(null);
+  const staticInfoRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useElementOnScreen(headerRef, '-100px');
 
   const [email, setEmail] = useState('');
