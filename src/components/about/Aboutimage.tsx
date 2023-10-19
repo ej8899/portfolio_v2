@@ -1,3 +1,4 @@
+import React from '../../assets/components/React';
 import './About.scss';
 import './Aboutimage.scss';
 import './Aboutresponse.scss';

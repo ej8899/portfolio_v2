@@ -1,4 +1,5 @@
 /* eslint react/prop-types: 0 */
+import React from '../../assets/components/React';
 import { useEffect, useRef, useState, ReactNode } from 'react';
 import './Collapse.scss';
 import useElementOnScreen from '../../hooks/useElementOnScreen';

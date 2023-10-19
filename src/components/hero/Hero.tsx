@@ -1,3 +1,4 @@
+import React from '../../assets/components/React';
 import Github from '../../assets/components/Github';
 import LinkedIn from '../../assets/components/LinkedIn';
 import Button from '../button/Button';

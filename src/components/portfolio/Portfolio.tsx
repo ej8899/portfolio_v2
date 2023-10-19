@@ -1,3 +1,4 @@
+import React from '../../assets/components/React';
 import { LegacyRef, useEffect, useRef, useState } from 'react';
 import Minus from '../../assets/components/Minus';
 import Plus from '../../assets/components/Plus';

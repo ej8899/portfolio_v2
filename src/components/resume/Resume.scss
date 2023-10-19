@@ -97,12 +97,12 @@
 
     text-transform: uppercase;
     font-weight: var(--fw-bold);
-    transform: rotate(-1deg);
+    transform: rotate(0deg);
     transition: transform var(--transition-short) ease-in-out;
 
     &:hover,
     &:focus {
-      transform: scale(1.05) rotate(1deg);
+      transform: scale(1.1) rotate(-3deg);
       // outline: 0;
       border-color: black;
       border: 2px;
@@ -200,7 +200,7 @@ $timebarbasecolor: #00bfb250;
 }
 .timeline-container {
   // border: 2px solid yellow;
-  padding-bottom: 120px;
+  padding-bottom: 160px;
 }
 
 .timeline-item {
@@ -229,7 +229,7 @@ $timebarbasecolor: #00bfb250;
 				top: 30px;
 				left: -15px;
 				border-width: 10px 15px 10px 0;
-				border-color: transparent teal transparent transparent;
+				border-color: transparent black transparent transparent;
 			}
 		}
 	}
@@ -255,7 +255,8 @@ $timebarbasecolor: #00bfb250;
 	//background: #f5f5f5;
   background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
   
-	box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
+	//box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
+  box-shadow: var(--box-shadow-full);
   transform: rotate(-$rotate);
   transition: opacity 1s;
   opacity: 0;
@@ -269,7 +270,7 @@ $timebarbasecolor: #00bfb250;
 		top: 30px;
 		right: -15px;
 		border-width: 10px 0 10px 15px;
-		border-color: transparent transparent transparent teal
+		border-color: transparent transparent transparent black
 	}
 }
 
@@ -295,9 +296,11 @@ $timebarbasecolor: #00bfb250;
 
 
 .timeline-card {
+  border: 2px solid black;
   transition: all 0.3s;
   &:hover {
-    box-shadow: 0 10px 25px 5px teal;
+    box-shadow: 0px 20px 30px -10px teal;
+    //--box-shadow-full: 0px 20px 30px -10px teal;
   }
 	padding: 0!important;
 
