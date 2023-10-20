@@ -28,6 +28,11 @@ import tinyStats from '../assets/project-tinyapp/image-createtinyurl.png';
 import mapWikiMap from '../assets/project-mapmywiki/screenshot-main.png';
 import mapWikiSelect from '../assets/project-mapmywiki/screenshot-select.png';
 
+import yourtab6 from '../assets/project-yourtab/yourtab6.png';
+import yourtab2 from '../assets/project-yourtab/yourtab2.png';
+import yourtab3 from '../assets/project-yourtab/yourtab3.png';
+import yourtab4 from '../assets/project-yourtab/yourtab4.png';
+
 export interface IProject {
   title: string;
   featured: boolean;
@@ -66,6 +71,7 @@ type TTech =
   | 'bootstrap'
   | 'postgres'
   | 'vite'
+  | 'php'
   | 'express';
 
 const PROJECTS: IProject[] = [
@@ -186,6 +192,36 @@ const PROJECTS: IProject[] = [
       },
     ],
     bulletPoints: ['google fonts', 'google maps api', 'fontawesome', 'ajax'],
+  },
+
+  {
+    title: 'YourTab!',
+    featured: true,
+    links: {
+      live: 'https://chrome.google.com/webstore/detail/lnakjbaboaknheaialecgjokpbgoljdc',
+      repo: 'https://github.com/ej8899/newtab',
+    },
+    techIcons: ['javascript', 'css', 'php'],
+    screenshots: [
+      { url: yourtab6, alt: 'main view of YourTab!' },
+      { url: yourtab2, alt: 'Do not like an image? Just block it!' },
+      { url: yourtab3, alt: 'Settings to adjust your images, and other items!' },
+      { url: yourtab4, alt: 'Calendar, events and many more mini apps included!' },
+    ],
+    description: [
+      { type: 'header', value: 'The Inspiration' },
+      {
+        type: 'p',
+        value:
+          'This project stemmed off a freelance "new tab" page I had recently completed for a corporate client. I wanted to simply take that framework, add on a few features and make it publically usable. Besides, every developer project needs a to do list application in it - so why not put a to do list inside a more significant application!',
+      },
+      {
+        type: 'more|what I learned...',
+        value:
+          'I have already created Chrome Store applications in the past, so working on this application was not new. But it was a good project to refresh my knowledge of manipulating the DOM with basic Javascript as well as utilizing some simple PHP middleware to Unsplash API for the images.',
+      },
+    ],
+    bulletPoints: [],
   },
 
   {

@@ -22,6 +22,7 @@ import Jquery from '../../assets/components/Jquery';
 import Bootstrapicon from '../../assets/components/Bootstrapicon';
 import Express from '../../assets/components/Express';
 import Mui from '../../assets/components/Mui';
+import Php from '../../assets/components/Php';
 
 import './Project.scss';
 
@@ -165,6 +166,10 @@ function Project({ data, number }: TProps) {
               case 'postgres':
                 techComponent = <Postgres />;
                 tooltip = 'PostgreSQL';
+                break;
+              case 'php':
+                techComponent = <Php />;
+                tooltip = 'PHP';
                 break;
               case 'express':
                 techComponent = <Express />;
