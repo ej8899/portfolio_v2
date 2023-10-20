@@ -215,10 +215,16 @@
   cursor: pointer;
   //transition: opacity 0.3s, transform 1.3s;
   animation: fadeOut 2s;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
+  border: 1px solid black;
 }
 
 #scrollToTopButton:hover {
-  opacity: 0.8;
+  opacity: 1.0;
+  //display:block;
+  //transform: translate(0, 0) scale(1.3);
+  color:black;
 }
 
 #scrollToTopButton.active {
@@ -247,10 +253,14 @@
   //transition: opacity 0.3s, transform 1.3s;
   //animation: fadeOut 2s;
   z-index: 49;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
 }
 
 #chatBotButton:hover {
-  opacity: 0.8;
+  opacity: 1.0;
+  color: black;
 }
 
 #chatBotButton.active {
