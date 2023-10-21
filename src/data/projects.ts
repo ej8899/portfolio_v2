@@ -216,12 +216,17 @@ const PROJECTS: IProject[] = [
           'This project stemmed off a freelance "new tab" page I had recently completed for a corporate client. I wanted to simply take that framework, add on a few features and make it publically usable. Besides, every developer project needs a to do list application in it - so why not put a to do list inside a more significant application!',
       },
       {
+        type: 'more|interesting features...',
+        value:
+          'Although the Chrome App Store does manage versions and push them to the end user, I did develop a hosted app version management system that will alert the end user if they are behind and prompt them to update.  YourTab fetches an update JSON once a day that contains version and change log information for the user.  An alert "badge" is displayed if there is newer version than being used.',
+      },
+      {
         type: 'more|what I learned...',
         value:
-          'I have already created Chrome Store applications in the past, so working on this application was not new. But it was a good project to refresh my knowledge of manipulating the DOM with basic Javascript as well as utilizing some simple PHP middleware to Unsplash API for the images.',
+          'Pushing the app into production with my PHP middleware also required me to work with .htaccess for environment variables and access rights. It was good a good experience to work with the approval processes on both Unsplash and the Google Chrome Store. ',
       },
     ],
-    bulletPoints: [],
+    bulletPoints: ['google fonts', 'local storage', 'unsplash api', 'weather api'],
   },
 
   {

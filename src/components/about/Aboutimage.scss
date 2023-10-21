@@ -11,6 +11,7 @@
 
 .photo-scaling {
   transform: scale(0.5);
+  transform-style: preserve-3d;
   transition: transform 0.4s;
   padding-top:500px;
   position: relative;
