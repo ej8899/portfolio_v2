@@ -87,5 +87,7 @@ export const stickyNav = () => {
   });
 };
 
-
+export const appTitle = (newTitle:string) => {
+  return document.title = newTitle;
+}
 

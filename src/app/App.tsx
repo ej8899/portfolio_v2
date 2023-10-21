@@ -19,7 +19,7 @@ import Header from '../components/header/Header';
 import Hero from '../components/hero/Hero';
 import Portfolio from '../components/portfolio/Portfolio';
 import './App.scss';
-import { stickyNav, initCursor, activeAnimation } from '../utils';
+import { stickyNav, initCursor, activeAnimation, appTitle } from '../utils';
 // eslint-disable-next-line import/extensions, import/no-extraneous-dependencies
 import Splitting from 'splitting';
 import SkillSlider from '../components/skillslider/SkillSlider';
@@ -34,6 +34,7 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 // export const WindowContext = createContext({ height: 0, width: 0 });
 
 function App() {
+  // appTitle('ErnieJohnson.ca - Web Dev Portfolio');
   const { height, width } = useWindowDimensions();
   // console.log('window height:', height);
   // what element is on screenconst [activeSection, setActiveSection] = useState(null);
@@ -48,8 +49,23 @@ function App() {
 
   const handleEnter = (sectionName: string) => {
     setActiveSection(sectionName);
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     console.log(`Section entered: ${sectionName}`);
+    switch (sectionName) {
+      case 'about':
+        appTitle('about -> ErnieJohnson.ca');
+        break;
+      case 'portfolio':
+        appTitle('portfolio -> ErnieJohnson.ca');
+        break;
+      case 'resume':
+        appTitle('resume -> ErnieJohnson.ca');
+        break;
+      case 'contact':
+        appTitle('contact -> ErnieJohnson.ca');
+        break;
+      default:
+        appTitle('ErnieJohnson.ca - Web Dev Portfolio');
+    }
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -148,8 +164,10 @@ function App() {
         <SectionObserver sectionName='portfolio' onEnter={handleEnter} onLeave={handleLeave}>
           <Portfolio reference={sectionRefs.portfolio} />
         </SectionObserver>
-        <SectionObserver sectionName='contact' onEnter={handleEnter} onLeave={handleLeave}>
+        <SectionObserver sectionName='resume' onEnter={handleEnter} onLeave={handleLeave}>
           <Resume reference={sectionRefs.resume} />
+        </SectionObserver>
+        <SectionObserver sectionName='contact' onEnter={handleEnter} onLeave={handleLeave}>
           <Contact />
         </SectionObserver>
         <Footer />
