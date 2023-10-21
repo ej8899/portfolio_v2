@@ -154,7 +154,7 @@
     &-p {
       //margin-bottom: var(--p-gap);
       line-height: 1.5;
-      color: var(--clr-neutral-300);
+      color: var(--clr-neutral-300) !important;
     }
 
     @media (max-width: 850px) {
@@ -174,5 +174,11 @@
     &__text-header {
       text-align: center;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  ul {
+    text-align: center;
   }
 }

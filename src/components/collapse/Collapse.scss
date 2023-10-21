@@ -78,6 +78,12 @@
   overflow: hidden;
 }
 
+.collapsible-header {
+  @media (max-width: 500px) {
+    text-align: center;
+  }
+}
+
 .collapsible-wrapper.open {
   max-height: 1000px; /* Adjust this value based on your content's size */
   padding-top: 1rem;

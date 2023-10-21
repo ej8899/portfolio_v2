@@ -226,7 +226,9 @@ function Project({ data, number }: TProps) {
               </div>
               <ul className='project__text-p'>
                 {data.bulletPoints.map((item, index) => (
-                  <li key={index}>- {item}</li>
+                  <li key={index}>
+                    <i className='fa-solid fa-caret-right fa-2xs'></i> {item}
+                  </li>
                 ))}
               </ul>
             </>
