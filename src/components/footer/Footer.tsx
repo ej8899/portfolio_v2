@@ -11,7 +11,7 @@ function Footer() {
       <div className='footer__wrapper copyright_text'>
             <div className='footer-section'>
               <div
-                className='social-links scrolla-element-anim-1 scroll-animate'
+                className='social-links'
                 data-animate='active'
               >
                 <a target='_new' rel='nofollow' href={globalconfig.link.twitter}>
@@ -33,7 +33,7 @@ function Footer() {
             </div>
             <div className='footer-section'>
               <div
-                className='copyright-text scrolla-element-anim-1 scroll-animate'
+                className='copyright-text'
                 data-animate='active'
               >
                 © {currentYear} <strong>ERNIEJOHNSON.CA</strong>. All rights reserved.
@@ -41,7 +41,7 @@ function Footer() {
             </div>
             <div className='footer-section'>
               <div
-                className='copyright-text scrolla-element-anim-1 scroll-animate'
+                className='copyright-text'
                 data-animate='active'
               >
                 version {globalconfig.appVersion}
