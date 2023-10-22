@@ -223,7 +223,7 @@ use {
 }
 
 /* Media queries for responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .skill-details-container {
     flex-direction: column;
   }
@@ -267,9 +267,10 @@ use {
   transition: transform 0.5s ease-out;
 }
 
-.skill-card:hover::before{
-  transition-delay:0.3s ;
-  transform: scale(115,1.5);
+.skill-card:hover{
+  //transition-delay:0.3s ;
+  //transform: scale(115,1.5);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .skill-card:hover{

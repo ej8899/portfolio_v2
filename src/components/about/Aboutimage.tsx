@@ -33,8 +33,6 @@ function Aboutimage() {
     }, 100);
   }, [isOnScreen]);
 
-  // TODO bug in circle if scrolling into view - it already fades in, then does the fadeInUp animation - need to keep circle off for start.
-
   return (
     <div className='section about-started photo-scaling'>
       <div className='slide'>
