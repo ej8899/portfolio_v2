@@ -11,7 +11,6 @@ function Header(props: { sectionName: string }) {
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const isHeaderOffScreen = useElementOffScreen(headerRef);
-  // props.sectionName - if portfolio, change header theme
 
   useEffect(() => {
     if (!isHeaderOffScreen) {
@@ -22,8 +21,8 @@ function Header(props: { sectionName: string }) {
   }, [isHeaderOffScreen]);
 
   return (
-    <div className={'centered_nav header'}>
-      <header className='column' aria-label='header with navigation' ref={headerRef}>
+    <div className={'centered_nav header '}>
+      <header className={'column'} aria-label='header with navigation' ref={headerRef}>
         <LogoIcon />
         <nav className={isMenuOpen ? 'nav__open' : 'nav__closed'}>
           <ul

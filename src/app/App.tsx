@@ -49,7 +49,6 @@ function App() {
 
   const handleEnter = (sectionName: string) => {
     setActiveSection(sectionName);
-    console.log(`Section entered: ${sectionName}`);
     switch (sectionName) {
       case 'about':
         appTitle('about -> ErnieJohnson.ca');

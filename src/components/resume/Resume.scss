@@ -100,8 +100,7 @@
     transform: rotate(0deg);
     transition: transform var(--transition-short) ease-in-out;
 
-    &:hover,
-    &:focus {
+    &:hover {
       transform: scale(1.1) rotate(-3deg);
       // outline: 0;
       border-color: black;
@@ -297,7 +296,7 @@ $timebarbasecolor: #00bfb250;
 
 .timeline-card {
   border: 2px solid black;
-  transition: all 0.3s;
+  transition: all 1s;
   &:hover {
     box-shadow: 0px 20px 30px -10px teal;
     //--box-shadow-full: 0px 20px 30px -10px teal;

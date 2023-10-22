@@ -205,7 +205,10 @@ function Project({ data, number }: TProps) {
               if (itemType === 'more')
                 return (
                   <Collapse title={typeDescription} key={value}>
-                    <p className='project__text-p'>{value}</p>
+                    <div
+                      className='project__text-p'
+                      dangerouslySetInnerHTML={{ __html: value }}
+                    ></div>
                   </Collapse>
                 );
               else

@@ -77,13 +77,14 @@
       background: var(--clr-neutral-700);
 
       transition: all var(--transition-short) ease-in-out;
-
+      transform: scale(0.8);
       &.currentImage {
         background: var(--clr-primary-100);
+        transform: scale(1.1)
       }
 
       &:hover {
-        transform: scale(1.25);
+        transform: scale(1.1);
       }
 
       &:focus-visible {
