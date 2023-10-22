@@ -122,8 +122,12 @@ const PROJECTS: IProject[] = [
         value:
           'I cant say too much about there being challenges as I had  a great team to work with.  We did have some time zone differences between our group of three, but a weekly catch up meeting via Google Meet and some regular Discord chat messages were all that was required to keep the project on time and on track. Our main working system was to follow the minimal viable project (mvp) plan while myself, assuming role of project manager and front end designer/developer, was able to submit back-end/database API tickets into a shared Trello (Kanban) type board.',
       },
+      {
+        type: 'more|technical features...',
+        value: '<li>google fonts<li>materialUI<li>youtube api<li>chatGPT',
+      },
     ],
-    bulletPoints: ['materialUI', 'google fonts', 'youtube API', 'chatGPT'],
+    bulletPoints: [],
   },
 
   {
@@ -157,8 +161,12 @@ const PROJECTS: IProject[] = [
         value:
           'I should have written an MVP (minimal viable product) plan for the portfolio site. Along the way of developing the portfolio site, there were always new things I wanted to add or otherwise incorporate.  The ChatBot add-in was a good example - a simple idea for an extra has turned itself into an entirely new project within the portfolio project itself!  Note to self: Create and follow your MVP!',
       },
+      {
+        type: 'more|technical features...',
+        value: '<li>google fonts<li>chatGPT<li>vite',
+      },
     ],
-    bulletPoints: ['vite', 'google fonts', 'chatGPT'],
+    bulletPoints: [],
   },
 
   {
@@ -190,8 +198,12 @@ const PROJECTS: IProject[] = [
         value:
           'Time is of course, always a challenge.  More time would have been great so our team could have been adding more features or rolling this project out live for our bootcamp cohort to experiment with in real time. Additional challenges also included creating our own "roll-up" sections, custom "select" lists.  These things are available in well known libraries, but a challenge to make on your own - however, a very good learning experience!',
       },
+      {
+        type: 'more|technical features...',
+        value: '<li>google fonts<li>google maps api<li>fontawesome<li>ajax',
+      },
     ],
-    bulletPoints: ['google fonts', 'google maps api', 'fontawesome', 'ajax'],
+    bulletPoints: [],
   },
 
   {
@@ -223,10 +235,14 @@ const PROJECTS: IProject[] = [
       {
         type: 'more|what I learned...',
         value:
-          'Pushing the app into production with my PHP middleware also required me to work with .htaccess for environment variables and access rights. It was good a good experience to work with the approval processes on both Unsplash and the Google Chrome Store. ',
+          'Pushing the app into production with my PHP middleware also required me to work with .htaccess for environment variables and access rights. The PHP middleware will allow me to apply rate limits over and above the service provider limits and afford opportunity for additional user tracking in the future.',
+      },
+      {
+        type: 'more|technical features...',
+        value: '<li>google fonts<li>local storage<li>unsplash api<li>weather api',
       },
     ],
-    bulletPoints: ['google fonts', 'local storage', 'unsplash api', 'weather api'],
+    bulletPoints: [],
   },
 
   {
@@ -295,8 +311,13 @@ const PROJECTS: IProject[] = [
         value:
           'I really went overboard with LightBnB extra feature. One thing I got heavily invested in to was Google Maps API. I  plotted LightBnB locations on the map, and not only that, but they were plotted based on search results and were also interactive on the map to also search backwards into the main application. Additionally, this use of Google Maps had me dive into caching of API results rather quickly so I could save both costs and time in repeated API calls.',
       },
+      {
+        type: 'more|technical features...',
+        value:
+          '<li>sql (postgres)<li>ajax<li>fontawesome<li>google maps api<li>light/dark theme<li>currency converter',
+      },
     ],
-    bulletPoints: ['SQL', 'Ajax', 'FontAwesome', 'Google Maps API'],
+    bulletPoints: [],
   },
 
   {
@@ -343,8 +364,12 @@ const PROJECTS: IProject[] = [
         value:
           'I added numerous extra features into Tweeter like dark mode, favorites, offensive message flagging, re-Tweeter functionality and a jokes API system. Also implemented was a pagination system - fetching only additional Tweeter messages from the Node implemented data system as required.',
       },
+      {
+        type: 'more|technical features...',
+        value: '<li>google fonts<li>ajax<li>fontawesome',
+      },
     ],
-    bulletPoints: ['FontAwesome', 'Google Fonts', 'Ajax'],
+    bulletPoints: [],
   },
 
   {
@@ -387,8 +412,12 @@ const PROJECTS: IProject[] = [
         value:
           'I took the liberty to add in numerous extra features into TinyApp! on both the server and front end sides.  The server has verbose logging and a quiet mode and on the client/front end side we have a hidden menu bar if not logged in, incorrect password notification, duplicate account error checking, total click counting, unique click counting, and click through logs with graphs for each tiny URL created.',
       },
+      {
+        type: 'more|technical features...',
+        value: '<li>bootstrap',
+      },
     ],
-    bulletPoints: ['bootstrap'],
+    bulletPoints: [],
   },
 ];
 
