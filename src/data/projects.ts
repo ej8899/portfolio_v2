@@ -163,7 +163,7 @@ const PROJECTS: IProject[] = [
       },
       {
         type: 'more|technical features...',
-        value: '<li>google fonts<li>chatGPT<li>vite',
+        value: '<li>google fonts<li>chatGPT<li>vite<li>image optimization',
       },
     ],
     bulletPoints: [],
