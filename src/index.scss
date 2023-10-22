@@ -160,9 +160,9 @@ a:visited {
     color: var(--clr-primary-100);
   }
 
-  &:focus {
-    outline: var(--a11y-outline);
-  }
+  // &:focus {
+  //   outline: var(--a11y-outline);
+  // }
 }
 
 p,

@@ -102,7 +102,6 @@
     padding-right: 1.5rem;
     // max-width: fit-content;
     transition: opacity var(--transition-short) ease-in-out;
-  
     > * {
       width: 32px;
     }
@@ -112,7 +111,7 @@
         width: 24px;
         //margin-top: var(--p-gap);
       }
-
+      background-color: var(--clr-neutral-600);
       // tooltips extend beyond viewport on small screens
       // move the anchor point to the parent __div-icons
       position: relative;

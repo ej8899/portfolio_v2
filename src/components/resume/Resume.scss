@@ -318,18 +318,23 @@ $timebarbasecolor: #00bfb250;
 		}
   .img-lhl {
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('src/assets/images/port-code.png') center center no-repeat;
+    background-size: cover;
   }
   .img-marigold {
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('src/assets/images/port-vgis.png') center center no-repeat;
+    background-size: cover;
   }
   .img-kgl {
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('src/assets/images/port-mapping.png') center center no-repeat;
+    background-size: cover;
   }
   .img-fluor {
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('src/assets/images/port-fluor.png') center center no-repeat;
+    background-size: cover;
   }
   .img-forces {
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('src/assets/images/port-forces.png') center center no-repeat;
+    background-size: cover;
   }
   .img-gsecurity {
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('src/assets/images/port-gsecurity.jpg') center center no-repeat;
@@ -368,7 +373,7 @@ blockquote {
 	right: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
   .overlay-grower {
     left:47px;
   }
