@@ -2,7 +2,7 @@
 // ModalContent.tsx
 
 // Define your modal content as variables
-const modalContentEngineer = (
+export const modalContentEngineer = (
   <>
     <p>
       Software developers cannot freely use the term "software engineer" in Canada as the title of
@@ -24,7 +24,7 @@ const modalContentEngineer = (
       could be subject to fines if used without being licensed.
     </p>
     <p>
-      Sources:
+      <i>Sources:</i>
       <br />
       (1){' '}
       <a
@@ -65,11 +65,32 @@ const modalContentEngineer = (
   </>
 );
 
-const modalContent2 = (
+export const modalContentMProjects = (
   <>
-    <p>Modal 2 content goes here.</p>
+    <p>
+      <img
+        src='src/assets/modals/mprojects-henday.jpg'
+        alt='major highway (27km) & bridges (47) project (Edmonton AB)'
+      ></img>
+      <br />
+      For these major projects (ranging from $300 million to $4.7 billion), my role progressed from
+      Utilities Coordinator to Utilities Superintendent and ultimately Utilities Manager.
+      <br />
+      <br />
+      Duties included managing the safe construction of bridges, roads and buildings in and around
+      existing buried and overhead facilities including major gas and oil pipelines and power
+      systems. This safe work methodology required the use of my tech skills to develop training
+      programs, interactive 'paperwork', sharing of utility information and shared mapping of
+      utility hazards, approval documents and more.
+      <br />
+      <br />
+      The mapping systems I would implement would include Google Maps systems that allowed custom
+      markers and linking back into secure Sharepoint data systems.
+      <br />
+      <br />
+      Additional duties included the management and training of field level workers in safe utility
+      excavation techniques, developing safe execavation training programs (live and via regular
+      'tool box talk' documentation as well as video/Powerpoint presentations).
+    </p>
   </>
 );
-
-// Export the variables
-export { modalContentEngineer, modalContent2 };

@@ -5,10 +5,9 @@ import { useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import './About.scss';
 import Aboutimage from './Aboutimage';
-import Collapse from '../collapse/Collapse';
 
 import { useModal } from '../modal/ModalManager';
-import { modalContentEngineer, modalContent2 } from './ModalContent'; // Import the modal content
+import { modalContentEngineer, modalContentMProjects } from './ModalContent'; // Import the modal content
 import KeywordPopover from '../popover/KeywordPopover';
 
 interface AboutProps {
@@ -26,10 +25,10 @@ function About(props: AboutProps) {
     // console.log('about- opening modal');
     switch (modalItem) {
       case 'engineer':
-        openModal('Software Engineers in 🇨🇦', modalContentEngineer, 'footer text here');
+        openModal('Software Engineers in 🇨🇦', modalContentEngineer, '');
         break;
       case 'majorprojects':
-        openModal('Major Projects...', 'fdfdfd', '');
+        openModal('Major Projects...', modalContentMProjects, '');
         break;
       default:
         break;
