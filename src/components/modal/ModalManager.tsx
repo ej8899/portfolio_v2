@@ -36,8 +36,17 @@ export function ModalManager({ children }: { children: React.ReactNode }) {
   };
 
   const closeModal = () => {
-    setModal(null);
-    setIsActive(false);
+    const modalElement = document.querySelector('.modal-container');
+    const modalMain = document.querySelector('.modal');
+    if (modalElement && modalMain) {
+      modalElement.classList.add('modal-animate-out');
+      modalMain.classList.add('modal-hide');
+    }
+
+    setTimeout(() => {
+      setModal(null);
+      setIsActive(false);
+    }, 300); // 500 milliseconds (0.5 seconds)
   };
 
   useEffect(() => {
