@@ -87,7 +87,7 @@
 }
 .modal-animate-out {
   transition: 0.3s all ease-in-out;
-  transform: scale(0.7) rotate(10deg) !important; /* Initial scale for animation */
+  transform: scale(0.7) rotate(-10deg) !important; /* Initial scale for animation */
   opacity: 0 !important;
 }
 
