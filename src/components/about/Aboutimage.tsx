@@ -42,7 +42,7 @@ function Aboutimage() {
           src='src/assets/images/profile2.png'
           alt='<b>Ernie</b> Johnson'
         />
-        <span className='circle circle-1'></span>
+        <span className='circle circle-1 animate__animated' ref={circleRef}></span>
         <span
           className='circle img-1 animate__animated'
           ref={pat1Ref}

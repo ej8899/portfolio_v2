@@ -4,6 +4,11 @@
 // Define your modal content as variables
 export const modalContentEngineer = (
   <>
+    <img
+      src='src/assets/modals/engineer.png'
+      alt='software engineer working at multi monitor display'
+    ></img>
+    <br />
     <p>
       Software developers cannot freely use the term "software engineer" in Canada as the title of
       "engineer" is protected by law and can only be used by individuals who are licensed by one of
