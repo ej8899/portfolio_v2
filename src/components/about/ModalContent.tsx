@@ -99,3 +99,49 @@ export const modalContentMProjects = (
     </p>
   </>
 );
+
+export const modalContentBootcamp = (
+  <>
+    <p>
+      <img src='src/assets/modals/students.png' alt='Students at a coding bootcamp'></img>
+      <br />
+      Although largely considering myself a self-taught programmer and web developer, I did attend a
+      coding bootcamp program at LighthouseLabs.ca in 2022.
+      <br />
+      <br />
+      This program largely concentrated on Javascript programming along with HTML and CSS, but
+      touched on SQL, Ruby, Ruby on Rails as well (the latter being more of a way to get people
+      exposed to different languages that we could experience during future endeavours).
+      <br />
+      <br />
+      Overall, I found the program to be excellent and would highly recommend it to others.
+      <br />
+      Live instructor led seminars and the availability of "on-demand" mentors was a great way for
+      me to see what was new in the web application development world and renew my interest in
+      developing my skills into a new career path!
+    </p>
+  </>
+);
+
+export const modalContentCommodore = (
+  <>
+    <p>
+      <img src='src/assets/modals/commodore.png' alt='commodore computer and tape drive'></img>
+      <br />
+      Although largely considering myself a self-taught programmer and web developer, I did attend a
+      coding bootcamp program at LighthouseLabs.ca in 2022.
+      <br />
+      <br />
+      This program largely concentrated on Javascript programming along with HTML and CSS, but
+      touched on SQL, Ruby, Ruby on Rails as well (the latter being more of a way to get people
+      exposed to different languages that we could experience during future endeavours).
+      <br />
+      <br />
+      Overall, I found the program to be excellent and would highly recommend it to others.
+      <br />
+      Live instructor led seminars and the availability of "on-demand" mentors was a great way for
+      me to see what was new in the web application development world and renew my interest in
+      developing my skills into a new career path!
+    </p>
+  </>
+);
