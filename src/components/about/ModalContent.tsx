@@ -128,20 +128,25 @@ export const modalContentCommodore = (
     <p>
       <img src='src/assets/modals/commodore.png' alt='commodore computer and tape drive'></img>
       <br />
-      Although largely considering myself a self-taught programmer and web developer, I did attend a
-      coding bootcamp program at LighthouseLabs.ca in 2022.
+      My first exposure to computers and programming takes me way back to when Commodore first
+      released the VIC-20. I was eager to pickup the latest Compute! magazine and frantically type
+      out code to play the latest games. Only to more often than not be greeted with the famous
+      "syntax error". Hey, it was frustrating, but great for growing my debugging skills!
       <br />
       <br />
-      This program largely concentrated on Javascript programming along with HTML and CSS, but
-      touched on SQL, Ruby, Ruby on Rails as well (the latter being more of a way to get people
-      exposed to different languages that we could experience during future endeavours).
+      <img
+        className='modal-image-border'
+        src='src/assets/modals/oldcode.png'
+        alt='old BASIC code from compute! magazine'
+      ></img>
       <br />
       <br />
-      Overall, I found the program to be excellent and would highly recommend it to others.
+      Eventually, I upgraded to the Tandy CoCo2 and started building my own simple dungeon crawler
+      first person games using its 'enhanced' graphics systems and the Basic language!
       <br />
-      Live instructor led seminars and the availability of "on-demand" mentors was a great way for
-      me to see what was new in the web application development world and renew my interest in
-      developing my skills into a new career path!
+      <br />
+      Getting back into coding now, I quite regret not having any of these old relics still to setup
+      an antique 'home lab'!
     </p>
   </>
 );
