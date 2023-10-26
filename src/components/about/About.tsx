@@ -13,7 +13,6 @@ import {
   modalContentBootcamp,
   modalContentCommodore,
 } from './ModalContent'; // Import the modal content
-import KeywordPopover from '../popover/KeywordPopover';
 
 interface AboutProps {
   reference: React.RefObject<HTMLDivElement>;
@@ -119,8 +118,8 @@ function About(props: AboutProps) {
                 </button>
                 computers. Eventually, this transitioned into PC&apos;s and{' '}
                 <span data-tooltip='Blackberry and PalmPilot'>early mobile devices</span>
-                and then into the early days of web development - from static web pages, to web to
-                full-stack e-commerce applications.
+                &nbsp;and then into the early days of web development - from static web pages, to
+                web to full-stack e-commerce applications.
               </p>
               <p>
                 Life happened, and I decided to re-think my career choices - I made a sudden shift

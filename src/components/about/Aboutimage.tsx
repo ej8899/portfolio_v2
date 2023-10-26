@@ -16,17 +16,22 @@ function Aboutimage() {
   const isOnScreen = useElementOnScreen(infoRef1, '-100px');
 
   useEffect(() => {
-    // TODO remove ani classes if off screen to reset these
+    // TODO remove ani classes if off screen to reset these  // hideitems // showitems
     if (!isOnScreen) {
-      infoRef1.current?.classList.remove('animate__zoomIn');
-      infoRef2.current?.classList.remove('animate__zoomIn');
+      // infoRef1.current?.classList.remove('animate__zoomIn');
+      // infoRef2.current?.classList.remove('animate__zoomIn');
+
+      // circleRef.current?.classList.add('hideitems');
       return;
     }
-
+    // TODO above and below we're going to need to run a show and hide class with opacity 0 / opacity 1
     setTimeout(() => {
       infoRef1.current?.classList.add('animate__zoomIn');
       infoRef2.current?.classList.add('animate__zoomIn');
+
       circleRef.current?.classList.add('animate__fadeInUp');
+      circleRef.current?.classList.add('showitems');
+
       pat1Ref.current?.classList.add('animate__fadeInTopRight');
       pat3Ref.current?.classList.add('animate__fadeInBottomRight');
       pat2Ref.current?.classList.add('animate__fadeInLeft');

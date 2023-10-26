@@ -17,6 +17,14 @@
   position: relative;
 }
 
+.hideitems {
+  opacity: 0;
+}
+.showitems {
+  opacity: 1;
+}
+
+
 @media screen and (max-width: 1024px) {
   .photo-scaling {
     transform: scale(0.5);
