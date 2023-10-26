@@ -89,7 +89,16 @@ function About(props: AboutProps) {
           <div className='about__content' ref={aboutRef}>
             <div className='about__text' ref={leftColumnRef}>
               <p>
-                I am a Construction Manager-transitioned- Web & Applications Developer.
+                When much younger, I did start coding mini games and{' '}
+                <span data-tooltip='freeware and shareware'>applications</span> in BASIC language on{' '}
+                computers. Eventually, this transitioned into PC&apos;s and{' '}
+                <span data-tooltip='Blackberry and PalmPilot'>early mobile devices</span>
+                &nbsp;and then into the early days of web development - from static web pages, to
+                web to full-stack e-commerce applications.
+              </p>
+              <hr />
+              <p>
+                I&apos;m a Construction Manager turned Web & Applications Developer.
                 <br />(
                 <button
                   className='button-text'
@@ -102,45 +111,38 @@ function About(props: AboutProps) {
                 )
               </p>
               <p>
-                In all honesty, I&apos;ve now come &quot;full-circle&quot; in my career journey and
-                am coming back to web and applications development.
+                My journey has taken me full-circle, returning to my passion for web and application
+                development.
               </p>
               <p>
-                When much younger, I did start coding mini games and{' '}
-                <span data-tooltip='freeware and shareware'>applications</span> in BASIC language on{' '}
+                It all started when I was younger, coding mini games and applications in BASIC on{' '}
                 <button
                   className='button-text'
                   onClick={() => {
                     handleOpenModal('commodore');
                   }}
                 >
-                  Commodore (& Tandy)&nbsp;
-                </button>
-                computers. Eventually, this transitioned into PC&apos;s and{' '}
-                <span data-tooltip='Blackberry and PalmPilot'>early mobile devices</span>
-                &nbsp;and then into the early days of web development - from static web pages, to
-                web to full-stack e-commerce applications.
+                  Commodore and Tandy
+                </button>{' '}
+                computers. This evolved into PC and early mobile device development and eventually
+                led to building full-stack e-commerce applications.
               </p>
               <p>
-                Life happened, and I decided to re-think my career choices - I made a sudden shift
-                into first responder & emergency service roles. A few years years later and I found
-                myself involved in construction management of &quot;
+                After a brief shift into first responder and emergency service roles, I found myself
+                managing{' '}
                 <button
                   className='button-text'
                   onClick={() => {
                     handleOpenModal('majorprojects');
                   }}
                 >
-                  major projects
-                </button>
-                &quot; across Canada.
+                  major construction projects
+                </button>{' '}
+                across Canada.
               </p>
               <p>
-                Fast forwarding into 2021, life-happened once again, and I&apos;ve once again
-                decided to re-ignite my passion for{' '}
-                <span data-tooltip='including hardware!'>technology</span> and application
-                development. I decided to leave my job to enroll in an intensive full-stack web
-                development&nbsp;
+                In 2021, I decided to reignite my love for technology and applications. I left my
+                job to enroll in an intensive full-stack web development&nbsp;
                 <button
                   className='button-text'
                   onClick={() => {
@@ -151,7 +153,11 @@ function About(props: AboutProps) {
                 </button>
                 .
               </p>
-              <p>I loved seeing what was new, and now here we are!</p>
+              <p>
+                I thrive on embracing the latest&nbsp;
+                <span data-tooltip='including hardware!'>technologies</span>, and this is where my
+                journey has brought me today.
+              </p>
               <p>
                 Other interests include:
                 <span data-tooltip='my dog'>
