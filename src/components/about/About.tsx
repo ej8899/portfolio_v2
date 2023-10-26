@@ -7,7 +7,12 @@ import './About.scss';
 import Aboutimage from './Aboutimage';
 
 import { useModal } from '../modal/ModalManager';
-import { modalContentEngineer, modalContentMProjects } from './ModalContent'; // Import the modal content
+import {
+  modalContentEngineer,
+  modalContentMProjects,
+  modalContentBootcamp,
+  modalContentCommodore,
+} from './ModalContent'; // Import the modal content
 import KeywordPopover from '../popover/KeywordPopover';
 
 interface AboutProps {
@@ -29,6 +34,12 @@ function About(props: AboutProps) {
         break;
       case 'majorprojects':
         openModal('Major Projects...', modalContentMProjects, '');
+        break;
+      case 'bootcamp':
+        openModal('Coding Bootcamp', modalContentBootcamp, '');
+        break;
+      case 'commodore':
+        openModal('Commodore & Tandy!', modalContentCommodore, '');
         break;
       default:
         break;
@@ -98,11 +109,14 @@ function About(props: AboutProps) {
               <p>
                 When much younger, I did start coding mini games and{' '}
                 <span data-tooltip='freeware and shareware'>applications</span> in BASIC language on{' '}
-                <KeywordPopover
-                  keyword='Commodore'
-                  content='This is the popover content. It can include rich text, images, and more.'
-                  header='Popover Header'
-                />{' '}
+                <button
+                  className='button-text'
+                  onClick={() => {
+                    handleOpenModal('commodore');
+                  }}
+                >
+                  Commodore (& Tandy)&nbsp;
+                </button>
                 computers. Eventually, this transitioned into PC&apos;s and{' '}
                 <span data-tooltip='Blackberry and PalmPilot'>early mobile devices</span>
                 and then into the early days of web development - from static web pages, to web to
@@ -128,7 +142,15 @@ function About(props: AboutProps) {
                 <span data-tooltip='including hardware!'>technology</span> and application
                 development. I decided to leave my job to enroll in an intensive full-stack web
                 development&nbsp;
-                <span data-tooltip='Lighthouse Labs'>bootcamp</span>.
+                <button
+                  className='button-text'
+                  onClick={() => {
+                    handleOpenModal('bootcamp');
+                  }}
+                >
+                  bootcamp
+                </button>
+                .
               </p>
               <p>I loved seeing what was new, and now here we are!</p>
               <p>
