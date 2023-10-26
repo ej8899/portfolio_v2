@@ -171,11 +171,11 @@ function App() {
         </SectionObserver>
         <Footer />
       </div>
-      <button id='scrollToTopButton' title='Scroll to Top'>
+      <button id='scrollToTopButton' data-tooltip='top'>
         <i className='fas fa-chevron-up'></i>
       </button>
       <div className='cursor' />
-      <div id='chatBotButton'>
+      <div id='chatBotButton' data-tooltip='chat'>
         <div className='chat-icon' onClick={toggleChat}>
           <i className='fas fa-comment-alt'></i>
         </div>

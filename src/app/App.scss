@@ -66,9 +66,9 @@
 
     border-radius: var(--border-radius-100);
     border-bottom: 3px solid var(--clr-primary-100);
-    box-shadow: var(--box-shadow-900);
+    box-shadow: var(--box-shadow-full);
 
-    line-height: 1.35;
+    line-height: 1.0;
     transition: transform var(--transition-short) ease-in-out;
 
     white-space: nowrap; /* Prevent line breaks within the tooltip text */
@@ -78,7 +78,7 @@
 
   &:hover {
     &::after {
-      transform: scale(1) translateX(-50%) rotate(3deg) !important;
+      transform: scale(0.9) translateX(-50%) rotate(3deg) !important;
     }
   }
 }
