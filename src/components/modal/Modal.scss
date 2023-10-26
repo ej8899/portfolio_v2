@@ -222,3 +222,8 @@
 		pointer-events: none;
 	}
 }
+
+.modal-image-border {
+  border: 2px solid black;
+  box-shadow: var(--box-shadow-full);
+}
