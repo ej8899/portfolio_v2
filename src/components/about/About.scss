@@ -158,15 +158,18 @@
 .opie{
   opacity:1 !important;
 }
+.opie-hide{
+  opacity:0 !important;
+}
 .rotate3r {
   transform: rotate(4deg);
   transition: all 0.3s ease-in-out;
-  opacity: 1;
+  opacity: 0;
 }
 .rotate3l {
   transform: rotate(-4deg);
   transition: all 0.3s ease-in-out;
-  opacity: 1;
+  opacity: 0;
 }
 
 .greyscale {
@@ -194,6 +197,8 @@
 	border-radius: 380px;
 	-webkit-border-radius: 380px;
 	z-index: 10;
+  opacity: 0;
+  border: 2px solid red;
 }
 
 .circle.circle {

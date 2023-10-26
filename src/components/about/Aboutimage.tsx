@@ -7,6 +7,7 @@ import { useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 
 function Aboutimage() {
+  const photoRef = useRef<HTMLImageElement>(null);
   const infoRef1 = useRef<HTMLLIElement>(null);
   const infoRef2 = useRef<HTMLLIElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
@@ -26,8 +27,10 @@ function Aboutimage() {
     }
     // TODO above and below we're going to need to run a show and hide class with opacity 0 / opacity 1
     setTimeout(() => {
-      infoRef1.current?.classList.add('animate__zoomIn');
-      infoRef2.current?.classList.add('animate__zoomIn');
+      infoRef1.current?.classList.add('animate__fadeIn');
+      infoRef2.current?.classList.add('animate__fadeIn');
+
+      photoRef.current?.classList.add('animate__fadeIn');
 
       circleRef.current?.classList.add('animate__fadeInUp');
       circleRef.current?.classList.add('showitems');
@@ -43,9 +46,11 @@ function Aboutimage() {
       <div className='slide'>
         <img
           decoding='async'
+          className='animate__animated about-photo'
           data-scroll-ratio='0.9'
           src='src/assets/images/profile2.png'
           alt='<b>Ernie</b> Johnson'
+          ref={photoRef}
         />
         <span className='circle circle-1 animate__animated' ref={circleRef}></span>
         <span
