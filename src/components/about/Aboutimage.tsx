@@ -43,7 +43,7 @@ function Aboutimage() {
 
   return (
     <div className='section about-started photo-scaling'>
-      <div className='slide'>
+      <div className='slide photowrapper'>
         <img
           decoding='async'
           className='animate__animated about-photo'

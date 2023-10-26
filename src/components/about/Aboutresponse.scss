@@ -52,15 +52,19 @@
 	background-size: contain;
 }
 
-.section.about-started .slide .circle.circle-1 {
+// .section.about-started .slide .circle.circle-1 {
+.circle-1 {
 	width: 680px;
 	height: 680px;
 	z-index: 2;
-	background: var(--myorange);
-  background: linear-gradient(0deg, tomato 0%, orange 77%);
+	//background: var(--myorange);
+  
 	border-radius: 100%;
 	-webkit-border-radius: 100%;
-  border: 2px solid black;
+  	border: 2px solid black;
+  
+  	background: linear-gradient(0deg, tomato 0%, orange 77%);
+	transition: all 1s ease-in-out;
 }
 
 .section.about-started .slide .circle.img-1 {
