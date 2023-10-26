@@ -176,7 +176,8 @@
 	color: #000;
 	border: 2px solid #000;
 	background-color: #fff;
-	box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+	// box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: var(--box-shadow-full);
 	height: 111px;
 	border-radius: 82px;
 	-webkit-border-radius: 82px;

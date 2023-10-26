@@ -219,6 +219,7 @@
   transition: all 0.3s ease-in-out;
   opacity: 0.8;
   border: 1px solid black;
+  box-shadow: 2px 2px black;
 }
 
 #scrollToTopButton:hover {
@@ -243,7 +244,7 @@
 #chatBotButton {
   //display: none;
   position: fixed;
-  bottom: 80px;
+  bottom: 90px;
   right: 20px;
   background-color: orange;
   color: #fff;
@@ -257,6 +258,7 @@
   opacity: 0.8;
   transition: all 0.3s ease-in-out;
   border: 1px solid black;
+  box-shadow: 2px 2px black;
 }
 
 #chatBotButton:hover {
