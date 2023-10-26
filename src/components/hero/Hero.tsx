@@ -50,15 +50,6 @@ function Hero(props: { reference: LegacyRef<HTMLElement> | undefined }) {
               <Button type='outline'>About Me</Button>
             </a>
           </div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          &nbsp;
         </div>
       </div>
     </section>
