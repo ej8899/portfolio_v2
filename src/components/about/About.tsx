@@ -155,18 +155,18 @@ function About(props: AboutProps) {
               <p>
                 Other interests include:
                 <span data-tooltip='my dog'>
-                  <big>🐕</big>
+                  <big className='about-extra'>🐕</big>
                 </span>{' '}
-                <span data-tooltip='travel'>
+                <span className='about-extra' data-tooltip='travel'>
                   <big>✈️</big>
                 </span>
-                <span data-tooltip='scuba diving'>
+                <span className='about-extra' data-tooltip='scuba diving'>
                   <big>🤿</big>
                 </span>{' '}
-                <span data-tooltip='fitness'>
+                <span className='about-extra' data-tooltip='fitness'>
                   <big>💪</big>
                 </span>{' '}
-                <span data-tooltip='photography'>
+                <span className='about-extra' data-tooltip='photography'>
                   <big>📸</big>
                 </span>
               </p>
