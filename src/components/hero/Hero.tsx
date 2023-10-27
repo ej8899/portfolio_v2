@@ -1,11 +1,8 @@
 import React from '../../assets/components/React';
-import Github from '../../assets/components/Github';
-import LinkedIn from '../../assets/components/LinkedIn';
 import Button from '../button/Button';
 import './Hero.scss';
 import globalconfig from '../../config';
-import useElementOnScreen from '../../hooks/useElementOnScreen';
-import { FormEvent, LegacyRef, useEffect, useRef, useState } from 'react';
+import { LegacyRef } from 'react';
 
 function Hero(props: { reference: LegacyRef<HTMLElement> | undefined }) {
   return (
