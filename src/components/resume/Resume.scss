@@ -429,3 +429,20 @@ blockquote {
 	}
 	
 }
+
+/* Default styles for larger screens */
+.resumedownload-message {
+  display: flex;
+  align-items: center;
+}
+
+/* Media query for screens with a max width of 850px */
+@media (max-width: 850px) {
+  .resumedownload-message {
+    flex-direction: column;
+  }
+
+  .resumedownload-divider {
+    display: none;
+  }
+}

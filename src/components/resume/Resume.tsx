@@ -113,11 +113,14 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
           <div className='subtitle-message'>
             Here are just a few recent and/or key moments from my résumé!
           </div>
-          <div className='subtitle-message'>
+          <div className='resumedownload-message subtitle-message'>
             <a href='https://flowcv.com/resume/0chloacpte' target='_new'>
               Click to view my resume online
             </a>
-            &nbsp;|| Here to download a PDF.
+            <span className='resumedownload-divider'>&nbsp;||&nbsp;</span>
+            <a href='your-pdf-link.pdf' download>
+              Here to download a PDF.
+            </a>
           </div>
         </div>
 
