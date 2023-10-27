@@ -11,7 +11,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 // @ts-ignore: Object is possibly 'null'.
 import React from '../assets/components/React';
-import { SetStateAction, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import About from '../components/about/About';
 import Contact from '../components/contact/Contact';
 import Footer from '../components/footer/Footer';
@@ -25,17 +25,16 @@ import Splitting from 'splitting';
 import SkillSlider from '../components/skillslider/SkillSlider';
 import SectionObserver from '../components/SectionObserver';
 // extras
-import globalconfig from '../config';
 import AboutSlider from '../components/about/AboutSlider';
 import Chatbot from '../components/chatbot/Chatbot';
 import Resume from '../components/resume/Resume';
-import useWindowDimensions from '../hooks/useWindowDimensions';
+// import useWindowDimensions from '../hooks/useWindowDimensions';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
 
 function App() {
   // appTitle('ErnieJohnson.ca - Web Dev Portfolio');
-  const { height, width } = useWindowDimensions();
+  // const { height, width } = useWindowDimensions();
   // console.log('window height:', height);
   // what element is on screenconst [activeSection, setActiveSection] = useState(null);
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -71,7 +70,7 @@ function App() {
   const handleLeave = (sectionName: string) => {
     // setActiveSection(null);
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    console.log(`Section left: ${sectionName}`);
+    // console.log(`Section left: ${sectionName}`);
   };
 
   // chatbot
@@ -113,7 +112,7 @@ function App() {
       //
       // scroll position for back to top button
       //
-      const scrollPosition = window.scrollY;
+      // const scrollPosition = window.scrollY;
       // scrollY = window.scrollY;
       // add the scroll to top button
       if (window.scrollY > 300) {
