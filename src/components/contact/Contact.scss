@@ -154,6 +154,8 @@
 
       &:focus {
         // outline: var(--border-focus);
+        // TODO need var for this - this will be same as about bg
+        background: #FFD7B5;
         outline: 2px solid teal !important;
         + .validation-message {
           color: var(--clr-neutral-500);

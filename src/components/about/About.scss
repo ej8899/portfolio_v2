@@ -7,9 +7,10 @@
   padding-top: 0px;
   z-index: 2;
   //color: var(--clr-neutral-900);
-  background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
+  //background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
   //background-image: linear-gradient(red,yellow);
-  //background-color: rgb(172, 138, 138);
+  // TODO need vars for revised bg color
+  background-color: #FFD7B5;
   h2 {
     position: relative;
     
@@ -300,7 +301,8 @@
 }
 
 .custom-shape-divider-bottom-1694044314 .shape-fill {
-  fill: var(--clr-about-bg-top);
+  //fill: var(--clr-about-bg-top);
+  fill: #FFD7B5;
   //fill: blue;
 }
 .shape-fillb {
@@ -318,4 +320,24 @@
 
 .about-extra {
   transform: rotate(3deg);
+}
+
+
+
+.custom-shape-divider-bottom-16940443142 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  //transform: rotate(180deg);
+  z-index: 3;
+  //border-radius: 50px;
+  // border: 2px solid red;
+}
+.aboutskills-divider-fill {
+  // TODO needs var - about background var
+  fill: #FFD7B5;
+  // fill: orange;
 }
