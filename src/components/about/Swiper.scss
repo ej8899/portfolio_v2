@@ -182,7 +182,7 @@
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-  padding: 25px;
+  padding: 18px;
   opacity: 1;
 }
 
@@ -303,7 +303,7 @@
   max-width: 400px;
 	position: relative;
 	overflow: hidden;
-	padding: 30px 35px;
+	padding: 20px 25px;
   background:linear-gradient(to bottom right , orange 65%, rgb(220, 133, 2));
 	border-radius: 18px;
   //box-shadow: 5px 5px 10px 3px teal;
@@ -390,7 +390,8 @@
 }
 .swiper-slide-active .fa-slider {
   color: black;
-  filter: drop-shadow(2px 2px 3px teal);
+  //filter: drop-shadow(2px 2px 3px teal);
+  filter: drop-shadow(4px 4px teal);
   transition: all 0.5s ease-in-out;
 }
 
