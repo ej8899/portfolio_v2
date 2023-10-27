@@ -13,7 +13,7 @@ function ContactText() {
           <span> Address: </span>
         </div>
         <div className='lui-text'>
-          <span>
+          <span className='text-secret' data-message='...I have home offices in both provinces.'>
             Windsor, Ontario / Calgary, Alberta
             <br />
             Available for remote: Canada & USA
@@ -28,7 +28,9 @@ function ContactText() {
           <span> Freelance: </span>
         </div>
         <div className='lui-text'>
-          <span> Currently Available </span>
+          <span className='text-secret' data-message='...part-time & full-time also considered!'>
+            Currently Available
+          </span>
         </div>
       </div>
       <div className='numbers-item'>
@@ -39,7 +41,9 @@ function ContactText() {
           <span> Email: </span>
         </div>
         <div className='lui-text'>
-          <span> ernie@erniejohnson.ca </span>
+          <span className='text-secret' data-message='...or use the form to the right 😏'>
+            ernie@erniejohnson.ca
+          </span>
         </div>
       </div>
       <div className='numbers-item'>
@@ -50,7 +54,9 @@ function ContactText() {
           <span> Phone: </span>
         </div>
         <div className='lui-text'>
-          <span> +1&nbsp;&nbsp;705 - 331 - 8899 </span>
+          <span className='text-secret' data-message='...texting will work best!'>
+            +1&nbsp;&nbsp;705 - 331 - 8899
+          </span>
         </div>
       </div>
     </div>
