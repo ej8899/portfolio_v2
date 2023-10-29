@@ -2,6 +2,7 @@ import React from '../../assets/components/React';
 import './SkillSlider.scss';
 import { LegacyRef, useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
+import Skillcards from './Skillcards';
 
 /* good reference on sliders here:
 https://ryanmulligan.dev/blog/css-marquee/
@@ -202,52 +203,7 @@ const SkillSlider = (props: { reference: LegacyRef<HTMLElement> | undefined }) =
             </div>
           </div>
         </article>
-        <div className='centered_container column centered_grid'>
-          <div className='skill-details-container'>
-            <div className='skill-details-column'>
-              <div className='skill-card'>
-                <h4>
-                  Studying:
-                  <br />
-                  MongoDB
-                </h4>
-                <p>
-                  Although versed in traditional SQL databases, I like the concept behind MongoDB
-                  and being able to utilize it on AWS, Google Cloud, and Azure.
-                  <br />
-                  <br />
-                  This gets bumped to the top of my studies list!
-                </p>
-              </div>
-            </div>
-            <div className='skill-details-column'>
-              <div className='skill-card'>
-                <h4>
-                  Studying:
-                  <br />
-                  AWS Cloud Consultant
-                </h4>
-                <p>
-                  Not much needs to be said here as it&apos;s important to be versed in utilizing
-                  cloud platforms.
-                </p>
-              </div>
-            </div>
-            <div className='skill-details-column'>
-              <div className='skill-card'>
-                <h4>
-                  Studying:
-                  <br />
-                  Python
-                </h4>
-                <p>
-                  I do utilize Python presently, but there is a lot of functionality I still have to
-                  research. Knowing more &apos;off the cuff&apos; is going to be benefical.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Skillcards reference={undefined} />
         <svg
           style={{
             display: 'none',
