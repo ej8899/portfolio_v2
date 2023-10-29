@@ -206,28 +206,43 @@ const SkillSlider = (props: { reference: LegacyRef<HTMLElement> | undefined }) =
           <div className='skill-details-container'>
             <div className='skill-details-column'>
               <div className='skill-card'>
-                <h4>What is a Frontend Develoment?</h4>
+                <h4>
+                  Studying:
+                  <br />
+                  MongoDB
+                </h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique
-                  aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.
+                  Although versed in traditional SQL databases, I like the concept behind MongoDB
+                  and being able to utilize it on AWS, Google Cloud, and Azure.
+                  <br />
+                  <br />
+                  This gets bumped to the top of my studies list!
                 </p>
               </div>
             </div>
             <div className='skill-details-column'>
               <div className='skill-card'>
-                <h4>What is a Frontend Develoment?</h4>
+                <h4>
+                  Studying:
+                  <br />
+                  AWS Cloud Consultant
+                </h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique
-                  aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.
+                  Not much needs to be said here as it&apos;s important to be versed in utilizing
+                  cloud platforms.
                 </p>
               </div>
             </div>
             <div className='skill-details-column'>
               <div className='skill-card'>
-                <h4>What is a Frontend Develoment?</h4>
+                <h4>
+                  Studying:
+                  <br />
+                  Python
+                </h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique
-                  aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.
+                  I do utilize Python presently, but there is a lot of functionality I still have to
+                  research. Knowing more &apos;off the cuff&apos; is going to be benefical.
                 </p>
               </div>
             </div>
