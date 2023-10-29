@@ -3,18 +3,39 @@
     --index0: calc(var(--index) - 1); /* 0-based index */
     --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
     --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+    position: sticky;
+    @media (max-width: 500px) {
+      top:10px;
+    }
+    top: 130px;
+    padding-top: calc(var(--index) * var(--card-top-offset)); /* stack top padding */
+    //padding-top: 2em;
+    margin: 0;
   }
 
   @keyframes scale {
     to {
       transform:
-        scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+        scale(calc(1.1 - calc(0.07 * var(--reverse-index))));
     }
   }
 
   #skillcards {
-    --numcards: 3;
+    --numcards: 4;
+    --card-top-offset: 2em;
+    --card-margin: 0vw; /* separation between cards */
+    --card-height: 200px;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(var(--numcards), var(--card-height));
+
+    gap: var(--card-margin);
     view-timeline-name: --cards-element-scrolls-in-body;
+    //padding-bottom: calc(var(--numcards) * var(--card-top-offset));
+    padding-bottom: 50px !important;
+    margin-bottom: var(--card-margin);
+    list-style: none;
+    display: grid;
   }
 
   .skill-card__content {
@@ -24,6 +45,80 @@
     animation: linear scale forwards;
     animation-timeline: --cards-element-scrolls-in-body;
     animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
-    margin: 20px;
+    border: 2px solid black;
+    transform-origin: 50% 0%;
+	  will-change: transform;
+    text-align: left;
+  }
+
+  #card_1 {
+    --index:1;
+  }
+  #card_2 {
+    --index:2;
+  }
+  #card_3 {
+    --index:3;
+  }
+  #card_4 {
+    --index:4;
+  }
+}
+
+.studies_sticky {
+  top: 50px;
+  position: sticky;
+  // padding-top: var(--section-vertical-padding);
+}
+
+.studies {
+  --studies-gap: min(4.5vh, 3rem);
+  padding-block: var(--section-vertical-padding);
+  z-index: 2;
+  position: relative;
+  color: var(--clr-neutral-900);
+  background: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
+  background-color: white;
+  padding-top:0;
+  h2 {
+    position: relative;
+    margin-bottom: var(--about-gap);
+    color: var(--clr-neutral-900);
+    text-shadow: 
+    -1px 1px 6px var(--clr-neutral-400),
+    1px 1px 6px var(--clr-neutral-400);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 70%;
+      left: 4.3ch;
+      width: 3.2ch;
+      height: 0.45ch;
+      z-index: -1;
+      background: var(--clr-primary-100);
+      animation: pulseSkewScale infinite 1s ease-in-out;
+    }
+  }
+}
+
+.studies__title {
+  position: relative;
+  margin-bottom: var(--about-gap);
+  color: var(--clr-neutral-900);
+  text-shadow: 
+  -1px 1px 6px var(--clr-neutral-400),
+  1px 1px 6px var(--clr-neutral-400);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 70%;
+    left: 6.0ch !important;
+    width: 4.2ch !important;
+    height: 0.45ch;
+    z-index: -1;
+    background: var(--clr-primary-100);
+    animation: pulseSkewScale infinite 1s ease-in-out;
   }
 }
