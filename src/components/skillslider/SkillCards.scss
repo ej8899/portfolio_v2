@@ -49,6 +49,18 @@
     transform-origin: 50% 0%;
 	  will-change: transform;
     text-align: left;
+
+    display:flex;
+    flex-direction: row;
+    margin: 20px;
+    align-items: center;
+  }
+
+  .skill-card-text {
+    // border: 1px solid blue;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
   }
 
   #card_1 {
