@@ -24,7 +24,11 @@
     --numcards: 4;
     --card-top-offset: 2em;
     --card-margin: 0vw; /* separation between cards */
-    --card-height: 200px;
+    --card-height: 180px;
+    @media (max-width: 500px) {
+      --card-height: 250px;
+    }
+    
 
     grid-template-columns: 1fr;
     grid-template-rows: repeat(var(--numcards), var(--card-height));
@@ -53,14 +57,11 @@
     display:flex;
     flex-direction: row;
     margin: 20px;
-    align-items: center;
   }
 
   .skill-card-text {
-    // border: 1px solid blue;
     padding: 20px;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
   }
 
   #card_1 {
@@ -78,8 +79,13 @@
 }
 
 .skill-logo {
-  width: 128px;
+  max-width: 100px;
+  //max-height: 128px;
+  fill:teal;
+  padding: 0;
+  margin: 0;
 }
+
 
 .studies_sticky {
   top: 50px;
@@ -137,4 +143,8 @@
     background: var(--clr-primary-100);
     animation: pulseSkewScale infinite 1s ease-in-out;
   }
+}
+
+.w200 {
+  width:200px !important;
 }

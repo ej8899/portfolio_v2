@@ -28,7 +28,7 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
           <ul id='skillcards'>
             <li className='skillcard' id='card_1'>
               <div className='skill-card__content skill-card'>
-                <div className='skill-card-text'>
+                <div className='skill-card-text w200'>
                   <svg className='devsvg skill-logo'>
                     <use xlinkHref='#mongodb' />
                   </svg>
@@ -49,7 +49,7 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
 
             <li className='skillcard' id='card_2'>
               <div className='skill-card__content skill-card'>
-                <div className='skill-card-text'>
+                <div className='skill-card-text w200'>
                   <svg className='devsvg skill-logo'>
                     <use xlinkHref='#aws' />
                   </svg>
@@ -66,7 +66,7 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
 
             <li className='skillcard' id='card_3'>
               <div className='skill-card__content skill-card'>
-                <div className='skill-card-text'>
+                <div className='skill-card-text w200'>
                   <svg className='devsvg skill-logo'>
                     <use xlinkHref='#python' />
                   </svg>
@@ -83,8 +83,10 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
 
             <li className='skillcard' id='card_4'>
               <div className='skill-card__content skill-card'>
-                <div className='skill-card-text'>
-                  <ChatGpt />
+                <div className='skill-card-text w200'>
+                  <svg className='devsvg skill-logo chatgpt-logo'>
+                    <use xlinkHref='#chatgpt' />
+                  </svg>
                 </div>
                 <div className='skill-card-text'>
                   <h4>AI Integration</h4>
@@ -99,6 +101,8 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
               </div>
             </li>
           </ul>
+          <br />
+          <br />
         </div>
       </div>
     </div>
