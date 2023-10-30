@@ -3,6 +3,7 @@ import './SkillCards.scss';
 import { LegacyRef, useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import ChatGpt from '../../assets/components/ChatGpt';
+import MongoDB from '../../assets/components/MongoDB';
 
 const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -28,6 +29,11 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
             <li className='skillcard' id='card_1'>
               <div className='skill-card__content skill-card'>
                 <div className='skill-card-text'>
+                  <svg className='devsvg skill-logo'>
+                    <use xlinkHref='#mongodb' />
+                  </svg>
+                </div>
+                <div className='skill-card-text'>
                   <h4>MongoDB</h4>
                   <p>
                     I&apos;ve been involved in SQL & Relational databases for many years, but at the
@@ -44,6 +50,11 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
             <li className='skillcard' id='card_2'>
               <div className='skill-card__content skill-card'>
                 <div className='skill-card-text'>
+                  <svg className='devsvg skill-logo'>
+                    <use xlinkHref='#aws' />
+                  </svg>
+                </div>
+                <div className='skill-card-text'>
                   <h4>AWS</h4>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique
@@ -55,6 +66,11 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
 
             <li className='skillcard' id='card_3'>
               <div className='skill-card__content skill-card'>
+                <div className='skill-card-text'>
+                  <svg className='devsvg skill-logo'>
+                    <use xlinkHref='#python' />
+                  </svg>
+                </div>
                 <div className='skill-card-text'>
                   <h4>Advanced Python</h4>
                   <p>
