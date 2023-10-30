@@ -38,8 +38,8 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
                   <p>
                     I&apos;ve been involved in SQL & Relational databases for many years, but at the
                     same time always entertained by alternatives, however performance was always
-                    lacking. MongoDB seems to have largely solved the performance issues while
-                    developers scalability, simplicity and scalability.
+                    lacking. MongoDB seems to have largely solved the performance issues while still
+                    delivering scalability, simplicity.
                     <br />
                     I&apos;m eager to expand my knowledge of MongoDB.
                   </p>
