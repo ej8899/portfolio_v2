@@ -5,7 +5,7 @@
     --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
     position: sticky;
     @media (max-width: 500px) {
-      top:10px;
+      top:100px;
     }
     top: 130px;
     padding-top: calc(var(--index) * var(--card-top-offset)); /* stack top padding */
@@ -24,10 +24,10 @@
     --numcards: 4;
     --card-top-offset: 2em;
     --card-margin: 0vw; /* separation between cards */
-    --card-height: 180px;
-    @media (max-width: 500px) {
-      --card-height: 250px;
-    }
+    --card-height: 200px;
+    // @media (max-width: 500px) {
+    //   --card-height: 250px;
+    // }
     
 
     grid-template-columns: 1fr;
@@ -91,6 +91,9 @@
 .studies_sticky {
   top: 50px;
   position: sticky;
+  @media (max-width: 500px) {
+    top:1px;
+  }
   // padding-top: var(--section-vertical-padding);
 }
 

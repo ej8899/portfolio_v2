@@ -10,7 +10,7 @@
   //background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
   //background-image: linear-gradient(red,yellow);
   // TODO need vars for revised bg color
-  background-color: #FFD7B5;
+  background-color: var(--clr-about-bg-top);
   h2 {
     position: relative;
     
@@ -302,7 +302,7 @@
 
 .custom-shape-divider-bottom-1694044314 .shape-fill {
   //fill: var(--clr-about-bg-top);
-  fill: #FFD7B5;
+  fill: var(--clr-about-bg-top);
   //fill: blue;
 }
 .shape-fillb {
@@ -338,6 +338,6 @@
 }
 .aboutskills-divider-fill {
   // TODO needs var - about background var
-  fill: #FFD7B5;
+  fill: var(--clr-about-bg-top);
   // fill: orange;
 }

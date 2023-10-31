@@ -204,6 +204,7 @@ const SkillSlider = (props: { reference: LegacyRef<HTMLElement> | undefined }) =
           </div>
         </article>
         <Skillcards reference={undefined} />
+        <div className='spacer'></div>
         <svg
           style={{
             display: 'none',
