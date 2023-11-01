@@ -37,11 +37,12 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
                   <h4>MongoDB</h4>
                   <p>
                     I&apos;ve been involved in SQL & Relational databases for many years, but at the
-                    same time always entertained by alternatives, however performance was always
-                    lacking. MongoDB seems to have largely solved the performance issues while still
-                    delivering scalability, simplicity.
+                    same time was always entertained by alternatives, however performance was always
+                    lacking.
                     <br />
-                    I&apos;m eager to expand my knowledge of MongoDB.
+                    <br />
+                    MongoDB seems to have largely solved the performance issues while still
+                    delivering scalability, simplicity to developers.
                   </p>
                 </div>
               </div>
@@ -57,8 +58,11 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
                 <div className='skill-card-text'>
                   <h4>AWS</h4>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique
-                    aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.
+                    Learning Amazon Web Services is essential to design, deploy, and manage scalable
+                    and reliable cloud solutions, which is a critical component in today&apos;s
+                    world. Since AWS offers a wide array of cloud services, this makes it a highly
+                    sought-after platform, making it a valuable skill for career growth in cloud
+                    computing.
                   </p>
                 </div>
               </div>
@@ -74,8 +78,10 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
                 <div className='skill-card-text'>
                   <h4>Advanced Python</h4>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam porro similique
-                    aliquid debitis ipsam soluta dolorum ipsa! Voluptate, suscipit iure.
+                    I utilize Python for a few API end points in various applications, as well as
+                    some home automation scripts. What I don&apos;t do is get fully immersed in my
+                    development projects, so that&apos;s on the task list - I&apos;m currently
+                    evaluating game development with PyGame.
                   </p>
                 </div>
               </div>
@@ -91,11 +97,13 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
                 <div className='skill-card-text'>
                   <h4>AI Integration</h4>
                   <p>
-                    Although I utilize AI on a daily basis as a coding assistant and even as a
+                    Although I do utilize AI on a daily basis as a coding assistant and even as a
                     assistant, I have yet to incorporate AI into any applications on a significant
-                    <br />I have a few projects in the &apos;to do&apos; list as well as a couple of
-                    projects that I&apos;d like to add an AI componenent to them. Updates will be
-                    enough!
+                    level. However I do have a few projects in the &apos;to do&apos; list as well as
+                    a couple projects that I&apos;d like to add an AI componenent to them.
+                    <br />
+                    <br />
+                    Updates on this will be soon enough!
                   </p>
                 </div>
               </div>

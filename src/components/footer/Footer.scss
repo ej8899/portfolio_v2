@@ -8,7 +8,8 @@ footer {
   text-transform: uppercase;
   font-family: var(--ff-accent);
   font-size: 0.9rem;
-  height: 100px;
+  //height: 100px;
+  height: 1000px;
   strong {
     color: var(--clr-primary-100);
   }
@@ -92,4 +93,9 @@ footer {
   font-family: "Jost", sans-serif;
   //max-width: 1280px;
   width:100%;
+}
+
+.footer-hidden {
+  position: fixed;
+  bottom: 100px;
 }

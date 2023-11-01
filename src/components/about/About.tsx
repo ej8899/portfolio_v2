@@ -88,15 +88,7 @@ function About(props: AboutProps) {
           <div className='subtitle-message'>Get to know a bit more about me.</div>
           <div className='about__content' ref={aboutRef}>
             <div className='about__text' ref={leftColumnRef}>
-              <p>
-                When much younger, I did start coding mini games and{' '}
-                <span data-tooltip='freeware and shareware'>applications</span> in BASIC language on{' '}
-                computers. Eventually, this transitioned into PC&apos;s and{' '}
-                <span data-tooltip='Blackberry and PalmPilot'>early mobile devices</span>
-                &nbsp;and then into the early days of web development - from static web pages, to
-                web to full-stack e-commerce applications.
-              </p>
-              <hr />
+              <br />
               <p>
                 I&apos;m a Construction Manager turned Web & Applications Developer.
                 <br />(
@@ -141,8 +133,8 @@ function About(props: AboutProps) {
                 across Canada.
               </p>
               <p>
-                In 2021, I decided to reignite my love for technology and applications. I left my
-                job to enroll in an intensive full-stack web development&nbsp;
+                In 2021, I decided to reignite my love for technology and application development. I
+                left my job to enroll in an intensive full-stack web development&nbsp;
                 <button
                   className='button-text'
                   onClick={() => {
@@ -151,7 +143,7 @@ function About(props: AboutProps) {
                 >
                   bootcamp
                 </button>
-                .
+                &nbsp;to see what was new in the industry.
               </p>
               <p>
                 I thrive on embracing the latest&nbsp;

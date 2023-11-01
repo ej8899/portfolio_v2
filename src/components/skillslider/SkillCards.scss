@@ -25,9 +25,9 @@
     --card-top-offset: 2em;
     --card-margin: 0vw; /* separation between cards */
     --card-height: 200px;
-    // @media (max-width: 500px) {
-    //   --card-height: 250px;
-    // }
+    @media (max-width: 820px) {
+      --card-height: 300px;
+    }
     
 
     grid-template-columns: 1fr;
