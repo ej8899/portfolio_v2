@@ -3,12 +3,15 @@
   --timer: 0.5s;
   z-index: 1;
   position: relative;
-  // padding-block: calc(var(--section-separator-height) + var(--section-vertical-padding)) var(--section-vertical-padding);
+  padding-block: calc(var(--section-separator-height) + var(--section-vertical-padding)) var(--section-vertical-padding);
   //color: var(--clr-neutral-200);
   background-color: rgb(254, 254, 254);
   display: grid;
   grid-template-columns: 1fr;
+  // border: 2px solid blue;
   place-items: center;
+  -webkit-justify-items: center;
+  -webkit-align-items:center;
   padding-bottom: 120px;
 
   // https://wickedbackgrounds.com/app
@@ -41,12 +44,16 @@
   }
 
   &__text {
-    opacity: 0;
+    // border: 2px solid red;
+    opacity: 1;
     animation: fadeInFromBottom var(--timer) ease-out 0.5s normal forwards;
-    transform: translateY(-10vh);
+    //transform: translateY(-10vh);
     position: fixed;
+    position: -webkit-fixed;
     text-align: center;
-
+      // BUG: top:20% shouldn't be here - works fine on FF and chrome w/o it - safari seems to need a fixed value
+      top: 20%;
+    
     @media (min-width: 900px) {
       //background-color: blue;
       text-align: left;

@@ -1,24 +1,29 @@
-@supports (animation-timeline: view()) {
-  .skillcard {
-    --index0: calc(var(--index) - 1); /* 0-based index */
-    --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
-    --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
-    position: sticky;
-    @media (max-width: 500px) {
-      top:100px;
-    }
-    top: 130px;
-    padding-top: calc(var(--index) * var(--card-top-offset)); /* stack top padding */
-    //padding-top: 2em;
-    margin: 0;
+.skillcard {
+  position: sticky;
+  @media (max-width: 500px) {
+    top:100px;
   }
+  top: 130px;
+  padding-top: 1.5em;
+  margin: 0;
+}
 
+@supports (animation-timeline: view()) {
   @keyframes scale {
     to {
       transform:
         scale(calc(1.1 - calc(0.07 * var(--reverse-index))));
     }
   }
+}
+  .skillcard {
+    --index0: calc(var(--index) - 1); /* 0-based index */
+    --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+    --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+    padding-top: calc(var(--index) * var(--card-top-offset)); /* stack top padding */
+  }
+
+  
 
   #skillcards {
     --numcards: 4;
@@ -76,7 +81,7 @@
   #card_4 {
     --index:4;
   }
-}
+// }
 
 .skill-logo {
   max-width: 100px;
