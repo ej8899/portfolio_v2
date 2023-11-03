@@ -37,7 +37,6 @@
     h3 {
       margin: 0;
       font-weight: 400;
-      color: white;
       font-family: "Space Mono", Arial, serif;
     }
     
@@ -53,6 +52,7 @@
     }
     
     .centered-div {
+    width:100%;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Horizontal centering */
@@ -131,35 +131,36 @@
   
   </head>
 
-  <body style="background-color:#FF9000">
+  <body>
     <div id="root"></div>
     
     <noscript>
-      <div class="centered-div">
-        <hr width="60%">
+      <div class="centered-div" style="background-image: url(./public/nojsbg.png); background-position: 50px -100px; background-color: transparent; background-size: cover;">
+      <div class="centered-div" style="background-color: #ff9100ec">
+        <hr width="60%" style="color:teal; border: 2px solid;">
         This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.
-        <hr width="60%">
+        <hr width="60%" style="color:teal; border: 2px solid;">
 
       <h1 class='nosheader'>
         - Ernie Johnson -
       </h1>
       <h3>
-        <span class="nos_subheader">Your Full Stack Web & App Developer!</span>
+        <span class="nos_subheader" style="color:white">Your Full Stack Web & App Developer!</span>
       </h3>
       <div>
-        <a target='_new' rel='nofollow' href="">
+        <a target='_new' rel='nofollow' href="https://www.linkedin.com/in/ernie-johnson/">
           <i class="soclinks fa-brands fa-linkedin fa-2xl"></i></a>
-        <a target='_new' rel='nofollow' href="{globalconfig.link.github}">
+        <a target='_new' rel='nofollow' href="https://github.com/ej8899/">
         <i aria-hidden='true' class='soclinks fab fa-github  fa-2xl'></i></a>
-        <a target='_new' rel='nofollow' href="{globalconfig.link.twitter}">
+        <a target='_new' rel='nofollow' href="http://www.twitter.com/ejdevscom">
         <i aria-hidden='true' class='soclinks fab fa-twitter  fa-2xl'></i></a>
-        <a target='_new' rel='nofollow' href="{globalconfig.link.youtube}">
+        <a target='_new' rel='nofollow' href="https://www.youtube.com/@oldmancodes">
         <i aria-hidden='true' class='soclinks fab fa-youtube  fa-2xl'></i></a>
       </div>
 
       <section class="content">
           <p>Working across Canada & USA with home offices in Calgary and Windsor</p>
-          <h3><span class="nos_subheader">Skilled in:</span></h3>
+          <h3><span class="nos_subheader" style="color:white">Skilled in:</span></h3>
           <ul class="horizontal-list">
               <li>JavaScript</li>
               <li>HTML</li>
@@ -186,8 +187,9 @@
               <li>Cybersecurity</li>
           </ul>
       </section>
-      <hr width="60%">
+      <hr width="60%" style="color:teal; border: 2px solid;">
       &copy;2023 - ErnieJohnson.ca
+    </div>
     </div>
     </noscript>
 
