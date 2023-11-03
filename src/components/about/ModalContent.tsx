@@ -14,19 +14,19 @@ export const modalContentEngineer = (
       "engineer" is protected by law and can only be used by individuals who are licensed by one of
       the provincial or territorial engineering regulators. These regulators are responsible for
       ensuring that engineers meet high standards of education, experience, ethics, and
-      professionalism, and that they protect the public interest and safety in their work. By using
-      the title of "engineer", software developers may imply that they have the same qualifications
-      and obligations as licensed engineers, which may not be the case.
+      professionalism, and that they protect the public interest and safety in their work.
     </p>
     <p>
-      This could allegedly mislead the public and create confusion about the scope and quality of
-      the services provided by software developers.
+      By using the title of "engineer", software developers may imply that they have the same
+      qualifications and obligations as licensed engineers, which may not be the case. This could
+      allegedly mislead the public and create confusion about the scope and quality of the services
+      provided by software developers.
     </p>
     <p>
-      That all being said, there are regular cases being brought forward to allow the use of
-      "software engineer" without the requirement for official provincial licensing. At the time of
-      this writing however, developers in Canada are not to use the term "software engineer" and
-      could be subject to fines if used without being licensed.
+      That all being said, there are cases being brought forward to allow the use of "software
+      engineer" without the requirement for official provincial licensing. At the time of this
+      writing however, developers in Canada are not to use the term "software engineer" and could be
+      subject to fines if used without being licensed.
     </p>
     <p>
       <i>Sources:</i>

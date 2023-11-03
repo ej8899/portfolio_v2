@@ -98,7 +98,7 @@ function About(props: AboutProps) {
                     handleOpenModal('engineer');
                   }}
                 >
-                  &nbsp;Why am I not a software engineer?&nbsp;
+                  &nbsp;Why am I <i>NOT</i> a software engineer?&nbsp;
                 </button>
                 )
               </p>
@@ -143,7 +143,7 @@ function About(props: AboutProps) {
                 >
                   bootcamp
                 </button>
-                &nbsp;to see what was new in the industry.
+                &nbsp;program to learn about what was new in the industry.
               </p>
               <p>
                 I thrive on embracing the latest&nbsp;
