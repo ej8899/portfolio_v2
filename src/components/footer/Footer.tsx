@@ -9,7 +9,6 @@ function Footer() {
   return (
     <footer className='footer' aria-label='footer containing github repo link'>
       <div className='footer-hidden'>
-        where is this text
       </div>
       <div className='footer__wrapper copyright_text'>
             <div className='footer-section'>
