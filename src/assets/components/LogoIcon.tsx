@@ -15,9 +15,6 @@ function LogoIcon() {
             <g id='tight-bounds' transform='matrix(1,0,0,1,0,0)'>
               <svg viewBox='0 0 576 360' height='360' width='576'>
                 <g>
-                  <svg></svg>
-                </g>
-                <g>
                   <svg viewBox='0 0 576 360' height='360' width='576'>
                     <g>
                       <path
