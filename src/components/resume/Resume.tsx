@@ -252,7 +252,6 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                 <button className='bnt-more'>More</button>
               </div>
             </div>
-            {''}
           </div>
           <div className='overlay-fade-bottom'></div>
         </section>
