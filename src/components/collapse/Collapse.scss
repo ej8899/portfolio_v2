@@ -8,11 +8,12 @@
   display: flex;
   align-items: center; /* Vertically align items */
   justify-content: start; /* Horizontally left items */
-  gap: 5px; /* Adjust the gap between text and arrow */
+  //gap: 5px; /* Adjust the gap between text and arrow */
   // padding: 5px;
   // padding-left: 10px;
   padding-right: 10px;
-
+  //width: 400px;
+  //border:2px solid blue;
 }
 
 .button-text {
@@ -68,12 +69,22 @@
 .collapse-arrows {
   fill: black;
   background-color: orange;
-  height: 15px;
-  width: 15px;
+  height: 20px !important;
+  //width: 20px !important;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 .button-container:hover .collapse-arrows {
   fill: #ff6600;
   background-color: black;
+}
+.collapse-arrows-wrapper {
+  //width:100px !important;
+  flex: 0 0 20px;
+  //border: 2px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .collapsible-section {
@@ -114,17 +125,11 @@
 
 
 .ldots {
-  height: 1em; 
-  overflow: hidden;
-  word-wrap: break-word;
-  /* above stays fixed to work - below for config */
-  color: blue;
-  letter-spacing: 5px;
-  //font-size:22px;
-}
-
-.ldots:after {
-  //content: '................................................';
+  width: 100%;
+  background: radial-gradient(circle at 50% 0.8em, orange 8%, transparent 8%);
+  background-size: 0.5em;
+  background-repeat: repeat-x;
+  color: black;
 }
 
 .leftjustify {
