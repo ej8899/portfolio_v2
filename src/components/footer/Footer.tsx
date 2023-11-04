@@ -38,7 +38,9 @@ function Footer() {
                 className='copyright-text'
                 data-animate='active'
               >
-                © {currentYear} <strong>ERNIEJOHNSON.CA</strong>. All rights reserved.
+                © {currentYear} <strong>ERNIEJOHNSON.CA</strong>.
+                <br />
+                All rights reserved.
               </div>
             </div>
             <div className='footer-section'>
