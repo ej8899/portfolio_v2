@@ -33,9 +33,10 @@ function Collapse({ title, children }: CollapsePropTypes) {
           aria-label={`Toggle ${isCollapsed ? 'Expand' : 'Collapse'}`}
         >
           <div className='button-container'>
-            <span>
+            <span className='leftjustify'>
               {title === null || title === undefined ? (isCollapsed ? 'More' : 'Less') : title}
             </span>
+            <span className='ldots'></span>
             <svg className='collapse-arrows'>
               <use xlinkHref={isCollapsed ? '#rightcircle' : '#uparrow'} />
             </svg>

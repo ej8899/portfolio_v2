@@ -7,11 +7,12 @@
 .button-container {
   display: flex;
   align-items: center; /* Vertically align items */
-  justify-content: center; /* Horizontally center items */
+  justify-content: start; /* Horizontally left items */
   gap: 5px; /* Adjust the gap between text and arrow */
   // padding: 5px;
   // padding-left: 10px;
   padding-right: 10px;
+
 }
 
 .button-text {
@@ -36,6 +37,8 @@
   transition: transform 0.2s ease;
   position: relative; /* Add relative positioning */
   transition: color 0.3s; /* Keep the color transition */
+  //display:flex;
+  width: 100%;
   
   &:before {
     content: "";
@@ -107,4 +110,23 @@
   transition: max-height 0.4s ease-in-out;
   max-height: 0;
   border: 2px solid transparent;
+}
+
+
+.ldots {
+  height: 1em; 
+  overflow: hidden;
+  word-wrap: break-word;
+  /* above stays fixed to work - below for config */
+  color: blue;
+  letter-spacing: 5px;
+  //font-size:22px;
+}
+
+.ldots:after {
+  //content: '................................................';
+}
+
+.leftjustify {
+  white-space: nowrap;
 }
