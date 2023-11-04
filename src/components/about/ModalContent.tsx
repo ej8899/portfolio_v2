@@ -5,6 +5,7 @@
 export const modalContentEngineer = (
   <>
     <img
+      className='modal-image-border'
       src='src/assets/modals/engineer.png'
       alt='software engineer working at multi monitor display'
     ></img>
@@ -74,6 +75,7 @@ export const modalContentMProjects = (
   <>
     <p>
       <img
+        className='modal-image-border'
         src='src/assets/modals/mprojects-henday.jpg'
         alt='major highway (27km) & bridges (47) project (Edmonton AB)'
       ></img>
@@ -93,6 +95,13 @@ export const modalContentMProjects = (
       markers and linking back into secure Sharepoint data systems.
       <br />
       <br />
+      <img
+        className='modal-image-border'
+        src='src/assets/images/port-mapping.png'
+        alt='major highway (27km) & bridges (47) project (Edmonton AB)'
+      ></img>
+      <br />
+      <br />
       Additional duties included the management and training of field level workers in safe utility
       excavation techniques, developing safe execavation training programs (live and via regular
       'tool box talk' documentation as well as video/Powerpoint presentations).
@@ -103,7 +112,11 @@ export const modalContentMProjects = (
 export const modalContentBootcamp = (
   <>
     <p>
-      <img src='src/assets/modals/students.png' alt='Students at a coding bootcamp'></img>
+      <img
+        className='modal-image-border'
+        src='src/assets/modals/students.png'
+        alt='Students at a coding bootcamp'
+      ></img>
       <br />
       Although largely considering myself a self-taught programmer and web developer, I did attend a
       coding bootcamp program at LighthouseLabs.ca in 2022.
@@ -126,7 +139,11 @@ export const modalContentBootcamp = (
 export const modalContentCommodore = (
   <>
     <p>
-      <img src='src/assets/modals/commodore.png' alt='commodore computer and tape drive'></img>
+      <img
+        className='modal-image-border'
+        src='src/assets/modals/commodore.png'
+        alt='commodore computer and tape drive'
+      ></img>
       <br />
       My first exposure to computers and programming takes me way back to when Commodore first
       released the VIC-20. I was eager to pickup the latest Compute! magazine and frantically type
