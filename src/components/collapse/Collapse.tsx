@@ -36,10 +36,10 @@ function Collapse({ title, children }: CollapsePropTypes) {
             <span className='leftjustify'>
               {title === null || title === undefined ? (isCollapsed ? 'More' : 'Less') : title}
             </span>
-            <span className='ldots'>&nbsp;</span>
+            <span className='ldots'>&nbsp;</span>&nbsp;
             <span className='collapse-arrows-wrapper'>
               <svg className='collapse-arrows rightjustify'>
-                <use xlinkHref={isCollapsed ? '#rightcircle' : '#uparrow'} />
+                <use xlinkHref={isCollapsed ? '#rightarrow' : '#uparrow'} />
               </svg>
             </span>
           </div>
