@@ -37,6 +37,7 @@ function App() {
   // const { height, width } = useWindowDimensions();
   // console.log('window height:', height);
   // what element is on screenconst [activeSection, setActiveSection] = useState(null);
+  const [isChrome115Plus, setIsChrome115Plus] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const sectionRefs = {
     portfolio: useRef(null),
@@ -140,6 +141,17 @@ function App() {
         // window.removeEventListener('resize', handleResize);
       });
     }
+
+    const isChrome = /Chrome\/([0-9]+)/.test(navigator.userAgent);
+    const chromeVersion = isChrome ? parseInt(RegExp.$1) : 0;
+    if (isChrome && chromeVersion >= 115) {
+      setIsChrome115Plus(true);
+      const timer = setTimeout(() => {
+        setIsChrome115Plus(false);
+      }, 15000);
+    } else {
+      setIsChrome115Plus(false);
+    }
   }, []);
 
   useEffect(() => {
@@ -179,6 +191,7 @@ function App() {
           <i className='fas fa-comment-alt'></i>
         </div>
       </div>
+      {isChrome115Plus ? <div id='snackbar'>browser update recommended!</div> : null}
       {isChatOpen && <Chatbot onClose={toggleChat} />}
     </>
     // </WindowContext.Provider>
