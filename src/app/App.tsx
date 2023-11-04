@@ -144,7 +144,7 @@ function App() {
 
     const isChrome = /Chrome\/([0-9]+)/.test(navigator.userAgent);
     const chromeVersion = isChrome ? parseInt(RegExp.$1) : 0;
-    if (isChrome && chromeVersion >= 115) {
+    if (isChrome && chromeVersion <= 115) {
       setIsChrome115Plus(true);
       const timer = setTimeout(() => {
         setIsChrome115Plus(false);
