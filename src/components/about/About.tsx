@@ -12,6 +12,7 @@ import {
   modalContentMProjects,
   modalContentBootcamp,
   modalContentCommodore,
+  modalContentServers,
 } from './ModalContent'; // Import the modal content
 
 interface AboutProps {
@@ -29,7 +30,7 @@ function About(props: AboutProps) {
     // console.log('about- opening modal');
     switch (modalItem) {
       case 'engineer':
-        openModal('Software Engineers in 🇨🇦', modalContentEngineer, '');
+        openModal('Software Engineers in Canada', modalContentEngineer, '');
         break;
       case 'majorprojects':
         openModal('Major Projects...', modalContentMProjects, '');
@@ -39,6 +40,9 @@ function About(props: AboutProps) {
         break;
       case 'commodore':
         openModal('Commodore & Tandy!', modalContentCommodore, '');
+        break;
+      case 'hardware':
+        openModal('Hardware', modalContentServers, '');
         break;
       default:
         break;
@@ -146,9 +150,16 @@ function About(props: AboutProps) {
                 &nbsp;program to learn about what was new in the industry.
               </p>
               <p>
-                I thrive on embracing the latest&nbsp;
-                <span data-tooltip='including hardware!'>technologies</span>, and this is where my
-                journey has brought me today.
+                I thrive on embracing the latest technologies (
+                <button
+                  className='button-text'
+                  onClick={() => {
+                    handleOpenModal('hardware');
+                  }}
+                >
+                  including hardware
+                </button>
+                ) and this is where my journey has brought me today.
               </p>
               <p>
                 Other interests include:

@@ -167,3 +167,31 @@ export const modalContentCommodore = (
     </p>
   </>
 );
+
+export const modalContentServers = (
+  <>
+    <p>
+      <img
+        className='modal-image-border'
+        src='src/assets/modals/hardware.png'
+        alt='computer homelab'
+      ></img>
+      <br />
+      Yes, I'm a bit of a hardware 'collector' and do thoroughly enjoy building systems including
+      servers, desktops and various other homelab equipment complete with automation systems.
+      <br />
+      <br />
+      As a part of what I already do is operate a cluster of server systems totalling well over
+      300Tb of storage. Some of this space is rented to clients across Canada for data backup as
+      well as remote data access for a civil engineering team with offices in Calgary, Regina and
+      Toronto. Their data must remain accessible across the globe.
+      <br />
+      <br />
+      In addition to this 'large-ish' storage server system, I also operate a shared hosting service
+      for a handful of select clients (largely running Wordpress sites). Although the server
+      maintenance I'm required to do is quite minimal, I am required to review server logs to ensure
+      everyone is in compliance with TOS for system usage and troubleshoot any failed Wordpress
+      installs and updates.
+    </p>
+  </>
+);
