@@ -37,7 +37,7 @@ function Hero(props: { reference: LegacyRef<HTMLElement> | undefined }) {
               <i aria-hidden='true' className='fab fa-github socicons' />
             </a>
             <a target='_new' rel='nofollow' href={globalconfig.link.twitter}>
-              <i aria-hidden='true' className='fab fa-twitter socicons' />
+              <i aria-hidden='true' className='fab fa-x-twitter socicons' />
             </a>
             <a target='_new' rel='nofollow' href={globalconfig.link.youtube}>
               <i aria-hidden='true' className='fab fa-youtube socicons' />
