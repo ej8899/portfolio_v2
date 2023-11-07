@@ -31,7 +31,7 @@ The goal of this repo is to practice the following skill sets:
 ![Hero](screenshots/hero.png)
 
 ## Summary
-
+...
 
 
 
