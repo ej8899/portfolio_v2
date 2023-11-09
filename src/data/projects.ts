@@ -32,6 +32,7 @@ import yourtab6 from '../assets/project-yourtab/yourtab6.png';
 import yourtab2 from '../assets/project-yourtab/yourtab2.png';
 import yourtab3 from '../assets/project-yourtab/yourtab3.png';
 import yourtab4 from '../assets/project-yourtab/yourtab4.png';
+import yourtab5 from '../assets/project-yourtab/yourtab-design.png';
 
 export interface IProject {
   title: string;
@@ -219,6 +220,7 @@ const PROJECTS: IProject[] = [
       { url: yourtab2, alt: 'Do not like an image? Just block it!' },
       { url: yourtab3, alt: 'Settings to adjust your images, and other items!' },
       { url: yourtab4, alt: 'Calendar, events and many more mini apps included!' },
+      { url: yourtab5, alt: 'Rough sketch-up of the proposed design' },
     ],
     description: [
       { type: 'header', value: 'The Inspiration' },
