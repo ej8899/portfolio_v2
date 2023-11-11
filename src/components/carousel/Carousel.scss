@@ -37,7 +37,7 @@
     img {
       scroll-snap-align: start;
       border: 2px solid black;
-      object-fit: contain;
+      object-fit: scale-down;
       width: auto;
       //height:100%;
       display: block;
