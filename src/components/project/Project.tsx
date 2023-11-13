@@ -23,6 +23,7 @@ import Bootstrapicon from '../../assets/components/Bootstrapicon';
 import Express from '../../assets/components/Express';
 import Mui from '../../assets/components/Mui';
 import Php from '../../assets/components/Php';
+import Python from '../../assets/components/Python';
 
 import './Project.scss';
 
@@ -170,6 +171,10 @@ function Project({ data, number }: TProps) {
               case 'php':
                 techComponent = <Php />;
                 tooltip = 'PHP';
+                break;
+              case 'python':
+                techComponent = <Python />;
+                tooltip = 'Python';
                 break;
               case 'express':
                 techComponent = <Express />;
