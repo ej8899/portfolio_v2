@@ -6,6 +6,8 @@ import uuid
 
 cgitb.enable()  # enable detailed error messages
 
+database_file = "blog_database.json"
+
 def generate_uid():
     return str(uuid.uuid4())
 
@@ -20,8 +22,7 @@ def authenticate(username, password):
 # FETCH: return ALL data in JSON
 #
 def fetch_data():
-    database_file = "blog_database.json"
-
+    global database_file
     try:
         # Load existing data from the database
         with open(database_file, 'r') as f:
@@ -34,7 +35,7 @@ def fetch_data():
 # SAVE: new post data
 #
 def save_to_database(blog_post):
-    database_file = "blog_database.json"
+    global database_file
 
     try:
         # Load existing data from the database
