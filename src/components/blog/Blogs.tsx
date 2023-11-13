@@ -17,8 +17,12 @@ function BlogComponent() {
       try {
         const response = await fetch('https://erniejohnson.ca/cgi-bin/post.py?action=fetch', {
           method: 'POST',
-          mode: 'no-cors',
+          mode: 'cors',
         });
+        // const response = await fetch('http://localhost:8000/post.py?action=fetch', {
+        //   method: 'POST',
+        //   mode: 'no-cors',
+        // });
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
