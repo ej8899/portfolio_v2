@@ -73,6 +73,7 @@ type TTech =
   | 'postgres'
   | 'vite'
   | 'php'
+  | 'python'
   | 'express';
 
 const PROJECTS: IProject[] = [
@@ -138,7 +139,7 @@ const PROJECTS: IProject[] = [
       live: 'http://erniejohnson.ca',
       repo: 'https://github.com/ej8899/portfolio_v2',
     },
-    techIcons: ['react', 'sass', 'typescript', 'vite'],
+    techIcons: ['react', 'sass', 'typescript', 'vite', 'python'],
     screenshots: [
       { url: learnthisHome, alt: 'LearnThis! Screenshot' },
       { url: learnthisLessons, alt: 'LearnThis! Screenshot' },
