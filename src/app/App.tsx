@@ -28,6 +28,7 @@ import SectionObserver from '../components/SectionObserver';
 import AboutSlider from '../components/about/AboutSlider';
 import Chatbot from '../components/chatbot/Chatbot';
 import Resume from '../components/resume/Resume';
+import BlogComponent from '../components/blog/Blogs';
 // import useWindowDimensions from '../hooks/useWindowDimensions';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
@@ -176,6 +177,7 @@ function App() {
         </SectionObserver>
         <SectionObserver sectionName='resume' onEnter={handleEnter} onLeave={handleLeave}>
           <Resume reference={sectionRefs.resume} />
+          <BlogComponent />
         </SectionObserver>
         <SectionObserver sectionName='contact' onEnter={handleEnter} onLeave={handleLeave}>
           <Contact />
