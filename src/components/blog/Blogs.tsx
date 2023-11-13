@@ -31,6 +31,7 @@ const convertMarkdownToHtml = (markdown: string): string => {
 
 function BlogComponent() {
   const [blogPosts, setBlogPosts] = useState<{ [postId: string]: BlogPost }>({});
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -60,16 +61,35 @@ function BlogComponent() {
     void fetchData();
   }, []);
 
+  const handleToggleBlog = () => {
+    setIsOpen((prev) => !prev);
+  };
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      handleToggleBlog();
+    }
+  };
+
   return (
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, react/prop-types, @typescript-eslint/no-unsafe-member-access
-    <section id='blog' className='blog' aria-label='blog posts'>
-      <div className='column full_height centered_grid'>
-        <h2 className='blog__title'>Blog Posts</h2>
-        <div className='blog__subtitle-message subtitle-message'>Some of my Ramblings</div>
-        <ul>
-          {Object.entries(blogPosts).map(([postId, post]) => (
-            <li key={postId}>
-              <Collapse title={post.title} key={postId}>
+    <div className={`blog-container ${isOpen ? 'open' : ''}`}>
+      <div
+        className={`blog-tab ${isOpen ? '' : 'open'}`}
+        role='button'
+        tabIndex={0}
+        onClick={handleToggleBlog}
+        onKeyDown={handleKeyDown}
+      >
+        Blog
+      </div>
+      <section id='blog' className={`blog ${isOpen ? 'open' : ''}`} aria-label='blog posts'>
+        <div className='column full_height centered_grid'>
+          <h2 className='blog__title'>Blog Posts</h2>
+          <div className='blog__subtitle-message subtitle-message'>Some of my Ramblings</div>
+          <ul>
+            {Object.entries(blogPosts).map(([postId, post]) => (
+              <li key={postId}>
+                <p>Title: {post.title}</p>
                 <p>Date: {post.date}</p>
                 <p>ID: {postId}</p>
                 <p>Keywords: {post.keywords.join(', ')}</p>
@@ -77,12 +97,12 @@ function BlogComponent() {
                   className='project__text-p'
                   dangerouslySetInnerHTML={{ __html: convertMarkdownToHtml(post.article) }}
                 ></div>
-              </Collapse>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </div>
   );
 }
 
