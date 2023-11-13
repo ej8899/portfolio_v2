@@ -72,7 +72,10 @@ def main():
     if action == 'fetch':
         # Fetch routine
         data = fetch_data()
-        
+        print("Access-Control-Allow-Origin: *");
+        print("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+        print("Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization");
+        #print();
         print("Content-type: application/json\n")
         print(json.dumps(data, indent=2))
     else:
@@ -108,4 +111,7 @@ def main():
 
 # Run the main function
 # if __name__ == "__main__":
+
+
+
 main()
