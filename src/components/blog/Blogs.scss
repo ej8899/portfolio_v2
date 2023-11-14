@@ -1,28 +1,28 @@
 //
 
 .blog {
-  position: relative;
-  // padding-block: calc(var(--section-separator-height) + var(--section-vertical-padding)) var(--section-vertical-padding);
-  padding-block: var(--section-vertical-padding);
-  //padding-top: var(--section-vertical-padding);
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-// padding-bottom: 250px;
-  z-index: 2;
-  //padding-top: 0px;
-  //background-color: white;
-  //background-color: teal;
-  //background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><g transform=" rotate(358 960 540) translate(-58.97700164393336 -33.17456342471246) scale(1.0614343767124306) "><rect width="1920" height="1080" fill="rgb(32, 122, 122)"></rect><g transform="translate(0, 0)"><path fill="rgb(140, 185, 185)" fill-opacity="1" d="M0,144.271L106.667,136.358C213.333,128.446,426.667,112.621,640,158.459C853.333,204.298,1066.667,311.799,1280,373.049C1493.333,434.298,1706.667,449.295,1813.333,456.793L1920,464.291L1920,1080L1813.333,1080C1706.667,1080,1493.333,1080,1280,1080C1066.667,1080,853.333,1080,640,1080C426.667,1080,213.333,1080,106.667,1080L0,1080Z"></path></g><g transform="translate(0, 540)"></g></g></svg>');
-  //background-color: var(--clr-about-bg-bottom);
-  background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
-  //margin-bottom: 50px;
+  flex-grow: 1;
+  padding-left:60px;
+  position: fixed;
+  top: 50px;
+  height: 100%;
+  width: 60%;
+  right: -100%;
+  overflow-y: scroll;
 
-  // &__content {
-  //   width: 100%;
-  //   display: grid;
-  //   place-items: center;
-  //   gap: 1rem;
-  // }
+
+  padding-top: 20px;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 100px;
+  z-index: 3;
+  // background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
+  background-color: orange;
+  transition: all 0.5s ease; /* Add a transition for smooth animation */
+
+  &.open {
+    right: 0; /* Slide in when the "open" class is applied */
+  }
 
   &__content {
     display: grid;
@@ -112,4 +112,28 @@
     color: black;
     // TODO above is sub header color - set proper variable for light/dark modes
   }
+}
+
+.blog-tab {
+  position: fixed;
+  top: 50%;
+  right: 59%;
+  padding: 0;
+  margin: 0;
+  transform: translateY(-50%) rotate(-90deg);
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  transition: right 0.6s ease;
+  z-index: 5;
+  &.open {
+    // right: 1200px;
+    right: -0.6%;
+  }
+}
+
+.blog-container {
+  position: relative;
+  overflow: hidden;
 }
