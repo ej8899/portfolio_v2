@@ -96,28 +96,17 @@ const PROJECTS: IProject[] = [
       {
         type: 'p',
         value:
-          '1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      },
-      {
-        type: 'more',
-        value:
-          '2Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      },
-      { type: 'header', value: 'High Level Breakdown' },
-      {
-        type: 'p',
-        value:
-          '3Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ',
+          'As I delve further into my web and application development career, I constantly find myself collecting bits of information - learning materials, reference items, and so on. The need for a bookmarking system presented itself, BUT I wanted this to be different than just a bookmarking and organizing tool.',
       },
       {
         type: 'p',
         value:
-          '4Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          'As material was added to LearnThis!, I wanted to create a learning componenet to this information.  As a result, we developed some back-end algorithms to assemble bookmarked materials in a logic learning order for beginners, intermediate and advanced learners.  This information is assembled based on the end users desires, as well as recommended ratings and rankings by other users - effectively giving the end users intelligent steps to learn various materials.  Essentially, we have a "cloud sourced" learning system!',
       },
       {
-        type: 'p',
+        type: 'more|extra features',
         value:
-          '5RLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,dfdfd quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          'What good is a data collection tool such as this without a quick way to get information into it?  As the front-end lead developer on this project, I took it upon myself to quickly assemble a Chrome browser extension tool so that we could collect information quickly and accurately.  A data parsing system was also implemented to assist the user in categorizing information.',
       },
       {
         type: 'more|teamwork challenges',
@@ -126,7 +115,8 @@ const PROJECTS: IProject[] = [
       },
       {
         type: 'more|technical features',
-        value: '<li>google fonts<li>materialUI<li>youtube api<li>chatGPT',
+        value:
+          '<li>google fonts<li>materialUI<li>youtube api<li>chatGPT<li>postgresql database<li>node.js<li>react',
       },
     ],
     bulletPoints: [],
@@ -152,6 +142,11 @@ const PROJECTS: IProject[] = [
         type: 'p',
         value:
           'It was important to assemble a quick portfolio in order to talk more about who I am and what I work with for my web development projects as well as continue on learning by doing with actual live projects.',
+      },
+      {
+        type: 'p',
+        value:
+          'My "quick" portfolio idea quickly turned into something much more, and to this day I try to remain actively developing new features within it.',
       },
       {
         type: 'more|learning objectives',

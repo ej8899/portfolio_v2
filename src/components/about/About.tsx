@@ -102,7 +102,7 @@ function About(props: AboutProps) {
                     handleOpenModal('engineer');
                   }}
                 >
-                  &nbsp;Why am I <i>NOT</i> a software engineer?&nbsp;
+                  &nbsp;Why am I <s>NOT</s> a software engineer?&nbsp;
                 </button>
                 )
               </p>
