@@ -4,10 +4,12 @@ import './Blogs.scss';
 import Collapse from '../collapse/Collapse';
 
 interface BlogPost {
+  image: string;
   title: string;
   date: string;
   keywords: string[];
   article: string;
+  id: string;
 }
 
 const convertMarkdownToHtml = (markdown: string): string => {
@@ -32,6 +34,8 @@ const convertMarkdownToHtml = (markdown: string): string => {
 function BlogComponent() {
   const [blogPosts, setBlogPosts] = useState<{ [postId: string]: BlogPost }>({});
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const [postOpen, setPostOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,12 +67,39 @@ function BlogComponent() {
 
   const handleToggleBlog = () => {
     setIsOpen((prev) => !prev);
+    setSelectedPost(null);
   };
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
       handleToggleBlog();
     }
   };
+
+  const handlePostClick = (post: BlogPost) => {
+    setSelectedPost(post);
+    setPostOpen(true);
+    console.log(post);
+  };
+
+  const handleOutsideClick = (e: MouseEvent) => {
+    const slideOver = document.querySelector('.slide-over');
+    if (slideOver && !slideOver.contains(e.target as Node)) {
+      setPostOpen(false);
+    }
+    console.log('click out');
+  };
+
+  useEffect(() => {
+    if (postOpen) {
+      document.addEventListener('click', handleOutsideClick);
+    } else {
+      document.removeEventListener('click', handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [postOpen]);
 
   return (
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, react/prop-types, @typescript-eslint/no-unsafe-member-access
@@ -87,21 +118,74 @@ function BlogComponent() {
           <h2 className='blog__title'>Blog Posts</h2>
           <div className='blog__subtitle-message subtitle-message'>Some of my Ramblings</div>
           <ul>
-            {Object.entries(blogPosts).map(([postId, post]) => (
-              <li key={postId}>
-                <p>Title: {post.title}</p>
-                <p>Date: {post.date}</p>
-                <p>ID: {postId}</p>
-                <p>Keywords: {post.keywords.join(', ')}</p>
-                <div
-                  className='project__text-p'
-                  dangerouslySetInnerHTML={{ __html: convertMarkdownToHtml(post.article) }}
-                ></div>
-              </li>
-            ))}
+            {Object.entries(blogPosts)
+              .sort(([, postA], [, postB]) => new Date(postB.date) - new Date(postA.date))
+              .map(([postId, post]) => (
+                <li key={postId}>
+                  <div
+                    className='blog-post-row'
+                    role='button'
+                    tabIndex={0} // Make the div focusable
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handlePostClick(post);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.stopPropagation();
+                        handlePostClick(post);
+                      }
+                    }}
+                  >
+                    {post.image && (
+                      <img src={post.image} alt={`${post.title}`} className='blog-post-image' />
+                    )}
+                    <div className='blog-post-details'>
+                      <p className='post-title'>{post.title}</p>
+                      {post.date && <p>Date: {post.date}</p>}
+                      <p>
+                        {post.keywords.map((keyword, index) => (
+                          <span key={index} className='projcard-tag'>
+                            {keyword}
+                          </span>
+                        ))}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))}
           </ul>
         </div>
       </section>
+      {selectedPost && (
+        <div className={`slide-over ${postOpen ? 'open' : ''}`}>
+          <div className='slide-over-content'>
+            {selectedPost.image && (
+              <img
+                src={selectedPost.image}
+                alt={`${selectedPost.title}`}
+                className='blog-post-image-full'
+              />
+            )}
+            <h2>{selectedPost.title}</h2>
+            {selectedPost.date && <p>Date: {selectedPost.date}</p>}
+
+            <p>
+              {selectedPost.keywords.map((keyword, index) => (
+                <span key={index} className='projcard-tag'>
+                  {keyword}
+                </span>
+              ))}
+            </p>
+
+            <div
+              className='blog__text-p'
+              dangerouslySetInnerHTML={{ __html: convertMarkdownToHtml(selectedPost.article) }}
+            ></div>
+          </div>
+          <button onClick={() => setPostOpen(false)}>Close</button>
+        </div>
+      )}
     </div>
   );
 }
