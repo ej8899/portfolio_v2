@@ -10,6 +10,7 @@ function Aboutimage() {
   const photoRef = useRef<HTMLImageElement>(null);
   const infoRef1 = useRef<HTMLLIElement>(null);
   const infoRef2 = useRef<HTMLLIElement>(null);
+  const infoRef3 = useRef<HTMLLIElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
   const pat1Ref = useRef<HTMLDivElement>(null);
   const pat2Ref = useRef<HTMLDivElement>(null);
@@ -29,6 +30,7 @@ function Aboutimage() {
     setTimeout(() => {
       infoRef1.current?.classList.add('animate__fadeIn');
       infoRef2.current?.classList.add('animate__fadeIn');
+      infoRef3.current?.classList.add('animate__fadeIn');
 
       photoRef.current?.classList.add('animate__fadeIn');
 
@@ -92,9 +94,18 @@ function Aboutimage() {
               className='rotate3r parallax-about-item-info2 animate__animated animate__delay-2s'
               ref={infoRef2}
             >
-              <span className='num'>53</span>
+              <span className='num'>53+</span>
               <span className='value'>
                 Completed <strong>Projects</strong>
+              </span>
+            </li>
+            <li
+              className='parallax-about-item-info3 animate__animated animate__delay-3s'
+              ref={infoRef3}
+            >
+              <span className='num'>22+</span>
+              <span className='value'>
+                <strong>Freelance Clients</strong>
               </span>
             </li>
           </ul>
