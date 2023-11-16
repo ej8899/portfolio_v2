@@ -34,6 +34,8 @@ import yourtab3 from '../assets/project-yourtab/yourtab3.png';
 import yourtab4 from '../assets/project-yourtab/yourtab4.png';
 import yourtab5 from '../assets/project-yourtab/yourtab-design.png';
 
+import portfolio1 from '../assets/project-portfolio/paperlayout.jpeg';
+
 export interface IProject {
   title: string;
   featured: boolean;
@@ -131,7 +133,7 @@ const PROJECTS: IProject[] = [
     },
     techIcons: ['react', 'sass', 'typescript', 'vite', 'python'],
     screenshots: [
-      { url: learnthisHome, alt: 'LearnThis! Screenshot' },
+      { url: portfolio1, alt: 'Sketching and Kanban process' },
       { url: learnthisLessons, alt: 'LearnThis! Screenshot' },
       { url: learnthisClipper, alt: 'LearnThis! Screenshot' },
       { url: learnthisAbout, alt: 'LearnThis! Screenshot' },
@@ -160,7 +162,7 @@ const PROJECTS: IProject[] = [
       },
       {
         type: 'more|technical features',
-        value: '<li>google fonts<li>chatGPT<li>vite<li>image optimization',
+        value: '<li>google fonts<li>chatGPT<li>vite<li>image optimization<li>Python (blog backend)',
       },
     ],
     bulletPoints: [],
