@@ -30,6 +30,13 @@ export const modalContentEngineer = (
       subject to fines if used without being licensed.
     </p>
     <p>
+      <i>
+        November 2023 update - The Province of Alberta passed legislation that now allows for us to
+        use the term "Software Engineer" in our titles. So, I can finally call myself a Software
+        Engineer!
+      </i>
+    </p>
+    <p>
       <i>Sources:</i>
       <br />
       (1){' '}
