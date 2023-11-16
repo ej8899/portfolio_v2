@@ -204,7 +204,7 @@ function BlogComponent() {
                           getFormattedReadDate(postId) !== 'never' ? 'blog-read' : ''
                         }`}
                         role='button'
-                        tabIndex={0} // Make the div focusable
+                        tabIndex={0}
                         onClick={(e) => {
                           e.stopPropagation();
                           handlePostClick({ ...post, id: postId });
@@ -221,9 +221,8 @@ function BlogComponent() {
                         )}
                         <div className='blog-post-details'>
                           <p className='post-title'>{post.title}</p>
-                          <p>last read: {getFormattedReadDate(postId)}</p>
-                          <p className='post-title'>ID{post.id}</p>
-                          {post.date && <p>Date: {post.date}</p>}
+                          {post.date && <p>Article date... {post.date}</p>}
+                          <p>Last read... {getFormattedReadDate(postId)}</p>
                           <p>
                             {post.keywords.map((keyword, index) => (
                               <span key={index} className='projcard-tag'>
