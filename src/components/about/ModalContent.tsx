@@ -2,11 +2,12 @@
 // ModalContent.tsx
 
 // Define your modal content as variables
+import photoEngineer from '../../assets/modals/engineer.png';
 export const modalContentEngineer = (
   <>
     <img
       className='modal-image-border'
-      src='src/assets/modals/engineer.png'
+      src={photoEngineer}
       alt='software engineer working at multi monitor display'
     ></img>
     <br />
@@ -78,12 +79,14 @@ export const modalContentEngineer = (
   </>
 );
 
+import photoHenday from '../../assets/modals/mprojects-henday.jpg';
+import photoMapping from '../../assets/images/port-mapping.png';
 export const modalContentMProjects = (
   <>
     <p>
       <img
         className='modal-image-border'
-        src='src/assets/modals/mprojects-henday.jpg'
+        src={photoHenday}
         alt='major highway (27km) & bridges (47) project (Edmonton AB)'
       ></img>
       <br />
@@ -104,7 +107,7 @@ export const modalContentMProjects = (
       <br />
       <img
         className='modal-image-border'
-        src='src/assets/images/port-mapping.png'
+        src={photoMapping}
         alt='major highway (27km) & bridges (47) project (Edmonton AB)'
       ></img>
       <br />
@@ -116,14 +119,11 @@ export const modalContentMProjects = (
   </>
 );
 
+import photoLHL from '../../assets/modals/students.png';
 export const modalContentBootcamp = (
   <>
     <p>
-      <img
-        className='modal-image-border'
-        src='src/assets/modals/students.png'
-        alt='Students at a coding bootcamp'
-      ></img>
+      <img className='modal-image-border' src={photoLHL} alt='Students at a coding bootcamp'></img>
       <br />
       Although largely considering myself a self-taught programmer and web developer, I did attend a
       coding bootcamp program at LighthouseLabs.ca in 2022.
@@ -143,12 +143,14 @@ export const modalContentBootcamp = (
   </>
 );
 
+import photoCommodore from '../../assets/modals/commodore.png';
+import photoOldCode from '../../assets/modals/oldcode.png';
 export const modalContentCommodore = (
   <>
     <p>
       <img
         className='modal-image-border'
-        src='src/assets/modals/commodore.png'
+        src={photoCommodore}
         alt='commodore computer and tape drive'
       ></img>
       <br />
@@ -160,7 +162,7 @@ export const modalContentCommodore = (
       <br />
       <img
         className='modal-image-border'
-        src='src/assets/modals/oldcode.png'
+        src={photoOldCode}
         alt='old BASIC code from compute! magazine'
       ></img>
       <br />
@@ -175,14 +177,11 @@ export const modalContentCommodore = (
   </>
 );
 
+import photoLab from '../../assets/modals/hardware.png';
 export const modalContentServers = (
   <>
     <p>
-      <img
-        className='modal-image-border'
-        src='src/assets/modals/hardware.png'
-        alt='computer homelab'
-      ></img>
+      <img className='modal-image-border' src={photoLab} alt='computer homelab'></img>
       <br />
       Yes, I'm a bit of a hardware 'collector' and do thoroughly enjoy building systems including
       servers, desktops and various other homelab equipment complete with automation systems.

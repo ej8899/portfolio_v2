@@ -2,6 +2,9 @@ import React from '../../assets/components/React';
 import './About.scss';
 import './Aboutimage.scss';
 import './Aboutresponse.scss';
+import aboutPhoto from '../../assets/images/profile2.png';
+import imagePattern1 from '../../assets/images/pat-1.png';
+import imagePattern2 from '../../assets/images/pat-2.png';
 
 import { useEffect, useRef } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
@@ -50,7 +53,7 @@ function Aboutimage() {
           decoding='async'
           className='animate__animated about-photo'
           data-scroll-ratio='0.9'
-          src='src/assets/images/profile2.png'
+          src={aboutPhoto}
           alt='<b>Ernie</b> Johnson'
           ref={photoRef}
         />
@@ -61,7 +64,7 @@ function Aboutimage() {
           data-scroll-ratio='0.1'
           id='item1'
           style={{
-            backgroundImage: 'url(src/assets/images/pat-1.png)',
+            backgroundImage: `url(${imagePattern1})`,
           }}
         />
         <span
@@ -70,14 +73,14 @@ function Aboutimage() {
           data-scroll-ratio='0.1'
           id='item2'
           style={{
-            backgroundImage: 'url(src/assets/images/pat-2.png)',
+            backgroundImage: `url(${imagePattern2})`,
           }}
         />
         <span
           className='circle img-3  animate__animated'
           ref={pat3Ref}
           style={{
-            backgroundImage: 'url(src/assets/images/pat-2.png)',
+            backgroundImage: `url(${imagePattern2})`,
           }}
         />
         <div className='info-list'>

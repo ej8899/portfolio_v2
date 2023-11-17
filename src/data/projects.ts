@@ -249,7 +249,7 @@ const PROJECTS: IProject[] = [
     title: 'Scheduler',
     featured: true,
     links: {
-      live: 'https://github.com',
+      live: '',
       repo: 'https://github.com/ej8899/scheduler',
     },
     techIcons: ['react', 'sass', 'postgres', 'express', 'node'],
@@ -284,7 +284,7 @@ const PROJECTS: IProject[] = [
     title: 'Light BnB',
     featured: false,
     links: {
-      live: 'https://github.com',
+      live: '',
       repo: 'https://github.com/ej8899/lightBnB',
     },
     techIcons: ['javascript', 'sass', 'jquery', 'postgres', 'express', 'node'],

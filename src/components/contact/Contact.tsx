@@ -4,6 +4,7 @@ import useElementOnScreen from '../../hooks/useElementOnScreen';
 import Button from '../button/Button';
 import './Contact.scss';
 import ContactText from './ContactText';
+import qrCode from '../../assets/images/qrcode-contact2.png';
 
 function Contact() {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -293,7 +294,7 @@ function Contact() {
       </div>
       <div className='column centered_grid'>
         <img
-          src='src/assets/images/qrcode-contact2.png'
+          src={qrCode}
           alt='qr code to scan for contact card'
           width='150px'
           className='qrcode'

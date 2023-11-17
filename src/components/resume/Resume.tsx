@@ -8,6 +8,13 @@ import { LegacyRef, useEffect, useRef, useState } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
 import './Resume.scss'; // You can name your CSS file accordingly
 
+// import imageCAF from '../../assets/images/qrcode-contact2.png';
+// import imageKGL from '../../assets/images/qrcode-contact2.png';
+// import imageMarigold from '../../assets/images/qrcode-contact2.png';
+// import imageLHL from '../../assets/images/qrcode-contact2.png';
+// import imageFluor from '../../assets/images/qrcode-contact2.png';
+// import imageCyberSec from '../../assets/images/qrcode-contact2.png';
+
 function useAnimateOnScreen(
   itemOnScreen: boolean,
   timelineRef: React.RefObject<HTMLElement>,
@@ -118,7 +125,10 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
               Click to view my resume online
             </a>
             <span className='resumedownload-divider'>&nbsp;||&nbsp;</span>
-            <a href='your-pdf-link.pdf' download>
+            <a
+              href='http://www.erniejohnson.ca/public/resume - ernie johnson - web and app developer.pdf'
+              download
+            >
               Here to download a PDF.
             </a>
           </div>
@@ -162,7 +172,7 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                   dashboard, integrate custom mapping application in order to visually organize (&
                   sort) data to facilitate team sharing of required data, photos, and tasks.
                   <br />
-                  $4.5B project.
+                  $5.7B project.
                   <br />
                   &nbsp;
                 </p>
@@ -188,7 +198,7 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                   <br />
                   Develop web applications in solo and team based environments.
                 </p>
-                <button>More</button>
+                {/* <button className='bnt-more'>More</button> */}
               </div>
             </div>
 
@@ -211,7 +221,7 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                   <br />
                   $2.7B project.
                 </p>
-                <button className='bnt-more'>More</button>
+                {/* <button className='bnt-more'>More</button> */}
               </div>
             </div>
 
@@ -226,11 +236,15 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                 </div>
                 <div className='date'>2018 - 2021</div>
                 <p>
-                  mapping, interactive documents,
+                  Develop interactive mapping system for utility design, damage and conflict
+                  tracking and monitoring. Develop utility safety programs, create interactive
+                  training and safe excavation documents and materials in conjunction with site
+                  safety team members. Monitor and assist work crews with safe excavation
+                  proceedures.
                   <br />
                   $1.4B project.
                 </p>
-                <button className='bnt-more'>More</button>
+                {/* <button className='bnt-more'>More</button> */}
               </div>
             </div>
 
@@ -245,11 +259,13 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                 </div>
                 <div className='date'>2001 - 2003</div>
                 <p>
+                  Attend various Canadian Forces schools for Avionics (Aircraft Electronics)
+                  Technician training:
                   <li>Canadian Forces School of Aerospace & Technology,</li>
                   <li>Canadian Forces School of Communications & Electronics,</li>
                   <li>Performance Oriented Electronics Training</li>
                 </p>
-                <button className='bnt-more'>More</button>
+                {/* <button className='bnt-more'>More</button> */}
               </div>
             </div>
           </div>
