@@ -77,7 +77,7 @@ function BlogComponent() {
 
   // close if click/tap outside of blog window
   const handleOutsideBlogClick = (e: MouseEvent) => {
-    console.log('closing blog posts');
+    // console.log('closing blog posts');
     const blogContainer = document.getElementById('blog-container');
     if (blogContainer && !blogContainer.contains(e.target as Node)) {
       handleToggleBlog();
