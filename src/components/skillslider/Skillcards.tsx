@@ -80,8 +80,8 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
                   <p>
                     I utilize Python for a few API end points in various applications, as well as
                     some home automation scripts. What I don&apos;t do is get fully immersed in my
-                    development projects like I do with other languages, as a result, I&apos;ve decided
-                    to put some emphasis on game development with Python & the PyGame library.
+                    development projects like I do with other languages, as a result, I&apos;ve to
+                    put some emphasis on game development with Python & the PyGame library.
                   </p>
                 </div>
               </div>
