@@ -8,7 +8,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/autoplay';
 // import { useEffect, useRef } from 'react';
 import { servicesSliderProps } from '../../sliderProps';
-
+import imagePattern2 from '../../assets/images/pat-2.png';
 // import Swiper core and required modules
 
 // import function to register Swiper custom elements
@@ -76,7 +76,7 @@ function AboutSlider() {
               <div
                 className='image'
                 style={{
-                  backgroundImage: 'url(src/assets/images/pat-2.png)',
+                  backgroundImage: `url(${imagePattern2})`,
                 }}
               />
               <i className='fa-solid fa-laptop-code fa-slider'></i>
@@ -104,7 +104,7 @@ function AboutSlider() {
               <div
                 className='image'
                 style={{
-                  backgroundImage: 'url(src/assets/images/pat-2.png)',
+                  backgroundImage: `url(${imagePattern2})`,
                 }}
               />
               <i className='fa-solid fa-database fa-slider'></i>
@@ -131,7 +131,7 @@ function AboutSlider() {
               <div
                 className='image'
                 style={{
-                  backgroundImage: 'url(src/assets/images/pat-2.png)',
+                  backgroundImage: `url(${imagePattern2})`,
                 }}
               />
               <i className='fa-solid fa-microchip fa-slider'></i>
@@ -159,7 +159,7 @@ function AboutSlider() {
               <div
                 className='image'
                 style={{
-                  backgroundImage: 'url(src/assets/images/pat-2.png)',
+                  backgroundImage: `url(${imagePattern2})`,
                 }}
               />
               <i className='fa-solid fa-code-branch fa-slider'></i>
@@ -186,7 +186,7 @@ function AboutSlider() {
               <div
                 className='image'
                 style={{
-                  backgroundImage: 'url(src/assets/images/pat-2.png)',
+                  backgroundImage: `url(${imagePattern2})`,
                 }}
               />
               <i className='fa-solid fa-comments fa-slider'></i>
@@ -213,7 +213,7 @@ function AboutSlider() {
               <div
                 className='image'
                 style={{
-                  backgroundImage: 'url(src/assets/images/pat-2.png)',
+                  backgroundImage: `url(${imagePattern2})`,
                 }}
               />
               <i className='fa-solid fa-list-check fa-slider'></i>
@@ -241,7 +241,7 @@ function AboutSlider() {
               <div
                 className='image'
                 style={{
-                  backgroundImage: 'url(src/assets/images/pat-2.png)',
+                  backgroundImage: `url(${imagePattern2})`,
                 }}
               />
               <i className='fa-solid fa-shield-halved fa-slider'></i>
@@ -269,7 +269,7 @@ function AboutSlider() {
               <div
                 className='image'
                 style={{
-                  backgroundImage: 'url(src/assets/images/pat-2.png)',
+                  backgroundImage: `url(${imagePattern2})`,
                 }}
               />
               <i className='fa-solid fa-brain fa-slider'></i>

@@ -126,7 +126,7 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
             </a>
             <span className='resumedownload-divider'>&nbsp;||&nbsp;</span>
             <a
-              href='http://www.erniejohnson.ca/public/resume - ernie johnson - web and app developer.pdf'
+              href='https://www.erniejohnson.ca/public/resume - ernie johnson - web and app developer.pdf'
               download
             >
               Here to download a PDF.
