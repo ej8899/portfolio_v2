@@ -185,7 +185,7 @@ const PROJECTS: IProject[] = [
       {
         type: 'p',
         value:
-          'Map My Wiki was a LHL mid-term project.  We were given a list of several project ideas and our group agreed upon a mapping system utilizing the Google Maps API. Originally, the plan was to have a single topic of interest that we would map and add to a database, but it was easy enough to add to the scop and allow for unlimited maps!',
+          'Map My Wiki was a group based LHL mid-term project.  We were given a list of several project ideas and our group agreed upon a mapping system utilizing the Google Maps API. Originally, the plan was to have a single topic of interest that we would map and add to a database, but it was easy enough to add to the scop and allow for unlimited maps!',
       },
       {
         type: 'more|learning objectives',
@@ -195,7 +195,7 @@ const PROJECTS: IProject[] = [
       {
         type: 'more|challenges',
         value:
-          'Time is of course, always a challenge.  More time would have been great so our team could have been adding more features or rolling this project out live for our bootcamp cohort to experiment with in real time. Additional challenges also included creating our own "roll-up" sections, custom "select" lists.  These things are available in well known libraries, but a challenge to make on your own - however, a very good learning experience!',
+          'I ran as team lead for this project as well as the front-end developer and my team members were great - little to no challenges existed in our team dynamic.   More time though would have been great so our team could have been adding more features or rolling this project out live for our bootcamp cohort to experiment with in real time. Additional challenges also included creating our own "roll-up" sections, custom "select" lists.  These things are available in well known libraries, but a challenge to make on your own - however, a very good learning experience!',
       },
       {
         type: 'more|technical features',
