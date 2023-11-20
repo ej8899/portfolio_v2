@@ -297,7 +297,7 @@ function Contact() {
           src={qrCode}
           alt='qr code to scan for contact card'
           width='150px'
-          className='qrcode'
+          className='qrcode animate__animated animate__fadeIn animate__delay-4s'
         ></img>
       </div>
     </section>

@@ -155,6 +155,11 @@ function BlogComponent() {
   return (
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, react/prop-types, @typescript-eslint/no-unsafe-member-access
     <div id='blog-container' className={`blog-container ${isOpen ? 'open' : ''}`}>
+      <div className={'games-tab'}>
+        <a href='https://www.erniejohnson.ca/pixelrealms' target='_blank' rel='noreferrer'>
+          <i className='fa-solid fa-gamepad fa-rotate-r90'></i>&nbsp;Games
+        </a>
+      </div>
       <div
         className={`blog-tab ${isOpen ? '' : 'open'}`}
         role='button'
@@ -162,7 +167,7 @@ function BlogComponent() {
         onClick={handleToggleBlog}
         onKeyDown={handleKeyDown}
       >
-        Blog
+        <i className='fa-solid fa-file-invoice'></i>&nbsp;Blog
       </div>
       <section id='blog' className={`blog ${isOpen ? 'open' : ''}`} aria-label='blog posts'>
         <div className='column full_height centered_grid'>

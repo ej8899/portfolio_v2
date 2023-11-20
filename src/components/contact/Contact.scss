@@ -433,9 +433,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .qrcode {
   cursor:none;
   transition: transform var(--transition-short) ease-in-out;
+  transform: scale(0.8);
 }
 .qrcode:hover {
-  transform: scale(1.3);
+  transform: scale(1.0);
 }
 
 
