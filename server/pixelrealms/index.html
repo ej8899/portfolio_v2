@@ -68,12 +68,15 @@
         
         section img {
             width: 40%;
-            max-width: 50%; /* Adjust the max-width as needed */
+            
             position: fixed;
             top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
+            @media (max-width: 500px) {
+              width:80%;
+            }
         }
         
         .gameslist {
@@ -150,6 +153,8 @@
           display: flex;
           justify-content: center;
           align-items: center;
+
+          
         }
         .pixel-row .pixel-hover {
           bottom: 0;
@@ -161,6 +166,13 @@
           z-index: -1;
           border: 2px solid black;
           margin: 2px;
+
+          border-image: 
+          url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 0H8v4H4v4H0v8h4v4h4v4h8v-4h4v-4h4V8h-4V4h-4V0zm0 4v4h4v8h-4v4H8v-4H4V8h4V4h8z' fill='%23000000'/%3E%3C/svg%3E")
+          8 stretch;
+          
+          border-width: 8px;
+          border-style: solid;
         }
         .pixel-row .pixel-hover span {
           background: teal;
@@ -239,6 +251,10 @@
           display: none;
         }
 
+        a {
+          color:teal;
+        }
+
     </style>
 </head>
 <body>
@@ -312,7 +328,7 @@
     </div>
 
     <footer>
-        &copy; 2023 ErnieJohnson.ca - All rights reserved.
+        &copy; 2023 <a href="https://www.erniejohnson.ca">ErnieJohnson.ca</a> - All rights reserved.
     </footer>
 
 </body>
