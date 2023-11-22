@@ -34,7 +34,12 @@ import yourtab3 from '../assets/project-yourtab/yourtab3.png';
 import yourtab4 from '../assets/project-yourtab/yourtab4.png';
 import yourtab5 from '../assets/project-yourtab/yourtab-design.png';
 
-import portfolio1 from '../assets/project-portfolio/paperlayout.jpeg';
+import portfolio1 from '../assets/project-portfolio/meetingtitle.jpg';
+import portfolio2 from '../assets/project-portfolio/scr1.png';
+import portfolio3 from '../assets/project-portfolio/scr2.png';
+import portfolio4 from '../assets/project-portfolio/scr3.png';
+import portfolio5 from '../assets/project-portfolio/paperlayout.jpg';
+import portfolio6 from '../assets/project-portfolio/scr5.jpg';
 
 export interface IProject {
   title: string;
@@ -133,10 +138,12 @@ const PROJECTS: IProject[] = [
     },
     techIcons: ['react', 'sass', 'typescript', 'vite', 'python'],
     screenshots: [
-      { url: portfolio1, alt: 'Sketching and Kanban process' },
-      { url: learnthisLessons, alt: 'LearnThis! Screenshot' },
-      { url: learnthisClipper, alt: 'LearnThis! Screenshot' },
-      { url: learnthisAbout, alt: 'LearnThis! Screenshot' },
+      { url: portfolio1, alt: 'web site for a meeting' },
+      { url: portfolio2, alt: 'blog section  (with python backend)' },
+      { url: portfolio3, alt: 'built in chat bot' },
+      { url: portfolio4, alt: 'modals of extra information' },
+      { url: portfolio5, alt: 'Sketching layouts - on paper!' },
+      { url: portfolio6, alt: 'Kanban workflow process using Notion' },
     ],
     description: [
       { type: 'header', value: 'The Inspiration' },
