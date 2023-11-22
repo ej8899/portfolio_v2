@@ -59,7 +59,9 @@ function Project({ data, number }: TProps) {
         <div className='project__header-text'>
           {data.links ? (
             <>
-              <h3 className='project__title' data-project-number={paddedProjectNumber}>
+              <h3 className='project__title'>
+                <span className='black'>{paddedProjectNumber}</span>
+                <span className='orange'>&nbsp;|</span>&nbsp;
                 <a href={data.links.live} target='_blank' rel='noreferrer' id={projectA11yId}>
                   {data.title}
                 </a>
@@ -223,24 +225,6 @@ function Project({ data, number }: TProps) {
                   </p>
                 );
             })}
-          {data.bulletPoints && data.bulletPoints.length > 0 && (
-            <>
-              <div
-                className='project__text-header'
-                key='libraries used'
-                style={{ paddingBottom: '0px', marginBottom: '0.5rem' }}
-              >
-                Libraries Used:
-              </div>
-              <ul className='project__text-p'>
-                {data.bulletPoints.map((item, index) => (
-                  <li key={index}>
-                    <i className='fa-solid fa-caret-right fa-2xs'></i> {item}
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
         </div>
         <div className='project__screenshots'>
           <Carousel imageArray={data.screenshots} isTransitionDone={isTransitionDone} />

@@ -28,7 +28,7 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
           <ul id='skillcards'>
             <li className='skillcard' id='card_1'>
               <div className='skill-card__content skill-card'>
-                <div className='skill-card-text w200'>
+                <div className='skill-logo-column'>
                   <svg className='devsvg skill-logo'>
                     <use xlinkHref='#mongodb' />
                   </svg>
@@ -50,7 +50,7 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
 
             <li className='skillcard' id='card_2'>
               <div className='skill-card__content skill-card'>
-                <div className='skill-card-text w200'>
+                <div className='skill-logo-column'>
                   <svg className='devsvg skill-logo'>
                     <use xlinkHref='#aws' />
                   </svg>
@@ -70,7 +70,7 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
 
             <li className='skillcard' id='card_3'>
               <div className='skill-card__content skill-card'>
-                <div className='skill-card-text w200'>
+                <div className='skill-logo-column'>
                   <svg className='devsvg skill-logo'>
                     <use xlinkHref='#python' />
                   </svg>
@@ -78,10 +78,9 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
                 <div className='skill-card-text'>
                   <h4>Advanced Python</h4>
                   <p>
-                    I utilize Python for a few API end points in various applications, as well as
-                    some home automation scripts. What I don&apos;t do is get fully immersed in my
-                    development projects like I do with other languages, as a result, I&apos;ve to
-                    put some emphasis on game development with Python & the PyGame library.
+                    I utilize Python for a few API end points in various applications, but want to
+                    get more immersed with it. I&apos;ve decided to put emphasis on game development
+                    with Python (& the PyGame library) to boost my learning progress.
                   </p>
                 </div>
               </div>
@@ -89,7 +88,7 @@ const SkillCards = (props: { reference: LegacyRef<HTMLElement> | undefined }) =>
 
             <li className='skillcard' id='card_4'>
               <div className='skill-card__content skill-card'>
-                <div className='skill-card-text w200'>
+                <div className='skill-logo-column'>
                   <svg className='devsvg skill-logo chatgpt-logo'>
                     <use xlinkHref='#chatgpt' />
                   </svg>

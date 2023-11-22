@@ -163,6 +163,7 @@ function About(props: AboutProps) {
               </p>
               <p>
                 Other interests include:
+                <br />
                 <span data-tooltip='my dog'>
                   <big className='about-extra'>🐕</big>
                 </span>{' '}
@@ -180,6 +181,7 @@ function About(props: AboutProps) {
                 </span>
               </p>
             </div>
+            {/* about image here */}
             <div ref={rightColumnRef}>
               <Aboutimage />
             </div>

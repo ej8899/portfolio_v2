@@ -5,6 +5,14 @@
 
   position: relative;
 
+  @media (max-width: 500px) {
+    // max-width: 305px;
+    width:100%;
+  }
+
+  &li {
+    color:orange;
+  }
   padding-block: var(--p-gap);
 
   color: var(--clr-neutral-300);
@@ -158,6 +166,7 @@
 
     &-p {
       //margin-bottom: var(--p-gap);
+      width:100%;
       line-height: 1.5;
       color: var(--clr-neutral-300) !important;
     }
@@ -186,4 +195,11 @@
   ul {
     text-align: center;
   }
+}
+
+.orange {
+  color: orange;
+}
+.black {
+  color: var(--clr-neutral-800);
 }

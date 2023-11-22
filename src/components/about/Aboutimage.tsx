@@ -34,14 +34,11 @@ function Aboutimage() {
       infoRef1.current?.classList.add('animate__fadeIn');
       infoRef2.current?.classList.add('animate__fadeIn');
       infoRef3.current?.classList.add('animate__fadeIn');
-
       photoRef.current?.classList.add('animate__fadeIn');
-
       circleRef.current?.classList.add('animate__fadeInUp');
       circleRef.current?.classList.add('showitems');
-
-      pat1Ref.current?.classList.add('animate__fadeInTopRight');
-      pat3Ref.current?.classList.add('animate__fadeInBottomRight');
+      pat1Ref.current?.classList.add('animate__fadeInDown');
+      pat3Ref.current?.classList.add('animate__fadeInUp');
       pat2Ref.current?.classList.add('animate__fadeInLeft');
     }, 100);
   }, [isOnScreen]);

@@ -47,7 +47,7 @@ let timeUsed = 0;
 const calculateTimeDifference = () => {
   const difference = (new Date()) - startTime;
   timeUsed = Math.floor(difference / 1000);
-  console.log('time in app currently (s):',timeUsed);
+  // console.log('time in app currently (s):',timeUsed);
 };
 
 const popOutIcon =`<svg class="popoutIcon" xmlns='http://www.w3.org/2000/svg' height='0.7em' width='0.7em' viewBox='0 0 512 512'>
@@ -138,11 +138,6 @@ const intents = {
   zzz: {
     patterns: ['zzz'],
     responses: [`Asleep at the keyboard are you?`],
-    replies: 0,
-  },
-  about: {
-    patterns: ['about'],
-    responses: [`You'll want to elaborate further - perhaps add an additional word or two on what you're looking for.`],
     replies: 0,
   },
   greetingsDay: {
@@ -267,7 +262,7 @@ const intents = {
   },
   help: {
     patterns: ['help', 'support', 'assistance','assist'],
-    responses: ['Sure, {username} I\'m here to help!', 'What do you need assistance with?', 'I\'m here to assist you.'],
+    responses: ['Sure, {username} I\'m here to help!  Just tell me a bit more about what you\'re hoping to find out about.', 'What do you need assistance with?', 'I\'m here to assist you. Just tell me a bit more about what you\'re hoping to learn about.'],
     replies: 0,
   },
   bye: {
@@ -302,7 +297,7 @@ const intents = {
     replies: 0,
   },
   softSkills: {
-    patterns: ['softskills','soft skills','project management','interpersonal'],
+    patterns: ['softskills','soft skills','project management','interpersonal','project manager'],
     responses: ['Ernie has, of course, numerous "soft skills" he has gained during many years of employment across several different industries. The ability to work independently and within a team, communications, project management and more.'],
     replies: 0,
   },
@@ -358,7 +353,7 @@ const intents = {
     replies: 0,
   },
   gameDev: {
-    patterns: ['game dev','game development','game developer'],
+    patterns: ['game dev','game development','game developer','games','build a game','build games'],
     responses: ['Ernie has a strong interest in game development and has a history in doing early game development quite some time ago before the day of enhanced graphics. These were text based games, or games utilizing very simple sprites and collision detection routines.<br><br>That being said, Ernie would thoroughly enjoy working with a team on more modern day game development!'],
     replies: 0,
   },
@@ -378,7 +373,7 @@ const intents = {
     replies: 0,
   },
   education: {
-    patterns: ['education', 'courses', 'certification', 'certifications','school','where did you go to school','where did ernie go to school','go to school','self taught','college','university'],
+    patterns: ['education', 'courses', 'certification', 'certificates', 'certificate', 'certifications','school','where did you go to school','where did ernie go to school','go to school','self taught','college','university'],
     responses: [`Much of Ernie's developer education is from a self-taught perspective.  From growing up in the 80's with learning BASIC on [Commodore] and [Tandy] computers and progressing into C and C++ programming on PC's and later into web development with HTML, early CSS, Perl, CGI and PHP. This progressed into knowing the foundations of SQL through applications like dBase and MySQL. As web technologies progressed, Ernie was quick to become proficient in Javascript coding.  To this day, he continues to hone his skills largely in Javascript, Typescript, Python, Kotlin and Swift.<br><br>Ernie recently completed a coding [bootcamp] at [Lighthouse Labs] to get his knowledge up to current trends.<br><br>Ernie also is eager to pick up extra certifications in [cybersecurity], general IT and networking support.`],
     replies: 0,
   },
@@ -406,7 +401,7 @@ const intents = {
     responses: [`I used primarily the CoCo3...<br><br>... that was about 35 years ago for me!<br>Crazy to think, 128kb of RAM was "lots"!`]
   },
   operatingSystems: {
-    patterns: ['operating systems','windows','mac','macos','ventura','linux','ubuntu','redhat','sonoma','monterey','big sur','mint', 'debian','manjaro','pop','fedora','suse','elementary','puppy','networking','apple'],
+    patterns: ['operating systems','windows','mac','macos','ventura','linux','ubuntu','redhat','sonoma','monterey','big sur','mint', 'debian','manjaro','pop','fedora','suse','elementary','puppy','networking','apple','nas','server','server management','sysop','attached storage'],
     responses: ['On a day to day basis, Ernie is using MacOS, Windows and Linux systems.<br><br>He tries to stay fairly up to date with developer beta versions to see what is new and coming for OS releases.<br><br>OS experience also includes network administration on Linux and Windows sytems back as far as Windows 2000 Server!'],
     replies: 0,
   },
@@ -478,6 +473,11 @@ const intents = {
     responses: ['Yes, Ernie uses AI technologies like ChatGPT and Google Bard.<br><br>In fact, Chatterbot was written largely by prompting ChatGPT to create the outline and basics of functionality.  Sure, there were a few bugs that needed a human to iron out along the way, and there may not have been much of a time saver from writing it from scratch, but interesting just the same!<br><br>That being said, Chatterbot responses are not generated by AI.'],
     replies: 0,
   },
+  random: {
+    patterns: ['cats', 'cat', 'fish','fishing'],
+    responses: ['I don\'t really have any thoughts on that.'],
+    replies: 0,
+  },
   datetoday: {
     patterns: ['what day is it',`today's date`, 'todays date', 'date today','today','date','date now','day'],
     responses: [getFormattedDate()],
@@ -506,6 +506,11 @@ const intents = {
   nameChange: {
     patterns: ['change name','change my name','name reset'],
     responses: ['Sure thing, just enter your new name:'],
+    replies: 0,
+  },
+  about: {
+    patterns: ['about'],
+    responses: [`You'll want to elaborate further - perhaps add an additional word or two on what you're looking for.`],
     replies: 0,
   },
   default: {
@@ -556,10 +561,10 @@ function getResponse(message) {
   const lowerMessage = message.toLowerCase();
   let additionalLink = '';
 
-  if (theuserName === '') {
-    theuserName = message;
-    return "Your name has been changed!";
-  }
+  // if (theuserName === '') {
+  //   theuserName = message;
+  //   return "Your name has been changed!";
+  // }
 
   for (const intentName in intents) {
     const intent = intents[intentName];
@@ -575,13 +580,13 @@ function getResponse(message) {
 
         if (intentName === 'nameChange') {
           // TODO how to reset user name at this point
-          console.log("getResponse -> nameChange");
+          // console.log("getResponse -> nameChange");
           theuserName = '';
         }
         
 
-        console.log("intentName:",intentName);
-        console.log('intent:',intent,' replies:',intent.replies);
+        // console.log("intentName:",intentName);
+        // console.log('intent:',intent,' replies:',intent.replies);
         // console.log('# of intents:',Object.keys(intents).length);
         if(intent.quickReplies && intent.quickReplies.length > 0) {
           // console.log('quick replies available in ',intentName);
@@ -622,7 +627,7 @@ function getResponse(message) {
   showQuickReplies = false;
   intents.default.replies++;
   unMatchedInputs.push(message);
-  console.log('no matches: ',unMatchedInputs);
+  // console.log('no matches: ',unMatchedInputs);
   return getRandomResponse(intents.default.responses);
 }
 
@@ -666,25 +671,25 @@ function Chatbot(props) {
   };
 
   const toggleChatbot = () => {
-    console.log("open status:",isOpen);
+    // console.log("open status:",isOpen);
     if(!isOpen) {
       // is open, will need to close so lets send chat stats:
       handlerSubmit();
       setIsOpen(!isOpen);
       // eslint-disable-next-line react/prop-types
       if (typeof props.onClose === 'function') {
-        console.log("chatterbot: props closing from within bot");
+        // console.log("chatterbot: props closing from within bot");
         
         // stats collection (duration chatbot is used)
         handleCloseChatbot();
-        console.log("time in chatbot (s):",timeUsed);
-        console.log('chatbot started:',startTime);
+        // console.log("time in chatbot (s):",timeUsed);
+        // console.log('chatbot started:',startTime);
         
         setTimeout(() => {
           // Code to execute after the delay
-          console.log('Sleeping for close...');
-          console.log('chatbot ended:',endTime);
-          console.log('time in chatbot:',timeUsed);
+          // console.log('Sleeping for close...');
+          // console.log('chatbot ended:',endTime);
+          // console.log('time in chatbot:',timeUsed);
           // eslint-disable-next-line react/prop-types
           props.onClose();
         }, 300);
@@ -693,6 +698,7 @@ function Chatbot(props) {
   };
 
   const resetUserName = (newName) => {
+    if(!chatbotConfigData.getUsername) return;
     setUserName(newName);
     localStorage.setItem("userName", newName);
   };
@@ -703,8 +709,15 @@ function Chatbot(props) {
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
+      // TODO  error check here if field is empty
       handleSendMessage();
     }
+  };
+
+  const handleSendButton = () => {
+    // TODO error check here if field is empty
+    // console.log("USER INPUT:",userInput);
+    handleSendMessage();
   };
 
   const handleQuickLinks = (responseToParse) => {
@@ -715,20 +728,23 @@ function Chatbot(props) {
   const handleQuickReply = (intent) => {
     // flushSync(() => { setUserInput(intent) });;
 
-    console.log("handleQuickLinks:state:",intent);
+    // console.log("handleQuickLinks:state:",intent);
     handleSendMessage(intent);
     // buttonRef.current.click();
   };
   
   // BUG - blank message on send crashes chatterbot
   const handleSendMessage = (inputIntent) => {
+    // if(!inputIntent && !userInput) {
+    //   console.log("NO INPUT");
+    // };
     // setIsTyping(true);
     // TODO why is setState not functioning as expected  - because of async flow -- but how can we solve the problem better than this way?
-
-    if (userInput.trim() == '' && inputIntent == '') {
-      inputIntent = "zzz";
-      alert("blank");
-    }
+    // console.log(`USERINPUT:${userInput}:`);
+    // if (userInput.trim() == '' && inputIntent == '') {
+    //   inputIntent = "zzz";
+    //   alert("blank");
+    // }
 
     if (inputIntent) {
       addMessage('User', inputIntent);
@@ -741,12 +757,12 @@ function Chatbot(props) {
       return;
     }
 
-    if (userInput.trim() == '' && !userName) {
+    if (userInput.trim() == '' && !userName && chatbotConfigData.getUsername) {
       // addMessage('Bot', `What is your name?`);
       return;
     }
     if (userInput.trim() !== '') {
-      if(!userName) {
+      if(!userName & chatbotConfigData.getUsername) {
         setUserName(userInput);
         localStorage.setItem("userName", userInput);
         addMessage('Bot', `Hi ${userInput}!<br>How can I assist you today?`);
@@ -775,14 +791,14 @@ function Chatbot(props) {
   // emailer for chat log and data
   //
   function handlerSubmit() {
-    console.log('in handlersubmit');
+    // console.log('in handlersubmit');
     if(unMatchedInputs.length < 1) return;
     handleSubmit().then(() => {
       // Handle success here
-      console.log('chatterbot log: attempt to send');
+      // console.log('chatterbot log: attempt to send');
       unMatchedInputs.length = 0;
     }).catch((error) => {
-      console.error('Error submitting form:', error);
+      // console.error('Error submitting form:', error);
       // Handle error here
     });
   }
@@ -808,7 +824,7 @@ function Chatbot(props) {
 
       if (!json.success) throw new Error('Something went wrong.');
     } catch (err) {
-      console.log('chatterbot - send log error:',err);
+      console.error('chatterbot - send log error:',err);
     }
   };
 
@@ -841,7 +857,7 @@ function Chatbot(props) {
     chatbotContainer.addEventListener('click', handleLinkClick);
 
     setTimeout(() => {
-      console.log('sleeping for slide in');
+      // console.log('sleeping for slide in');
       setIsOpen(false);
     }, 300); 
 
@@ -856,13 +872,18 @@ function Chatbot(props) {
       setUserName(savedUserName);
     }
 
-    if (!savedUserName) {
-      // console.log("message history length:",messageHistory.length);
-      if (messageHistory.length === 0) {
-        if(!userName) addMessage('Bot', `ue Good ${timePeriod}!<br>What is your name?`);
+    if(chatbotConfigData.getUsername) {
+      if (!savedUserName && chatbotConfigData.getUsername) {
+        // console.log("message history length:",messageHistory.length);
+        if (messageHistory.length === 0) {
+          if(!userName) addMessage('Bot', `ue Good ${timePeriod}!<br>What is your name?`);
+        }
+      } else {
+        addMessage('Bot',`Good ${timePeriod} & welcome back, ${savedUserName}!<br>How can I be of assistance?`);
+        userAvatar = `https://ui-avatars.com/api/?name=${savedUserName}&length=1&rounded=true&background=1481c1`;
       }
     } else {
-      addMessage('Bot',`Good ${timePeriod} & welcome back, ${savedUserName}!<br>How can I be of assistance?`);
+      addMessage('Bot',`Good ${timePeriod}!<br>How can I be of assistance?`);
       userAvatar = `https://ui-avatars.com/api/?name=${savedUserName}&length=1&rounded=true&background=1481c1`;
     }
 
@@ -886,7 +907,8 @@ function Chatbot(props) {
   }, [chatbotScore]);
 
   useEffect(() => {
-    console.log("useeffect on theuserName");
+    if(!chatbotConfigData.getUsername) return;
+    // console.log("useeffect on theuserName");
     localStorage.setItem("userName", theuserName);
   }, [theuserName]);
 
@@ -929,7 +951,7 @@ function Chatbot(props) {
             </div>
             {msg.sender === 'User' && (
               <div className="avatar-circle">
-                <img src={userAvatar} alt="user avatar"></img>
+                <i className="fa-solid fa-circle-user"></i>
               </div>
             )}
           </div>
@@ -948,7 +970,7 @@ function Chatbot(props) {
           placeholder="Type your message..."
           onKeyDown={handleKeyDown}
         />
-        &nbsp;&nbsp;&nbsp;<button ref={buttonRef} onClick={handleSendMessage}><SendIcon clasName='sendicon'/></button>
+        &nbsp;&nbsp;&nbsp;<button ref={buttonRef} onClick={handleSendButton}><SendIcon clasName='sendicon'/></button>
       </div>
     </div>
   </div>

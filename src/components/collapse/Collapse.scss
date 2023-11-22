@@ -67,21 +67,25 @@
 }
 
 .collapse-arrows {
-  fill: black;
-  background-color: orange;
-  height: 15px !important;
+  fill: var(--clr-neutral-900);
+  
+  //background-color: orange;
+  // height: 15px !important;
   //width: 20px !important;
   align-items: flex-end;
   justify-content: flex-end;
+  width: 20px;
+  height: 20px;
 }
 .button-container:hover .collapse-arrows {
-  fill: #ff6600;
-  background-color: black;
+  // fill: #ff6600;
+  // background-color: black;
 }
 .collapse-arrows-wrapper {
   //width:100px !important;
-  flex: 0 0 20px;
   //border: 2px solid red;
+  
+  flex: 0 0 20px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;

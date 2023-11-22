@@ -62,6 +62,9 @@
     display:flex;
     flex-direction: row;
     margin: 20px;
+    @media (max-width: 850px) {
+      // flex-direction: column;
+    }
   }
 
   .skill-card-text {
@@ -85,6 +88,9 @@
 
 .skill-logo {
   max-width: 100px;
+  @media (max-width: 500px) {
+    max-width: 70px;
+  }
   //max-height: 128px;
   fill:teal;
   padding: 0;
@@ -154,8 +160,14 @@
   }
 }
 
+.skill-logo-column {
+  padding-left:15px;
+}
 .w200 {
-  width:200px !important;
+  width:100%;
+  @media (min-width: 850px) {
+    width: 200px !important
+  }
   display: flex;
   align-items: center;
   justify-content: center;

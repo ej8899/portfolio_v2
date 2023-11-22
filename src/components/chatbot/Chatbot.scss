@@ -106,9 +106,14 @@
 
 .close-button {
   background-color: transparent;
-  border: none;
+  border: 1px solid black;
   color: #fff;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: orange;
+    color:black;
+  }
 }
 
 .message-history {

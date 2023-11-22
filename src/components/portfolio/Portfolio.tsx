@@ -50,11 +50,12 @@ function Portfolio(props: { reference: LegacyRef<HTMLElement> | undefined }) {
           A few favorite projects - past & present!
         </div>
         {/* featured projects */}
-        {PROJECTS.filter((project) => project.featured).map((project, i) => {
-          projectNum++;
-          return <Project data={project} number={i} key={project.title} />;
-        })}
-
+        <div ref={extraProjectsRef} className={'mainprojects-wrapper'}>
+          {PROJECTS.filter((project) => project.featured).map((project, i) => {
+            projectNum++;
+            return <Project data={project} number={i} key={project.title} />;
+          })}
+        </div>
         <div className='arrow-div'>
           <span className='arrow-sketch'>
             <ArrowSketch />

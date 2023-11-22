@@ -123,12 +123,23 @@
   }
 }
 
+.mainprojects-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-color: #058585;
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
 .extraprojects-wrapper {
   transition: all 0.8s ease-in-out;
   //transition: display 0.8s ease-in-out;
   max-height: 0;
   padding-left: 1rem;
   padding-right: 1rem;
+  display:flex;
+  justify-content: center;
 
   background-color: #058585;
   border-radius: 20px;

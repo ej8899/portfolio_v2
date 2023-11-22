@@ -7,14 +7,13 @@ const chatbotConfigData = {
   brandingTitle: 'ChatterBot',
   version: '1.0',
 
+  getUsername: false,
   allowScoring: true,
-  // TODO - build below features
   showScoring: true,
   sendStats: true,
+  // TODO these items to build:
   // this shows a 'typing' animation and slight delay before user gets response back
   instantResponse: true,
-
-  // TODO - add this feature
   allowBadLanguage: true,
 
   // TODO - add support for these toggles
