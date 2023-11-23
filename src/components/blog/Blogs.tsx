@@ -61,7 +61,6 @@ function BlogComponent() {
         console.error('Error fetching blog posts:', error);
       }
     };
-
     void fetchData();
   }, []);
 
