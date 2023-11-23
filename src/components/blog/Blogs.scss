@@ -9,6 +9,13 @@
   width: 60%;
   @media (max-width: 800px) {
     width: 100%;
+    top: 50px;
+    height: 100%
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+    top: 0px;
+    height: 100%
   }
   right: -100%;
   overflow-y: scroll;
@@ -188,7 +195,9 @@
   }
 }
 .blog-post-row:hover .blog-post-image {
-  transform: scale(1.15) rotate(5deg);
+  @media (min-width: 800px) {
+    transform: scale(1.15) rotate(5deg);
+  }
 }
 .blog-post-image-full {
   max-height: 300px;
@@ -213,6 +222,11 @@
   width: 55%;
   @media (max-width: 800px) {
     width: 100%;
+    top: 50px;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+    top: 0px;
   }
   border-radius: 10px 0px 0px 10px;
   overflow-y:scroll;

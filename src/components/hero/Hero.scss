@@ -121,6 +121,12 @@
           transform: rotate(2deg) skew(-5deg);
           //transform:  skew(-5deg);
           animation: pulseSkewScale 1s infinite ease-in-out;
+          @media (max-width: 900px) {
+            // background-color: red;
+            width: 400%;
+            right: 40.0%;
+            bottom: -2px;
+          }
         }
       }
     }
@@ -137,6 +143,10 @@
 
     @media (min-width: 900px) {
       justify-content: flex-start;
+    }
+    @media (max-width: 900px) {
+      justify-content: flex-start;
+      flex-direction: column;
     }
 
     a {
@@ -229,4 +239,17 @@
 }
 .nowblack {
   color: grey !important;
+}
+.p10px {
+  padding:10px;
+}
+
+br.display-none {
+  display: inline; // Show BR tag for narrow screens
+}
+
+@media (min-width: 900px) { // or whatever you are after
+  br.display-none {
+    display: none; // Hide BR tag for wider screens
+  }
 }

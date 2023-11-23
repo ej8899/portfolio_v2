@@ -27,25 +27,32 @@ function Hero(props: { reference: LegacyRef<HTMLElement> | undefined }) {
             </span>
           </h2>
           <h3>
-            Your Full Stack <span>Web & App Developer!</span>
+            Your Full Stack{' '}
+            <span>
+              Web <br className='display-none' />& App Developer!
+            </span>
           </h3>
           <div className='hero__cta'>
-            <a target='_new' rel='nofollow' href={globalconfig.link.linkedin}>
-              <i aria-hidden='true' className='fab fa-linkedin-in socicons' />
-            </a>
-            <a target='_new' rel='nofollow' href={globalconfig.link.github}>
-              <i aria-hidden='true' className='fab fa-github socicons' />
-            </a>
-            <a target='_new' rel='nofollow' href={globalconfig.link.twitter}>
-              <i aria-hidden='true' className='fab fa-x-twitter socicons' />
-            </a>
-            <a target='_new' rel='nofollow' href={globalconfig.link.youtube}>
-              <i aria-hidden='true' className='fab fa-youtube socicons' />
-            </a>
+            <div>
+              <a target='_new' rel='nofollow' href={globalconfig.link.linkedin}>
+                <i aria-hidden='true' className='fab fa-linkedin-in socicons p10px' />
+              </a>
+              <a target='_new' rel='nofollow' href={globalconfig.link.github}>
+                <i aria-hidden='true' className='fab fa-github socicons p10px' />
+              </a>
+              <a target='_new' rel='nofollow' href={globalconfig.link.twitter}>
+                <i aria-hidden='true' className='fab fa-x-twitter socicons p10px' />
+              </a>
+              <a target='_new' rel='nofollow' href={globalconfig.link.youtube}>
+                <i aria-hidden='true' className='fab fa-youtube socicons p10px' />
+              </a>
+            </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href='#about'>
-              <Button type='outline'>About Me</Button>
-            </a>
+            <div>
+              <a href='#about'>
+                <Button type='outline'>About Me</Button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
