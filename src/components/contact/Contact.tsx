@@ -124,7 +124,7 @@ function Contact() {
           {/* <p>Feedback is always appreciated!</p> */}
         </div>
       </div>
-      <div className='column centered_grid contact__content'>
+      <div className='column centered_flex_row contact__content'>
         <div ref={staticInfoRef} className='animate__animated'>
           <ContactText />
         </div>

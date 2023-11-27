@@ -439,6 +439,17 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   transform: scale(1.0);
 }
 
+.centered_flex_row {
+  // display:flex;
+  // flex-direction: row;
+  // width: 100%;
+  // border: 2px solid red;
+  // @media (max-width: 950px) {
+  //   flex-direction: column;
+  // }
+  display: grid;
+  place-items: center;
+}
 
 .slanted-hr {
   position: absolute;

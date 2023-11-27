@@ -38,7 +38,6 @@ import portfolio1 from '../assets/project-portfolio/meetingtitle.jpg';
 import portfolio2 from '../assets/project-portfolio/scr1.png';
 import portfolio3 from '../assets/project-portfolio/scr2.png';
 import portfolio4 from '../assets/project-portfolio/scr3.png';
-import portfolio5 from '../assets/project-portfolio/paperlayout.jpg';
 import portfolio6 from '../assets/project-portfolio/scr5.jpg';
 
 export interface IProject {
@@ -142,7 +141,6 @@ const PROJECTS: IProject[] = [
       { url: portfolio2, alt: 'blog section  (with python backend)' },
       { url: portfolio3, alt: 'built in chat bot' },
       { url: portfolio4, alt: 'modals of extra information' },
-      { url: portfolio5, alt: 'Sketching layouts - on paper!' },
       { url: portfolio6, alt: 'Kanban workflow process using Notion' },
     ],
     description: [
