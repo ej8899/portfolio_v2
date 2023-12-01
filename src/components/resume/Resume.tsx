@@ -168,7 +168,8 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                 </div>
                 <div className='date'>2023</div>
                 <p>
-                  Create Sharepoint site for mega-project specific jobs, integrate sharepoint
+                  In addition to duties of a Utilities Manager, I spent time creating and migrating
+                  to an area Sharepoint site for mega-project specific jobs, integrate sharepoint
                   dashboard, integrate custom mapping application in order to visually organize (&
                   sort) data to facilitate team sharing of required data, photos, and tasks.
                   <br />
@@ -197,6 +198,8 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                   <br />
                   <br />
                   Develop web applications in solo and team based environments.
+                  <br />
+                  Assist other students in any challenges experienced.
                 </p>
                 {/* <button className='bnt-more'>More</button> */}
               </div>
@@ -213,7 +216,8 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                 </div>
                 <div className='date'>2021 - 2022</div>
                 <p>
-                  Develop mapping system for tracking of shared documents and work packages
+                  In addition to duties of a Utilities Superintendent, I spent time developing a
+                  mapping system for tracking of shared documents and work packages throughout
                   throughout project area. Work with developer team to establish MS Power Apps for
                   buried utility identification and inspections. Work with developer team to
                   implement and beta test vGIS systems for augmented reality buried utility
@@ -236,11 +240,11 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                 </div>
                 <div className='date'>2018 - 2021</div>
                 <p>
-                  Develop interactive mapping system for utility design, damage and conflict
-                  tracking and monitoring. Develop utility safety programs, create interactive
-                  training and safe excavation documents and materials in conjunction with site
-                  safety team members. Monitor and assist work crews with safe excavation
-                  proceedures.
+                  In addition to duties of a Utilities SuperintendentDevelop interactive mapping
+                  system for utility design, damage and conflict tracking and monitoring. I
+                  developed utility safety programs, create interactive training and safe excavation
+                  documents and materials in conjunction with site safety team members. Monitor and
+                  assist work crews with safe excavation proceedures.
                   <br />
                   $1.4B project.
                 </p>
