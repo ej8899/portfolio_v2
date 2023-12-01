@@ -6,8 +6,8 @@
 
 .button-container {
   display: flex;
-  align-items: center; /* Vertically align items */
-  justify-content: start; /* Horizontally left items */
+  align-items: center;
+  justify-content: flex-start;
   //gap: 5px; /* Adjust the gap between text and arrow */
   // padding: 5px;
   // padding-left: 10px;

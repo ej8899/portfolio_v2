@@ -1,7 +1,6 @@
 import React from '../../assets/components/React';
 import { LegacyRef, useEffect, useRef, useState } from 'react';
 import './Blogs.scss';
-import Collapse from '../collapse/Collapse';
 
 interface BlogPost {
   image: string;

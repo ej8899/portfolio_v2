@@ -73,6 +73,7 @@ function App() {
     // setActiveSection(null);
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     // console.log(`Section left: ${sectionName}`);
+    return;
   };
 
   // chatbot
@@ -147,7 +148,7 @@ function App() {
     const chromeVersion = isChrome ? parseInt(RegExp.$1) : 0;
     if (isChrome && chromeVersion <= 115) {
       setIsChrome115Plus(true);
-      const timer = setTimeout(() => {
+      setTimeout(() => {
         setIsChrome115Plus(false);
       }, 15000);
     } else {
