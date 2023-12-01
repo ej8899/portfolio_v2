@@ -2,6 +2,7 @@
 // import Github from '../../assets/components/Github';
 import './Footer.scss';
 import globalconfig from '../../config';
+import version from '../../version.json';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -49,6 +50,8 @@ function Footer() {
                 data-animate='active'
               >
                 version {globalconfig.appVersion}
+                <br />
+                build: {version.buildDate}
               </div>
             </div>
       </div>
