@@ -98,5 +98,18 @@ footer {
 
 .footer-hidden {
   position: fixed;
-  bottom: 100px;
+  bottom: 120px;
+}
+
+.footer.build-clicked {
+  height: 100vh !important;
+}
+
+@keyframes shake {
+
+}
+
+
+.shake {
+// 
 }

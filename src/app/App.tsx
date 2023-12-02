@@ -63,6 +63,9 @@ function App() {
       case 'contact':
         appTitle('contact -> ErnieJohnson.ca');
         break;
+      case 'footer':
+        appTitle('hidden area -> ErnieJohnson.ca');
+        break;
       default:
         appTitle('ErnieJohnson.ca - Web Dev Portfolio');
     }
@@ -70,9 +73,9 @@ function App() {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleLeave = (sectionName: string) => {
-    // setActiveSection(null);
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    // console.log(`Section left: ${sectionName}`);
+    if (sectionName === 'footer') {
+      //
+    }
     return;
   };
 
@@ -183,7 +186,9 @@ function App() {
         <SectionObserver sectionName='contact' onEnter={handleEnter} onLeave={handleLeave}>
           <Contact />
         </SectionObserver>
-        <Footer />
+        <SectionObserver sectionName='footer' onEnter={handleEnter} onLeave={handleLeave}>
+          <Footer />
+        </SectionObserver>
       </div>
       <button id='scrollToTopButton' data-tooltip='top'>
         <i className='fas fa-chevron-up'></i>

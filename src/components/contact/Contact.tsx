@@ -115,7 +115,7 @@ function Contact() {
           <path d='M1200 120L0 16.48 0 0 1200 0 1200 120z' className='contact-divider-fill'></path>
         </svg>
       </div>
-      <div className='slanted-hr'></div>
+
       {/* section content */}
       <div className='column centered_grid'>
         <div className='contact__header' ref={headerRef}>
