@@ -48,7 +48,12 @@ function Footer() {
       aria-label='footer containing github repo link'
       ref={headerRef}
     >
-      <div className='footer-hidden'>more coming soon!</div>
+      <div className='footer-hidden'>
+        <div className='glitch' data-text='More coming soon!'>
+          More coming soon!
+        </div>
+        <div className='glow'>More coming soon!</div>
+      </div>
       <div className='footer__wrapper copyright_text'>
         <div className='footer-section'>
           <div className='social-links' data-animate='active'>

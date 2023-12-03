@@ -4,3 +4,4 @@ env.d.ts
 .prettierrc
 .eslintrc
 vite.config.ts
+generateVersion.js
