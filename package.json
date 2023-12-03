@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run generate-version && tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
-    "css": "node_modules/.bin/postcss dist/assets/*.css --replace -v"
+    "css": "node_modules/.bin/postcss dist/assets/*.css --replace -v",
+    "generate-version": "node generateVersion.js"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^4.3.4",
