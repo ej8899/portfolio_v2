@@ -35,6 +35,12 @@ function BlogComponent() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const [postOpen, setPostOpen] = useState(false);
+  const [sortBy, setSortBy] = useState<'recent' | 'unread'>('recent'); // Add sorting state
+
+  // eslint-disable-next-line @typescript-eslint/no-shadow
+  const handleSortBy = (sortBy: 'recent' | 'unread') => {
+    setSortBy(sortBy);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -99,7 +105,12 @@ function BlogComponent() {
   };
 
   const isPostRead = (postId: string) => {
-    return localStorage.getItem(`readStatus-${postId}`) === 'true';
+    // console.log('readStatus:', localStorage.getItem(`readStatus=${postId}`));
+    const readStatus = localStorage.getItem(`readStatus-${postId}`);
+    // console.log(`readStatus of ${postId}:`, readStatus);
+    if (readStatus === null) return false;
+    return true;
+    // return localStorage.getItem(`readStatus-${postId}`) === 'true';
   };
 
   const getFormattedReadDate = (postId: string) => {
@@ -168,7 +179,7 @@ function BlogComponent() {
         <i className='fa-solid fa-file-invoice'></i>&nbsp;Blog
       </div>
       <section id='blog' className={`blog ${isOpen ? 'open' : ''}`} aria-label='blog posts'>
-        <div className='column full_height centered_grid'>
+        <div className='column centered_grid'>
           {Object.keys(blogPosts).length === 0 ? (
             <div className='centered_item'>
               <svg
@@ -192,47 +203,87 @@ function BlogComponent() {
             <div className='centered_grid'>
               <h2 className='blog__header'>Blog Posts</h2>
               <div className='blog__subtitle-message subtitle-message'>Some of my Ramblings:</div>
+              <div className='sort-buttons'>
+                <span className='spacer-width'></span>
+                <button
+                  className={`button_astext ${sortBy === 'recent' ? 'selectedsort' : ''}`}
+                  onClick={() => handleSortBy('recent')}
+                >
+                  Recent
+                </button>
+                <button className='button_astext'> | </button>
+                <button
+                  className={`button_astext ${sortBy === 'unread' ? 'selectedsort' : ''}`}
+                  onClick={() => handleSortBy('unread')}
+                >
+                  Unread
+                </button>
+              </div>
               <ul>
                 {Object.entries(blogPosts)
+                  .filter(([postId, post]) => {
+                    if (sortBy === 'unread') {
+                      // console.log('is postRead:', isPostRead(postId));
+                      return !isPostRead(postId); // Filter out read posts
+                    }
+                    return true; // Include all posts when sorting by recent
+                  })
                   .sort(([, postA], [, postB]) => {
                     const dateA = new Date(postA.date);
                     const dateB = new Date(postB.date);
-                    return dateB.getTime() - dateA.getTime();
-                    // new Date(postB.date) - new Date(postA.date)
+                    return dateB.getTime() - dateA.getTime(); // Most recent first
                   })
                   .map(([postId, post]) => (
                     <li key={postId}>
-                      <div
-                        className={`blog-post-row ${
-                          getFormattedReadDate(postId) !== 'never' ? 'blog-read' : ''
-                        }`}
-                        role='button'
-                        tabIndex={0}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handlePostClick({ ...post, id: postId });
-                        }}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' || e.key === ' ') {
+                      <div className='blog-post-row-wrapper'>
+                        {getFormattedReadDate(postId) == 'never' ? (
+                          <div className='block-badge'>
+                            <i className='fa-solid fa-certificate'></i>
+                          </div>
+                        ) : null}
+                        <div
+                          className={`blog-post-row ${
+                            getFormattedReadDate(postId) !== 'never' ? 'blog-read' : ''
+                          }`}
+                          role='button'
+                          tabIndex={0}
+                          onClick={(e) => {
                             e.stopPropagation();
                             handlePostClick({ ...post, id: postId });
-                          }
-                        }}
-                      >
-                        {post.image && (
-                          <img src={post.image} alt={`${post.title}`} className='blog-post-image' />
-                        )}
-                        <div className='blog-post-details'>
-                          <p className='post-title'>{post.title}</p>
-                          {post.date && <p>Article date... {post.date}</p>}
-                          <p>Last read... {getFormattedReadDate(postId)}</p>
-                          <p>
-                            {post.keywords.map((keyword, index) => (
-                              <span key={index} className='projcard-tag'>
-                                {keyword}
-                              </span>
-                            ))}
-                          </p>
+                          }}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                              e.stopPropagation();
+                              handlePostClick({ ...post, id: postId });
+                            }
+                          }}
+                        >
+                          {post.image && (
+                            <img
+                              src={post.image}
+                              alt={`${post.title}`}
+                              className='blog-post-image'
+                            />
+                          )}
+                          <div className='blog-post-details'>
+                            <p className='post-title'>{post.title}</p>
+                            <p>
+                              {post.date && (
+                                <>
+                                  Article date... {post.date}
+                                  <br />
+                                </>
+                              )}
+                              Last read... {getFormattedReadDate(postId)}
+                            </p>
+                            <p>
+                              {post.keywords.map((keyword, index) => (
+                                <span key={index} className='projcard-tag'>
+                                  {keyword}
+                                </span>
+                              ))}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </li>

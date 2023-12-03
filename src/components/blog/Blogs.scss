@@ -148,6 +148,10 @@
   overflow: hidden;
 }
 
+.blog-post-row-wrapper {
+  position: relative;
+}
+
 .blog-post-row {
   display: flex;
   align-items: center;
@@ -157,10 +161,10 @@
   box-shadow: var(--box-shadow-full);
   background-color: var(--clr-neutral-100);
   padding: 5px;
-  overflow: hidden;
+  overflow:hidden;
   border: 2px solid black;
   border-radius: var(--border-radius-100);
-  filter: grayscale(50%);
+  // filter: grayscale(50%);
   transition: all 0.3s ease-in-out;
   @media (max-width: 800px) {
     flex-direction: column;
@@ -168,7 +172,7 @@
   &:hover {
     box-shadow: var(--box-shadow-hover);
     background-color: var(--clr-neutral-200);
-    filter: grayscale(0%);
+    // filter: grayscale(0%);
   }
 }
 .post-title {
@@ -211,7 +215,7 @@
   flex-grow: 1;
 }
 .blog-read {
-  filter: grayscale(95%);
+  // filter: grayscale(95%);
 }
 
 .slide-over {
@@ -290,4 +294,74 @@
 
 .buttonfill {
   background-color: teal !important;
+}
+
+.badge {
+  color: rgb(251, 81, 51); 
+  padding: 0px 0px;
+  margin: 0;
+  position: absolute;
+  font-size: 1.0vw;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-weight: bold;
+  top: 0.1vw;
+  left: 2.0vw;
+  transition: none !important;
+  z-index: -1;
+}
+.block-badge {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  
+  color:rgb(251,81,51) !important;
+  
+  padding: 5px 5px;
+  border-radius: 50%;
+  font-size: 24px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  //justify-content: center;
+  //align-items: center;
+  cursor: pointer;
+  //background-color: orange;
+  transition: all 0.3s;
+  opacity: 1;
+}
+.block-badge:hover {
+  transform: scale(1.4);
+}
+.block-badge-active {
+  opacity: 0.8;
+}
+
+.sort-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: center;
+  justify-content: center;
+  flex: 1;
+  & .spacer-width {
+    width: 100%;
+  }
+}
+.button_astext {
+  flex: none;
+  outline: none;
+  background: transparent !important;
+  padding: 5px !important;
+  color: black !important;
+  margin-bottom: 2px;
+  &:hover {
+    transform: rotate(0deg) !important;
+    transform: scale(1.1) !important;
+    text-decoration: underline !important;
+  }
+  &.selectedsort {
+    color:white !important;
+    background-color: teal !important;
+  }
 }
