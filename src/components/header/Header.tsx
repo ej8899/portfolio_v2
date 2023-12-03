@@ -25,10 +25,16 @@ function Header(props: { sectionName: string }) {
       <header className={'column'} aria-label='header with navigation' ref={headerRef}>
         <LogoIcon />
         <nav className={isMenuOpen ? 'nav__open' : 'nav__closed'}>
+          {/* change header color based on where we are in the portfolio*/}
           <ul
             className={`${
               // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-              props.sectionName === 'portfolio' || props.sectionName === 'hero' ? 'nav-invert' : ''
+              props.sectionName === 'portfolio' ||
+              props.sectionName === 'footer' ||
+              props.sectionName === 'contact' ||
+              props.sectionName === 'hero'
+                ? 'nav-invert'
+                : ''
             }`}
           >
             <li>

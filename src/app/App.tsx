@@ -64,7 +64,7 @@ function App() {
         appTitle('contact -> ErnieJohnson.ca');
         break;
       case 'footer':
-        appTitle('hidden area -> ErnieJohnson.ca');
+        appTitle('hidden footer -> ErnieJohnson.ca');
         break;
       default:
         appTitle('ErnieJohnson.ca - Web Dev Portfolio');
