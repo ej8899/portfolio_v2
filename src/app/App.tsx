@@ -29,6 +29,7 @@ import AboutSlider from '../components/about/AboutSlider';
 import Chatbot from '../components/chatbot/Chatbot';
 import Resume from '../components/resume/Resume';
 import BlogComponent from '../components/blog/Blogs';
+import FeedbackForm from '../components/contact/Feedback';
 // import useWindowDimensions from '../hooks/useWindowDimensions';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
@@ -189,6 +190,7 @@ function App() {
         <SectionObserver sectionName='footer' onEnter={handleEnter} onLeave={handleLeave}>
           <Footer />
         </SectionObserver>
+        <FeedbackForm />
       </div>
       <button id='scrollToTopButton' data-tooltip='top'>
         <i className='fas fa-chevron-up'></i>

@@ -107,7 +107,7 @@
   }
 }
 
-.blog-tab, .games-tab {
+.blog-tab, .games-tab, .feedback-tab {
   position: fixed;
   top: 300px;
   //right: 58%;
@@ -133,11 +133,20 @@
   // }
   &:hover {
     background-color: teal;
+    color:black !important;
+  }
+  & a:hover {
+    color:black !important;
   }
 }
 .games-tab {
   top: 220px;
   right: -34px !important;
+}
+.feedback-tab {
+  top: 120px;
+  right: -41px !important;
+  z-index: 3;
 }
 .fa-rotate-r90 {
   transform: rotate(90deg);
