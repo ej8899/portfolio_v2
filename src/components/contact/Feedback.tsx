@@ -11,8 +11,6 @@ const FeedbackForm = () => {
   const [isSent, setIsSent] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  const [isFormDisplay, setIsFormDisplay] = useState(true);
-
   const handleRatingClick = (rating: number) => {
     if (!rating) rating = 3;
     setSelectedRating(rating);
@@ -35,7 +33,6 @@ const FeedbackForm = () => {
 
   const handleSubmit = async () => {
     //     e.preventDefault();
-    setIsFormDisplay(false);
     setIsSendPending(true);
     // console.log('Selected Rating:', selectedRating);
     // console.log('Feedback Text:', feedbackText);
@@ -122,7 +119,7 @@ const FeedbackForm = () => {
               rows={5}
             />
 
-            <button className='feedback-button' onClick={(e) => void handleSubmit()}>
+            <button className='feedback-button' onClick={() => void handleSubmit()}>
               Send
             </button>
           </>

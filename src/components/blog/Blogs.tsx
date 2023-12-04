@@ -1,5 +1,5 @@
 import React from '../../assets/components/React';
-import { LegacyRef, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Blogs.scss';
 
 interface BlogPost {
