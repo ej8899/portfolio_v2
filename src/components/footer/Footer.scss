@@ -113,6 +113,8 @@ footer {
   font-weight: bold;
   font-size: 48px;
   z-index: 1;
+
+  margin-bottom: 100px;
 }
 
 
@@ -168,7 +170,7 @@ footer {
   text-shadow: 0 0 1000px #471ca8;
   color: transparent;
   position: absolute;
-  top: 0;
+  top: 0;  
 }
 
 @keyframes noise-1 {
