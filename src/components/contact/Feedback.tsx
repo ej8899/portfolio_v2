@@ -4,7 +4,7 @@ import { useState } from 'react';
 import './Feedback.scss';
 
 const FeedbackForm = () => {
-  const [selectedRating, setSelectedRating] = useState(3);
+  const [selectedRating, setSelectedRating] = useState<number | null>(3);
   const [feedbackText, setFeedbackText] = useState('');
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isSendPending, setIsSendPending] = useState(false);
@@ -13,7 +13,8 @@ const FeedbackForm = () => {
 
   const [isFormDisplay, setIsFormDisplay] = useState(true);
 
-  const handleRatingClick = (rating: number | React.SetStateAction<null>) => {
+  const handleRatingClick = (rating: number) => {
+    if (!rating) rating = 3;
     setSelectedRating(rating);
   };
 
@@ -32,16 +33,12 @@ const FeedbackForm = () => {
     setIsSent(false);
   };
 
-  // const handleSubmit = () => {
-  //   // Handle the submission of the feedback, you can send it to a server or perform any other action.
-  // };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async () => {
     //     e.preventDefault();
     setIsFormDisplay(false);
     setIsSendPending(true);
-    console.log('Selected Rating:', selectedRating);
-    console.log('Feedback Text:', feedbackText);
+    // console.log('Selected Rating:', selectedRating);
+    // console.log('Feedback Text:', feedbackText);
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -125,7 +122,7 @@ const FeedbackForm = () => {
               rows={5}
             />
 
-            <button className='feedback-button' onClick={(e) => void handleSubmit(e)}>
+            <button className='feedback-button' onClick={(e) => void handleSubmit()}>
               Send
             </button>
           </>
