@@ -71,7 +71,6 @@ const FeedbackForm = () => {
       <div className={'feedback-tab'} onClick={handleOpen}>
         <i className='fa-regular fa-face-smile-wink'></i>&nbsp;Feedback
       </div>
-
       <div className={`feedback-form ${isFormOpen ? 'feedback-open' : 'feedback-closed'}`}>
         <i className='close-icon' onClick={handleClose}>
           <i className='fa-solid fa-circle-xmark'></i>

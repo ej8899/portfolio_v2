@@ -65,6 +65,11 @@
   }
 }
 
+.feedback-wrapper {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .feedback-closed {
   transform: translateX(550px);
   //transform: translateX(100%);
