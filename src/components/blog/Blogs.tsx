@@ -304,6 +304,7 @@ function BlogComponent() {
                 src={selectedPost.image}
                 alt={`${selectedPost.title}`}
                 className='blog-post-image-full'
+                loading='lazy'
               />
             )}
             <h2>{selectedPost.title}</h2>

@@ -50,6 +50,7 @@ function Aboutimage() {
           decoding='async'
           className='animate__animated about-photo'
           data-scroll-ratio='0.9'
+          loading='lazy'
           src={aboutPhoto}
           alt='<b>Ernie</b> Johnson'
           ref={photoRef}

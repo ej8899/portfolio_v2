@@ -122,7 +122,7 @@ const PROJECTS: IProject[] = [
       {
         type: 'more|technical features',
         value:
-          '<li>google fonts<li>materialUI<li>youtube api<li>chatGPT<li>postgresql database<li>node.js<li>react',
+          '<ul><li>google fonts<li>materialUI<li>youtube api<li>chatGPT<li>postgresql database<li>node.js<li>react</ul>',
       },
     ],
     bulletPoints: [],
@@ -167,7 +167,8 @@ const PROJECTS: IProject[] = [
       },
       {
         type: 'more|technical features',
-        value: '<li>google fonts<li>chatGPT<li>vite<li>image optimization<li>Python (blog backend)',
+        value:
+          '<ul><li>google fonts<li>chatGPT<li>vite<li>image optimization<li>Python (blog backend)</ul>',
       },
     ],
     bulletPoints: [],
@@ -204,7 +205,7 @@ const PROJECTS: IProject[] = [
       },
       {
         type: 'more|technical features',
-        value: '<li>google fonts<li>google maps api<li>fontawesome<li>ajax',
+        value: '<ul><li>google fonts<li>google maps api<li>fontawesome<li>ajax</ul>',
       },
     ],
     bulletPoints: [],
@@ -244,7 +245,7 @@ const PROJECTS: IProject[] = [
       },
       {
         type: 'more|technical features',
-        value: '<li>google fonts<li>local storage<li>unsplash api<li>weather api',
+        value: '<ul><li>google fonts<li>local storage<li>unsplash api<li>weather api</uL>',
       },
     ],
     bulletPoints: [],
@@ -319,7 +320,7 @@ const PROJECTS: IProject[] = [
       {
         type: 'more|technical features',
         value:
-          '<li>sql (postgres)<li>ajax<li>fontawesome<li>google maps api<li>light/dark theme<li>currency converter',
+          '<ul><li>sql (postgres)<li>ajax<li>fontawesome<li>google maps api<li>light/dark theme<li>currency converter</ul>',
       },
     ],
     bulletPoints: [],
@@ -371,7 +372,7 @@ const PROJECTS: IProject[] = [
       },
       {
         type: 'more|technical features',
-        value: '<li>google fonts<li>ajax<li>fontawesome',
+        value: '<ul><li>google fonts<li>ajax<li>fontawesome</uL>',
       },
     ],
     bulletPoints: [],
@@ -419,7 +420,7 @@ const PROJECTS: IProject[] = [
       },
       {
         type: 'more|technical features',
-        value: '<li>bootstrap',
+        value: '<ul><li>bootstrap</uL>',
       },
     ],
     bulletPoints: [],
