@@ -38,22 +38,47 @@ function Header(props: { sectionName: string }) {
             }`}
           >
             <li>
-              <a href='#hero' onClick={() => setIsMenuOpen(false)}>
+              <a
+                className={`${props.sectionName === 'hero' ? 'lactive' : ''}`}
+                href='#hero'
+                onClick={() => setIsMenuOpen(false)}
+              >
                 home
               </a>
             </li>
             <li>
-              <a href='#about' onClick={() => setIsMenuOpen(false)}>
+              <a
+                className={`${props.sectionName === 'about' ? 'lactive' : ''}`}
+                href='#about'
+                onClick={() => setIsMenuOpen(false)}
+              >
                 about
               </a>
             </li>
             <li>
-              <a href='#portfolio' onClick={() => setIsMenuOpen(false)}>
+              <a
+                className={`${props.sectionName === 'portfolio' ? 'lactive' : ''}`}
+                href='#portfolio'
+                onClick={() => setIsMenuOpen(false)}
+              >
                 portfolio
               </a>
             </li>
             <li>
-              <a href='#contact' onClick={() => setIsMenuOpen(false)}>
+              <a
+                className={`${props.sectionName === 'resume' ? 'lactive' : ''}`}
+                href='#resume'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                resume
+              </a>
+            </li>
+            <li>
+              <a
+                className={`${props.sectionName === 'contact' ? 'lactive' : ''}`}
+                href='#contact'
+                onClick={() => setIsMenuOpen(false)}
+              >
                 contact
               </a>
             </li>
