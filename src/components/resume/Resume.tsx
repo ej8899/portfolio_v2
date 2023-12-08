@@ -6,7 +6,8 @@
 import React from '../../assets/components/React';
 import { LegacyRef, useEffect, useRef, useState } from 'react';
 import useElementOnScreen from '../../hooks/useElementOnScreen';
-import './Resume.scss'; // You can name your CSS file accordingly
+import './Resume.scss';
+import CertificateList from './Certs';
 
 // import imageCAF from '../../assets/images/qrcode-contact2.png';
 // import imageKGL from '../../assets/images/qrcode-contact2.png';
@@ -277,6 +278,7 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
           </div>
           <div className='overlay-fade-bottom'></div>
         </section>
+        <CertificateList></CertificateList>
       </div>
     </section>
   );
