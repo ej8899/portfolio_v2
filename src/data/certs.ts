@@ -6,6 +6,7 @@ export interface Certificates {
   certVerificationURL: string;
   certBy: string;
   certDate: string;
+  certType: string; // 'primary' or 'secondary'
 }
 
 export type CertType =
@@ -45,6 +46,7 @@ export type CertType =
   | 'version control'
   | 'nosql'
   | 'php'
+  | 'testing'
   | 'python'
   | 'environmental'
   | 'express';
@@ -52,12 +54,30 @@ export type CertType =
 const CERTS: Certificates[] = [
   {
     certTitle: 'Lighthouse Labs Web Developer',
-    certTypes: ['react', 'sass', 'sql', 'database', 'express', 'node', 'frontend', 'backend'],
+    certTypes: [
+      'react',
+      'sass',
+      'sql',
+      'database',
+      'express',
+      'node',
+      'frontend',
+      'backend',
+      'css',
+      'html',
+      'version control',
+      'postgres',
+      'database',
+      'jquery',
+      'eslint',
+      'testing',
+    ],
     certImage: '',
     certVerificationURL: '',
     certDescription: 'Certificate of Web Development Craftmanship',
     certBy: 'Lighthouse Labs',
     certDate: '2023-02-17',
+    certType: 'primary',
   },
   {
     certTitle: 'Getting Started with Python',
@@ -67,6 +87,7 @@ const CERTS: Certificates[] = [
     certDescription: 'Introductory course on Python',
     certBy: 'University of Michigan',
     certDate: '2023-06-11',
+    certType: 'secondary',
   },
   {
     certTitle: 'Crash Course on Python',
@@ -76,6 +97,7 @@ const CERTS: Certificates[] = [
     certDescription: 'Introductory course on Python',
     certBy: 'Google',
     certDate: '2023-10-17',
+    certType: 'secondary',
   },
   {
     certTitle: 'COP28 - Learning for a Sustainable Future',
@@ -85,6 +107,7 @@ const CERTS: Certificates[] = [
     certDescription: 'Understanding environmental impacts of today',
     certBy: 'University of Edinburgh',
     certDate: '2023-12-01',
+    certType: 'secondary',
   },
   {
     certTitle: 'Technical Support Fundamentals',
@@ -94,6 +117,7 @@ const CERTS: Certificates[] = [
     certDescription: 'Basics of IT technical support roles',
     certBy: 'Google',
     certDate: '2023-04-26',
+    certType: 'secondary',
   },
   {
     certTitle: 'Foundations of Cybersecurity',
@@ -103,6 +127,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Google',
     certDate: '2023-04-20',
+    certType: 'secondary',
   },
   {
     certTitle: 'Linux & SQL',
@@ -112,6 +137,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Google',
     certDate: '2023-04-20',
+    certType: 'secondary',
   },
   {
     certTitle: 'Google Cybersecurity Professional',
@@ -121,6 +147,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Google',
     certDate: '2023-04-21',
+    certType: 'primary',
   },
   {
     certTitle: 'Assets, Threats & Vulnerabilities',
@@ -130,6 +157,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Google',
     certDate: '2023-04-20',
+    certType: 'secondary',
   },
   {
     certTitle: 'Networks & Network Security',
@@ -139,6 +167,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Google',
     certDate: '2023-04-20',
+    certType: 'secondary',
   },
   {
     certTitle: 'Detection & Response',
@@ -148,6 +177,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Google',
     certDate: '2023-04-20',
+    certType: 'secondary',
   },
   {
     certTitle: 'Version Control',
@@ -157,6 +187,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Meta',
     certDate: '2023-04-28',
+    certType: 'secondary',
   },
   {
     certTitle: 'React Basics',
@@ -166,6 +197,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Meta',
     certDate: '2023-04-28',
+    certType: 'secondary',
   },
   {
     certTitle: 'Programming with Javascript',
@@ -175,6 +207,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Meta',
     certDate: '2023-04-28',
+    certType: 'secondary',
   },
   {
     certTitle: 'Introduction to Back-End Development',
@@ -184,6 +217,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Meta',
     certDate: '2023-09-16',
+    certType: 'secondary',
   },
   {
     certTitle: 'HTML and CSS in Depth',
@@ -193,6 +227,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Meta',
     certDate: '2023-04-29',
+    certType: 'secondary',
   },
   {
     certTitle: 'Introduction to Front-End Development',
@@ -202,6 +237,7 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Meta',
     certDate: '2023-09-16',
+    certType: 'secondary',
   },
   {
     certTitle: 'Automate Cybersecurity Tasks with Python',
@@ -211,6 +247,27 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Google',
     certDate: '2023-04-21',
+    certType: 'secondary',
+  },
+  {
+    certTitle: 'Getting Started in MS SharePoint',
+    certTypes: ['office', 'sharepoint'],
+    certImage: '',
+    certVerificationURL: 'https://coursera.org/verify/9EKT2WG694CJ',
+    certDescription: '',
+    certBy: 'Coursera Project Network',
+    certDate: '2023-04-21',
+    certType: 'secondary',
+  },
+  {
+    certTitle: 'Manage Security Risks',
+    certTypes: ['cybersecurity'],
+    certImage: '',
+    certVerificationURL: 'https://coursera.org/verify//9Y8D4ZEE4JL',
+    certDescription: '',
+    certBy: 'Google',
+    certDate: '2023-04-20',
+    certType: 'secondary',
   },
 ];
 

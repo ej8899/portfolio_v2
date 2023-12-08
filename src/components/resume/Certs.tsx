@@ -15,6 +15,7 @@ interface Certificate {
   certDescription: string;
   certBy: string;
   certDate: string;
+  certType: string;
 }
 
 const CertificateList = () => {
@@ -74,20 +75,22 @@ const CertificateList = () => {
   return (
     <div>
       <div>
-        <h2>certification types</h2>
+        <h2>certification subjects</h2>
         <ul>
-          {Object.entries(certTypeCloud).map(([type, count]) => (
-            <li
-              key={type}
-              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
-              role='button'
-              tabIndex={0}
-              onClick={() => filterCertificates(type as CertType)}
-              onKeyDown={(e) => e.key === 'Enter' && filterCertificates(type as CertType)}
-            >
-              {type} ({count})
-            </li>
-          ))}
+          {Object.entries(certTypeCloud)
+            .sort(([typeA], [typeB]) => typeA.localeCompare(typeB))
+            .map(([type, count]) => (
+              <li
+                key={type}
+                // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+                role='button'
+                tabIndex={0}
+                onClick={() => filterCertificates(type as CertType)}
+                onKeyDown={(e) => e.key === 'Enter' && filterCertificates(type as CertType)}
+              >
+                {type} ({count})
+              </li>
+            ))}
         </ul>
       </div>
 
@@ -95,7 +98,10 @@ const CertificateList = () => {
         <h2>Certifications</h2>
         <ul>
           {filteredCertificates.map((cert) => (
-            <li key={cert.certTitle}>
+            <li
+              key={cert.certTitle}
+              style={{ fontWeight: cert.certType === 'primary' ? 'bold' : 'normal' }}
+            >
               {cert.certDate} - {cert.certTitle}
             </li>
           ))}
