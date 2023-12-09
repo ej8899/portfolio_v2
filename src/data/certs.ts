@@ -37,6 +37,7 @@ export type CertType =
   | 'networking'
   | 'linux'
   | 'office'
+  | 'soft skills'
   | 'hardware'
   | 'support'
   | 'database'
@@ -49,6 +50,7 @@ export type CertType =
   | 'testing'
   | 'python'
   | 'environmental'
+  | 'game dev'
   | 'express';
 
 const CERTS: Certificates[] = [
@@ -60,6 +62,7 @@ const CERTS: Certificates[] = [
       'sql',
       'database',
       'express',
+      'git',
       'node',
       'frontend',
       'backend',
@@ -101,7 +104,7 @@ const CERTS: Certificates[] = [
   },
   {
     certTitle: 'COP28 - Learning for a Sustainable Future',
-    certTypes: ['environmental'],
+    certTypes: ['environmental', 'soft skills'],
     certImage: '',
     certVerificationURL: 'https://coursera.org/verify/TCVZLRE8VEYN',
     certDescription: 'Understanding environmental impacts of today',
@@ -267,6 +270,16 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Google',
     certDate: '2023-04-20',
+    certType: 'secondary',
+  },
+  {
+    certTitle: 'How Social-Emotional Skills Bring Success at Work',
+    certTypes: ['soft skills'],
+    certImage: '',
+    certVerificationURL: '',
+    certDescription: '',
+    certBy: 'Ottawa Chinese Community Service Centre',
+    certDate: '2023-04-04',
     certType: 'secondary',
   },
 ];
