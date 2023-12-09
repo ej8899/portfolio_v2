@@ -3,6 +3,7 @@ import cgi
 import cgitb
 import json
 import uuid
+import os
 
 cgitb.enable()  # enable detailed error messages
 
@@ -12,12 +13,16 @@ def generate_uid():
     return str(uuid.uuid4())
 
 def authenticate(username, password):
-    # Hardcoded username and password for simplicity
-    hardcoded_username = "admin"
-    hardcoded_password = "password123"
+    # Hardcoded username and password for simplicity - live version to use ENV or other auth methods
+    # hardcoded_username = "admin"
+    # hardcoded_password = "password123"
+    
+    ## stored_password = os.environ.get("BLOG_PASSWORD")
+    stored_username = "admin"
+    stored_password = os.environ["BLOG_PASSWORD"] if "BLOG_PASSWORD" in os.environ else None
 
-    return username == hardcoded_username and password == hardcoded_password
-
+    #return username == hardcoded_username and password == hardcoded_password
+    return username == stored_username and password == stored_password
 #
 # FETCH: return ALL data in JSON
 #
@@ -75,7 +80,7 @@ def main():
         print("Access-Control-Allow-Origin: *");
         print("Access-Control-Allow-Methods: GET, POST, OPTIONS");
         print("Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization");
-        print();
+        # print();
         print("Content-type: application/json\n")
         print(json.dumps(data, indent=2))
     else:
