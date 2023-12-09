@@ -76,22 +76,26 @@ const CertificateList = () => {
     <div>
       <div>
         <h2>certification subjects</h2>
-        <ul>
+        <div className='cert-subject-wrapper'>
           {Object.entries(certTypeCloud)
             .sort(([typeA], [typeB]) => typeA.localeCompare(typeB))
             .map(([type, count]) => (
-              <li
-                key={type}
-                // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
-                role='button'
-                tabIndex={0}
-                onClick={() => filterCertificates(type as CertType)}
-                onKeyDown={(e) => e.key === 'Enter' && filterCertificates(type as CertType)}
-              >
-                {type} ({count})
-              </li>
+              <span key={type}>
+                <span
+                  key={type}
+                  className='cert-display-subject'
+                  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+                  role='button'
+                  tabIndex={0}
+                  onClick={() => filterCertificates(type as CertType)}
+                  onKeyDown={(e) => e.key === 'Enter' && filterCertificates(type as CertType)}
+                >
+                  {type}&nbsp;({count})
+                </span>
+                &nbsp;|{' '}
+              </span>
             ))}
-        </ul>
+        </div>
       </div>
 
       <div>
@@ -101,6 +105,7 @@ const CertificateList = () => {
             <li
               key={cert.certTitle}
               style={{ fontWeight: cert.certType === 'primary' ? 'bold' : 'normal' }}
+              className='cert-row'
             >
               {cert.certDate} - {cert.certTitle}
             </li>
