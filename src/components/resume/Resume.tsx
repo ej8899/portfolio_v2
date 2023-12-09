@@ -266,12 +266,12 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                 <p>
                   Attend various Canadian Forces schools for Avionics (Aircraft Electronics)
                   Technician training:
-                  <ul>
-                    <li>Canadian Forces School of Aerospace & Technology,</li>
-                    <li>Canadian Forces School of Communications & Electronics,</li>
-                    <li>Performance Oriented Electronics Training</li>
-                  </ul>
                 </p>
+                <ul>
+                  <li>- Canadian Forces School of Aerospace & Technology,</li>
+                  <li>- Canadian Forces School of Communications & Electronics,</li>
+                  <li>- Performance Oriented Electronics Training</li>
+                </ul>
                 {/* <button className='bnt-more'>More</button> */}
               </div>
             </div>
