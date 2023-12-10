@@ -100,17 +100,17 @@ const CertificateList = () => {
 
       <div>
         <h2>Certifications</h2>
-        <ul>
+        <div className='certlist-wrapper'>
           {filteredCertificates.map((cert) => (
-            <li
+            <div
               key={cert.certTitle}
               style={{ fontWeight: cert.certType === 'primary' ? 'bold' : 'normal' }}
               className='cert-row'
             >
               {cert.certDate} - {cert.certTitle}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
