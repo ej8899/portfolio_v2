@@ -22,10 +22,36 @@ const CertificateList = () => {
   // State for sorting
   const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc'); // 'asc' or 'desc'
   const [filteredCertificates, setFilteredCertificates] = useState<Certificate[]>([]);
+  const [expandedCert, setExpandedCert] = useState<string | null>(null);
 
   // Function to toggle sort order
   const toggleSortOrder = () => {
     setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+  };
+
+  const formatCertDate = (certDate: string) => {
+    const date = new Date(certDate);
+    const monthNames = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+    const month = monthNames[date.getMonth()];
+    const year = date.getFullYear().toString().slice(-2);
+    return `${month} '${year}`;
+  };
+
+  const toggleExpanded = (certTitle: string) => {
+    setExpandedCert((prev) => (prev === certTitle ? null : certTitle));
   };
 
   // Function to sort certificates by date
@@ -73,7 +99,7 @@ const CertificateList = () => {
   const certTypeCloud = countCertTypes();
 
   return (
-    <div>
+    <div className='certs'>
       <div>
         <h2>certification subjects</h2>
         <div className='cert-subject-wrapper'>
@@ -90,9 +116,9 @@ const CertificateList = () => {
                   onClick={() => filterCertificates(type as CertType)}
                   onKeyDown={(e) => e.key === 'Enter' && filterCertificates(type as CertType)}
                 >
-                  {type}&nbsp;({count})
+                  {type.replace(' ', '\u00a0')}&nbsp;({count})
                 </span>
-                &nbsp;|{' '}
+                &nbsp;<span className='cert-type-divider'>|</span>{' '}
               </span>
             ))}
         </div>
@@ -100,16 +126,22 @@ const CertificateList = () => {
 
       <div>
         <h2>Certifications</h2>
-        <div className='certlist-wrapper'>
-          {filteredCertificates.map((cert) => (
-            <div
-              key={cert.certTitle}
-              style={{ fontWeight: cert.certType === 'primary' ? 'bold' : 'normal' }}
-              className='cert-row'
-            >
-              {cert.certDate} - {cert.certTitle}
-            </div>
-          ))}
+        <div className='certlist-wrapper' id='style2'>
+          <ol className='olcards'>
+            {filteredCertificates.map((cert) => (
+              <li key={cert.certTitle} data-date={formatCertDate(cert.certDate)}>
+                <div className='content'>
+                  <div className='title'>{cert.certTitle}</div>
+                  <div className='text'>
+                    Issued by: {cert.certBy}, on {cert.certDate}.{' '}
+                    <a href={cert.certVerificationURL} target='_blank' rel='noopener noreferrer'>
+                      ( View Certificate )
+                    </a>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </div>

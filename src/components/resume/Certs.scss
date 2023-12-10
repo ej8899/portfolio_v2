@@ -3,7 +3,8 @@
   // white-space: normal;
   // border: 1px solid red;
   padding: 2px;
-  
+  text-align: center;
+  // border: 2px solid blue;
   &:hover {
     background-color: beige;
     border-radius: 4px;
@@ -12,14 +13,23 @@
 
 .cert-subject-wrapper {
   max-width: 600px;
+  text-align: center;
   // overflow: hidden;
   // border: 2px solid blue;
   // white-space: nowrap;
 }
 
-.cert-row {
-  padding: 2px;
+.cert-type-divider {
+  color: teal;
+  font-weight: bold;
+}
 
+.cert-row {
+  padding: 4px;
+  border-bottom: 2px solid teal;
+  // border-radius: 5px;
+  margin: 2px;
+  font-size: 1.1rem;
   &:hover {
     background-color: bisque;
     border-radius: 4px;
@@ -28,7 +38,132 @@
 
 
 .certlist-wrapper {
-  max-height: 200px;
-  height: 200px;
-  overflow-y: scroll;
+  max-height: 300px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.cert-details {
+  padding-top:0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.cert-date-style {
+  background-color: orange;
+  border-radius: 5px;
+}
+
+.certs {
+  ::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.0);
+    // background: transparent !important;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.2) !important;
+  }
+
+  ::-webkit-scrollbar
+  {
+    width: 14px !important;
+    //background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.0);
+    background-color: orange !important;
+    border: 1px solid black !important;
+  }
+}
+
+
+
+
+.olcards,
+.olcards * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.olcards {
+  list-style: none;
+  border: 2px solid yellow;
+  width: 100%;
+  counter-reset: cardCount;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  --cardsGap: 1rem;
+  gap: var(--cardsGap);
+  padding-bottom: var(--cardsGap);
+}
+
+.olcards li {
+  counter-increment: cardCount;
+  display: flex;
+  color: white;
+
+  --labelOffset: 0.5rem;
+  --arrowClipSize: 0rem;
+  margin-top: var(--labelOffset);
+}
+
+.olcards li::before {
+  content: attr(data-date);
+  background: white;
+  color: white;
+  font-size: 1em;
+  font-weight: 400;
+  border-radius: 10px;
+  height: 1.8em;
+  width: 100px;
+  border: 2px solid black;
+  background-color: var(--clr-primary-100);
+  box-shadow: var(--box-shadow-full);
+  transform: translateY(calc(-1 * var(--labelOffset)));
+  transform: rotate(-5deg);
+  overflow: visible;
+  margin-right: calc(-7 * var(--labelOffset));
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+
+.olcards li .content {
+  background-color: teal;
+  border: 2px solid black;
+  margin-right: 10px;
+  --inlinePadding: 1em;
+  --boxPadding: 0.2em;
+  // display: grid;
+  // padding: var(--boxPadding) calc(var(--inlinePadding) + var(--arrowClipSize))
+  //   var(--boxPadding) calc(var(--inlinePadding) + var(--labelOffset));
+  // grid-template-areas:
+  //   "icon title"
+  //   "icon text";
+  gap: 0.25em 1em;
+  padding: 5px;
+  position: relative;
+}
+.olcards li .content::before {
+  
+}
+.olcards li .content::after {
+  
+}
+.olcards li .content .title {
+  // grid-area: title;
+  font-size: 1.25em;
+  /* font-weight: 700; */
+}
+.olcards li .content .text {
+  // grid-area: text;
 }

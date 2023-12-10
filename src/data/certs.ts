@@ -319,7 +319,7 @@ const CERTS: Certificates[] = [
   },
   {
     certTitle: 'PMP Basics',
-    certTypes: ['project management'],
+    certTypes: ['project management', 'soft skills'],
     certImage: 'none',
     certVerificationURL: 'https://simpli-web.app.link/e/zlFTYMrMoFb',
     certDescription: '',
