@@ -30,6 +30,7 @@ import Chatbot from '../components/chatbot/Chatbot';
 import Resume from '../components/resume/Resume';
 import BlogComponent from '../components/blog/Blogs';
 import FeedbackForm from '../components/contact/Feedback';
+import CertificateList from '../components/resume/Certs';
 // import useWindowDimensions from '../hooks/useWindowDimensions';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
@@ -184,6 +185,7 @@ function App() {
           <Resume reference={sectionRefs.resume} />
           <BlogComponent />
         </SectionObserver>
+        <CertificateList></CertificateList>
         <SectionObserver sectionName='contact' onEnter={handleEnter} onLeave={handleLeave}>
           <Contact />
         </SectionObserver>

@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import React from '../../assets/components/React';
+import { useEffect, useState } from 'react';
 
 // DATA:
 import CERTS, { CertType } from '../../data/certs';
@@ -19,17 +18,15 @@ interface Certificate {
 }
 
 const CertificateList = () => {
-  // State for sorting
-  const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc'); // 'asc' or 'desc'
+  const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
   const [filteredCertificates, setFilteredCertificates] = useState<Certificate[]>([]);
-  const [expandedCert, setExpandedCert] = useState<string | null>(null);
-
-  // Function to toggle sort order
-  const toggleSortOrder = () => {
-    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
-  };
+  const [activeSortType, setActiveSortType] = useState<CertType>('all');
+  const [listVisibility, setListVisibility] = useState<'visible' | 'listhidden'>('visible');
 
   const formatCertDate = (certDate: string) => {
+    if (certDate == 'in progress') {
+      return 'In progress!';
+    }
     const date = new Date(certDate);
     const monthNames = [
       'Jan',
@@ -50,11 +47,6 @@ const CertificateList = () => {
     return `${month} '${year}`;
   };
 
-  const toggleExpanded = (certTitle: string) => {
-    setExpandedCert((prev) => (prev === certTitle ? null : certTitle));
-  };
-
-  // Function to sort certificates by date
   const sortCertificates = (certs: Certificate[], order: 'asc' | 'desc') => {
     return certs.slice().sort((a, b) => {
       const dateA = new Date(a.certDate).getTime();
@@ -64,19 +56,6 @@ const CertificateList = () => {
     });
   };
 
-  // Sorted certificates
-  const sortedCertificates = sortCertificates(CERTS, sortOrder);
-
-  const filterCertificates = (type: CertType) => {
-    if (type === 'all') {
-      setFilteredCertificates(sortedCertificates);
-    } else {
-      const filtered = sortedCertificates.filter((cert) => cert.certTypes.includes(type));
-      setFilteredCertificates(filtered);
-    }
-  };
-
-  // Function to count certTypes
   const countCertTypes = () => {
     const typeCount: Record<string, number> = {
       all: CERTS.length,
@@ -95,53 +74,85 @@ const CertificateList = () => {
     return typeCount;
   };
 
-  // Certificate tag cloud
   const certTypeCloud = countCertTypes();
+
+  useEffect(() => {
+    setListVisibility('listhidden');
+  }, [activeSortType, sortOrder]);
+
+  useEffect(() => {
+    // After the fade-out animation completes, update the data and set the list back to 'visible'
+    const timeoutId = setTimeout(() => {
+      const sortedCerts = sortCertificates(CERTS, sortOrder);
+      if (activeSortType === 'all') {
+        setFilteredCertificates(sortedCerts);
+      } else {
+        const filtered = sortedCerts.filter((cert) => cert.certTypes.includes(activeSortType));
+        setFilteredCertificates(filtered);
+      }
+      setListVisibility('visible');
+    }, 500); // Adjust the timeout duration as needed
+
+    // Clean up the timeout to avoid potential memory leaks
+    return () => clearTimeout(timeoutId);
+  }, [activeSortType, sortOrder]);
 
   return (
     <div className='certs'>
-      <div>
-        <h2>certification subjects</h2>
-        <div className='cert-subject-wrapper'>
-          {Object.entries(certTypeCloud)
-            .sort(([typeA], [typeB]) => typeA.localeCompare(typeB))
-            .map(([type, count]) => (
-              <span key={type}>
-                <span
-                  key={type}
-                  className='cert-display-subject'
-                  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
-                  role='button'
-                  tabIndex={0}
-                  onClick={() => filterCertificates(type as CertType)}
-                  onKeyDown={(e) => e.key === 'Enter' && filterCertificates(type as CertType)}
-                >
-                  {type.replace(' ', '\u00a0')}&nbsp;({count})
-                </span>
-                &nbsp;<span className='cert-type-divider'>|</span>{' '}
-              </span>
-            ))}
+      <div className='column centered_grid'>
+        <div className='certs__header'>
+          <h2 id='certs__title'>Certifications</h2>
+          <div className='subtitle-message'>
+            Here are just a few recent certifications & courses!
+          </div>
         </div>
-      </div>
 
-      <div>
-        <h2>Certifications</h2>
-        <div className='certlist-wrapper' id='style2'>
-          <ol className='olcards'>
-            {filteredCertificates.map((cert) => (
-              <li key={cert.certTitle} data-date={formatCertDate(cert.certDate)}>
-                <div className='content'>
-                  <div className='title'>{cert.certTitle}</div>
-                  <div className='text'>
-                    Issued by: {cert.certBy}, on {cert.certDate}.{' '}
-                    <a href={cert.certVerificationURL} target='_blank' rel='noopener noreferrer'>
-                      ( View Certificate )
-                    </a>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
+        <div className='certlist-main'>
+          <div className='cert-subject-wrapper'>
+            {Object.entries(certTypeCloud)
+              .sort(([typeA], [typeB]) => typeA.localeCompare(typeB))
+              .map(([type, count]) => (
+                <span key={type}>
+                  <span
+                    className={`cert-display-subject ${
+                      activeSortType === type ? 'active-sort' : ''
+                    }`}
+                    role='button'
+                    tabIndex={0}
+                    onClick={() => setActiveSortType(type as CertType)}
+                    onKeyDown={(e) => e.key === 'Enter' && setActiveSortType(type as CertType)}
+                  >
+                    {type.replace(' ', '\u00a0')}&nbsp;({count})
+                  </span>
+                  &nbsp;<span className='cert-type-divider'>|</span>{' '}
+                </span>
+              ))}
+          </div>
+          <div className={`certlist-wrapper ${listVisibility}`} id='style2'>
+            <div className='ol-wrapper'>
+              <div className='certs-header'></div>
+              <ol className='olcards'>
+                {filteredCertificates.map((cert) => (
+                  <li key={cert.certTitle} data-date={formatCertDate(cert.certDate)}>
+                    <div className='content'>
+                      <div className='title'>{cert.certTitle}</div>
+                      <div className='text'>
+                        Issued by: {cert.certBy}, on {cert.certDate}.{' '}
+                        <a
+                          href={cert.certVerificationURL}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
+                          ( View Certificate )
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div className='certs-footer'></div>
+          </div>
         </div>
       </div>
     </div>

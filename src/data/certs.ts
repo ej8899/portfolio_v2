@@ -27,6 +27,7 @@ export type CertType =
   | 'accessibility'
   | 'html'
   | 'jest'
+  | 'automation'
   | 'jquery'
   | 'mui'
   | 'eslint'
@@ -44,6 +45,8 @@ export type CertType =
   | 'database'
   | 'postgres'
   | 'sql'
+  | 'api'
+  | 'middleware'
   | 'git'
   | 'version control'
   | 'nosql'
@@ -70,6 +73,8 @@ const CERTS: Certificates[] = [
       'frontend',
       'backend',
       'css',
+      'api',
+      'middleware',
       'html',
       'version control',
       'postgres',
@@ -231,7 +236,7 @@ const CERTS: Certificates[] = [
   },
   {
     certTitle: 'Introduction to Back-End Development',
-    certTypes: ['javascript', 'backend', 'html', 'css'],
+    certTypes: ['javascript', 'backend', 'html', 'css', 'api', 'middleware'],
     certImage: '',
     certVerificationURL: 'https://coursera.org/verify/L27644FUTU2Q',
     certDescription: '',
@@ -363,6 +368,50 @@ const CERTS: Certificates[] = [
     certDate: '2023-10-28',
     certType: 'secondary',
     certStatus: 'complete',
+  },
+  {
+    certTitle: 'Learn Python with Games',
+    certTypes: ['python', 'game dev'],
+    certImage: 'none',
+    certVerificationURL: 'none',
+    certDescription: '',
+    certBy: 'Udemy',
+    certDate: 'in progress',
+    certType: 'primary',
+    certStatus: 'inprogress',
+  },
+  {
+    certTitle: 'IT Support Professional',
+    certTypes: ['hardware', 'support', 'networking'],
+    certImage: 'none',
+    certVerificationURL: 'none',
+    certDescription: '',
+    certBy: 'Google',
+    certDate: 'in progress',
+    certType: 'primary',
+    certStatus: 'inprogress',
+  },
+  {
+    certTitle: 'IT Automation with Python',
+    certTypes: ['python', 'automation'],
+    certImage: 'none',
+    certVerificationURL: 'none',
+    certDescription: '',
+    certBy: 'Google',
+    certDate: 'in progress',
+    certType: 'primary',
+    certStatus: 'inprogress',
+  },
+  {
+    certTitle: 'Meta Front End Developer Professional',
+    certTypes: ['frontend', 'react', 'html', 'javascript', 'css'],
+    certImage: 'none',
+    certVerificationURL: 'none',
+    certDescription: '',
+    certBy: 'Meta',
+    certDate: 'in progress',
+    certType: 'primary',
+    certStatus: 'inprogress',
   },
 ];
 

@@ -17,6 +17,7 @@
   //background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><g transform=" rotate(358 960 540) translate(-58.97700164393336 -33.17456342471246) scale(1.0614343767124306) "><rect width="1920" height="1080" fill="rgb(32, 122, 122)"></rect><g transform="translate(0, 0)"><path fill="rgb(140, 185, 185)" fill-opacity="1" d="M0,144.271L106.667,136.358C213.333,128.446,426.667,112.621,640,158.459C853.333,204.298,1066.667,311.799,1280,373.049C1493.333,434.298,1706.667,449.295,1813.333,456.793L1920,464.291L1920,1080L1813.333,1080C1706.667,1080,1493.333,1080,1280,1080C1066.667,1080,853.333,1080,640,1080C426.667,1080,213.333,1080,106.667,1080L0,1080Z"></path></g><g transform="translate(0, 540)"></g></g></svg>');
   //background-color: var(--clr-about-bg-bottom);
   background-image: linear-gradient(var(--clr-about-bg-top), var(--clr-about-bg-bottom));
+  // background: var(--clr-about-bg-bottom);
   //margin-bottom: 50px;
 
   // &__content {

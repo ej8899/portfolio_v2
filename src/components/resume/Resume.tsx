@@ -278,7 +278,6 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
           </div>
           <div className='overlay-fade-bottom'></div>
         </section>
-        <CertificateList></CertificateList>
       </div>
     </section>
   );
