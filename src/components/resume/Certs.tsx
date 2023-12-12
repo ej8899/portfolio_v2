@@ -137,7 +137,7 @@ const CertificateList = () => {
                     <div className='content'>
                       <div className='title'>{cert.certTitle}</div>
                       <div className='text'>
-                        Issued by: {cert.certBy}, on {cert.certDate}.{' '}
+                        Issued by: {cert.certBy}, {cert.certDate}.{' '}
                         <a
                           href={cert.certVerificationURL}
                           target='_blank'
