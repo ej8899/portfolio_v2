@@ -25,7 +25,8 @@ const CertificateList = () => {
 
   const formatCertDate = (certDate: string) => {
     if (certDate == 'in progress') {
-      return 'In progress!';
+      // const fontprogress = '<i class="fa-solid fa-bars-progress"></i>';
+      return 'In\u00a0progress!';
     }
     const date = new Date(certDate);
     const monthNames = [
@@ -44,7 +45,7 @@ const CertificateList = () => {
     ];
     const month = monthNames[date.getMonth()];
     const year = date.getFullYear().toString().slice(-2);
-    return `${month} '${year}`;
+    return `✔️\u00a0${month} '${year}`;
   };
 
   const sortCertificates = (certs: Certificate[], order: 'asc' | 'desc') => {
@@ -138,13 +139,17 @@ const CertificateList = () => {
                       <div className='title'>{cert.certTitle}</div>
                       <div className='text'>
                         Issued by: {cert.certBy}, {cert.certDate}.{' '}
-                        <a
-                          href={cert.certVerificationURL}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                        >
-                          ( View Certificate )
-                        </a>
+                        {cert.certVerificationURL !== 'none' ? (
+                          <a
+                            href={cert.certVerificationURL}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            (View Certificate)
+                          </a>
+                        ) : (
+                          '(No Certificate Issued)'
+                        )}
                       </div>
                     </div>
                   </li>
