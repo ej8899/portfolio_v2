@@ -19,7 +19,6 @@ const SkillSlider = (props: { reference: LegacyRef<HTMLElement> | undefined }) =
   }, [isOnScreen]);
 
   return (
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, react/prop-types, @typescript-eslint/no-unsafe-member-access
     <section className='skills' aria-labelledby='my skills and tools' ref={props.reference}>
       <div className='column centered_grid'>
         <h2 id='skills' className='skills__title'>
