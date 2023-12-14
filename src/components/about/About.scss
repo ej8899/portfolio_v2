@@ -11,6 +11,7 @@
   //background-image: linear-gradient(red,yellow);
   // TODO need vars for revised bg color
   background-color: var(--clr-about-bg-top);
+  
   h2 {
     position: relative;
     
@@ -322,9 +323,13 @@
   transform: rotate(3deg);
 }
 
-
+.custom-shape-divider-top-16940443142 {
+  // background-image: var(--bg-topography);
+  // border: 2px solid red;
+}
 
 .custom-shape-divider-bottom-16940443142 {
+  background-image: var(--bg-topography);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -334,7 +339,7 @@
   //transform: rotate(180deg);
   z-index: 3;
   //border-radius: 50px;
-  // border: 2px solid red;
+  border: 2px solid red;
 }
 .aboutskills-divider-fill {
   // TODO needs var - about background var
