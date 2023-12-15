@@ -139,7 +139,7 @@ const CertificateList = () => {
                       <div className='title'>{cert.certTitle}</div>
                       <div className='text'>
                         Issued by: {cert.certBy}, {cert.certDate}.{' '}
-                        {cert.certVerificationURL !== 'none' ? (
+                        {cert.certVerificationURL !== 'none' && cert.certVerificationURL !== '' ? (
                           <a
                             href={cert.certVerificationURL}
                             target='_blank'
