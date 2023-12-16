@@ -425,7 +425,7 @@ const CERTS: Certificates[] = [
     certBy: 'Microsoft',
     certDate: '2023-12-16',
     certType: 'primary',
-    certStatus: 'inprogress',
+    certStatus: 'complete',
   },
   {
     certTitle: 'Introduction to AWS Cloud',
@@ -448,6 +448,17 @@ const CERTS: Certificates[] = [
     certDate: 'in progress',
     certType: 'primary',
     certStatus: 'inprogress',
+  },
+  {
+    certTitle: 'Introduction to Git and GitHub',
+    certTypes: ['version control', 'git'],
+    certImage: 'none',
+    certVerificationURL: 'https://coursera.org/verify/6NK2ABTHVW4Z',
+    certDescription: '',
+    certBy: 'Google',
+    certDate: '2023-12-16',
+    certType: 'secondary',
+    certStatus: 'complete',
   },
 ];
 
