@@ -11,54 +11,57 @@ export interface Certificates {
 }
 
 export type CertType =
-  | 'react'
-  | 'all'
-  | 'redux'
-  | 'typescript'
-  | 'javascript'
-  | 'css'
-  | 'sass'
-  | 'firebase'
-  | 'cybersecurity'
-  | 'frontend'
-  | 'backend'
-  | 'node'
-  | 'ui/ux'
   | 'accessibility'
+  | 'all'
+  | 'api'
+  | 'automation'
+  | 'aws'
+  | 'azure'
+  | 'babel'
+  | 'backend'
+  | 'bootstrap'
+  | 'cloud'
+  | 'css'
+  | 'cybersecurity'
+  | 'database'
+  | 'environmental'
+  | 'eslint'
+  | 'express'
+  | 'firebase'
+  | 'frontend'
+  | 'game dev'
+  | 'git'
+  | 'hacking'
+  | 'hardware'
   | 'html'
   | 'jest'
-  | 'automation'
   | 'jquery'
-  | 'mui'
-  | 'eslint'
-  | 'babel'
-  | 'webpack'
-  | 'bootstrap'
-  | 'vite'
-  | 'sharepoint'
-  | 'networking'
+  | 'javascript'
   | 'linux'
-  | 'office'
-  | 'soft skills'
-  | 'hardware'
-  | 'support'
-  | 'database'
-  | 'postgres'
-  | 'sql'
-  | 'api'
   | 'middleware'
-  | 'git'
-  | 'version control'
-  | 'nosql'
   | 'mongodb'
+  | 'mui'
+  | 'networking'
+  | 'node'
+  | 'nosql'
+  | 'office'
   | 'php'
+  | 'postgres'
   | 'project management'
-  | 'testing'
   | 'python'
-  | 'environmental'
-  | 'game dev'
-  | 'hacking'
-  | 'express';
+  | 'react'
+  | 'redux'
+  | 'sass'
+  | 'sharepoint'
+  | 'soft skills'
+  | 'sql'
+  | 'support'
+  | 'testing'
+  | 'typescript'
+  | 'ui/ux'
+  | 'version control'
+  | 'vite'
+  | 'webpack';
 
 const CERTS: Certificates[] = [
   {
@@ -409,6 +412,39 @@ const CERTS: Certificates[] = [
     certVerificationURL: 'none',
     certDescription: '',
     certBy: 'Meta',
+    certDate: 'in progress',
+    certType: 'primary',
+    certStatus: 'inprogress',
+  },
+  {
+    certTitle: 'Introduction to Microsoft Azure',
+    certTypes: ['azure', 'cloud'],
+    certImage: 'none',
+    certVerificationURL: 'none',
+    certDescription: '',
+    certBy: 'Microsoft',
+    certDate: 'in progress',
+    certType: 'primary',
+    certStatus: 'inprogress',
+  },
+  {
+    certTitle: 'Introduction to AWS Cloud',
+    certTypes: ['aws', 'cloud'],
+    certImage: 'none',
+    certVerificationURL: 'none',
+    certDescription: '',
+    certBy: 'Amazon Web Services',
+    certDate: 'in progress',
+    certType: 'primary',
+    certStatus: 'inprogress',
+  },
+  {
+    certTitle: 'AWS Cloud Technology Consultant Specialization',
+    certTypes: ['aws', 'cloud'],
+    certImage: 'none',
+    certVerificationURL: 'none',
+    certDescription: '',
+    certBy: 'Amazon Web Services',
     certDate: 'in progress',
     certType: 'primary',
     certStatus: 'inprogress',
