@@ -23,7 +23,9 @@ export type CertType =
   | 'cloud'
   | 'css'
   | 'cybersecurity'
+  | 'cryptography'
   | 'database'
+  | 'debugging'
   | 'environmental'
   | 'eslint'
   | 'express'
@@ -459,6 +461,41 @@ const CERTS: Certificates[] = [
     certDate: '2023-12-16',
     certType: 'secondary',
     certStatus: 'complete',
+  },
+  {
+    certTitle: 'Troubleshooting & Debugging Techniques',
+    certTypes: ['testing', 'debugging', 'python'],
+    certImage: 'none',
+    certVerificationURL: 'https://coursera.org/verify/JFMVA6EB6ETS',
+    certDescription: '',
+    certBy: 'Google',
+    certDate: '2023-12-16',
+    certType: 'secondary',
+    certStatus: 'complete',
+  },
+  {
+    certTitle: 'Applied Python Cryptography',
+    certTypes: ['cryptography', 'cybersecurity', 'python'],
+    certImage: 'none',
+    certVerificationURL:
+      'https://codered.eccouncil.org/certificate/78f022f0-672d-433b-8493-012cd5eab56d',
+    certDescription: '',
+    certBy: 'EC Council',
+    certDate: '2023-12-17',
+    certType: 'secondary',
+    certStatus: 'complete',
+  },
+  {
+    certTitle: 'Deep Web and Cybersecurity',
+    certTypes: ['cybersecurity', 'python'],
+    certImage: 'none',
+    certVerificationURL:
+      'https://codered.eccouncil.org/certificate/78f022f0-672d-433b-8493-012cd5eab56d',
+    certDescription: '',
+    certBy: 'EC Council',
+    certDate: 'in progress',
+    certType: 'secondary',
+    certStatus: 'inprogress',
   },
 ];
 
