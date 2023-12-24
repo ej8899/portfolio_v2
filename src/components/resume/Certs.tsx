@@ -5,6 +5,7 @@ import CERTS, { CertType } from '../../data/certs';
 
 // CSS
 import './Certs.scss';
+import Collapse from '../collapse/Collapse';
 
 interface Certificate {
   certTitle: string;

@@ -14,6 +14,7 @@ export type CertType =
   | 'accessibility'
   | 'all'
   | 'api'
+  | 'appsec'
   | 'automation'
   | 'aws'
   | 'azure'
@@ -32,6 +33,7 @@ export type CertType =
   | 'firebase'
   | 'frontend'
   | 'game dev'
+  | 'go'
   | 'git'
   | 'hacking'
   | 'hardware'
@@ -475,7 +477,7 @@ const CERTS: Certificates[] = [
   },
   {
     certTitle: 'Applied Python Cryptography',
-    certTypes: ['cryptography', 'cybersecurity', 'python'],
+    certTypes: ['cryptography', 'cybersecurity', 'python', 'hacking'],
     certImage: 'none',
     certVerificationURL:
       'https://codered.eccouncil.org/certificate/78f022f0-672d-433b-8493-012cd5eab56d',
@@ -487,15 +489,59 @@ const CERTS: Certificates[] = [
   },
   {
     certTitle: 'Deep Web and Cybersecurity',
-    certTypes: ['cybersecurity', 'python'],
+    certTypes: ['cybersecurity', 'python', 'hacking'],
     certImage: 'none',
-    certVerificationURL:
-      'https://codered.eccouncil.org/certificate/78f022f0-672d-433b-8493-012cd5eab56d',
+    certVerificationURL: '',
     certDescription: '',
     certBy: 'EC Council',
     certDate: 'in progress',
     certType: 'secondary',
     certStatus: 'inprogress',
+  },
+  {
+    certTitle: 'Getting Started with Go',
+    certTypes: ['go'],
+    certImage: 'none',
+    certVerificationURL: 'https://coursera.org/verify/88GW4ZJYVP5K',
+    certDescription: '',
+    certBy: 'University of California',
+    certDate: '2023-12-18',
+    certType: 'secondary',
+    certStatus: 'primary',
+  },
+  {
+    certTitle: 'Application Security Foundations Level 1',
+    certTypes: ['cybersecurity', 'appsec'],
+    certImage: 'none',
+    certVerificationURL: '',
+    certDescription: '',
+    certBy: 'We Hack Purple',
+    certDate: 'in progress',
+    certType: 'primary',
+    certStatus: 'primary',
+  },
+  {
+    certTitle: 'API Security',
+    certTypes: ['cybersecurity', 'appsec', 'api'],
+    certImage: 'none',
+    certVerificationURL:
+      'https://ejnotes.notion.site/api-security-mini-course-c768ee5e705c4911a25788bf0ddf716a?pvs=4',
+    certDescription: '',
+    certBy: 'We Hack Purple',
+    certDate: '2023-12-20',
+    certType: 'primary',
+    certStatus: 'primary',
+  },
+  {
+    certTitle: 'Functions, Methods and Interfaces in Go',
+    certTypes: ['go'],
+    certImage: 'none',
+    certVerificationURL: '',
+    certDescription: '',
+    certBy: 'University of California',
+    certDate: '2023-12-23',
+    certType: 'secondary',
+    certStatus: 'primary',
   },
 ];
 
