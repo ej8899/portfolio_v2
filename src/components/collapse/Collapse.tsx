@@ -7,10 +7,9 @@ import useElementOnScreen from '../../hooks/useElementOnScreen';
 type CollapsePropTypes = {
   title?: string;
   children?: ReactNode;
-  ctype: string;
 };
 
-function Collapse({ title, children, ctype }: CollapsePropTypes) {
+function Collapse({ title, children }: CollapsePropTypes) {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const collapseRef = useRef<HTMLDivElement>(null);
   const isOnScreen = useElementOnScreen(collapseRef);
