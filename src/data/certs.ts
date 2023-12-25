@@ -55,6 +55,7 @@ export type CertType =
   | 'python'
   | 'react'
   | 'redux'
+  | 'ruby'
   | 'sass'
   | 'sharepoint'
   | 'soft skills'
@@ -88,10 +89,12 @@ const CERTS: Certificates[] = [
       'database',
       'jquery',
       'eslint',
+      'ruby',
       'testing',
     ],
     certImage: '',
-    certVerificationURL: '',
+    certVerificationURL:
+      'https://ejnotes.notion.site/Lighthouse-Labs-Web-Development-feb5124870f44594a9ef4a07c5b10d4b?pvs=4',
     certDescription: 'Certificate of Web Development Craftmanship',
     certBy: 'Lighthouse Labs',
     certDate: '2023-02-17',
