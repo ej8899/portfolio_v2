@@ -36,6 +36,8 @@ function BlogComponent() {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const [postOpen, setPostOpen] = useState(false);
   const [sortBy, setSortBy] = useState<'recent' | 'unread'>('recent'); // Add sorting state
+  const [unreadCount, setUnreadCount] = useState<number>(0);
+  const [recentCount, setRecentCount] = useState<number>(0);
 
   // eslint-disable-next-line @typescript-eslint/no-shadow
   const handleSortBy = (sortBy: 'recent' | 'unread') => {
@@ -161,6 +163,14 @@ function BlogComponent() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const tunreadCount = Object.keys(blogPosts).filter((postId) => !isPostRead(postId)).length;
+    setUnreadCount(tunreadCount);
+
+    const trecentCount = Object.keys(blogPosts).length;
+    setRecentCount(trecentCount);
+  }, [blogPosts]);
+
   return (
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, react/prop-types, @typescript-eslint/no-unsafe-member-access
     <div id='blog-container' className={`blog-container ${isOpen ? 'open' : ''}`}>
@@ -209,14 +219,14 @@ function BlogComponent() {
                   className={`button_astext ${sortBy === 'recent' ? 'selectedsort' : ''}`}
                   onClick={() => handleSortBy('recent')}
                 >
-                  Recent
+                  Recent ({recentCount})
                 </button>
                 <button className='button_astext'> | </button>
                 <button
                   className={`button_astext ${sortBy === 'unread' ? 'selectedsort' : ''}`}
                   onClick={() => handleSortBy('unread')}
                 >
-                  Unread
+                  Unread ({unreadCount})
                 </button>
               </div>
               <ul>
