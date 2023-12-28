@@ -12,7 +12,8 @@ export interface Certificates {
 
 export type CertType =
   | 'accessibility'
-  | 'all'
+  | 'ai'
+  | '.all'
   | 'api'
   | 'appsec'
   | 'automation'
@@ -543,6 +544,42 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'University of California',
     certDate: '2023-12-23',
+    certType: 'secondary',
+    certStatus: 'primary',
+  },
+  {
+    certTitle: 'Pair Programming with an LLM',
+    certTypes: ['ai'],
+    certImage: 'none',
+    certVerificationURL:
+      'https://ejnotes.notion.site/Pair-Programming-with-a-Large-Language-Model-296956d1d0174e46ad993d96d54dd502?pvs=4',
+    certDescription: '',
+    certBy: 'DeepLearning.AI',
+    certDate: '2023-12-26',
+    certType: 'secondary',
+    certStatus: 'primary',
+  },
+  {
+    certTitle: 'ChatGPT Prompt Engineering for Developers',
+    certTypes: ['ai'],
+    certImage: 'none',
+    certVerificationURL:
+      'https://ejnotes.notion.site/chatGPT-Prompt-Engineering-for-Developers-2ae3bf7db10b45c59dbc3b04ef269920?pvs=4',
+    certDescription: '',
+    certBy: 'DeepLearning.AI',
+    certDate: '2023-12-27',
+    certType: 'secondary',
+    certStatus: 'primary',
+  },
+  {
+    certTitle: 'Introduction to Generative AI',
+    certTypes: ['ai'],
+    certImage: 'none',
+    certVerificationURL:
+      'https://ejnotes.notion.site/Introduction-to-Generative-AI-f37c5db240884699bd395c757a964a2f?pvs=4',
+    certDescription: '',
+    certBy: 'Google',
+    certDate: '2023-12-27',
     certType: 'secondary',
     certStatus: 'primary',
   },

@@ -21,7 +21,7 @@ interface Certificate {
 const CertificateList = () => {
   const [sortOrder, setSortOrder] = useState<'desc' | 'asc'>('desc');
   const [filteredCertificates, setFilteredCertificates] = useState<Certificate[]>([]);
-  const [activeSortType, setActiveSortType] = useState<CertType>('all');
+  const [activeSortType, setActiveSortType] = useState<CertType>('.all');
   const [listVisibility, setListVisibility] = useState<'visible' | 'listhidden'>('visible');
 
   const formatCertDate = (certDate: string) => {
@@ -60,7 +60,7 @@ const CertificateList = () => {
 
   const countCertTypes = () => {
     const typeCount: Record<string, number> = {
-      all: CERTS.length,
+      '.all': CERTS.length,
     };
 
     CERTS.forEach((cert) => {
@@ -86,7 +86,7 @@ const CertificateList = () => {
     // After the fade-out animation completes, update the data and set the list back to 'visible'
     const timeoutId = setTimeout(() => {
       const sortedCerts = sortCertificates(CERTS, sortOrder);
-      if (activeSortType === 'all') {
+      if (activeSortType === '.all') {
         setFilteredCertificates(sortedCerts);
       } else {
         const filtered = sortedCerts.filter((cert) => cert.certTypes.includes(activeSortType));
