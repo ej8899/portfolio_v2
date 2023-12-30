@@ -101,15 +101,15 @@ function App() {
 
   /* Setup initial JS items */
   useEffect(() => {
-    logger.info('App started');
-
     // Check if userId already exists in localStorage
     const userId = localStorage.getItem('userId');
-
     // If not, generate a new userId and save it to localStorage
     if (!userId) {
       const newUserId = generateUUID();
       localStorage.setItem('userId', newUserId);
+      logger.info('App started - new user');
+    } else {
+      logger.info('App started - repeat visitor');
     }
 
     activeAnimation();

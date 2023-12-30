@@ -31,7 +31,7 @@ class Logger {
 
   private serverUrl: string;
 
-  constructor(name: string, serverUrl = 'http://erniejohnson.ca/logger/log.py') {
+  constructor(name: string, serverUrl = 'http://erniejohnson.ca/cgi-bin/log.py') {
     this.name = name;
     this.level = logLevels.INFO; // Default log level
     this.consoleOutput = true; // show log messages in console?
@@ -108,21 +108,24 @@ class Logger {
 
       // dump to server:
       if (this.serverSend) {
-        const userId = this.getUserId();
-        console.log({
-          date: new Date().toISOString(),
-          message: logMessage,
-          userId,
-          environment,
-        });
-        // this.sendLogToServer({
+        let userId = this.getUserId();
+        if (!userId) {
+          userId = 'unknown';
+        }
+        // console.log({
         //   date: new Date().toISOString(),
         //   message: logMessage,
         //   userId,
         //   environment,
-        // }).catch((error) => {
-        //   console.error('Error while sending log to server:', error);
         // });
+        this.sendLogToServer({
+          date: new Date().toISOString(),
+          log: logMessage,
+          environment,
+          userId,
+        }).catch((error) => {
+          console.error('Error while sending log to server:', error);
+        });
       }
     }
   }
@@ -134,14 +137,19 @@ class Logger {
     userId?: string;
   }): Promise<void> {
     try {
+      const formData = new FormData();
+      formData.append('logData', JSON.stringify(logData));
+
       const response = await fetch(this.serverUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ logData }),
+        mode: 'cors',
+        // headers: {
+        //   'Content-Type': 'application/json',
+        // },
+        // body: JSON.stringify({ logData }),
+        body: formData,
       });
-
+      // console.log(response);
       if (!response.ok) {
         console.error('Failed to send log to server:', response.statusText);
       }
