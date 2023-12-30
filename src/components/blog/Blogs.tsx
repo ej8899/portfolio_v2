@@ -1,6 +1,7 @@
 import React from '../../assets/components/React';
 import { useEffect, useState } from 'react';
 import './Blogs.scss';
+import logger from '../../loggerSingleton';
 
 interface BlogPost {
   image: string;
@@ -56,6 +57,7 @@ function BlogComponent() {
         //   mode: 'no-cors',
         // });
         if (!response.ok) {
+          logger.error('failed to fetch blog posts');
           throw new Error('Failed to fetch data');
         }
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -65,7 +67,8 @@ function BlogComponent() {
         setBlogPosts(data);
         // console.log('data:', blogPosts);
       } catch (error) {
-        console.error('Error fetching blog posts:', error);
+        logger.error('failed to fetch blog posts');
+        // console.error('Error fetching blog posts:', error);
       }
     };
     void fetchData();
@@ -74,6 +77,7 @@ function BlogComponent() {
   const handleToggleBlog = () => {
     setIsOpen((prev) => !prev);
     setSelectedPost(null);
+    logger.info('opening blog posts');
   };
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -91,6 +95,7 @@ function BlogComponent() {
   };
 
   const handlePostClick = (post: BlogPost) => {
+    logger.info(`opening blog: ${post.title}`);
     setSelectedPost(post);
     setPostOpen(true);
     const readDate = new Date();

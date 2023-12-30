@@ -16,6 +16,7 @@ import './Chatbot.scss';
 import globalconfig from '../../config';
 import popOut from './newWindow';
 import SendIcon from './sendIcon';
+import logger from '../../loggerSingleton';
 
 // TODO use badwords filter (build it)
 import badWordsArray from './badwords';
@@ -672,8 +673,10 @@ function Chatbot(props) {
 
   const toggleChatbot = () => {
     // console.log("open status:",isOpen);
+    
     if(!isOpen) {
       // is open, will need to close so lets send chat stats:
+      logger.info('chatterbot: safe close');
       handlerSubmit();
       setIsOpen(!isOpen);
       // eslint-disable-next-line react/prop-types
@@ -855,7 +858,7 @@ function Chatbot(props) {
 
     // Add the event listener for link clicks
     chatbotContainer.addEventListener('click', handleLinkClick);
-
+    logger.info('chatterbot: opening');
     setTimeout(() => {
       // console.log('sleeping for slide in');
       setIsOpen(false);

@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Feedback.scss';
+import logger from '../../loggerSingleton';
 
 const FeedbackForm = () => {
   const [selectedRating, setSelectedRating] = useState<number | null>(3);
@@ -25,6 +26,7 @@ const FeedbackForm = () => {
     }, 300);
   };
   const handleOpen = () => {
+    logger.info('started feedback form');
     setIsFormOpen(true);
     setIsSendPending(false);
     setIsError(false);
@@ -62,7 +64,8 @@ const FeedbackForm = () => {
     } catch (err) {
       setIsSendPending(false);
       setIsError(true);
-      console.error('error sending');
+      logger.error('error sending feedback');
+      // console.error('error sending');
     }
   };
 

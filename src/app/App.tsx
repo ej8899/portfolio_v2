@@ -31,6 +31,7 @@ import Resume from '../components/resume/Resume';
 import BlogComponent from '../components/blog/Blogs';
 import FeedbackForm from '../components/contact/Feedback';
 import CertificateList from '../components/resume/Certs';
+import logger from '../loggerSingleton';
 // import useWindowDimensions from '../hooks/useWindowDimensions';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
@@ -64,9 +65,11 @@ function App() {
         break;
       case 'contact':
         appTitle('contact -> ErnieJohnson.ca');
+        logger.info('in contact section');
         break;
       case 'footer':
         appTitle('hidden footer -> ErnieJohnson.ca');
+        logger.info('found hidden footer (build click)');
         break;
       default:
         appTitle('ErnieJohnson.ca - Web Dev Portfolio');
@@ -90,6 +93,7 @@ function App() {
 
   /* Setup initial JS items */
   useEffect(() => {
+    logger.info('App started');
     activeAnimation();
     initCursor();
     window.addEventListener('scroll', stickyNav);

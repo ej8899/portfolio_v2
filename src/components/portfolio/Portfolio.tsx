@@ -7,6 +7,7 @@ import useElementOnScreen from '../../hooks/useElementOnScreen';
 import Project from '../project/Project';
 import './Portfolio.scss';
 import ArrowSketch from '../../assets/components/ArrowSketch';
+import logger from '../../loggerSingleton';
 
 function Portfolio(props: { reference: LegacyRef<HTMLElement> | undefined }) {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -21,6 +22,7 @@ function Portfolio(props: { reference: LegacyRef<HTMLElement> | undefined }) {
     if (!isOnScreen) return;
     titleRef.current?.classList.add('animate-in');
   }, [isOnScreen]);
+
   useEffect(() => {
     if (!isExtraOnScreen) {
       setRenderAllProjects(false);
@@ -66,6 +68,7 @@ function Portfolio(props: { reference: LegacyRef<HTMLElement> | undefined }) {
               className='portfolio__view-more portfolio__additional-projects-title'
               // data-tooltip='View All Projects'
               onClick={() => {
+                if (!renderAllProjects) logger.info('opened additional projects');
                 setRenderAllProjects((prev) => !prev);
               }}
               aria-label={`${renderAllProjects ? 'Hide Extra Projects' : 'View All Projects'}`}

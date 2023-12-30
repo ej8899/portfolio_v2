@@ -5,6 +5,7 @@ import Button from '../button/Button';
 import './Contact.scss';
 import ContactText from './ContactText';
 import qrCode from '../../assets/images/qrcode-contact2.png';
+import logger from '../../loggerSingleton';
 
 function Contact() {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -92,11 +93,11 @@ function Contact() {
       const json = (await response.json()) as { success: boolean };
 
       setIsSendPending(false);
-
       if (!json.success) throw new Error('Something went wrong.');
 
       setIsSent(true);
     } catch (err) {
+      logger.error('error sending contact form');
       setIsSendPending(false);
       setIsError(true);
     }
