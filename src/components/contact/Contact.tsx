@@ -96,6 +96,7 @@ function Contact() {
       if (!json.success) throw new Error('Something went wrong.');
 
       setIsSent(true);
+      logger.trace('contact - sent a message success');
     } catch (err) {
       logger.error('error sending contact form');
       setIsSendPending(false);
