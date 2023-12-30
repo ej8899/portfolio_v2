@@ -34,9 +34,30 @@ class Logger {
     this.level = logLevels[level.toUpperCase() as keyof LogLevels] || logLevels.INFO;
   }
 
-  private log(level: keyof LogLevels, message: string): void {
-    if (logLevels[level] >= this.level) {
-      console.log(`[${level}] [${this.name}] ${message}`);
+  private log(level: string, message: string): void {
+    const logMessage = `[${level}] [${this.name}] ${message}`;
+
+    switch (level) {
+      case 'TRACE':
+        console.log('\x1b[36m%s\x1b[0m', logMessage); // Cyan
+        break;
+      case 'DEBUG':
+        console.log('\x1b[32m%s\x1b[0m', logMessage); // Green
+        break;
+      case 'INFO':
+        console.log('\x1b[34m%s\x1b[0m', logMessage); // Blue
+        break;
+      case 'WARN':
+        console.log('\x1b[33m%s\x1b[0m', logMessage); // Yellow
+        break;
+      case 'ERROR':
+        console.log('\x1b[31m%s\x1b[0m', logMessage); // Red
+        break;
+      case 'FATAL':
+        console.log('\x1b[41m%s\x1b[0m', logMessage); // Background Red
+        break;
+      default:
+        console.log(logMessage);
     }
   }
 
