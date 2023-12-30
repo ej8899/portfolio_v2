@@ -25,39 +25,47 @@ class Logger {
 
   private level: number;
 
+  private consoleOutput: boolean;
+
   constructor(name: string) {
     this.name = name;
     this.level = logLevels.INFO; // Default log level
+    this.consoleOutput = true; // show log messages in console?
   }
 
   setLogLevel(level: keyof LogLevels): void {
     this.level = logLevels[level.toUpperCase() as keyof LogLevels] || logLevels.INFO;
   }
 
+  toggleConsoleLog(shouldLog: boolean): void {
+    this.consoleOutput = shouldLog;
+  }
+
   private log(level: string, message: string): void {
     const logMessage = `[${level}] [${this.name}] ${message}`;
-
-    switch (level) {
-      case 'TRACE':
-        console.log('\x1b[36m%s\x1b[0m', logMessage); // Cyan
-        break;
-      case 'DEBUG':
-        console.log('\x1b[32m%s\x1b[0m', logMessage); // Green
-        break;
-      case 'INFO':
-        console.log('\x1b[34m%s\x1b[0m', logMessage); // Blue
-        break;
-      case 'WARN':
-        console.log('\x1b[33m%s\x1b[0m', logMessage); // Yellow
-        break;
-      case 'ERROR':
-        console.log('\x1b[31m%s\x1b[0m', logMessage); // Red
-        break;
-      case 'FATAL':
-        console.log('\x1b[41m%s\x1b[0m', logMessage); // Background Red
-        break;
-      default:
-        console.log(logMessage);
+    if (this.consoleOutput) {
+      switch (level) {
+        case 'TRACE':
+          console.log('\x1b[36m%s\x1b[0m', logMessage); // Cyan
+          break;
+        case 'DEBUG':
+          console.log('\x1b[32m%s\x1b[0m', logMessage); // Green
+          break;
+        case 'INFO':
+          console.log('\x1b[34m%s\x1b[0m', logMessage); // Blue
+          break;
+        case 'WARN':
+          console.log('\x1b[33m%s\x1b[0m', logMessage); // Yellow
+          break;
+        case 'ERROR':
+          console.log('\x1b[31m%s\x1b[0m', logMessage); // Red
+          break;
+        case 'FATAL':
+          console.log('\x1b[41m%s\x1b[0m', logMessage); // Background Red
+          break;
+        default:
+          console.log(logMessage);
+      }
     }
   }
 
@@ -87,4 +95,5 @@ class Logger {
 }
 
 const logger = new Logger('EJCA');
+logger.toggleConsoleLog(true);
 export default logger;
