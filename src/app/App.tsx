@@ -51,6 +51,14 @@ function App() {
     resume: useRef(null),
   };
 
+  const generateUUID = (): string => {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      const r = (Math.random() * 16) | 0;
+      const v = c === 'x' ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  };
+
   const handleEnter = (sectionName: string) => {
     setActiveSection(sectionName);
     switch (sectionName) {
@@ -94,6 +102,16 @@ function App() {
   /* Setup initial JS items */
   useEffect(() => {
     logger.info('App started');
+
+    // Check if userId already exists in localStorage
+    const userId = localStorage.getItem('userId');
+
+    // If not, generate a new userId and save it to localStorage
+    if (!userId) {
+      const newUserId = generateUUID();
+      localStorage.setItem('userId', newUserId);
+    }
+
     activeAnimation();
     initCursor();
     window.addEventListener('scroll', stickyNav);
