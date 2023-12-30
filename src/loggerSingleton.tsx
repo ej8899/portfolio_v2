@@ -27,10 +27,16 @@ class Logger {
 
   private consoleOutput: boolean;
 
-  constructor(name: string) {
+  private serverSend: boolean;
+
+  private serverUrl: string;
+
+  constructor(name: string, serverUrl = 'http://erniejohnson.ca/logger/log.py') {
     this.name = name;
     this.level = logLevels.INFO; // Default log level
     this.consoleOutput = true; // show log messages in console?
+    this.serverSend = true; // send logMessage to server for actual logging
+    this.serverUrl = serverUrl;
   }
 
   setLogLevel(level: keyof LogLevels): void {
@@ -41,8 +47,41 @@ class Logger {
     this.consoleOutput = shouldLog;
   }
 
+  private getEnvironmentInfo(): { browser: string; version: string; os: string; device: string } {
+    const userAgent = window.navigator.userAgent;
+    const browserData = this.parseUserAgent(userAgent);
+
+    return {
+      browser: browserData.browserName,
+      version: browserData.browserVersion,
+      os: window.navigator.platform,
+      device: this.getDeviceType(),
+    };
+  }
+
+  private parseUserAgent(userAgent: string): { browserName: string; browserVersion: string } {
+    const match = userAgent.match(/(chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    const [, browserName, browserVersion] = match;
+
+    return { browserName, browserVersion };
+  }
+
+  private getDeviceType(): string {
+    const isMobile = /Mobile|Android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      window.navigator.userAgent,
+    );
+    return isMobile ? 'Mobile' : 'Desktop';
+  }
+
+  private getUserId(): string | null {
+    return localStorage.getItem('userId');
+  }
+
   private log(level: string, message: string): void {
     const logMessage = `[${level}] [${this.name}] ${message}`;
+    const formattedLog = `[${new Date().toISOString()}] ${logMessage}`;
+    const environment = this.getEnvironmentInfo();
+
     if (this.consoleOutput) {
       switch (level) {
         case 'TRACE':
@@ -66,6 +105,48 @@ class Logger {
         default:
           console.log(logMessage);
       }
+
+      // dump to server:
+      if (this.serverSend) {
+        const userId = this.getUserId();
+        console.log({
+          date: new Date().toISOString(),
+          message: logMessage,
+          userId,
+          environment,
+        });
+        // this.sendLogToServer({
+        //   date: new Date().toISOString(),
+        //   message: logMessage,
+        //   userId,
+        //   environment,
+        // }).catch((error) => {
+        //   console.error('Error while sending log to server:', error);
+        // });
+      }
+    }
+  }
+
+  private async sendLogToServer(logData: {
+    date: string;
+    log: string;
+    environment: unknown;
+    userId?: string;
+  }): Promise<void> {
+    try {
+      const response = await fetch(this.serverUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ logData }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to send log to server:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error while sending log to server:', error);
     }
   }
 
