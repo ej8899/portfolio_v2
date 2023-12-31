@@ -30,8 +30,20 @@ def view_log():
 
     log_entries.sort(key=lambda entry: entry.get('date', ''), reverse=True)
 
-    html_output = "<html><head><title>Log Entries</title><script src=\"https://cdn.tailwindcss.com\"></script></head><body>"
-    html_output += f"<h1 class=\"text-3xl font-extrabold dark:text-black\">Log Entries ({total_unique_users} uniques)</h1>"
+    html_output = "<html><head><title>Log Entries</title><script src=\"https://cdn.tailwindcss.com\"></script></head>"
+    html_output += "<body class=\"bg-slate-600\">"
+
+    html_output += "<header class=\"bg-white rounded-lg shadow m-8 dark:bg-gray-800\">"
+    html_output += "<div class=\"w-full mx-auto p-4 md:flex md:items-center md:justify-between\">"
+    html_output += "<span class=\"text-sm text-gray-500 sm:text-center dark:text-gray-400\">"
+    html_output += f"<h1 class=\"text-3xl font-extrabold dark:text-white\">Log Entries ({total_unique_users} uniques)</h1></span>"
+    html_output += "<ul class=\"flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0\">"
+    html_output += "<li><a href=\"#\" class=\"hover:underline me-4 md:me-6\">About</a></li>"
+    html_output += "<li><a href=\"#\" class=\"hover:underline me-4 md:me-6\">Privacy Policy</a></li>"
+    html_output += "<li><a href=\"#\" class=\"hover:underline me-4 md:me-6\">Licensing</a></li>"
+    html_output += "<li><a href=\"#\" class=\"hover:underline\">Contact</a></li>"
+    html_output += "</ul></div></header>"
+    
     html_output += "<div class=\"relative overflow-x-auto shadow-md sm:rounded-lg m-8\">"
     html_output += "<table class=\"w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400\">"
     html_output += "<thead class=\"text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400\">"
@@ -49,7 +61,7 @@ def view_log():
 
     html_output += "</tbody></table></div>"
     html_output += "<footer class=\"bg-white rounded-lg shadow m-8 dark:bg-gray-800\">"
-    html_output += "<div class=\"w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between\">"
+    html_output += "<div class=\"w-full mx-auto p-4 md:flex md:items-center md:justify-between\">"
     html_output += "<span class=\"text-sm text-gray-500 sm:text-center dark:text-gray-400\">"
     html_output += "<a href=\"https://erniejohnson.ca\" class=\"hover:underline\">ErnieJohnson.ca</a>. All Rights Reserved.</span>"
     html_output += "<ul class=\"flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0\">"
@@ -59,7 +71,6 @@ def view_log():
     html_output += "<li><a href=\"#\" class=\"hover:underline\">Contact</a></li>"
     html_output += "</ul></div></footer>"
 
-    
     html_output +="</body></html>"
     print (html_output)
     
