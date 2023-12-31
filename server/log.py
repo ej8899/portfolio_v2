@@ -9,6 +9,7 @@ from collections import defaultdict
 
 # Path to the log file
 log_file_path = 'app_log.txt'
+entries_per_page = 50;
 
 def get_python_version():
     return sys.version
@@ -21,6 +22,9 @@ def view_log():
         print("No log entries available.")
         return
     
+    # Limit log entries to 100 rows
+    log_entries = log_entries[:100]
+
     # Count occurrences of unique userId values
     user_id_counts = defaultdict(int)
     for entry in log_entries:
@@ -91,6 +95,31 @@ def append_to_log(log_data):
         finally:
             fcntl.flock(log_file.fileno(), fcntl.LOCK_UN)
 
+
+def fetch_log(fetch_param=all):
+    print(f"fetching:items{fetch_param}:")
+    with open(log_file_path, 'r') as log_file:
+        log_entries = [json.loads(line) for line in log_file.readlines() if line.strip()]
+
+    if fetch_param == 'all':
+        # Return all log entries
+        print (json.dumps(log_entries))
+    elif fetch_param.isdigit():
+        # Fetch specified number of entries starting from the provided index
+        start_index = int(fetch_param)
+        end_index = start_index + entries_per_page
+        fetched_entries = log_entries[start_index:end_index]
+        print (json.dumps(fetched_entries))
+    else:
+        # Display paginated log entries by default
+        total_entries = len(log_entries)
+        page_number = 1
+        start_index = (page_number - 1) * entries_per_page
+        end_index = start_index + entries_per_page
+        paginated_entries = log_entries[start_index:end_index]
+        print (json.dumps(paginated_entries))
+
+
 def main():
     print("Access-Control-Allow-Origin: *");
     print("Access-Control-Allow-Methods: GET, POST, OPTIONS");
@@ -102,9 +131,13 @@ def main():
     create_log_file()
     form = cgi.FieldStorage()
     action = form.getvalue('action')
+    fetch = form.getvalue('fetch')
   
     if action == 'view':
         view_log()
+    if action == 'fetch':
+        fetch_log(fetch)
+        #print(f"<br>fetching log:items:{fetch}:")
     else:
         print("thanks for stopping by<br>")
         log_data_json = form.getvalue('logData')

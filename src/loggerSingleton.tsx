@@ -31,7 +31,7 @@ class Logger {
 
   private serverUrl: string;
 
-  constructor(name: string, serverUrl = 'http://erniejohnson.ca/cgi-bin/log.py') {
+  constructor(name: string, serverUrl = 'https://erniejohnson.ca/cgi-bin/log.py') {
     this.name = name;
     this.level = logLevels.INFO; // Default log level
     this.consoleOutput = true; // show log messages in console?
