@@ -6,6 +6,7 @@ import os
 from datetime import datetime
 import sys
 from collections import defaultdict
+from datetime import datetime, timedelta
 
 # Path to the log file
 log_file_path = 'app_log.txt'
@@ -22,7 +23,8 @@ def view_log():
         print("No log entries available.")
         return
     
-    # Limit log entries to 100 rows
+    # reverse log entries and limit to 100 items
+    log_entries = log_entries[::-1]
     log_entries = log_entries[:100]
 
     # Count occurrences of unique userId values
@@ -97,7 +99,7 @@ def append_to_log(log_data):
 
 
 def fetch_log(fetch_param=all):
-    print(f"fetching:items{fetch_param}:")
+    # print(f"fetching:items{fetch_param}:")
     with open(log_file_path, 'r') as log_file:
         log_entries = [json.loads(line) for line in log_file.readlines() if line.strip()]
 
@@ -120,13 +122,84 @@ def fetch_log(fetch_param=all):
         print (json.dumps(paginated_entries))
 
 
+#
+#
+#
+def append_warn_log(log_data):
+    # Create a log entry for the WARN message
+    warn_log_entry = {
+        "date": datetime.utcnow().isoformat(),
+        "environment": log_data.get('environment', {}),
+        "userId": log_data.get('userId', ''),
+        "log": "[WARN] [SERVER] Possible DoS - Logs on hold",
+        "serverDate": datetime.utcnow().isoformat()
+    }
+
+    # Append the WARN log entry to the log file
+    append_to_log(warn_log_entry)
+
+def check_last_entries(log_entries):
+    # Filter entries with "app started" message
+    app_started_entries = [entry for entry in log_entries if 'app started' in entry.get('log', '').lower()]
+    warning_entries = [entry for entry in log_entries if 'warn' in entry.get('log', '').lower()]
+    warning_entries = warning_entries[::-1]
+    ok_to_log = True
+
+    with open('debug_log.txt', 'a') as debug_log:
+        debug_log.write(f"count of app_started_entries: {len(app_started_entries)}\n")
+
+    dos_items = 10 # set the warning threshold for potential DoS attack within dos_minutes
+    dos_minutes = 2 # set # of minutes to monitor apps starting for potential DoS attacks
+    consecutive_count = 0
+    user_id = None
+
+    for entry in app_started_entries:
+        entry_date = datetime.strptime(entry.get('date', ''), '%Y-%m-%dT%H:%M:%S.%fZ')
+        current_date = datetime.utcnow()
+        time_difference = current_date - entry_date
+
+        if time_difference <= timedelta(minutes=dos_minutes):
+            if entry.get('userId') == user_id:
+                consecutive_count += 1
+            else:
+                user_id = entry.get('userId')
+                consecutive_count = 1  # Reset count for a new userId
+        else:
+            consecutive_count = 0  # Reset count if log message is not within the last 60 minutes
+
+
+    if consecutive_count >= dos_items:
+        print(f"Last 10 log entries indicate 'app started' consecutively with the same userId ({user_id}).")
+        with open('debug_log.txt', 'a') as debug_log:
+            debug_log.write(f"WARNING app started in last 10 entries... {datetime.utcnow().isoformat()}\n")
+            
+            # TODO get last log entry
+            # TODO if it's a DoS warning entry, exit, otherwise enter a DoS warning entry
+            if warning_entries and warning_entries[0].get('userId') == user_id:
+                with open('debug_log.txt', 'a') as debug_log:
+                    debug_log.write(f"DoS warning already exists for this user. Skipping append_warn_log.... {datetime.utcnow().isoformat()}\n")
+                ok_to_log = False
+            else:
+                with open('debug_log.txt', 'a') as debug_log:
+                    debug_log.write(f"appending to log:  DoS WARN.... {datetime.utcnow().isoformat()}\n")
+                append_warn_log(entry)
+                ok_to_log = False
+        
+    else:
+        print("Less than 10 consecutive log entries with 'app started.'")
+        with open('debug_log.txt', 'a') as debug_log:
+            debug_log.write(f"less than 10 app started entries... {datetime.utcnow().isoformat()}\n")
+            debug_log.write(f"less than 10 app started entries... count: {consecutive_count}\n")
+    return ok_to_log
+
+
+
+
 def main():
     print("Access-Control-Allow-Origin: *");
     print("Access-Control-Allow-Methods: GET, POST, OPTIONS");
     print("Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization");
-    print("Content-type: text/html\n")
-    print("Python Version:")
-    print(get_python_version())
+    #print("Content-type: text/html\n")
     
     create_log_file()
     form = cgi.FieldStorage()
@@ -134,11 +207,16 @@ def main():
     fetch = form.getvalue('fetch')
   
     if action == 'view':
+        print("Content-type: text/html\n")
+        print("Python Version:")
+        print(get_python_version())
         view_log()
     if action == 'fetch':
+        print("Content-type: application/json\n")
         fetch_log(fetch)
         #print(f"<br>fetching log:items:{fetch}:")
     else:
+        print("Content-type: text/html\n")
         print("thanks for stopping by<br>")
         log_data_json = form.getvalue('logData')
         if log_data_json:
@@ -146,7 +224,22 @@ def main():
             log_data = json.loads(log_data_json)
             if log_data:
                 log_data['serverDate'] = datetime.utcnow().isoformat()
-                append_to_log(log_data);
+                
+                
+                # Check last 10 log entries before appending new entry
+                # with open(log_file_path, 'r') as log_file:
+                #     log_entries = json.load(log_file)
+                with open(log_file_path, 'r') as log_file:
+                    log_entries = [json.loads(line) for line in log_file.readlines() if line.strip()]
+                ok_to_log = check_last_entries(log_entries)
+
+                if ok_to_log:
+                    with open('debug_log.txt', 'a') as debug_log:
+                        debug_log.write(f"appending... {datetime.utcnow().isoformat()}\n")
+
+                    print("appending...")
+                    
+                    append_to_log(log_data);
             else:
                 print("error decoding json");
                 # append_to_log('error decoding json');
