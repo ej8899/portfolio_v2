@@ -112,6 +112,8 @@ def fetch_log(fetch_param=all):
         end_index = start_index + entries_per_page
         fetched_entries = log_entries[start_index:end_index]
         print (json.dumps(fetched_entries))
+    elif fetch_param == 'stats':
+        fetch_stats();
     else:
         # Display paginated log entries by default
         total_entries = len(log_entries)
@@ -120,6 +122,24 @@ def fetch_log(fetch_param=all):
         end_index = start_index + entries_per_page
         paginated_entries = log_entries[start_index:end_index]
         print (json.dumps(paginated_entries))
+
+
+#
+#
+#
+def fetch_stats():
+    # fetch data and server stats and return in JSON
+    # TODO - data size
+    # TODO - # of all entries
+    # TODO - # of error entries
+    # TODO - # of WARN entries
+    # TODO - # of INFO entries
+    # TODO - # of (other) entires
+    # TODO - uniques via phone
+    # TODO - uniques via tablet
+    # TODO - uniques via Desktop
+    # TODO - users per day
+    print ('sending stats')
 
 
 #
