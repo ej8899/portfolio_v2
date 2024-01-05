@@ -3,8 +3,9 @@ import cgi
 import json
 import fcntl
 import os
-from datetime import datetime
 import sys
+
+from datetime import datetime
 from collections import defaultdict
 from datetime import datetime, timedelta
 
@@ -123,24 +124,146 @@ def fetch_log(fetch_param=all):
         paginated_entries = log_entries[start_index:end_index]
         print (json.dumps(paginated_entries))
 
+def count_unique_user_ids(log_lines):
+    unique_user_ids = set()
+
+    for entry in log_lines:
+        user_id = entry.get('userId', '')
+        if user_id:
+            unique_user_ids.add(user_id)
+
+    total_unique_users = len(unique_user_ids)
+    # print(f"Total unique userIds: {total_unique_users}")
+    return total_unique_users
+
+
+
+def count_log_levels(log_lines):
+    log_levels_count = {
+        'WARN': 0,
+        'INFO': 0,
+        'ERROR': 0,
+        'FATAL': 0,
+        'DEBUG': 0,
+        'TRACE': 0
+    }
+    #print (log)
+    for line in log_lines:
+        log_message = line.get('log', '')
+        for level in log_levels_count.keys():
+            if f'[{level}]' in log_message:
+                log_levels_count[level] += 1
+
+    # print (log_levels_count)
+    return log_levels_count
+
+
+def environment_summary(log_entries):
+    device_counts = {}
+    os_counts = {}
+    browser_counts = {}
+
+    for entry in log_entries:
+        environment = entry.get('environment', {})
+        device = environment.get('device', '')
+        os = environment.get('os', '')
+        browser = environment.get('browser', '')
+
+        if device:
+            device_counts[device] = device_counts.get(device, 0) + 1
+        if os:
+            os_counts[os] = os_counts.get(os, 0) + 1
+        if browser:
+            browser_counts[browser] = browser_counts.get(browser, 0) + 1
+
+    # print("Device Summary:")
+    # print(device_counts)
+
+    # print("\nOS Summary:")
+    # print(os_counts)
+
+    # print("\nBrowser Summary:")
+    # print(browser_counts)
+
+    return device_counts, os_counts, browser_counts
+
+def count_entries_per_date(log_entries):
+    date_counts = defaultdict(int)
+
+    today = datetime.utcnow()
+
+    for entry in log_entries:
+        try:
+            date_str = entry.get('date', '')
+            if date_str:
+                # Use %Y-%m-%d to extract only the date portion
+                entry_date = datetime.strptime(date_str[:10], '%Y-%m-%d')
+                days_ago = (today - entry_date).days
+
+                # Count entries only if within the last 365 days
+                if 0 <= days_ago < 365:
+                    date_key = entry_date.strftime('%Y-%m-%d')
+                    date_counts[date_key] += 1
+        except Exception as e:
+            print(f"Error processing entry: {entry}. Error: {e}")
+
+    # print("Entries per Date Summary:")
+    # print(date_counts)
+
+    return date_counts
 
 #
 #
 #
 def fetch_stats():
     # fetch data and server stats and return in JSON
-    # TODO - data size
-    # TODO - # of all entries
-    # TODO - # of error entries
-    # TODO - # of WARN entries
-    # TODO - # of INFO entries
-    # TODO - # of (other) entires
-    # TODO - uniques via phone
-    # TODO - uniques via tablet
-    # TODO - uniques via Desktop
-    # TODO - users per day
-    print ('sending stats')
+    
+    # DONE - uniques via phone
+    # DONE - uniques via tablet
+    # DONE - uniques via Desktop
+    # DONE - users per day
+    
+    # python details
+    # print ('sending stats')
+    python_version = get_python_version()
+    # print (python_version)
+    
+    if os.path.exists(log_file_path):
+        # DONE - data size
+        file_size = os.path.getsize(log_file_path)
+        # print (file_size)
+        # Count total entries in the JSON log file
+        # DONE - # of all entries
+        with open(log_file_path, 'r') as log_file:
+            try:
+                log_entries = [json.loads(line) for line in log_file.readlines() if line.strip()]
+                total_entries = len(log_entries)
+                # print (total_entries)
+                log_levels_count = count_log_levels(log_entries)
+                unique_user_count = count_unique_user_ids(log_entries)
+                environment_summaries = environment_summary(log_entries)
+                date_counts = count_entries_per_date(log_entries)
+                # print(log_levels_count)
+            except json.JSONDecodeError:
+                # Handle JSON decoding error (invalid JSON format)
+                print ("ERROR decoding log file")
+                total_entries = 0
+    else:
+        file_size = 0
+        total_entries = 0
+        log_levels_count = {}
 
+    stats_data = {
+        'python_version': python_version,
+        'log_file_size': file_size,
+        'log_total_entries': total_entries,
+        'log_levels_count': log_levels_count,
+        'unique_visitors': unique_user_count,
+        'environment_summary': environment_summaries,
+        'date_counts': date_counts
+    }
+    # print (stats_data)
+    print (json.dumps(stats_data))
 
 #
 #
