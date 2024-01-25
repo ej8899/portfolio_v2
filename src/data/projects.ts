@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 // IMAGE IMPORTS
 import learnthisLessons from '../assets/learnthis/lessons.png';
 import learnthisHome from '../assets/learnthis/title.jpg';
@@ -40,6 +41,10 @@ import portfolio3 from '../assets/project-portfolio/scr2.png';
 import portfolio4 from '../assets/project-portfolio/scr3.png';
 import portfolio6 from '../assets/project-portfolio/scr5.jpg';
 
+import loga1 from '../assets/project-loga/smartmockups.png';
+import loga2 from '../assets/project-loga/SCR-20240109-hwjj.png';
+import loga3 from '../assets/project-loga/SCR-20240109-hwpu.png';
+
 export interface IProject {
   title: string;
   featured: boolean;
@@ -80,6 +85,7 @@ type TTech =
   | 'vite'
   | 'php'
   | 'python'
+  | 'tailwind'
   | 'express';
 
 const PROJECTS: IProject[] = [
@@ -169,6 +175,49 @@ const PROJECTS: IProject[] = [
         type: 'more|technical features',
         value:
           '<ul><li>google fonts<li>chatGPT<li>vite<li>image optimization<li>Python (blog backend)</ul>',
+      },
+    ],
+    bulletPoints: [],
+  },
+
+  {
+    title: 'Front End Log Analysis',
+    featured: true,
+    links: {
+      live: 'http://erniejohnson.ca/',
+      repo: 'https://erniejohnson.ca/loga/',
+    },
+    techIcons: ['react', 'tailwind', 'python'],
+    screenshots: [
+      { url: loga1, alt: 'Meeting to review Log Analysis' },
+      { url: loga2, alt: 'Initial dashboard with light mode in Tailwind CSS' },
+      { url: loga3, alt: 'Using Flowbite library to make layout quick and easy!' },
+    ],
+    description: [
+      { type: 'header', value: 'The Inspiration' },
+      {
+        type: 'p',
+        value:
+          'With Single Page Applications (SPAs), we dont get the same server interactivity and logging as we would with a multi-page or server rendered application. To compensate for this, and to provide some additional information about users on my SPA sites, I decided to create a simple front-end logging application.',
+      },
+      {
+        type: 'p',
+        value:
+          'Orignally, the logging API was a simple Python script and some simple Javascript inserted on the front-end applications to send data to the API for logging. As I started collecting log data, having a method to review the data was paramount.  I then proceeded to allow the Python to server-side render log data.  As data continued to collect, I decided to turn back to React and create a fully-functional front-end for the API data.',
+      },
+      {
+        type: 'more|learning objectives',
+        value:
+          'Learning objectives were initially to just expand on my day-to-day programming in Python.  Once I decided a fully-featured front-end, could be useful, I thought it would be usefull to incorporate Tailwind CSS into the project as a learning experiment.',
+      },
+      {
+        type: 'more|challenges',
+        value:
+          'Finding a finish point for the front-end application is proving difficult as I continue to collect log data. It will be important to work on additional logging and alerting features as time goes on. Full log management from the front end should also get implemented including archiving, deleting, saving logs.',
+      },
+      {
+        type: 'more|technical features',
+        value: '<ul><li>google fonts<li>chatGPT<li>vite<li>Python (API backend)</ul>',
       },
     ],
     bulletPoints: [],
