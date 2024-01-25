@@ -43,6 +43,8 @@ export type CertType =
   | 'jquery'
   | 'javascript'
   | 'linux'
+  | 'microsoft'
+  | 'm365'
   | 'middleware'
   | 'mongodb'
   | 'mui'
@@ -580,6 +582,18 @@ const CERTS: Certificates[] = [
     certDescription: '',
     certBy: 'Google',
     certDate: '2023-12-27',
+    certType: 'secondary',
+    certStatus: 'primary',
+  },
+  {
+    certTitle: 'M365 Fundamentals',
+    certTypes: ['m365', 'microsoft'],
+    certImage: 'none',
+    certVerificationURL:
+      '',
+    certDescription: '',
+    certBy: '',
+    certDate: '2024-01-24',
     certType: 'secondary',
     certStatus: 'primary',
   },
