@@ -24,6 +24,7 @@ import Express from '../../assets/components/Express';
 import Mui from '../../assets/components/Mui';
 import Php from '../../assets/components/Php';
 import Python from '../../assets/components/Python';
+import TailWindCSS from '../../assets/components/TailwindCSS';
 
 import './Project.scss';
 
@@ -177,6 +178,10 @@ function Project({ data, number }: TProps) {
               case 'python':
                 techComponent = <Python />;
                 tooltip = 'Python';
+                break;
+              case 'tailwind':
+                techComponent = <TailWindCSS />;
+                tooltip = 'Tailwind CSS';
                 break;
               case 'express':
                 techComponent = <Express />;
