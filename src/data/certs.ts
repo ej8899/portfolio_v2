@@ -589,8 +589,7 @@ const CERTS: Certificates[] = [
     certTitle: 'M365 Fundamentals',
     certTypes: ['m365', 'microsoft'],
     certImage: 'none',
-    certVerificationURL:
-      '',
+    certVerificationURL: '',
     certDescription: '',
     certBy: '',
     certDate: '2024-01-24',
