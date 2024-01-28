@@ -159,7 +159,7 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
                   web-type applications, including company kiosk app, company landing page and more.
                   Develop Microsoft Power Apps applications as required. Additional tasks included
                   design network layout for building, source networking contractor to run cabling,
-                  setup routers, routers,and firewalls.&nbsp;
+                  setup routers, backup server and firewalls.&nbsp;
                 </p>
               </div>
             </div>
