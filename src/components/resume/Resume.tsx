@@ -149,11 +149,7 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
               </div>
               <div className='timeline-content timeline-card' ref={timelineItem7}>
                 <div className='timeline-img-header img-itdirector'>
-                  <h3>
-                    (Freelance Contract)
-                    <br />
-                    NDA Company
-                  </h3>
+                  <h3>Freelance Contract</h3>
                 </div>
                 <div className='date'>2024</div>
                 <p>
