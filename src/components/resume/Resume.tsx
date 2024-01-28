@@ -53,6 +53,9 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
   const timelineItem6 = useRef<HTMLDivElement>(null);
   const item6OnScreen = useElementOnScreen(timelineItem6, '-30%');
 
+  const timelineItem7 = useRef<HTMLDivElement>(null);
+  const item7OnScreen = useElementOnScreen(timelineItem7, '-30%');
+
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
@@ -97,6 +100,7 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
   useAnimateOnScreen(item4OnScreen, timelineItem4, 'fadeIn');
   useAnimateOnScreen(item5OnScreen, timelineItem5, 'fadeIn');
   useAnimateOnScreen(item6OnScreen, timelineItem6, 'fadeIn');
+  useAnimateOnScreen(item7OnScreen, timelineItem7, 'fadeIn');
 
   const progressBarStyle = {
     height: `${scrollPercentage}%`, // Set the progress bar height based on scroll percentage
@@ -139,6 +143,30 @@ function Resume(props: { reference: LegacyRef<HTMLElement> | undefined }) {
           <div className='overlay-grower' style={progressBarStyle}></div>
           <div className='overlay-fade-top'></div>
           <div className='timeline-container'>
+            <div className='timeline-item'>
+              <div className='timeline-img'>
+                <i className='fa-solid fa-shield-halved'></i>
+              </div>
+              <div className='timeline-content timeline-card' ref={timelineItem7}>
+                <div className='timeline-img-header img-itdirector'>
+                  <h3>
+                    (Freelance Contract)
+                    <br />
+                    NDA Company
+                  </h3>
+                </div>
+                <div className='date'>2024</div>
+                <p>
+                  Deploy M365 cloud environment with focus on cybersecurity features for 70+ user
+                  start-up environment. Design and deploy multiple Sharepoint sites. Provide
+                  hardware procurement, setup and deployment services. Develop various custom
+                  web-type applications, including company kiosk app, company landing page and more.
+                  Develop Microsoft Power Apps applications as required. Additional tasks included
+                  design network layout for building, source networking contractor to run cabling,
+                  setup routers, routers,and firewalls.&nbsp;
+                </p>
+              </div>
+            </div>
             <div className='timeline-item'>
               <div className='timeline-img'>
                 <i className='fa-solid fa-shield-halved'></i>
