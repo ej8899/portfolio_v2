@@ -45,6 +45,9 @@ import loga1 from '../assets/project-loga/smartmockups.png';
 import loga2 from '../assets/project-loga/SCR-20240109-hwjj.png';
 import loga3 from '../assets/project-loga/SCR-20240109-hwpu.png';
 
+import k1 from '../assets/project-kiosk/1.jpg';
+import k2 from '../assets/project-kiosk/2.jpg';
+
 export interface IProject {
   title: string;
   featured: boolean;
@@ -184,8 +187,8 @@ const PROJECTS: IProject[] = [
     title: 'Front End Log Analysis',
     featured: true,
     links: {
-      live: 'http://erniejohnson.ca/',
-      repo: 'https://erniejohnson.ca/loga/',
+      live: 'http://erniejohnson.ca/loga',
+      repo: 'https://github.com/ej8899/ej-loga',
     },
     techIcons: ['react', 'tailwind', 'python'],
     screenshots: [
@@ -218,6 +221,49 @@ const PROJECTS: IProject[] = [
       {
         type: 'more|technical features',
         value: '<ul><li>google fonts<li>chatGPT<li>vite<li>Python (API backend)</ul>',
+      },
+    ],
+    bulletPoints: [],
+  },
+
+  {
+    title: 'Company Kiosk',
+    featured: true,
+    links: {
+      live: '',
+      repo: 'https://github.com/ej8899/mykiosk',
+    },
+    techIcons: ['react', 'tailwind', 'php'],
+    screenshots: [
+      { url: k1, alt: 'Main Kiosk display screen' },
+      { url: k2, alt: 'Kiosk app rotates through multiple secondary screens.' },
+    ],
+    description: [
+      { type: 'header', value: 'The Inspiration' },
+      {
+        type: 'p',
+        value:
+          'Our client was looking for an internal kiosk type application to present upcoming events and information to both staff and visitors to the office on various screens throughout their business environment.  The client was looking for a simple, yet effective solution that would be easy to maintain and update.',
+      },
+      {
+        type: 'more|requirements',
+        value:
+          'The only real requirements were to have a method for easy and quick updates of all displays this will be deployed to.   We opted for a remote configuration file that the application fetches from every 60 minutes to ensure any changes are deployed as quickly as reasonable.  In addition, some PHP middleware was written to interface with a third party weather API was created and deployed for security purposes.',
+      },
+      {
+        type: 'more|features',
+        value:
+          'Although not a project requirement, we wanted to implement a screen-saver type function to prevent any possibility of display burn in.  We opted to solve this by a) rotating background images every few minutes and b) rotating through different screens showcasing various information.  The screens were designed to be as simple as possible and to be easy to maintain and update.',
+      },
+      {
+        type: 'more|deployment',
+        value:
+          'Our code was written to microSD cards and deployed across the company displays via low-energy Raspberry PI units. Photos and configuration data pulls from a central locked directory on their web server.',
+      },
+      {
+        type: 'more|technical features',
+        value:
+          '<ul><li>google fonts<li>flowbite UI library (with TailwindCSS)<li>PHP middleware for weather API interface<li>server hosted config file for easy, remote updates</ul>',
       },
     ],
     bulletPoints: [],
