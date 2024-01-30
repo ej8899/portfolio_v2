@@ -147,8 +147,3 @@ class Logger {
     this.log('FATAL', message);
   }
 }
-
-const logger = new Logger('LOGA');
-logger.toggleConsoleLog(true);
-
-export default logger;
