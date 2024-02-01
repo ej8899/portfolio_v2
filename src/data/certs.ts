@@ -589,7 +589,8 @@ const CERTS: Certificates[] = [
     certTitle: 'M365 Fundamentals',
     certTypes: ['m365', 'microsoft'],
     certImage: 'none',
-    certVerificationURL: 'https://ejnotes.notion.site/m365-fundamentals-7cf788c5415e48d4828543c37acb25a9?pvs=4',
+    certVerificationURL:
+      'https://ejnotes.notion.site/m365-fundamentals-7cf788c5415e48d4828543c37acb25a9?pvs=4',
     certDescription: '',
     certBy: '',
     certDate: '2024-01-24',
