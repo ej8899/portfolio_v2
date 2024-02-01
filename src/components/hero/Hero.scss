@@ -14,6 +14,7 @@
   -webkit-align-items:center;
   padding-bottom: 120px;
 
+  
   // https://wickedbackgrounds.com/app
   // https://www.svgbackgrounds.com/how-to-add-svgs-with-css-background-image/
   // https://www.svgbackgrounds.com/tools/svg-to-css/
@@ -51,7 +52,7 @@
     position: -webkit-fixed;
     text-align: center;
       // BUG: top:20% shouldn't be here - works fine on FF and chrome w/o it - safari seems to need a fixed value
-      top: 20%;
+      top: 30%;
     
     @media (min-width: 900px) {
       //background-color: blue;
@@ -69,7 +70,7 @@
       letter-spacing: 0.05em;
       text-shadow: 2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 10px 8px 0px rgba(0, 0, 0, 0.3);
       margin-bottom: calc(var(--spacer) * 1.5);
-
+      
       font-weight: var(--fw-xbold);
       font-size: clamp(2.0rem, 8vw, 5rem);
       transform: rotate(-2deg) skew(-5deg);
@@ -79,7 +80,7 @@
     b {
       color: orange;
     }
-    // user title 1
+    // sub title
     h3 {
       margin-bottom: calc(var(--spacer) * 4);
       text-shadow: 
@@ -217,11 +218,13 @@
   fill: var(--clr-about-bg-top);
 }
 
+// TODO - below not used?
 .hero-started .title {
 	font-family: "Jost";
 	font-size: 90px;
 	line-height: 1.2;
 	color: red;
+  
 	font-weight: 700;
 	margin: 15px 0 0 0;
 	text-transform: uppercase;

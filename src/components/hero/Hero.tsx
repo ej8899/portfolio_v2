@@ -9,7 +9,7 @@ function Hero(props: { reference: LegacyRef<HTMLElement> | undefined }) {
     <section
       id='hero'
       className='hero'
-      aria-label='hero with github & linkedin links'
+      aria-label='hero with social media links'
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, react/prop-types
       ref={props.reference}
     >
