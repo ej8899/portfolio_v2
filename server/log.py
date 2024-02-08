@@ -136,6 +136,26 @@ def count_unique_user_ids(log_lines):
     # print(f"Total unique userIds: {total_unique_users}")
     return total_unique_users
 
+
+#
+# count totals by site
+#
+def count_log_entries_by_short_code(log_lines):
+    short_code_counts = defaultdict(int)
+    
+    for line in log_lines:
+        log_message = line.get('log', '')
+        # Extracting the short code from the log message
+        short_code = log_message.split('[')[-1].split(']')[0]
+        
+        # cleanup the data from any test cases:
+        if short_code == 'yet another log message':
+          continue
+        
+        short_code_counts[short_code] += 1
+
+    return short_code_counts
+
 #
 # when did errors LAST occur?
 #
@@ -266,6 +286,7 @@ def fetch_stats():
                 unique_user_count = count_unique_user_ids(log_entries)
                 environment_summaries = environment_summary(log_entries)
                 date_counts = count_entries_per_date(log_entries)
+                short_code_counts = count_log_entries_by_short_code(log_entries)
                 # print(log_levels_count)
             except json.JSONDecodeError:
                 # Handle JSON decoding error (invalid JSON format)
@@ -279,6 +300,7 @@ def fetch_stats():
     stats_data = {
         'python_version': python_version,
         'error_dates': last_errors,
+        'site_total_counts': short_code_counts,
         'log_file_size': file_size,
         'log_total_entries': total_entries,
         'log_levels_count': log_levels_count,
