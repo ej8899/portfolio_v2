@@ -136,8 +136,30 @@ def count_unique_user_ids(log_lines):
     # print(f"Total unique userIds: {total_unique_users}")
     return total_unique_users
 
+#
+# when did errors LAST occur?
+#
+def find_last_log_dates(log_lines):
+    log_levels_dates = {
+        'WARN': None,
+        'ERROR': None,
+        'FATAL': None
+    }
+    
+    for line in log_lines:
+        log_message = line.get('log', '')
+        log_date = line.get('date')
+        
+        for level in log_levels_dates.keys():
+            if f'[{level}]' in log_message:
+                if log_levels_dates[level] is None or log_date > log_levels_dates[level]:
+                    log_levels_dates[level] = log_date
 
+    return log_levels_dates
 
+#
+#
+#
 def count_log_levels(log_lines):
     log_levels_count = {
         'WARN': 0,
@@ -240,6 +262,7 @@ def fetch_stats():
                 total_entries = len(log_entries)
                 # print (total_entries)
                 log_levels_count = count_log_levels(log_entries)
+                last_errors = find_last_log_dates(log_entries)
                 unique_user_count = count_unique_user_ids(log_entries)
                 environment_summaries = environment_summary(log_entries)
                 date_counts = count_entries_per_date(log_entries)
@@ -255,6 +278,7 @@ def fetch_stats():
 
     stats_data = {
         'python_version': python_version,
+        'error_dates': last_errors,
         'log_file_size': file_size,
         'log_total_entries': total_entries,
         'log_levels_count': log_levels_count,
