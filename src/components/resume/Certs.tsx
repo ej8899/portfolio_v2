@@ -49,7 +49,7 @@ const CertificateList = () => {
     return `✔️\u00a0${month} '${year}`;
   };
 
-  const sortCertificates = (certs: Certificate[], order: 'asc' | 'desc') => {
+  const sortCertificates = (certs: Certificate[], order: 'asc' | 'desc' = 'desc') => {
     return certs.slice().sort((a, b) => {
       const dateA = new Date(a.certDate).getTime();
       const dateB = new Date(b.certDate).getTime();
