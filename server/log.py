@@ -180,6 +180,35 @@ def find_last_log_dates(log_lines):
 #
 #
 #
+def generate_site_monitors(log_lines):
+    site_monitors = {}
+
+    for line in log_lines:
+        log_message = line.get('log', '')
+        log_date = line.get('date')
+        
+        # Extract short code from log message
+        short_code = log_message.split('[')[-1].split(']')[0]
+
+        # Check if log message indicates an error
+        if '[ERROR]' in log_message or '[WARN]' in log_message or '[FATAL]' in log_message:
+            # Remove square brackets and spaces from log event type
+            event_type = log_message.split('[')[-2].strip('[] ').upper()
+
+            # Update site_monitors with the most recent log event type and date
+            if short_code not in site_monitors or (site_monitors[short_code]['date'] is None or log_date > site_monitors[short_code]['date']):
+                site_monitors[short_code] = {'event_type': event_type, 'date': log_date}
+
+    return site_monitors
+
+
+
+
+
+
+#
+#
+#
 def count_log_levels(log_lines):
     log_levels_count = {
         'WARN': 0,
@@ -297,10 +326,14 @@ def fetch_stats():
         total_entries = 0
         log_levels_count = {}
 
+    # Combine error dates with site total counts into site_monitors
+    site_monitors = generate_site_monitors(log_entries)
+
     stats_data = {
         'python_version': python_version,
         'error_dates': last_errors,
         'site_total_counts': short_code_counts,
+        'site_monitors': site_monitors,
         'log_file_size': file_size,
         'log_total_entries': total_entries,
         'log_levels_count': log_levels_count,
