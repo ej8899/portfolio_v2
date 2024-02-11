@@ -195,11 +195,12 @@ def generate_site_monitors(log_lines):
             # Remove square brackets and spaces from log event type
             event_type = log_message.split('[')[-2].strip('[] ').upper()
 
-            # Update site_monitors with the most recent log event type and date
+            # Update site_monitors with the most recent log event type, message, and date
             if short_code not in site_monitors or (site_monitors[short_code]['date'] is None or log_date > site_monitors[short_code]['date']):
-                site_monitors[short_code] = {'event_type': event_type, 'date': log_date}
+                site_monitors[short_code] = {'event_type': event_type, 'message': log_message, 'date': log_date}
 
     return site_monitors
+
 
 
 
