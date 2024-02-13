@@ -115,6 +115,32 @@ def fetch_log(fetch_param=all):
         print (json.dumps(fetched_entries))
     elif fetch_param == 'stats':
         fetch_stats();
+    elif fetch_param == 'daily':
+        # Fetch daily log data in the specified format
+        daily_data = {}
+
+        # Group log entries by site shortcode
+        for entry in log_entries:
+            short_code = entry.get('log', '').split('[')[-1].split(']')[0]  # Extract site shortcode
+            if short_code == 'yet another log message':
+                continue  # Skip this entry
+            if short_code not in daily_data:
+                daily_data[short_code] = {}
+
+            date_str = entry.get('date', '')
+            if date_str:
+              date_key = date_str.split('T')[0]  # Extract date without time
+              if date_key not in daily_data[short_code]:
+                  daily_data[short_code][date_key] = 0
+              daily_data[short_code][date_key] += 1
+
+        # Format daily data as required
+        formatted_daily_data = []
+        for short_code, date_counts in daily_data.items():
+            data = [[date, count] for date, count in date_counts.items()]
+            formatted_daily_data.append({'name': short_code, 'data': data})
+
+        print(json.dumps(formatted_daily_data))
     else:
         # Display paginated log entries by default
         total_entries = len(log_entries)
