@@ -26,6 +26,7 @@ export type CertType =
   | 'css'
   | 'cybersecurity'
   | 'cryptography'
+  | 'data analytics'
   | 'database'
   | 'debugging'
   | 'environmental'
@@ -595,6 +596,29 @@ const CERTS: Certificates[] = [
     certBy: '',
     certDate: '2024-01-24',
     certType: 'secondary',
+    certStatus: 'primary',
+  },
+  {
+    certTitle: 'Accelerate to an AI Powered Organization',
+    certTypes: ['microsoft'],
+    certImage: 'none',
+    certVerificationURL: '',
+    certDescription: '',
+    certBy: '',
+    certDate: '2024-02-20',
+    certType: 'secondary',
+    certStatus: 'primary',
+  },
+  {
+    certTitle: 'Introduction to Data Analysis',
+    certTypes: ['data analytics'],
+    certImage: 'none',
+    certVerificationURL:
+      'https://ejnotes.notion.site/Lighthouse-Labs-LHL-Data-Analysis-2ae6f88e83b346c0964538fd10804969?pvs=4',
+    certDescription: '',
+    certBy: 'Lighthouse Labs',
+    certDate: '2024-02-18',
+    certType: 'primary',
     certStatus: 'primary',
   },
 ];
