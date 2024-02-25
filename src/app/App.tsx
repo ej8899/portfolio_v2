@@ -32,6 +32,10 @@ import BlogComponent from '../components/blog/Blogs';
 import FeedbackForm from '../components/contact/Feedback';
 import CertificateList from '../components/resume/Certs';
 import logger from '../loggerSingleton';
+
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 // import useWindowDimensions from '../hooks/useWindowDimensions';
 
 // export const WindowContext = createContext({ height: 0, width: 0 });
