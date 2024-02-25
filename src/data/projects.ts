@@ -47,6 +47,7 @@ import loga3 from '../assets/project-loga/SCR-20240109-hwpu.png';
 
 import k1 from '../assets/project-kiosk/1.jpg';
 import k2 from '../assets/project-kiosk/2.jpg';
+import k3 from '../assets/project-kiosk/3.jpg';
 
 export interface IProject {
   title: string;
@@ -230,13 +231,14 @@ const PROJECTS: IProject[] = [
     title: 'Company Kiosk',
     featured: true,
     links: {
-      live: '',
+      live: 'https://erniejohnson.ca/clients/kiosk-demo/',
       repo: 'https://github.com/ej8899/mykiosk',
     },
     techIcons: ['react', 'tailwind', 'php'],
     screenshots: [
       { url: k1, alt: 'Main Kiosk display screen' },
       { url: k2, alt: 'Kiosk app rotates through multiple secondary screens.' },
+      { url: k3, alt: 'Kiosk app is made to display on a Raspberry PI and dedicated screen.' },
     ],
     description: [
       { type: 'header', value: 'The Inspiration' },
