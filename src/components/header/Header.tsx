@@ -1,12 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from 'react';
 import LogoIcon from '../../assets/components/LogoIcon';
 import HamburgerIcon from '../../assets/components/HamburgerIcon';
 import useElementOffScreen from '../../hooks/useElementOffScreen';
 import './Header.scss';
 
-function Header(props: { sectionName: string }) {
+interface HeaderProps {
+  sectionName: string;
+}
+
+function Header(props: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const headerRef = useRef<HTMLElement>(null);
@@ -15,20 +17,46 @@ function Header(props: { sectionName: string }) {
   useEffect(() => {
     if (!isHeaderOffScreen) {
       hamburgerRef.current?.classList.remove('hamburger-menu__sticky');
-      return;
+    } else {
+      hamburgerRef.current?.classList.add('hamburger-menu__sticky');
     }
-    hamburgerRef.current?.classList.add('hamburger-menu__sticky');
   }, [isHeaderOffScreen]);
+
+  const scrollToTargetElement = (targetId: string) => {
+    const targetElement = document.getElementById(targetId);
+    console.log('target', targetElement);
+    if (targetElement) {
+      const initialRect = targetElement?.getBoundingClientRect();
+      console.log('Target element initial position:', initialRect);
+
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+
+      setTimeout(() => {
+        const updatedRect = targetElement?.getBoundingClientRect();
+        console.log('Target element position after click:', updatedRect);
+      }, 0);
+
+      setIsMenuOpen(false);
+    } else {
+      console.error(`Element with id ${targetId} not found.`);
+    }
+  };
+
+  const handleNavLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    // event.preventDefault();
+    // const targetId = event.currentTarget.getAttribute('href')!;
+    // console.log('event', targetId);
+    // scrollToTargetElement(targetId);
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className={'centered_nav header '}>
       <header className={'column'} aria-label='header with navigation' ref={headerRef}>
         <LogoIcon />
         <nav className={isMenuOpen ? 'nav__open' : 'nav__closed'}>
-          {/* change header color based on where we are in the portfolio*/}
           <ul
             className={`${
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
               props.sectionName === 'portfolio' ||
               props.sectionName === 'footer' ||
               props.sectionName === 'contact' ||
@@ -41,6 +69,7 @@ function Header(props: { sectionName: string }) {
               <a
                 className={`${props.sectionName === 'hero' ? 'lactive' : ''}`}
                 href='#hero'
+                // onClick={handleNavLinkClick}
                 onClick={() => setIsMenuOpen(false)}
               >
                 home
@@ -50,7 +79,7 @@ function Header(props: { sectionName: string }) {
               <a
                 className={`${props.sectionName === 'about' ? 'lactive' : ''}`}
                 href='#about'
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleNavLinkClick}
               >
                 about
               </a>
@@ -59,7 +88,7 @@ function Header(props: { sectionName: string }) {
               <a
                 className={`${props.sectionName === 'portfolio' ? 'lactive' : ''}`}
                 href='#portfolio'
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleNavLinkClick}
               >
                 portfolio
               </a>
@@ -68,7 +97,7 @@ function Header(props: { sectionName: string }) {
               <a
                 className={`${props.sectionName === 'resume' ? 'lactive' : ''}`}
                 href='#resume'
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleNavLinkClick}
               >
                 resume
               </a>
@@ -77,7 +106,8 @@ function Header(props: { sectionName: string }) {
               <a
                 className={`${props.sectionName === 'contact' ? 'lactive' : ''}`}
                 href='#contact'
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleNavLinkClick}
+                // onClick={() => setIsMenuOpen(false)}
               >
                 contact
               </a>
