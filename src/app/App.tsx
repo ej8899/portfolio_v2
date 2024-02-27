@@ -226,7 +226,7 @@ function App() {
       <div className='cursor' />
       <div id='chatBotButton' data-tooltip='chat'>
         <div className='chat-icon' onClick={toggleChat}>
-          <i className='fas fa-comment-alt'></i>
+          <i className='fas fa-comment-alt rotate-10cw'></i>
         </div>
       </div>
       {isChrome115Plus ? <div id='snackbar'>browser update recommended!</div> : null}
